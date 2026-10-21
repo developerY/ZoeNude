@@ -1,17 +1,8 @@
 import React, { useState } from 'react';
 import { ArrowRight, Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-interface FooterProps {
-  onOpenManifesto: () => void;
-  onOpenQuiz: () => void;
-  onSelectCategory: (category: string) => void;
-}
-
-export const Footer: React.FC<FooterProps> = ({
-  onOpenManifesto,
-  onOpenQuiz,
-  onSelectCategory,
-}) => {
+export const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
 
@@ -74,24 +65,24 @@ export const Footer: React.FC<FooterProps> = ({
               </h4>
               <ul className="space-y-2 text-xs font-sans text-[#4E4542]">
                 <li>
-                  <button onClick={onOpenManifesto} className="hover:text-[#2B211E] text-left transition-colors">
+                  <Link to="/manifesto" className="hover:text-[#2B211E] text-left transition-colors">
                     The Manifesto
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button onClick={onOpenManifesto} className="hover:text-[#2B211E] text-left transition-colors">
+                  <Link to="/manifesto" className="hover:text-[#2B211E] text-left transition-colors">
                     Clean Biomimetic Base
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button onClick={onOpenQuiz} className="hover:text-[#2B211E] text-left transition-colors">
+                  <Link to="/shade-finder" className="hover:text-[#2B211E] text-left transition-colors">
                     True Skin Matching
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button onClick={onOpenManifesto} className="hover:text-[#2B211E] text-left transition-colors">
+                  <Link to="/manifesto" className="hover:text-[#2B211E] text-left transition-colors">
                     Refillable Glass
-                  </button>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -103,16 +94,24 @@ export const Footer: React.FC<FooterProps> = ({
               </h4>
               <ul className="space-y-2 text-xs font-sans text-[#4E4542]">
                 <li>
-                  <span className="hover:text-[#2B211E] cursor-pointer">Virtual Concierge</span>
+                  <Link to="/shade-finder" className="hover:text-[#2B211E] transition-colors">
+                    Virtual Concierge
+                  </Link>
                 </li>
                 <li>
-                  <span className="hover:text-[#2B211E] cursor-pointer">Order Tracking</span>
+                  <Link to="/shop" className="hover:text-[#2B211E] transition-colors">
+                    Bespoke Essentials
+                  </Link>
                 </li>
                 <li>
-                  <span className="hover:text-[#2B211E] cursor-pointer">Complimentary Returns</span>
+                  <Link to="/transformations" className="hover:text-[#2B211E] transition-colors">
+                    Complimentary Returns
+                  </Link>
                 </li>
                 <li>
-                  <span className="hover:text-[#2B211E] cursor-pointer">Contact Atelier</span>
+                  <Link to="/community" className="hover:text-[#2B211E] transition-colors">
+                    Contact Atelier
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -124,40 +123,49 @@ export const Footer: React.FC<FooterProps> = ({
               </h4>
               <ul className="space-y-2 text-xs font-sans text-[#4E4542]">
                 <li>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#2B211E] transition-colors">
+                  <a
+                    href="https://instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#2B211E] transition-colors"
+                  >
                     Instagram Editorial
                   </a>
                 </li>
                 <li>
-                  <span className="hover:text-[#2B211E] cursor-pointer">Journal & Technique</span>
+                  <Link to="/community" className="hover:text-[#2B211E] transition-colors">
+                    Community Gallery
+                  </Link>
                 </li>
                 <li>
-                  <button onClick={onOpenQuiz} className="hover:text-[#2B211E] text-left transition-colors">
+                  <Link to="/transformations" className="hover:text-[#2B211E] transition-colors">
                     Skin Match Labs
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <span className="hover:text-[#2B211E] cursor-pointer">Private Salons</span>
+                  <Link to="/manifesto" className="hover:text-[#2B211E] transition-colors">
+                    Private Salons
+                  </Link>
                 </li>
               </ul>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar matching Image_9 with new logo emblem */}
+        {/* Bottom Bar with Face Logo Emblem */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-sans text-[#6E625D]">
           <div className="flex items-center space-x-3.5">
-            <div className="w-8 h-8 rounded-full overflow-hidden border border-[#d2c3c0] bg-[#f5ede2] p-0.5 flex-shrink-0 shadow-xs">
+            <Link to="/" className="w-8 h-8 rounded-full overflow-hidden border border-[#d2c3c0] bg-[#f5ede2] p-0.5 flex-shrink-0 shadow-xs hover:border-[#85513f] transition-all">
               <img
                 src="/favicon.png"
                 alt="ZoeNude Logo Emblem"
                 className="w-full h-full object-cover rounded-full"
               />
-            </div>
+            </Link>
             <div className="flex items-center space-x-3">
-              <span className="font-serif text-lg font-medium text-[#2B211E]">
+              <Link to="/" className="font-serif text-lg font-medium text-[#2B211E] hover:text-[#85513f] transition-colors">
                 ZoeNude
-              </span>
+              </Link>
               <span className="hidden sm:inline text-[#E8DFD5]">•</span>
               <span className="italic font-serif text-xs text-[#85513f]">
                 Beauty, Without the Evidence.

@@ -3,24 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Header } from './components/Header';
-import { HeroSection } from './components/HeroSection';
-import { PillarsSection } from './components/PillarsSection';
-import { ShadeFinderSection } from './components/ShadeFinderSection';
-import { EssentialsSection } from './components/EssentialsSection';
-import { TransformationsSection } from './components/TransformationsSection';
-import { CommunitySection } from './components/CommunitySection';
-import { QuietConfidenceSection } from './components/QuietConfidenceSection';
 import { Footer } from './components/Footer';
 import { CartDrawer } from './components/CartDrawer';
 import { ShadeQuizModal } from './components/ShadeQuizModal';
 import { ProductQuickViewModal } from './components/ProductQuickViewModal';
 import { SearchModal } from './components/SearchModal';
 import { ManifestoModal } from './components/ManifestoModal';
+import { HomePage } from './pages/HomePage';
+import { ManifestoPage } from './pages/ManifestoPage';
+import { ShopPage } from './pages/ShopPage';
+import { ShadeFinderPage } from './pages/ShadeFinderPage';
+import { TransformationsPage } from './pages/TransformationsPage';
+import { CommunityPage } from './pages/CommunityPage';
 import { PRODUCTS, ALL_SHADES } from './data/cosmeticsData';
 import { Product, Shade, CartItem } from './types';
 import { Check } from 'lucide-react';
+
+// Scroll to top helper on page transition
+function ScrollToTop() {
+  const { pathname, search } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname, search]);
+  return null;
+}
 
 export default function App() {
   // Pre-seed cart with 2 items to match the '2' notification badge in Image_9
@@ -53,9 +62,6 @@ export default function App() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isManifestoOpen, setIsManifestoOpen] = useState(false);
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
-
-  // Category filter for bespoke essentials
-  const [activeCategory, setActiveCategory] = useState<string>('ALL');
 
   // Wishlist count & tracking
   const [wishlist, setWishlist] = useState<string[]>(['skin-veil-luminous-tint']);
@@ -120,128 +126,108 @@ export default function App() {
 
   const totalCartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
-  const scrollToEssentials = () => {
-    const el = document.getElementById('bespoke-essentials');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-[#FCF9F3] text-[#1C1C18] font-sans selection:bg-[#d8a48f]/30 selection:text-[#2B211E]">
-      {/* Toast Notification */}
-      {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 bg-[#2B211E] text-[#FCF9F3] px-5 py-3 rounded-lg shadow-2xl border border-[#4E4542] flex items-center space-x-2 text-xs font-sans tracking-wide animate-slideUp">
-          <Check size={14} className="text-[#d8a48f]" />
-          <span>{toastMessage}</span>
-        </div>
-      )}
+    <HashRouter>
+      <ScrollToTop />
+      <div className="min-h-screen bg-[#FCF9F3] text-[#1C1C18] font-sans selection:bg-[#d8a48f]/30 selection:text-[#2B211E] flex flex-col justify-between">
+        {/* Toast Notification */}
+        {toastMessage && (
+          <div className="fixed bottom-6 right-6 z-50 bg-[#2B211E] text-[#FCF9F3] px-5 py-3 rounded-lg shadow-2xl border border-[#4E4542] flex items-center space-x-2 text-xs font-sans tracking-wide animate-slideUp">
+            <Check size={14} className="text-[#d8a48f]" />
+            <span>{toastMessage}</span>
+          </div>
+        )}
 
-      {/* Global Navigation Header */}
-      <Header
-        cartCount={totalCartCount}
-        onOpenCart={() => setIsCartOpen(true)}
-        onOpenSearch={() => setIsSearchOpen(true)}
-        onOpenQuiz={() => setIsQuizOpen(true)}
-        onOpenManifesto={() => setIsManifestoOpen(true)}
-        activeCategory={activeCategory}
-        onSelectCategory={(cat) => {
-          setActiveCategory(cat);
-          scrollToEssentials();
-        }}
-        wishlistCount={wishlist.length}
-      />
+        {/* Global Multi-Page Navigation Header */}
+        <Header
+          cartCount={totalCartCount}
+          onOpenCart={() => setIsCartOpen(true)}
+          onOpenSearch={() => setIsSearchOpen(true)}
+          wishlistCount={wishlist.length}
+        />
 
-      {/* Hero Section: Philosophy No. 01 matching Image_9 */}
-      <HeroSection
-        onExploreComplexion={scrollToEssentials}
-        onOpenQuiz={() => setIsQuizOpen(true)}
-        onQuickViewProduct={(prod) => setQuickViewProduct(prod)}
-        featuredProduct={PRODUCTS[0]}
-      />
+        {/* Multi-Page Routes */}
+        <main className="flex-1">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <HomePage
+                  onAddToCart={handleAddToCart}
+                  onQuickView={(prod) => setQuickViewProduct(prod)}
+                />
+              }
+            />
+            <Route path="/manifesto" element={<ManifestoPage />} />
+            <Route path="/about" element={<ManifestoPage />} />
+            <Route
+              path="/shop"
+              element={
+                <ShopPage
+                  onAddToCart={handleAddToCart}
+                  onQuickView={(prod) => setQuickViewProduct(prod)}
+                />
+              }
+            />
+            <Route
+              path="/shade-finder"
+              element={
+                <ShadeFinderPage
+                  onAddToCart={handleAddToCart}
+                  onOpenQuizModal={() => setIsQuizOpen(true)}
+                />
+              }
+            />
+            <Route path="/transformations" element={<TransformationsPage />} />
+            <Route path="/community" element={<CommunityPage />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </main>
 
-      {/* Five Pillars of Naked Grace (The Zoe Manifesto) matching Image_8 and Image_9 */}
-      <PillarsSection
-        onOpenManifesto={() => setIsManifestoOpen(true)}
-      />
+        {/* Atelier Multi-Page Footer */}
+        <Footer />
 
-      {/* Adaptive Skin Intelligence / Tone Matrix Diagnostic Simulator matching Image_9 */}
-      <ShadeFinderSection
-        onOpenQuiz={() => setIsQuizOpen(true)}
-        onAddToCart={handleAddToCart}
-        foundationProduct={PRODUCTS[0]}
-      />
+        {/* Persistent Slide-over Cart Drawer */}
+        <CartDrawer
+          isOpen={isCartOpen}
+          onClose={() => setIsCartOpen(false)}
+          items={cartItems}
+          onUpdateQuantity={handleUpdateQuantity}
+          onRemoveItem={handleRemoveItem}
+          onCheckout={handleCheckout}
+        />
 
-      {/* Bespoke Essentials (Atelier Staples) matching Image_9 */}
-      <EssentialsSection
-        onAddToCart={handleAddToCart}
-        onQuickView={(prod) => setQuickViewProduct(prod)}
-        activeCategory={activeCategory}
-        onSelectCategory={setActiveCategory}
-      />
+        {/* Interactive 90-Second Shade Finder Diagnostic Quiz Modal */}
+        <ShadeQuizModal
+          isOpen={isQuizOpen}
+          onClose={() => setIsQuizOpen(false)}
+          onAddToCart={handleAddToCart}
+        />
 
-      {/* Authentic Transformations (Still You. In Every Light.) matching Image_9 */}
-      <TransformationsSection />
+        {/* Product Quick View / Formulation Inspection Modal */}
+        <ProductQuickViewModal
+          product={quickViewProduct}
+          onClose={() => setQuickViewProduct(null)}
+          onAddToCart={handleAddToCart}
+        />
 
-      {/* Community Gallery (#LifeLooksGoodOnYou) matching Image_9 */}
-      <CommunitySection />
+        {/* Search Modal */}
+        <SearchModal
+          isOpen={isSearchOpen}
+          onClose={() => setIsSearchOpen(false)}
+          onSelectProduct={(p) => setQuickViewProduct(p)}
+        />
 
-      {/* Quiet Confidence Dark Callout matching Image_9 */}
-      <QuietConfidenceSection
-        onShopCollection={scrollToEssentials}
-        onOpenQuiz={() => setIsQuizOpen(true)}
-      />
-
-      {/* Newsletter & Atelier Footer matching Image_9 */}
-      <Footer
-        onOpenManifesto={() => setIsManifestoOpen(true)}
-        onOpenQuiz={() => setIsQuizOpen(true)}
-        onSelectCategory={(cat) => {
-          setActiveCategory(cat);
-          scrollToEssentials();
-        }}
-      />
-
-      {/* Slide-over Cart Drawer */}
-      <CartDrawer
-        isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
-        items={cartItems}
-        onUpdateQuantity={handleUpdateQuantity}
-        onRemoveItem={handleRemoveItem}
-        onCheckout={handleCheckout}
-      />
-
-      {/* Interactive 90-Second Shade Finder Diagnostic Quiz */}
-      <ShadeQuizModal
-        isOpen={isQuizOpen}
-        onClose={() => setIsQuizOpen(false)}
-        onAddToCart={handleAddToCart}
-      />
-
-      {/* Product Quick View / Formulation Inspection Modal */}
-      <ProductQuickViewModal
-        product={quickViewProduct}
-        onClose={() => setQuickViewProduct(null)}
-        onAddToCart={handleAddToCart}
-      />
-
-      {/* Search Modal */}
-      <SearchModal
-        isOpen={isSearchOpen}
-        onClose={() => setIsSearchOpen(false)}
-        onSelectProduct={(p) => setQuickViewProduct(p)}
-      />
-
-      {/* Zoe Manifesto & Philosophy Deep-Dive Modal */}
-      <ManifestoModal
-        isOpen={isManifestoOpen}
-        onClose={() => setIsManifestoOpen(false)}
-        onOpenQuiz={() => {
-          setIsManifestoOpen(false);
-          setIsQuizOpen(true);
-        }}
-      />
-    </div>
+        {/* Zoe Manifesto & Philosophy Deep-Dive Modal */}
+        <ManifestoModal
+          isOpen={isManifestoOpen}
+          onClose={() => setIsManifestoOpen(false)}
+          onOpenQuiz={() => {
+            setIsManifestoOpen(false);
+            setIsQuizOpen(true);
+          }}
+        />
+      </div>
+    </HashRouter>
   );
 }

@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Heart, ShoppingBag, Menu, X, ArrowRight } from 'lucide-react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 interface HeaderProps {
   cartCount: number;
   onOpenCart: () => void;
   onOpenSearch: () => void;
-  onOpenQuiz: () => void;
-  onOpenManifesto: () => void;
-  activeCategory: string;
-  onSelectCategory: (category: string) => void;
   wishlistCount: number;
 }
 
@@ -16,20 +13,17 @@ export const Header: React.FC<HeaderProps> = ({
   cartCount,
   onOpenCart,
   onOpenSearch,
-  onOpenQuiz,
-  onOpenManifesto,
-  activeCategory,
-  onSelectCategory,
   wishlistCount,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [bannerIndex, setBannerIndex] = useState(0);
+  const location = useLocation();
 
   const announcements = [
     'COMPLIMENTARY STANDARD SHIPPING & SHADE MATCHING SAMPLES WITH EVERY ORDER',
     'THE ATELIER GUARANTEE: FREE COLOR EXCHANGES UNTIL YOUR COMPLEXION SINGS',
-    'DISCOVER BIOMIMETIC NUDES: FORMULATED WITH 94% BIO-LIPID VEIL'
+    'DISCOVER BIOMIMETIC NUDES: FORMULATED WITH 94% BIO-LIPID VEIL',
   ];
 
   useEffect(() => {
@@ -40,13 +34,19 @@ export const Header: React.FC<HeaderProps> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
+
   const navLinks = [
-    { label: 'COMPLEXION', category: 'COMPLEXION VEIL' },
-    { label: 'LIPS', category: 'LIP CARE · SATIN' },
-    { label: 'EYES & BROWS', category: 'EYES & BROWS' },
-    { label: 'SKINCARE', category: 'SETTING ESSENCE' },
-    { label: 'ABOUT ZOENUDE', action: onOpenManifesto },
-    { label: 'SHADE FINDER QUIZ', action: onOpenQuiz, isHighlight: true },
+    { label: 'HOME', to: '/' },
+    { label: 'COMPLEXION', to: '/shop?category=COMPLEXION VEIL' },
+    { label: 'LIPS', to: '/shop?category=LIP CARE · SATIN' },
+    { label: 'THE MANIFESTO', to: '/manifesto' },
+    { label: 'SHADE FINDER', to: '/shade-finder', isHighlight: true },
+    { label: 'TRANSFORMATIONS', to: '/transformations' },
+    { label: 'COMMUNITY', to: '/community' },
   ];
 
   return (
@@ -96,13 +96,8 @@ export const Header: React.FC<HeaderProps> = ({
 
             {/* Brand Logo & Crest */}
             <div className="flex items-center space-x-3">
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  onSelectCategory('ALL');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
+              <Link
+                to="/"
                 className="group flex items-center space-x-3.5 text-left focus:outline-none"
               >
                 {/* Main Logo Emblem with the Venus face */}
@@ -125,40 +120,40 @@ export const Header: React.FC<HeaderProps> = ({
                     COSMETICS
                   </span>
                 </div>
-              </a>
+              </Link>
             </div>
 
             {/* Desktop Center Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
-              {navLinks.map((link, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => {
-                    if (link.action) {
-                      link.action();
-                    } else if (link.category) {
-                      onSelectCategory(link.category);
-                      const el = document.getElementById('bespoke-essentials');
-                      if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
-                  className={`text-[11px] font-sans font-semibold tracking-[0.14em] uppercase transition-all duration-200 py-1 relative ${
-                    link.isHighlight
-                      ? 'text-[#85513f] hover:text-[#2B211E] font-bold'
-                      : activeCategory === link.category
-                      ? 'text-[#2B211E]'
-                      : 'text-[#4E4542] hover:text-[#2B211E]'
-                  }`}
-                >
-                  {link.label}
-                  {link.isHighlight && (
-                    <span className="absolute -top-1 -right-2 w-1.5 h-1.5 rounded-full bg-[#85513f]"></span>
-                  )}
-                  {activeCategory === link.category && (
-                    <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#2B211E]"></span>
-                  )}
-                </button>
-              ))}
+            <div className="hidden lg:flex items-center space-x-7">
+              {navLinks.map((link) => {
+                const isActive =
+                  link.to === '/'
+                    ? location.pathname === '/'
+                    : location.pathname + location.search === link.to ||
+                      location.pathname.startsWith(link.to.split('?')[0]);
+
+                return (
+                  <Link
+                    key={link.label}
+                    to={link.to}
+                    className={`text-[11px] font-sans font-semibold tracking-[0.14em] uppercase transition-all duration-200 py-1 relative ${
+                      link.isHighlight
+                        ? 'text-[#85513f] hover:text-[#2B211E] font-bold'
+                        : isActive
+                        ? 'text-[#2B211E]'
+                        : 'text-[#4E4542] hover:text-[#2B211E]'
+                    }`}
+                  >
+                    {link.label}
+                    {link.isHighlight && (
+                      <span className="absolute -top-1 -right-2 w-1.5 h-1.5 rounded-full bg-[#85513f]"></span>
+                    )}
+                    {isActive && (
+                      <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#2B211E]"></span>
+                    )}
+                  </Link>
+                );
+              })}
             </div>
 
             {/* Right Action Icons matching Image_9 */}
@@ -173,11 +168,8 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
 
               {/* Wishlist / Heart Icon */}
-              <button
-                onClick={() => {
-                  const el = document.getElementById('bespoke-essentials');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }}
+              <Link
+                to="/shop"
                 aria-label="Wishlist"
                 className="text-[#2B211E] hover:text-[#85513f] p-1.5 transition-colors relative focus:outline-none"
               >
@@ -187,9 +179,9 @@ export const Header: React.FC<HeaderProps> = ({
                     {wishlistCount}
                   </span>
                 )}
-              </button>
+              </Link>
 
-              {/* Shopping Bag Icon with counter badge (as shown with '2' in Image_9) */}
+              {/* Shopping Bag Icon with counter badge */}
               <button
                 onClick={onOpenCart}
                 aria-label="Shopping Cart"
@@ -203,10 +195,10 @@ export const Header: React.FC<HeaderProps> = ({
                 )}
               </button>
 
-              {/* User Avatar Portrait as seen in Image_9 */}
-              <button
-                onClick={onOpenManifesto}
-                aria-label="Client Account"
+              {/* User Avatar Portrait */}
+              <Link
+                to="/manifesto"
+                aria-label="Client Account / Manifesto"
                 className="w-8 h-8 rounded-full overflow-hidden border border-[#E8DFD5] hover:border-[#85513f] transition-all focus:outline-none"
               >
                 <img
@@ -214,7 +206,7 @@ export const Header: React.FC<HeaderProps> = ({
                   alt="Client Profile"
                   className="w-full h-full object-cover"
                 />
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -223,43 +215,33 @@ export const Header: React.FC<HeaderProps> = ({
         {mobileMenuOpen && (
           <div className="lg:hidden bg-[#FCF9F3] border-b border-[#E8DFD5] px-6 py-6 space-y-4 shadow-lg animate-fadeIn">
             <div className="flex flex-col space-y-3 pb-4 border-b border-[#E8DFD5]">
-              {navLinks.map((link, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    if (link.action) {
-                      link.action();
-                    } else if (link.category) {
-                      onSelectCategory(link.category);
-                      const el = document.getElementById('bespoke-essentials');
-                      if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
+              {navLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  to={link.to}
+                  onClick={() => setMobileMenuOpen(false)}
                   className="text-left text-xs font-semibold tracking-[0.14em] uppercase text-[#2B211E] py-2 flex items-center justify-between"
                 >
                   <span>{link.label}</span>
                   {link.isHighlight && (
-                    <span className="text-[10px] bg-[#d8a48f]/20 text-[#85513f] px-2 py-0.5 rounded-full">
-                      Quiz
+                    <span className="text-[10px] bg-[#d8a48f]/20 text-[#85513f] px-2 py-0.5 rounded-full font-bold">
+                      Diagnostic
                     </span>
                   )}
-                </button>
+                </Link>
               ))}
             </div>
 
             <div className="pt-2 flex items-center justify-between text-xs text-[#6E625D]">
               <span>Complimentary Concierge & Shade Swatches</span>
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenQuiz();
-                }}
+              <Link
+                to="/shade-finder"
+                onClick={() => setMobileMenuOpen(false)}
                 className="text-[#85513f] font-semibold flex items-center space-x-1"
               >
-                <span>Take Quiz</span>
+                <span>Take Diagnostic</span>
                 <ArrowRight size={14} />
-              </button>
+              </Link>
             </div>
           </div>
         )}

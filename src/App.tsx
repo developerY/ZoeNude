@@ -13,6 +13,7 @@ import { ProductQuickViewModal } from './components/ProductQuickViewModal';
 import { SearchModal } from './components/SearchModal';
 import { ManifestoModal } from './components/ManifestoModal';
 import { HomePage } from './pages/HomePage';
+import { AboutPage } from './pages/AboutPage';
 import { ManifestoPage } from './pages/ManifestoPage';
 import { ShopPage } from './pages/ShopPage';
 import { ShadeFinderPage } from './pages/ShadeFinderPage';
@@ -158,8 +159,8 @@ export default function App() {
                 />
               }
             />
+            <Route path="/about" element={<AboutPage />} />
             <Route path="/manifesto" element={<ManifestoPage />} />
-            <Route path="/about" element={<ManifestoPage />} />
             <Route
               path="/shop"
               element={

@@ -65,23 +65,23 @@ export const Footer: React.FC = () => {
               </h4>
               <ul className="space-y-2 text-xs font-sans text-[#4E4542]">
                 <li>
-                  <Link to="/manifesto" className="hover:text-[#2B211E] text-left transition-colors">
-                    The Manifesto
+                  <Link to="/about" className="hover:text-[#2B211E] text-left transition-colors">
+                    About The House
                   </Link>
                 </li>
                 <li>
                   <Link to="/manifesto" className="hover:text-[#2B211E] text-left transition-colors">
-                    Clean Biomimetic Base
+                    The Five Pillars Manifesto
                   </Link>
                 </li>
                 <li>
                   <Link to="/shade-finder" className="hover:text-[#2B211E] text-left transition-colors">
-                    True Skin Matching
+                    Biomimetic Shade Matrix
                   </Link>
                 </li>
                 <li>
-                  <Link to="/manifesto" className="hover:text-[#2B211E] text-left transition-colors">
-                    Refillable Glass
+                  <Link to="/about" className="hover:text-[#2B211E] text-left transition-colors">
+                    Clean Formulation Standards
                   </Link>
                 </li>
               </ul>

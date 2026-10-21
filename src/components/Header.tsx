@@ -39,14 +39,25 @@ export const Header: React.FC<HeaderProps> = ({
     setMobileMenuOpen(false);
   }, [location.pathname]);
 
+  const [shopDropdownOpen, setShopDropdownOpen] = useState(false);
+
   const navLinks = [
     { label: 'HOME', to: '/' },
-    { label: 'COMPLEXION', to: '/shop?category=COMPLEXION VEIL' },
-    { label: 'LIPS', to: '/shop?category=LIP CARE · SATIN' },
+    { label: 'SHOP', to: '/shop', hasDropdown: true },
+    { label: 'ABOUT', to: '/about' },
     { label: 'THE MANIFESTO', to: '/manifesto' },
     { label: 'SHADE FINDER', to: '/shade-finder', isHighlight: true },
     { label: 'TRANSFORMATIONS', to: '/transformations' },
     { label: 'COMMUNITY', to: '/community' },
+  ];
+
+  const shopCategories = [
+    { label: 'All Formulations', to: '/shop' },
+    { label: 'Complexion Veil', to: '/shop?category=COMPLEXION VEIL' },
+    { label: 'Lip Care · Satin', to: '/shop?category=LIP CARE · SATIN' },
+    { label: 'Botanical Cheek Flush', to: '/shop?category=BOTANICAL CHEEK FLUSH' },
+    { label: 'Multi-Use Sculpt & Eye', to: '/shop?category=MULTI-USE SCULPT' },
+    { label: 'Atelier Silk Brushes', to: '/shop?category=BRUSH & SILK TOOL' },
   ];
 
   return (
@@ -98,7 +109,7 @@ export const Header: React.FC<HeaderProps> = ({
             <div className="flex items-center space-x-3">
               <Link
                 to="/"
-                className="group flex items-center space-x-3.5 text-left focus:outline-none"
+                className="group flex items-center space-x-3 text-left focus:outline-none mr-2 sm:mr-4"
               >
                 {/* Main Logo Emblem with the Venus face */}
                 <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border border-[#d2c3c0] bg-[#f5ede2] p-0.5 flex-shrink-0 shadow-xs group-hover:border-[#85513f] transition-all">
@@ -110,11 +121,10 @@ export const Header: React.FC<HeaderProps> = ({
                 </div>
 
                 <div className="flex flex-col">
-                  <div className="flex items-baseline space-x-1.5">
+                  <div className="flex items-baseline">
                     <span className="font-serif text-2xl sm:text-[28px] tracking-tight text-[#2B211E] font-medium transition-colors group-hover:text-[#85513f]">
-                      ZoeNude
+                      ZoeNude<span className="text-[#85513f]">.</span>
                     </span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#85513f] inline-block mb-1"></span>
                   </div>
                   <span className="text-[9px] tracking-[0.25em] text-[#6E625D] uppercase font-sans -mt-1 font-medium">
                     COSMETICS
@@ -124,13 +134,57 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
 
             {/* Desktop Center Navigation */}
-            <div className="hidden lg:flex items-center space-x-7">
+            <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
               {navLinks.map((link) => {
                 const isActive =
                   link.to === '/'
                     ? location.pathname === '/'
-                    : location.pathname + location.search === link.to ||
-                      location.pathname.startsWith(link.to.split('?')[0]);
+                    : location.pathname === link.to ||
+                      (link.to !== '/' && location.pathname.startsWith(link.to));
+
+                if (link.hasDropdown) {
+                  return (
+                    <div
+                      key={link.label}
+                      className="relative py-2"
+                      onMouseEnter={() => setShopDropdownOpen(true)}
+                      onMouseLeave={() => setShopDropdownOpen(false)}
+                    >
+                      <Link
+                        to={link.to}
+                        className={`text-[11px] font-sans font-semibold tracking-[0.14em] uppercase transition-all duration-200 py-1 flex items-center space-x-1 ${
+                          isActive
+                            ? 'text-[#2B211E]'
+                            : 'text-[#4E4542] hover:text-[#2B211E]'
+                        }`}
+                      >
+                        <span>{link.label}</span>
+                      </Link>
+                      {isActive && (
+                        <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#2B211E]"></span>
+                      )}
+
+                      {/* Dropdown Menu for Shop */}
+                      {shopDropdownOpen && (
+                        <div className="absolute top-full left-0 w-56 bg-[#FCF9F3] border border-[#E8DFD5] rounded-xl shadow-xl py-3 px-2 z-50 animate-fadeIn">
+                          <div className="text-[9px] font-sans font-bold tracking-[0.18em] uppercase text-[#85513f] px-3 pb-2 mb-1 border-b border-[#F0EEE8]">
+                            ATELIER FORMULATIONS
+                          </div>
+                          {shopCategories.map((cat) => (
+                            <Link
+                              key={cat.label}
+                              to={cat.to}
+                              onClick={() => setShopDropdownOpen(false)}
+                              className="block px-3 py-2 text-xs font-sans text-[#4E4542] hover:text-[#2B211E] hover:bg-[#F2EDE4] rounded-lg transition-colors"
+                            >
+                              {cat.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
 
                 return (
                   <Link
@@ -214,21 +268,38 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Mobile Menu Dropdown */}
         {mobileMenuOpen && (
           <div className="lg:hidden bg-[#FCF9F3] border-b border-[#E8DFD5] px-6 py-6 space-y-4 shadow-lg animate-fadeIn">
-            <div className="flex flex-col space-y-3 pb-4 border-b border-[#E8DFD5]">
+            <div className="flex flex-col space-y-2.5 pb-4 border-b border-[#E8DFD5]">
               {navLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  to={link.to}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-left text-xs font-semibold tracking-[0.14em] uppercase text-[#2B211E] py-2 flex items-center justify-between"
-                >
-                  <span>{link.label}</span>
-                  {link.isHighlight && (
-                    <span className="text-[10px] bg-[#d8a48f]/20 text-[#85513f] px-2 py-0.5 rounded-full font-bold">
-                      Diagnostic
-                    </span>
+                <div key={link.label}>
+                  <Link
+                    to={link.to}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-left text-xs font-semibold tracking-[0.14em] uppercase text-[#2B211E] py-1.5 flex items-center justify-between hover:text-[#85513f] transition-colors"
+                  >
+                    <span>{link.label}</span>
+                    {link.isHighlight && (
+                      <span className="text-[10px] bg-[#d8a48f]/20 text-[#85513f] px-2 py-0.5 rounded-full font-bold">
+                        Diagnostic
+                      </span>
+                    )}
+                  </Link>
+
+                  {/* Mobile sub-links for Shop */}
+                  {link.label === 'SHOP' && (
+                    <div className="pl-3 py-1 space-y-1.5 border-l border-[#E8DFD5] my-1 ml-1">
+                      {shopCategories.slice(1).map((cat) => (
+                        <Link
+                          key={cat.label}
+                          to={cat.to}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="block text-[11px] font-sans text-[#6E625D] hover:text-[#2B211E] py-0.5"
+                        >
+                          {cat.label}
+                        </Link>
+                      ))}
+                    </div>
                   )}
-                </Link>
+                </div>
               ))}
             </div>
 

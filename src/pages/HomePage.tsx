@@ -89,6 +89,28 @@ export const HomePage: React.FC<HomePageProps> = ({
               </div>
             ))}
           </div>
+
+          {/* About The House Teaser Ribbon */}
+          <div className="mt-12 bg-white rounded-2xl p-6 sm:p-8 border border-[#E8DFD5] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
+            <div className="space-y-1 text-center sm:text-left">
+              <span className="text-[10px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase">
+                THE ATELIER HERITAGE
+              </span>
+              <h3 className="font-serif text-xl sm:text-2xl text-[#2B211E]">
+                Seven Years of Biomimetic Formulation in Paris
+              </h3>
+              <p className="text-xs text-[#6E625D] max-w-xl">
+                Discover how Dr. Helena Vance and Parisian master colorists developed breathable bio-lipid cosmetics that refuse to mask your living skin.
+              </p>
+            </div>
+            <Link
+              to="/about"
+              className="bg-[#2B211E] hover:bg-[#433430] text-[#FCF9F3] text-xs font-semibold px-6 py-3 rounded tracking-wider uppercase transition-colors whitespace-nowrap inline-flex items-center space-x-2"
+            >
+              <span>About ZoeNude</span>
+              <ArrowRight size={14} />
+            </Link>
+          </div>
         </div>
       </section>
 

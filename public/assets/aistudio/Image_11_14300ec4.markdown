@@ -1,0 +1,216 @@
+---
+name: Warm Cashmere & Alabaster Minimalist
+colors:
+  surface: '#fcf9f3'
+  surface-dim: '#dcdad4'
+  surface-bright: '#fcf9f3'
+  surface-container-lowest: '#ffffff'
+  surface-container-low: '#f6f3ed'
+  surface-container: '#f0eee8'
+  surface-container-high: '#ebe8e2'
+  surface-container-highest: '#e5e2dc'
+  on-surface: '#1c1c18'
+  on-surface-variant: '#4e4542'
+  inverse-surface: '#31312d'
+  inverse-on-surface: '#f3f0ea'
+  outline: '#807571'
+  outline-variant: '#d2c3c0'
+  surface-tint: '#695b58'
+  primary: '#140c09'
+  on-primary: '#ffffff'
+  primary-container: '#2b211e'
+  on-primary-container: '#968783'
+  inverse-primary: '#d4c3be'
+  secondary: '#85513f'
+  on-secondary: '#ffffff'
+  secondary-container: '#feb9a3'
+  on-secondary-container: '#7a4736'
+  tertiary: '#1f0600'
+  on-tertiary: '#ffffff'
+  tertiary-container: '#3a1b0d'
+  on-tertiary-container: '#af806c'
+  error: '#ba1a1a'
+  on-error: '#ffffff'
+  error-container: '#ffdad6'
+  on-error-container: '#93000a'
+  primary-fixed: '#f1dfd9'
+  primary-fixed-dim: '#d4c3be'
+  on-primary-fixed: '#231917'
+  on-primary-fixed-variant: '#504441'
+  secondary-fixed: '#ffdbd0'
+  secondary-fixed-dim: '#fbb6a0'
+  on-secondary-fixed: '#341004'
+  on-secondary-fixed-variant: '#6a3a2a'
+  tertiary-fixed: '#ffdbcd'
+  tertiary-fixed-dim: '#f1baa5'
+  on-tertiary-fixed: '#301306'
+  on-tertiary-fixed-variant: '#633d2d'
+  background: '#fcf9f3'
+  on-background: '#1c1c18'
+  surface-variant: '#e5e2dc'
+typography:
+  display-hero:
+    fontFamily: Bodoni Moda
+    fontSize: 56px
+    fontWeight: '400'
+    lineHeight: 64px
+    letterSpacing: -0.02em
+  display-hero-mobile:
+    fontFamily: Bodoni Moda
+    fontSize: 38px
+    fontWeight: '400'
+    lineHeight: 46px
+    letterSpacing: -0.01em
+  headline-lg:
+    fontFamily: Bodoni Moda
+    fontSize: 36px
+    fontWeight: '500'
+    lineHeight: 44px
+    letterSpacing: -0.015em
+  headline-lg-mobile:
+    fontFamily: Bodoni Moda
+    fontSize: 28px
+    fontWeight: '500'
+    lineHeight: 36px
+    letterSpacing: -0.01em
+  headline-md:
+    fontFamily: Bodoni Moda
+    fontSize: 26px
+    fontWeight: '500'
+    lineHeight: 34px
+  headline-sm:
+    fontFamily: Bodoni Moda
+    fontSize: 20px
+    fontWeight: '600'
+    lineHeight: 28px
+  title-md:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 17px
+    fontWeight: '600'
+    lineHeight: 24px
+  body-lg:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 16px
+    fontWeight: '400'
+    lineHeight: 26px
+  body-md:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 14px
+    fontWeight: '400'
+    lineHeight: 22px
+  body-sm:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 12px
+    fontWeight: '400'
+    lineHeight: 18px
+  label-caps:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 11px
+    fontWeight: '600'
+    lineHeight: 14px
+    letterSpacing: 0.12em
+  label-md:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 13px
+    fontWeight: '500'
+    lineHeight: 16px
+rounded:
+  sm: 0.125rem
+  DEFAULT: 0.25rem
+  md: 0.375rem
+  lg: 0.5rem
+  xl: 0.75rem
+  full: 9999px
+spacing:
+  gutter: 1.5rem
+  gutter-mobile: 1rem
+  margin: 3rem
+  margin-mobile: 1.25rem
+  space-xs: 0.375rem
+  space-sm: 0.75rem
+  space-md: 1.25rem
+  space-lg: 2rem
+  space-xl: 3.5rem
+---
+
+## Brand & Style
+
+This design system expresses quiet luxury, understated confidence, and luminous authenticity. Built for discerning consumers seeking elevated cosmetic essentials, the aesthetic celebrates genuine skin texture and effortless beauty under the philosophy: *"Beauty, Without the Evidence."*
+
+The visual direction merges **Minimalism** with an **Editorial Tactile Luxury** aesthetic:
+- **Atmosphere:** Warm, serene, and skin-centric. The experience feels like high-end editorial print media crossed with a calm, tactile vanity table.
+- **Visual Values:** Generous negative space, whisper-thin hairlines, velvety matte surfaces, and unhurried visual cadence.
+- **Tone:** Poised, intimate, and authentic—rejecting artificial perfection in favor of radiant natural grace.
+
+## Colors
+
+The palette is rooted in bare complexion tones, porcelain undertones, and warm mineral shadows:
+
+- **Primary (`#2B211E` — Deep Espresso):** Replaces harsh standard blacks. Used for crisp editorial headings, high-contrast actions, and delicate structural borders.
+- **Secondary (`#B77B67` — Muted Terracotta):** Warm, earthen accent evoking natural flush and sun-warmed clay. Highlights key focal points and state transitions.
+- **Tertiary (`#D8A48F` — Soft Rose Nude):** Gentle, luminous skin tone used for active badges, cosmetic swatch selections, and subtle tinting.
+- **Neutral (`#F9F6F0` — Warm Alabaster):** Replaces clinical pure white with a creamy, cashmere-like canvas base.
+
+### Functional Roles
+- **Canvas Base:** `#FBF9F5` (Delicate Cream)
+- **Surface Elevation:** `#FFFFFF` (Porcelain pure white for product cards and modular sheets)
+- **Subtle Fill / Dividers:** `#EFE8DE` (Cashmere tint)
+- **Muted Text:** `#6E625D` (Warm charcoal-taupe for secondary reading and metadata)
+
+## Typography
+
+The typographic system creates an interplay between high-fashion couture publishing and modern clarity:
+
+- **Headlines (`Bodoni Moda`):** A high-contrast modern serif with dramatic stroke modulation, infusing every headline with prestige, warmth, and grace. Set with tightened tracking for an intentional editorial layout.
+- **Body & Controls (`Plus Jakarta Sans`):** A humanist, geometric sans-serif featuring gentle terminal geometry that mirrors organic skin curves while maintaining crystalline legibility at smaller scales.
+- **Caps Hierarchy (`label-caps`):** Used sparingly for category callouts, ingredient badges, and collection eyebrow tags with expansive letter-spacing (`0.12em`) to mirror premium cosmetic packaging.
+
+## Layout & Spacing
+
+The layout is built upon an airy, balanced 12-column grid system designed to let photography breathe without visual crowding:
+
+- **Desktop (1200px+):** 12-column fluid grid, 48px (`3rem`) page margins, 24px (`1.5rem`) gutters. Content is bounded by a maximum width container of `1280px` for high-density reading and immersive product narratives.
+- **Tablet (768px - 1199px):** 8 columns, 32px margins, 20px gutters. Dual-pane editorial listings collapse to proportional single/double column pairings.
+- **Mobile (<768px):** 4 columns, 20px (`1.25rem`) side margins, 16px (`1rem`) gutters. Vertical breathing room is prioritized; image carousels gently peek past the margin to invite natural lateral swiping.
+- **Compositional Rhythm:** Sections should maintain at least `space-xl` separation, treating whitespace as an intentional ingredient rather than unoccupied space.
+
+## Elevation & Depth
+
+Visual depth avoids thick, artificial shadows in favor of a tactile, layered studio aesthetic:
+
+- **Tonal Layering:** The primary canvas (`#FBF9F5`) holds modular panels and floating cards in pure `#FFFFFF` or pale warm cream (`#F4EFEB`), yielding depth through surface distinction alone.
+- **Low-Contrast Hairlines:** Subtle 1px borders colored in `#E8DFD5` frame cards, product tiles, and persistent footers.
+- **Velvet Shadow Treatment:** When floating dialogs or shade-picker drawers require separation from the main flow, use an extra-diffused warm espresso shadow:
+  - `0 12px 36px -4px rgba(43, 33, 30, 0.06), 0 4px 12px -2px rgba(43, 33, 30, 0.03)`
+- **Tactile Softness:** Overlays utilize a frosted alabaster glass blur (`backdrop-filter: blur(12px); background: rgba(251, 249, 245, 0.85)`), preserving the radiant tone of underlying visuals.
+
+## Shapes
+
+The geometric identity relies on soft architectural corners combined with circular organic accents:
+
+- **Level 1 (Soft):** Primary cards, product tiles, input containers, and alerts feature `0.25rem` (4px) to `0.5rem` (8px) corner softening. This keeps forms structured and editorial without feeling sharp or harsh.
+- **Full Radii Exceptions:** Shade swatches, cosmetic dropper tags, and subtle pill chips utilize full rounding (`9999px`) to echo physical compact lids, lipstick bullet profiles, and pressed powder pans.
+- **Dividers & Strokes:** Separators use hairline weights (1px) in warm beige, accentuating the crafted, bespoke feel of fine stationery packaging.
+
+## Components
+
+### Buttons & Interactive Controls
+- **Primary Action:** Solid Deep Espresso (`#2B211E`) background, warm alabaster text, subtle `4px` radius. Hover shifts gracefully to `#433430`.
+- **Secondary Action:** Transparent fill with a 1px border in `#2B211E`, high-contrast serif or clean sans text, shifting on hover to a cashmere fill (`#F4EFEB`).
+- **Quiet Link:** Understated text link featuring an animated hairline underline offset by 4px.
+
+### Shade Selectors & Swatch Pickers
+- Circular 32px or 40px swatches displaying actual undertone/pigment swatches.
+- Active state indicated by a 2px offset ring in `#2B211E` with a 2px inner white clearance gap, ensuring accurate color perception without edge interference.
+
+### Product & Editorial Cards
+- Elevated on porcelain white with a delicate 1px `#E8DFD5` border.
+- Integrated photography features full-bleed warm lighting with seamless background integration into the card surface.
+- Micro-badges ("Most Distinctive", "Warm Undertone") utilize `label-caps` in deep espresso over a semi-translucent nude tint (`rgba(183, 123, 103, 0.12)`).
+
+### Form Inputs
+- Baseline-underlined or softly boxed fields in delicate cream (`#FAF6F0`).
+- Crisp placeholder styling in warm taupe (`#6E625D`). Active focus transitions to a 1px `#2B211E` outline with zero fuzzy outer glow.
+
+### Accordions & Ingredient Drawers
+- Minimalist hairline rules with clean `+` / `—` iconography. Expands smoothly with gentle vertical padding to expose full transparency notes and formulation benefits.

@@ -1,0 +1,6 @@
+{
+  "name": "ZoeNude Cosmetics",
+  "description": "Beauty, Without the Evidence. Skin-first biomimetic luxury cosmetics celebrating living skin structure with undetectable, breathable wear.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Maximize2, Sparkles, Check } from 'lucide-react';
+import { ArrowRight, Maximize2, Sparkles, Check, X, Info } from 'lucide-react';
 import { Product } from '../types';
 
 interface HeroSectionProps {
@@ -16,6 +16,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   featuredProduct,
 }) => {
   const [heroView, setHeroView] = useState<'cover' | 'model'>('cover');
+  const [isBadgeVisible, setIsBadgeVisible] = useState(true);
 
   return (
     <section className="relative overflow-hidden bg-[#FCF9F3] pt-6 pb-16 lg:py-20 border-b border-[#E8DFD5]">
@@ -159,48 +160,73 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 </div>
               </div>
 
-              {/* Floating Formulation Badge Card (Matches Image_9 floating over bottom-left of hero photo) */}
-              <div
-                onClick={() => onQuickViewProduct(featuredProduct)}
-                className="cursor-pointer group absolute -bottom-6 left-2 sm:-left-6 bg-[#FFFFFF] rounded-xl p-3 sm:p-4 shadow-[0_12px_36px_-4px_rgba(43,33,30,0.12),0_4px_12px_-2px_rgba(43,33,30,0.06)] border border-[#E8DFD5] max-w-[280px] sm:max-w-[310px] transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-              >
-                <div className="flex items-center space-x-3.5">
-                  {/* Small Product Dropper Bottle Thumbnail */}
-                  <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-lg overflow-hidden bg-[#FAF6F0] flex-shrink-0 border border-[#E8DFD5]">
-                    <img
-                      src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=300&q=80"
-                      alt="Skin Veil Formulation"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
+              {/* Floating Formulation Badge Card with Close / Dismiss capability */}
+              {isBadgeVisible ? (
+                <div
+                  onClick={() => onQuickViewProduct(featuredProduct)}
+                  className="cursor-pointer group absolute -bottom-6 left-2 sm:-left-6 bg-[#FFFFFF] rounded-xl p-3 sm:p-4 shadow-[0_12px_36px_-4px_rgba(43,33,30,0.12),0_4px_12px_-2px_rgba(43,33,30,0.06)] border border-[#E8DFD5] max-w-[280px] sm:max-w-[310px] transition-all duration-300 hover:shadow-xl hover:-translate-y-1 animate-fadeIn"
+                >
+                  {/* Close / Dismiss Button */}
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setIsBadgeVisible(false);
+                    }}
+                    className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[#FAF6F0] hover:bg-[#2B211E] text-[#6E625D] hover:text-white border border-[#E8DFD5] flex items-center justify-center transition-colors shadow-xs z-20 focus:outline-none"
+                    title="Close formulation note"
+                    aria-label="Close formulation note"
+                  >
+                    <X size={13} />
+                  </button>
+
+                  <div className="flex items-center space-x-3.5">
+                    {/* Small Product Dropper Bottle Thumbnail */}
+                    <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-lg overflow-hidden bg-[#FAF6F0] flex-shrink-0 border border-[#E8DFD5]">
+                      <img
+                        src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=300&q=80"
+                        alt="Skin Veil Formulation"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+
+                    <div className="flex-1 min-w-0">
+                      <span className="block text-[9px] font-sans font-semibold tracking-[0.14em] uppercase text-[#85513f]">
+                        FORMULATION
+                      </span>
+                      <h2 className="text-xs sm:text-[13px] font-serif font-bold text-[#2B211E] truncate leading-tight mt-0.5">
+                        94% Bio-Lipid Serum Base
+                      </h2>
+                      <p className="text-[10px] text-[#6E625D] mt-0.5 flex items-center space-x-1 truncate">
+                        <span className="w-2 h-2 rounded-full bg-[#D2A782] inline-block"></span>
+                        <span>WARM BEIGE · 05 Luminous Tint</span>
+                      </p>
+                    </div>
+
+                    {/* Expand / Quick View Icon Button */}
+                    <div className="w-8 h-8 rounded-full bg-[#F6F3ED] group-hover:bg-[#2B211E] group-hover:text-white text-[#2B211E] flex items-center justify-center transition-colors flex-shrink-0">
+                      <Maximize2 size={13} />
+                    </div>
                   </div>
 
-                  <div className="flex-1 min-w-0">
-                    <span className="block text-[9px] font-sans font-semibold tracking-[0.14em] uppercase text-[#85513f]">
-                      FORMULATION
+                  <div className="mt-2.5 pt-2 border-t border-[#F0EEE8] flex items-center justify-between text-[9px] font-sans text-[#6E625D]">
+                    <span className="flex items-center text-[#85513f]">
+                      <Check size={10} className="mr-1" />
+                      Undetectable micro-veil
                     </span>
-                    <h2 className="text-xs sm:text-[13px] font-serif font-bold text-[#2B211E] truncate leading-tight mt-0.5">
-                      94% Bio-Lipid Serum Base
-                    </h2>
-                    <p className="text-[10px] text-[#6E625D] mt-0.5 flex items-center space-x-1 truncate">
-                      <span className="w-2 h-2 rounded-full bg-[#D2A782] inline-block"></span>
-                      <span>WARM BEIGE · 05 Luminous Tint</span>
-                    </p>
-                  </div>
-
-                  {/* Expand / Quick View Icon Button */}
-                  <div className="w-8 h-8 rounded-full bg-[#F6F3ED] group-hover:bg-[#2B211E] group-hover:text-white text-[#2B211E] flex items-center justify-center transition-colors flex-shrink-0">
-                    <Maximize2 size={13} />
+                    <span className="underline group-hover:text-[#2B211E]">Click to Inspect</span>
                   </div>
                 </div>
-
-                <div className="mt-2.5 pt-2 border-t border-[#F0EEE8] flex items-center justify-between text-[9px] font-sans text-[#6E625D]">
-                  <span className="flex items-center text-[#85513f]">
-                    <Check size={10} className="mr-1" />
-                    Undetectable micro-veil
-                  </span>
-                  <span className="underline group-hover:text-[#2B211E]">Click to Inspect</span>
-                </div>
-              </div>
+              ) : (
+                <button
+                  onClick={() => setIsBadgeVisible(true)}
+                  className="absolute -bottom-4 left-2 sm:-left-4 bg-[#FFFFFF]/95 hover:bg-[#2B211E] text-[#6E625D] hover:text-white border border-[#E8DFD5] px-3 py-1.5 rounded-full text-[10px] font-sans font-medium tracking-wider uppercase transition-all shadow-sm flex items-center space-x-1.5 backdrop-blur-sm z-10"
+                  title="Show formulation card"
+                  aria-label="Show formulation card"
+                >
+                  <Info size={11} className="text-[#85513f]" />
+                  <span>Show Formulation Note</span>
+                </button>
+              )}
             </div>
           </div>
         </div>

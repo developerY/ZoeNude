@@ -73,32 +73,32 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               </button>
             </div>
 
-            {/* Editorial Press Accolades */}
+            {/* Brand Pillars: KoColor, ZoeWear, ZoeWave */}
             <div className="pt-8 border-t border-[#E8DFD5] grid grid-cols-3 gap-4 sm:gap-6">
               <div className="space-y-1">
-                <span className="block font-serif text-sm tracking-wider font-bold text-[#2B211E]">
-                  VOGUE
+                <span className="block font-serif text-sm tracking-wider font-bold text-[#2B211E] uppercase">
+                  KOCOLOR
                 </span>
                 <p className="text-[11px] leading-snug text-[#6E625D] italic">
-                  &ldquo;The new standard for undetectable nude complexion.&rdquo;
+                  &ldquo;Precision biomimetic pigment calibration for true vascular undertone harmony.&rdquo;
                 </p>
               </div>
 
               <div className="space-y-1">
-                <span className="block font-serif text-sm tracking-wider font-bold text-[#2B211E]">
-                  ALLURE
+                <span className="block font-serif text-sm tracking-wider font-bold text-[#2B211E] uppercase">
+                  ZOEWEAR
                 </span>
                 <p className="text-[11px] leading-snug text-[#6E625D] italic">
-                  &ldquo;Best of Beauty winner: Second Skin perfection.&rdquo;
+                  &ldquo;Undetectable second-skin wear that breathes seamlessly with your natural lipid barrier.&rdquo;
                 </p>
               </div>
 
               <div className="space-y-1">
-                <span className="block font-serif text-sm tracking-wider font-bold text-[#2B211E]">
-                  BAZAAR
+                <span className="block font-serif text-sm tracking-wider font-bold text-[#2B211E] uppercase">
+                  ZOEWAVE
                 </span>
                 <p className="text-[11px] leading-snug text-[#6E625D] italic">
-                  &ldquo;A masterclass in quiet, skin-forward luxury.&rdquo;
+                  &ldquo;Multi-dimensional light refraction and cellular vitality moving with your skin.&rdquo;
                 </p>
               </div>
             </div>

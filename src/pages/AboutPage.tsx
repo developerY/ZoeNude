@@ -65,18 +65,21 @@ export const AboutPage: React.FC = () => {
     },
   ];
 
-  const pressQuotes = [
+  const brandPillars = [
     {
-      quote: "The French beauty revolution nobody saw coming because you genuinely cannot see it on the skin.",
-      publication: "Vogue France",
+      quote: "Precision biomimetic pigment calibration engineered to mirror true vascular undertones without artificial masking.",
+      publication: "KoColor",
+      category: "Color Science",
     },
     {
-      quote: "ZoeNude solved the impossible dilemma between clean ingredients and ultra-luxury performance.",
-      publication: "Harper's Bazaar",
+      quote: "Undetectable second-skin wear formulated with bio-lipids that move in harmony with your natural lipid barrier.",
+      publication: "ZoeWear",
+      category: "Living Wear",
     },
     {
-      quote: "Skin looks like it was sculpted by sunlight and dew, rather than covered in makeup.",
-      publication: "The Cut",
+      quote: "Multi-dimensional light refraction and cellular frequency that preserves vitality and radiant skin luminescence.",
+      publication: "ZoeWave",
+      category: "Cellular Radiance",
     },
   ];
 
@@ -421,19 +424,22 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Press Quotes & Critical Acclaim */}
+      {/* The Trilogy Pillars: KoColor, ZoeWear, ZoeWave */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <span className="text-[10px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase">
-            EDITORIAL ACCLAIM
+            THE ATELIER FOUNDATION
           </span>
           <h2 className="font-serif text-3xl text-[#2B211E] mt-2">
-            In The Words of Critics
+            KoColor · ZoeWear · ZoeWave
           </h2>
+          <p className="text-xs sm:text-sm text-[#6E625D] mt-2 max-w-lg mx-auto">
+            The three unified disciplines defining our biomimetic second-skin formulations.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {pressQuotes.map((p, idx) => (
+          {brandPillars.map((p, idx) => (
             <div
               key={idx}
               className="bg-white rounded-2xl p-8 border border-[#E8DFD5] shadow-xs text-center flex flex-col justify-between"
@@ -441,9 +447,14 @@ export const AboutPage: React.FC = () => {
               <p className="font-serif text-base sm:text-lg italic text-[#2B211E] leading-relaxed">
                 &ldquo;{p.quote}&rdquo;
               </p>
-              <span className="text-[11px] font-sans font-bold tracking-[0.16em] uppercase text-[#85513f] mt-6 block">
-                {p.publication}
-              </span>
+              <div className="mt-6 pt-4 border-t border-[#F0EEE8]">
+                <span className="text-sm font-serif font-bold tracking-[0.16em] uppercase text-[#2B211E] block">
+                  {p.publication}
+                </span>
+                <span className="text-[10px] font-sans tracking-wider uppercase text-[#85513f] mt-0.5 block">
+                  {p.category}
+                </span>
+              </div>
             </div>
           ))}
         </div>

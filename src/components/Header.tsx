@@ -105,12 +105,12 @@ export const Header: React.FC<HeaderProps> = ({
                 }}
                 className="group flex items-center space-x-3.5 text-left focus:outline-none"
               >
-                {/* Main Logo Emblem from new brand artwork */}
+                {/* Main Logo Emblem with the Venus face */}
                 <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border border-[#d2c3c0] bg-[#f5ede2] p-0.5 flex-shrink-0 shadow-xs group-hover:border-[#85513f] transition-all">
                   <img
-                    src="/assets/aistudio/Gemini_Generated_Image_ac8jwiac8jwiac8j_feb6fedb.jpeg"
+                    src="/favicon.png"
                     alt="ZoeNude Main Logo"
-                    className="w-full h-full object-cover scale-[1.7] object-center transform -translate-y-0.5"
+                    className="w-full h-full object-cover rounded-full"
                   />
                 </div>
 

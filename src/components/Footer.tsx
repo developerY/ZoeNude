@@ -149,9 +149,9 @@ export const Footer: React.FC<FooterProps> = ({
           <div className="flex items-center space-x-3.5">
             <div className="w-8 h-8 rounded-full overflow-hidden border border-[#d2c3c0] bg-[#f5ede2] p-0.5 flex-shrink-0 shadow-xs">
               <img
-                src="/assets/aistudio/Gemini_Generated_Image_ac8jwiac8jwiac8j_feb6fedb.jpeg"
+                src="/favicon.png"
                 alt="ZoeNude Logo Emblem"
-                className="w-full h-full object-cover scale-[1.7] object-center transform -translate-y-0.5"
+                className="w-full h-full object-cover rounded-full"
               />
             </div>
             <div className="flex items-center space-x-3">

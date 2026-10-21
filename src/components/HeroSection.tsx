@@ -112,7 +112,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 <div className="aspect-[16/11] sm:aspect-[4/3.8] lg:aspect-[4/4.2] w-full overflow-hidden bg-[#e8dfd5] relative">
                   {heroView === 'cover' ? (
                     <img
-                      src="/assets/aistudio/Gemini_Generated_Image_ac8jwiac8jwiac8j_feb6fedb.jpeg"
+                      src="/assets/aistudio/Gemini_Generated_Image_bj462jbj462jbj46_fa1cb5df.jpeg"
                       alt="ZoeNude Official Cover Art - Beauty, Without The Evidence"
                       className="w-full h-full object-cover object-center filter contrast-[1.02] transform hover:scale-[1.02] transition-transform duration-700"
                     />

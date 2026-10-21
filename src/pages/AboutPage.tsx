@@ -126,23 +126,23 @@ export const AboutPage: React.FC = () => {
             {/* Right Column: Handcrafted Brand Crest Artwork */}
             <div className="lg:col-span-5">
               <div className="relative mx-auto max-w-sm sm:max-w-md">
-                <div className="rounded-3xl overflow-hidden border-2 border-[#E8DFD5] shadow-xl bg-[#F5EDE2] p-2">
+                <div className="rounded-3xl overflow-hidden border-2 border-[#E8DFD5] shadow-2xl bg-[#F5EDE2] p-2 group hover:shadow-3xl transition-shadow duration-500">
                   <img
-                    src="/assets/aistudio/Gemini_Generated_Image_bj462jbj462jbj46_fa1cb5df.jpeg"
-                    alt="ZoeNude Venus Portrait & Emblem"
-                    className="w-full h-auto object-cover rounded-2xl"
+                    src="/assets/aistudio/Gemini_Generated_Image_t98fi1t98fi1t98f__1__ebb6a715.jpeg"
+                    alt="ZoeNude Cosmetics Embossed Insignia - Beauty, Without the Evidence"
+                    className="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.02]"
                   />
                 </div>
                 {/* Floating Seal */}
-                <div className="absolute -bottom-5 -left-4 sm:-bottom-6 sm:-left-6 bg-white/95 backdrop-blur-md border border-[#E8DFD5] rounded-2xl p-4 shadow-xl max-w-[210px]">
+                <div className="absolute -bottom-5 -left-4 sm:-bottom-6 sm:-left-6 bg-white/95 backdrop-blur-md border border-[#E8DFD5] rounded-2xl p-4 shadow-xl max-w-[220px]">
                   <div className="flex items-center space-x-2 mb-1">
                     <Award size={16} className="text-[#85513f]" />
                     <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#2B211E]">
-                      ATELIER CRITERIA
+                      OFFICIAL ATELIER SEAL
                     </span>
                   </div>
                   <p className="text-[11px] font-sans text-[#6E625D] leading-tight">
-                    Clean biomimetic pigments tested across 24 true living undertones.
+                    The Aphrodite Crest · Hand-embossed mark of authenticity & living skin beauty.
                   </p>
                 </div>
               </div>
@@ -154,13 +154,13 @@ export const AboutPage: React.FC = () => {
       {/* The Origin Story & Founders */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Visual: Atelier Texture & Swatch */}
+          {/* Visual: Atelier Heritage Portrait */}
           <div className="lg:col-span-5 order-2 lg:order-1">
             <div className="relative">
               <div className="rounded-3xl overflow-hidden border border-[#E8DFD5] shadow-lg aspect-[4/5] bg-[#F2EDE4]">
                 <img
-                  src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80"
-                  alt="ZoeNude Biomimetic Texture Application"
+                  src="/assets/aistudio/Gemini_Generated_Image_bj462jbj462jbj46_fa1cb5df.jpeg"
+                  alt="ZoeNude Muse & Formulation Origins"
                   className="w-full h-full object-cover"
                 />
               </div>

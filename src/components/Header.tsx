@@ -44,11 +44,11 @@ export const Header: React.FC<HeaderProps> = ({
   const navLinks = [
     { label: 'HOME', to: '/' },
     { label: 'SHOP', to: '/shop', hasDropdown: true },
-    { label: 'ABOUT', to: '/about' },
     { label: 'THE MANIFESTO', to: '/manifesto' },
     { label: 'SHADE FINDER', to: '/shade-finder', isHighlight: true },
     { label: 'TRANSFORMATIONS', to: '/transformations' },
     { label: 'COMMUNITY', to: '/community' },
+    { label: 'ABOUT', to: '/about' },
   ];
 
   const shopCategories = [

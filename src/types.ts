@@ -68,3 +68,52 @@ export interface CommunityPost {
   tag: string;
   likes: number;
 }
+
+export type JournalCategory =
+  | 'ALL'
+  | 'APPLICATION TIPS'
+  | 'BIOMIMETIC SCIENCE'
+  | 'LIVING RITUALS'
+  | 'SHADE & COLOR SCIENCE'
+  | 'SKIN PREP';
+
+export interface JournalArticle {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle: string;
+  category: JournalCategory;
+  categoryLabel: string;
+  publishedDate: string; // e.g. 'March 2027'
+  readTime: string; // e.g. '4 MIN READ'
+  author: {
+    name: string;
+    role: string;
+    avatar: string;
+  };
+  heroImage: string;
+  excerpt: string;
+  atelierRule: string; // The core memorable beauty tip rule
+  contentParagraphs: string[];
+  keyTips: string[];
+  scientificNote?: string;
+  pullQuote?: {
+    text: string;
+    attribution: string;
+  };
+  steps?: {
+    stepNumber: string;
+    title: string;
+    description: string;
+  }[];
+  relatedProductIds: string[];
+}
+
+export interface QuickBeautyTip {
+  id: string;
+  title: string;
+  tagline: string;
+  tip: string;
+  category: string;
+  technique: string;
+}

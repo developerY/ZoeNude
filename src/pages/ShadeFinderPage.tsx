@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ALL_SHADES, PRODUCTS } from '../data/cosmeticsData';
 import { Shade, Product } from '../types';
 import { Sparkles, ShieldCheck, Gift, Droplets, Check, ArrowRight, RotateCcw } from 'lucide-react';
@@ -78,6 +79,16 @@ export const ShadeFinderPage: React.FC<ShadeFinderPageProps> = ({
               <Droplets size={15} className="text-[#85513f]" />
               <span>Non-Comedogenic Biomimetic Base</span>
             </span>
+          </div>
+
+          <div className="pt-3">
+            <Link
+              to="/complexion-studio"
+              className="inline-flex items-center space-x-2 text-xs font-semibold text-[#85513f] hover:text-[#2B211E] bg-[#FAF0E6] px-4 py-2 rounded-full border border-[#d8a48f]/40 transition-colors"
+            >
+              <span>Explore All-in-One Complexion Studio (Shade Finder + Transformations + Trio Builder)</span>
+              <ArrowRight size={13} />
+            </Link>
           </div>
         </div>
       </section>

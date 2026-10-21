@@ -13,8 +13,11 @@ export const ManifestoPage: React.FC = () => {
       <section className="bg-[#FAF6F0] py-16 sm:py-20 border-b border-[#E8DFD5] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-4">
           <div className="inline-flex items-center space-x-2 text-[11px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase">
-            <Feather size={14} />
-            <span>FOUNDING ETHOS & PHILOSOPHY</span>
+            <Link to="/about" className="hover:text-[#2B211E] transition-colors flex items-center space-x-1">
+              <span>ABOUT</span>
+            </Link>
+            <span className="text-[#A69A95]">/</span>
+            <span className="text-[#2B211E]">THE MANIFESTO</span>
           </div>
 
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#2B211E] font-normal max-w-3xl mx-auto leading-tight">

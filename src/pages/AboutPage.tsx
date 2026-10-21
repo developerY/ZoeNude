@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Sparkles, 
@@ -11,10 +11,12 @@ import {
   Leaf, 
   Droplets, 
   CheckCircle2, 
-  MapPin 
+  MapPin,
+  X
 } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
+  const [isSealVisible, setIsSealVisible] = useState(true);
   const standards = [
     {
       icon: <Droplets className="w-5 h-5 text-[#85513f]" />,
@@ -133,18 +135,41 @@ export const AboutPage: React.FC = () => {
                     className="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.02]"
                   />
                 </div>
-                {/* Floating Seal */}
-                <div className="absolute -bottom-5 -left-4 sm:-bottom-6 sm:-left-6 bg-white/95 backdrop-blur-md border border-[#E8DFD5] rounded-2xl p-4 shadow-xl max-w-[220px]">
-                  <div className="flex items-center space-x-2 mb-1">
-                    <Award size={16} className="text-[#85513f]" />
-                    <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#2B211E]">
-                      OFFICIAL ATELIER SEAL
-                    </span>
+                {/* Floating Seal with Close Button */}
+                {isSealVisible ? (
+                  <div className="absolute -bottom-5 -left-4 sm:-bottom-6 sm:-left-6 bg-white/95 backdrop-blur-md border border-[#E8DFD5] rounded-2xl p-4 shadow-xl max-w-[220px] transition-all duration-300 animate-fadeIn">
+                    {/* Close Button */}
+                    <button
+                      type="button"
+                      onClick={() => setIsSealVisible(false)}
+                      className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[#FAF6F0] hover:bg-[#2B211E] text-[#6E625D] hover:text-white border border-[#E8DFD5] flex items-center justify-center transition-colors shadow-xs z-20 focus:outline-none cursor-pointer"
+                      title="Close official seal note"
+                      aria-label="Close official seal note"
+                    >
+                      <X size={13} />
+                    </button>
+
+                    <div className="flex items-center space-x-2 mb-1">
+                      <Award size={16} className="text-[#85513f] flex-shrink-0" />
+                      <span className="text-[10px] font-sans font-bold uppercase tracking-wider text-[#2B211E]">
+                        OFFICIAL ATELIER SEAL
+                      </span>
+                    </div>
+                    <p className="text-[11px] font-sans text-[#6E625D] leading-tight pr-1">
+                      The Aphrodite Crest · Hand-embossed mark of authenticity & living skin beauty.
+                    </p>
                   </div>
-                  <p className="text-[11px] font-sans text-[#6E625D] leading-tight">
-                    The Aphrodite Crest · Hand-embossed mark of authenticity & living skin beauty.
-                  </p>
-                </div>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => setIsSealVisible(true)}
+                    className="absolute -bottom-3 -left-3 bg-white/95 hover:bg-white backdrop-blur-md border border-[#E8DFD5] rounded-full px-3 py-1.5 text-[10px] font-sans font-semibold text-[#85513f] uppercase tracking-wider shadow-md flex items-center space-x-1.5 transition-all cursor-pointer hover:shadow-lg"
+                    title="View atelier seal note"
+                  >
+                    <Award size={12} />
+                    <span>View Atelier Seal</span>
+                  </button>
+                )}
               </div>
             </div>
           </div>
@@ -165,7 +190,7 @@ export const AboutPage: React.FC = () => {
                 />
               </div>
               <div className="absolute -top-4 -right-4 bg-[#2B211E] text-white text-[11px] font-sans tracking-[0.18em] px-4 py-2 rounded-full uppercase shadow-md">
-                EST. 2018 · PARIS
+                EST. 2027 · PARIS
               </div>
             </div>
           </div>
@@ -204,8 +229,67 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
+      {/* The Zoe Manifesto Bridge Section */}
+      <section className="bg-[#2B211E] text-white py-16 sm:py-20 relative overflow-hidden">
+        {/* Subtle decorative glow */}
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-[#85513f]/20 blur-3xl pointer-events-none"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-4xl mx-auto bg-[#362a26] border border-[#52413c] rounded-3xl p-8 sm:p-12 shadow-2xl">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-[#4d3c36]">
+              <div>
+                <div className="inline-flex items-center space-x-2 text-[10px] font-sans font-semibold tracking-[0.22em] text-[#d8a48f] uppercase mb-2">
+                  <Feather size={14} />
+                  <span>THE FOUNDING CODE</span>
+                </div>
+                <h2 className="font-serif text-3xl sm:text-4xl text-[#FAF6F0] font-normal">
+                  The Zoe Manifesto
+                </h2>
+                <p className="font-serif text-sm sm:text-base text-[#d8a48f] italic mt-1">
+                  Five foundational truths governing every pigment, oil, and mineral we touch.
+                </p>
+              </div>
+
+              <Link
+                to="/manifesto"
+                className="inline-flex items-center space-x-2 bg-[#d8a48f] hover:bg-[#c99580] text-[#2B211E] text-xs font-semibold px-6 py-3.5 rounded tracking-wider uppercase transition-colors flex-shrink-0 self-start md:self-auto"
+              >
+                <span>Read Full Manifesto</span>
+                <ArrowRight size={14} />
+              </Link>
+            </div>
+
+            {/* 5 Pillars Quick Index */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 pt-8">
+              {[
+                { num: '01', title: 'Skin First, Pigment Second', tag: 'Biomimicry' },
+                { num: '02', title: 'The Optical Illusion', tag: 'Prism Light' },
+                { num: '03', title: 'Clean Chemistry', tag: 'Zero Occlusion' },
+                { num: '04', title: 'Universal Chromatics', tag: 'Living Tones' },
+                { num: '05', title: 'Conscious Luxury', tag: 'Italian Glass' },
+              ].map((p) => (
+                <Link
+                  key={p.num}
+                  to="/manifesto"
+                  className="bg-[#2B211E]/70 hover:bg-[#2B211E] border border-[#4d3c36] hover:border-[#d8a48f] p-4 rounded-xl transition-all group block text-left"
+                >
+                  <span className="text-[10px] font-sans font-bold text-[#d8a48f] block mb-1">
+                    PILLAR {p.num}
+                  </span>
+                  <div className="text-xs font-serif text-white group-hover:text-[#d8a48f] transition-colors leading-snug">
+                    {p.title}
+                  </div>
+                  <span className="text-[9px] text-[#A69A95] uppercase tracking-wider block mt-2">
+                    {p.tag}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* The 4 Formulation Commitments */}
-      <section className="bg-white py-20 border-y border-[#E8DFD5]">
+      <section id="commitments" className="bg-white py-20 border-y border-[#E8DFD5] scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
             <span className="text-[10px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase">
@@ -294,7 +378,7 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* Global Ateliers */}
-      <section className="bg-[#FAF6F0] py-20 border-t border-[#E8DFD5]">
+      <section id="ateliers" className="bg-[#FAF6F0] py-20 border-t border-[#E8DFD5] scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
             <span className="text-[10px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase">

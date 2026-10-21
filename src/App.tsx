@@ -18,17 +18,30 @@ import { ManifestoPage } from './pages/ManifestoPage';
 import { ShopPage } from './pages/ShopPage';
 import { ShadeFinderPage } from './pages/ShadeFinderPage';
 import { TransformationsPage } from './pages/TransformationsPage';
+import { ComplexionStudioPage } from './pages/ComplexionStudioPage';
 import { CommunityPage } from './pages/CommunityPage';
+import { JournalPage } from './pages/JournalPage';
 import { PRODUCTS, ALL_SHADES } from './data/cosmeticsData';
 import { Product, Shade, CartItem } from './types';
 import { Check } from 'lucide-react';
 
-// Scroll to top helper on page transition
+// Scroll to top or anchor helper on page transition
 function ScrollToTop() {
-  const { pathname, search } = useLocation();
+  const { pathname, search, hash } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname, search]);
+    if (hash) {
+      const id = hash.replace('#', '');
+      const timer = setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [pathname, search, hash]);
   return null;
 }
 
@@ -179,8 +192,30 @@ export default function App() {
                 />
               }
             />
+            <Route
+              path="/complexion-studio"
+              element={
+                <ComplexionStudioPage
+                  onAddToCart={handleAddToCart}
+                  onOpenQuizModal={() => setIsQuizOpen(true)}
+                  onQuickView={(prod) => setQuickViewProduct(prod)}
+                />
+              }
+            />
+            <Route path="/studio" element={<Navigate to="/complexion-studio" replace />} />
             <Route path="/transformations" element={<TransformationsPage />} />
             <Route path="/community" element={<CommunityPage />} />
+            <Route
+              path="/journal"
+              element={
+                <JournalPage
+                  onAddToCart={handleAddToCart}
+                  onQuickView={(prod) => setQuickViewProduct(prod)}
+                />
+              }
+            />
+            <Route path="/beauty-tips" element={<Navigate to="/journal" replace />} />
+            <Route path="/editorial" element={<Navigate to="/journal" replace />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>

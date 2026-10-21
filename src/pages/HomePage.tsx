@@ -2,9 +2,10 @@ import React from 'react';
 import { HeroSection } from '../components/HeroSection';
 import { QuietConfidenceSection } from '../components/QuietConfidenceSection';
 import { PRODUCTS, PILLARS, ALL_SHADES } from '../data/cosmeticsData';
+import { JOURNAL_ARTICLES } from '../data/journalData';
 import { Product, Shade } from '../types';
 import { Link, useNavigate } from 'react-router-dom';
-import { ArrowRight, Sparkles, ShieldCheck, Gift, Droplets, Star } from 'lucide-react';
+import { ArrowRight, Sparkles, ShieldCheck, Gift, Droplets, Star, BookOpen } from 'lucide-react';
 import { ProductCard } from '../components/ProductCard';
 
 interface HomePageProps {
@@ -175,20 +176,92 @@ export const HomePage: React.FC<HomePageProps> = ({
               </div>
             </div>
 
-            <div>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link
+                to="/complexion-studio"
+                className="bg-[#2B211E] hover:bg-[#433430] text-[#FCF9F3] text-xs font-sans font-semibold tracking-[0.14em] uppercase px-7 py-4 rounded shadow transition-all whitespace-nowrap inline-flex items-center justify-center space-x-2"
+              >
+                <span>COMPLEXION STUDIO</span>
+                <ArrowRight size={14} />
+              </Link>
               <Link
                 to="/shade-finder"
-                className="bg-[#2B211E] hover:bg-[#433430] text-[#FCF9F3] text-xs font-sans font-semibold tracking-[0.14em] uppercase px-8 py-4 rounded shadow transition-all whitespace-nowrap inline-flex items-center space-x-2"
+                className="bg-white hover:bg-[#FAF6F0] text-[#2B211E] border border-[#E8DFD5] text-xs font-sans font-semibold tracking-[0.14em] uppercase px-5 py-4 rounded transition-all whitespace-nowrap inline-flex items-center justify-center space-x-1"
               >
-                <span>LAUNCH DIAGNOSTIC</span>
-                <ArrowRight size={14} />
+                <span>TAKE QUIZ</span>
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 5. Quiet Confidence Dark Velvet Banner */}
+      {/* 5. The Journal & Beauty Tips Editorial Teaser */}
+      <section className="bg-[#FAF6F0] py-20 border-b border-[#E8DFD5]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+              <span className="text-[11px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase block mb-1">
+                THE JOURNAL · LES NARRATIVES DU TEINT
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#2B211E] font-normal">
+                Beauty Tips, Masterclasses & Skin Science
+              </h2>
+            </div>
+            <Link
+              to="/journal"
+              className="inline-flex items-center space-x-2 text-xs font-sans font-semibold tracking-[0.16em] uppercase text-[#2B211E] hover:text-[#85513f] transition-colors group"
+            >
+              <span>EXPLORE ALL 8 EDITORIAL STORIES</span>
+              <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {JOURNAL_ARTICLES.slice(0, 3).map((article) => (
+              <div
+                key={article.id}
+                onClick={() => navigate(`/journal?article=${article.slug}`)}
+                className="bg-white rounded-2xl overflow-hidden border border-[#E8DFD5] hover:border-[#85513f] transition-all cursor-pointer shadow-xs hover:shadow-md flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="aspect-[16/10] overflow-hidden bg-[#F2EDE4]">
+                    <img
+                      src={article.heroImage}
+                      alt={article.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="text-[10px] font-sans tracking-[0.16em] uppercase text-[#807571] mb-2 flex items-center space-x-2">
+                      <span className="text-[#85513f] font-semibold">{article.categoryLabel}</span>
+                      <span>·</span>
+                      <span>{article.readTime}</span>
+                      <span>·</span>
+                      <span>{article.publishedDate}</span>
+                    </div>
+                    <h3 className="font-serif text-lg text-[#2B211E] font-medium leading-snug group-hover:text-[#85513f] transition-colors">
+                      {article.title}
+                    </h3>
+                    <p className="mt-2 font-sans text-xs text-[#5C504A] leading-relaxed line-clamp-2">
+                      {article.excerpt}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="px-6 py-3.5 border-t border-[#F0EEE8] bg-[#FAFAF8] flex items-center justify-between text-xs font-sans">
+                  <span className="text-[11px] text-[#6E625D]">By {article.author.name}</span>
+                  <span className="text-[#85513f] font-semibold group-hover:translate-x-1 transition-transform inline-flex items-center space-x-1">
+                    <span>Read Technique</span>
+                    <ArrowRight size={12} />
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Quiet Confidence Dark Velvet Banner */}
       <QuietConfidenceSection
         onShopCollection={() => navigate('/shop')}
         onOpenQuiz={() => navigate('/shade-finder')}

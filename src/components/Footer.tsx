@@ -65,6 +65,16 @@ export const Footer: React.FC = () => {
               </h4>
               <ul className="space-y-2 text-xs font-sans text-[#4E4542]">
                 <li>
+                  <Link to="/journal" className="hover:text-[#2B211E] text-left transition-colors font-medium text-[#85513f]">
+                    The Journal & Beauty Tips
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/complexion-studio" className="hover:text-[#2B211E] text-left transition-colors font-medium text-[#2B211E]">
+                    Complexion Studio (Shades & Transformations)
+                  </Link>
+                </li>
+                <li>
                   <Link to="/about" className="hover:text-[#2B211E] text-left transition-colors">
                     About The House
                   </Link>
@@ -181,7 +191,7 @@ export const Footer: React.FC = () => {
               TERMS OF SERVICE
             </a>
             <span className="text-[#807571]">
-              &copy; 2025 ZOENUDE ATELIER INC. ALL RIGHTS RESERVED.
+              &copy; 2027 ZOENUDE ATELIER INC. ALL RIGHTS RESERVED.
             </span>
           </div>
         </div>

@@ -21,6 +21,15 @@ export const TransformationsPage: React.FC = () => {
           <p className="font-sans text-xs sm:text-sm text-[#4E4542] max-w-xl mx-auto leading-relaxed">
             Real stories from clients who replaced heavy silicone masking with breathable biomimetic living skin harmony.
           </p>
+          <div className="pt-3">
+            <Link
+              to="/complexion-studio"
+              className="inline-flex items-center space-x-2 text-xs font-semibold text-[#85513f] hover:text-[#2B211E] bg-[#FAF0E6] px-4 py-2 rounded-full border border-[#d8a48f]/40 transition-colors"
+            >
+              <span>Explore Interactive Before/After Studio & Shade Finder</span>
+              <ArrowRight size={13} />
+            </Link>
+          </div>
         </div>
       </section>
 

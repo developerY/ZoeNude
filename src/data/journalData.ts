@@ -1,4 +1,29 @@
-import { JournalArticle, QuickBeautyTip, JournalCategory } from '../types';
+import {
+  JournalArticle,
+  QuickBeautyTip,
+  JournalCategory,
+  SkinConcern,
+  SkinClimate,
+  AdvisoryExpert,
+  IngredientCodexEntry,
+  MasterclassReel
+} from '../types';
+
+export const SKIN_CONCERN_FILTERS: { id: SkinConcern; label: string; badge: string; description: string }[] = [
+  { id: 'ALL', label: 'All Concerns', badge: 'Complete', description: 'Universal techniques for every living complexion' },
+  { id: 'DEHYDRATED_BARRIER', label: 'Dehydrated & Flaking', badge: 'Barrier Repair', description: 'Bio-lipids and non-settling formulas for compromised stratum corneum' },
+  { id: 'ROSACEA_FLUSH', label: 'Rosacea & Flush', badge: 'Calming', description: 'Neutralizing warm/olive balancing without pink mask-effect' },
+  { id: 'MATURE_LINES', label: 'Mature & Dynamic Lines', badge: 'Zero-Cracking', description: 'Flexible bio-lipid elasticity that moves with expression lines' },
+  { id: 'TEXTURE_PORES', label: 'Textured Skin & Pores', badge: 'Diffusing', description: 'Self-leveling phytosterols that blur surface relief without heavy talc' },
+  { id: 'DULL_PIGMENT', label: 'Dullness & Uneven Tone', badge: 'Luminosity', description: 'Prismatic light dispersion to even tone without opaque masking' },
+];
+
+export const SKIN_CLIMATE_FILTERS: { id: SkinClimate; label: string; badge: string; description: string }[] = [
+  { id: 'ALL', label: 'All Climates', badge: 'Global', description: 'Universal performance across ambient zones' },
+  { id: 'ARID_COLD', label: 'Arid Cold & Indoor Heat', badge: 'Anti-Dehydration', description: 'Zero-evaporation lipid shield against dry heating' },
+  { id: 'HUMID_HEAT', label: 'Tropical & Summer Humidity', badge: 'Breathable', description: 'Breathable, melt-resistant biocompatibility' },
+  { id: 'URBAN_POLLUTION', label: 'Metropolitan Pollution', badge: 'Ectoin Shield', description: 'Antioxidant cellular barrier against airborne particulate' },
+];
 
 export const JOURNAL_CATEGORIES: { id: JournalCategory; label: string; count: number; description: string }[] = [
   { id: 'ALL', label: 'All Stories', count: 8, description: 'Complete library of skin narratives, masterclasses, and formulation science.' },
@@ -96,7 +121,22 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
         description: 'Using only the residual pigment remaining on your fingers, sweep gently across jawline and down into the upper neck. No hard demarcation line.'
       }
     ],
-    relatedProductIds: ['skin-veil-luminous-tint', 'bio-lipid-restorative-primer']
+    relatedProductIds: ['skin-veil-luminous-tint', 'bio-lipid-restorative-primer'],
+    clinicalStudy: {
+      metric: '+41% Hydration',
+      label: 'Corneometer TEWL Reduction',
+      context: 'Demonstrated significant lipid cohesion within 120 minutes of application',
+      duration: 'Double-Blind Clinical Protocol',
+      verifiedBy: 'Laboratoires Cutanés Sorbonne'
+    },
+    routineCapsule: {
+      bundleTitle: 'The Living Skin Duo',
+      savingsNote: 'Primer + Skin Veil (Save 15%)',
+      discountPercent: 15,
+      productIds: ['bio-lipid-restorative-primer', 'skin-veil-luminous-tint']
+    },
+    skinConcerns: ['DEHYDRATED_BARRIER', 'TEXTURE_PORES'],
+    climateFit: ['ARID_COLD', 'TEMPERATE']
   },
   {
     id: 'art-02',
@@ -149,7 +189,22 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
         description: 'Step 3 paces back from the mirror and blink rapidly. The stripe that completely disappears from view is your biometric sister match.'
       }
     ],
-    relatedProductIds: ['skin-veil-luminous-tint', 'alabaster-silk-finishing-powder']
+    relatedProductIds: ['skin-veil-luminous-tint', 'alabaster-silk-finishing-powder'],
+    clinicalStudy: {
+      metric: '0% Ashy Cast',
+      label: 'Melanin Vascular Differential Test',
+      context: '1,200 participants eliminated afternoon foundation greyness by matching collarbone baseline',
+      duration: 'Independent 2027 Clinical Cohort',
+      verifiedBy: 'Global Complexion Institute'
+    },
+    routineCapsule: {
+      bundleTitle: 'The Color Balance Trio',
+      savingsNote: 'Skin Veil + Setting Powder (Save 15%)',
+      discountPercent: 15,
+      productIds: ['skin-veil-luminous-tint', 'alabaster-silk-finishing-powder']
+    },
+    skinConcerns: ['ROSACEA_FLUSH', 'DULL_PIGMENT'],
+    climateFit: ['ALL']
   },
   {
     id: 'art-03',
@@ -202,7 +257,22 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
         description: 'Swipe Radiant Glaze Multi-Stick across high cheekbones and press onto center of lips with thumb pad.'
       }
     ],
-    relatedProductIds: ['bio-lipid-restorative-primer', 'skin-veil-luminous-tint', 'radiant-glaze-dew-multi-stick']
+    relatedProductIds: ['bio-lipid-restorative-primer', 'skin-veil-luminous-tint', 'radiant-glaze-dew-multi-stick'],
+    clinicalStudy: {
+      metric: '3 Minutes',
+      label: 'Rapid Barrier Harmonization Protocol',
+      context: 'Demonstrated 94% retention of natural skin luminescence after 12 hours of active wear',
+      duration: 'Atelier Time-Motion & Humidity Trials',
+      verifiedBy: 'Paris Atelier Aesthetics Division'
+    },
+    routineCapsule: {
+      bundleTitle: 'The 3-Minute Second Skin Capsule',
+      savingsNote: 'Primer + Veil + Dew Multi-Stick (Save 20%)',
+      discountPercent: 20,
+      productIds: ['bio-lipid-restorative-primer', 'skin-veil-luminous-tint', 'radiant-glaze-dew-multi-stick']
+    },
+    skinConcerns: ['DEHYDRATED_BARRIER', 'DULL_PIGMENT', 'MATURE_LINES'],
+    climateFit: ['ALL']
   },
   {
     id: 'art-04',
@@ -467,6 +537,184 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
         description: 'Under warm 3000K sunset light, check for any chalkiness or ashy cast. The correct shade glows with natural radiance.'
       }
     ],
-    relatedProductIds: ['skin-veil-luminous-tint', 'alabaster-silk-finishing-powder']
+    relatedProductIds: ['skin-veil-luminous-tint', 'alabaster-silk-finishing-powder'],
+    clinicalStudy: {
+      metric: '100% CRI Match',
+      label: 'Triple-Ambient Daylight Fidelity',
+      context: 'Zero metameric failure under natural solar spectra across all tested shades',
+      duration: '4-Season Paris Trial',
+      verifiedBy: 'Laboratoire de Colorimétrie Cutanée'
+    },
+    routineCapsule: {
+      bundleTitle: 'The Ambient Match & Set Trio',
+      savingsNote: 'Save 15% with complete living set',
+      discountPercent: 15,
+      productIds: ['skin-veil-luminous-tint', 'alabaster-silk-finishing-powder']
+    },
+    skinConcerns: ['DULL_PIGMENT', 'TEXTURE_PORES'],
+    climateFit: ['ARID_COLD', 'HUMID_HEAT', 'TEMPERATE']
+  }
+];
+
+export const ADVISORY_BOARD_EXPERTS: AdvisoryExpert[] = [
+  {
+    id: 'adv-01',
+    name: 'Dr. Éléonore de Courcel, MD, PhD',
+    title: 'Chief Dermatological Biologist & Barrier Researcher',
+    credentials: 'MD (Sorbonne Université), PhD in Corneobiology',
+    institution: 'Laboratoires de Recherche Cutanée Paris',
+    location: 'Paris, France',
+    portrait: 'https://images.unsplash.com/photo-1594824813583-128a11322055?auto=format&fit=crop&w=600&q=80',
+    focusArea: 'Stratum Corneum Lipid Synthesis & Non-Comedogenic Pigment Dispersions',
+    quote: '“True skin biocompatibility means the formulation mimics your skin’s own 3:1:1 lipid ratio. When makeup speaks the skin’s biological language, irritation ceases to exist.”',
+    verifiedBadges: ['Board Certified EU', '14 Clinical Publications', 'INSERM Fellow']
+  },
+  {
+    id: 'adv-02',
+    name: 'Laurent Vautier',
+    title: 'Master Atelier Artist & Global Creative Colorist',
+    credentials: '28 Years Paris Haute Couture & Cinema Complexionist',
+    institution: 'Atelier ZoeNude Haute Beauté',
+    location: 'Paris & Milan',
+    portrait: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
+    focusArea: 'Dynamic Skin Reflection under Natural Midday Sun & 8K Macro Cinematography',
+    quote: '“If I can see where the makeup begins and where the client’s skin ends through my lens, the formula has failed. ZoeNude is undetectable because it is living skin.”',
+    verifiedBadges: ['Haute Couture Week Director', 'César Award Nominee', 'Atelier Founder']
+  },
+  {
+    id: 'adv-03',
+    name: 'Dr. Kenjiro Takahashi, PharmD',
+    title: 'Director of Green Phytochemical Synthesis',
+    credentials: 'PharmD, Kyoto University & MIT Biomaterials Lab',
+    institution: 'Institute of Marine & Phyto-Lipids',
+    location: 'Kyoto & Zurich',
+    portrait: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
+    focusArea: 'Cold-Fermented Squalane & Ectoin Micro-Encapsulation',
+    quote: '“We eliminated synthetic petrochemical silicones not because it sounded romantic, but because fermented botanical lipids provide 3x longer hydration retention with zero cellular asphyxiation.”',
+    verifiedBadges: ['Biomimetic Patent Holder', 'Clean Chemical Pioneer', 'ISO 16128 Natural Leader']
+  }
+];
+
+export const INGREDIENT_CODEX: IngredientCodexEntry[] = [
+  {
+    id: 'ing-01',
+    inciName: 'Cold-Fermented Plant Squalane (100% Bio-Identical)',
+    commonName: 'Fermented Brazilian Sugarcane Squalane',
+    origin: 'Renewable Fermented Sugarcane · São Paulo Laboratory',
+    biomimeticRole: 'Exact molecular match to human sebum (422.8 g/mol) enabling pigments to self-level and float without drying.',
+    replacesSynthetic: 'Volatile Petrochemical Silicones (Cyclopentasiloxane, D4/D5 Dimethicone)',
+    clinicalBenefit: '+41% increase in dermal hydration within 2 hours; Grade 0 non-comedogenic (zero pore-clogging).',
+    skinAffinity: '100% Bio-Identical Lipid',
+    featuredInProducts: ['Complexion Veil Luminous Tint', 'Bio-Lipid Restorative Primer']
+  },
+  {
+    id: 'ing-02',
+    inciName: 'Ectoin Extremolyte Stress Shield',
+    commonName: 'Cellular Halo-Molecule Shield',
+    origin: 'Halophilic Desert Extremophile Ferment · Almeria Biosphere',
+    biomimeticRole: 'Surrounds keratinocytes with a protective water-coat that shields cell membranes from dry heat and blue light.',
+    replacesSynthetic: 'Synthetic PEG Emulsifiers & BHT Preservatives',
+    clinicalBenefit: '-37% cellular oxidative stress; preserves 99% pigment color fidelity from 8 AM to 8 PM.',
+    skinAffinity: 'Osmoprotective Active',
+    featuredInProducts: ['Complexion Veil Luminous Tint']
+  },
+  {
+    id: 'ing-03',
+    inciName: 'Spilanthes Acmella Botanical Gatuline®',
+    commonName: 'Paracress Plant "Smooth-Architecture" Extract',
+    origin: 'Sustainably Harvested South African Wild Botanicals',
+    biomimeticRole: 'Relaxes cellular micro-tension at dynamic facial zones so foundation glides over smile lines without creasing.',
+    replacesSynthetic: 'Heavy Synthetic Silicone Cross-Polymers & Plastic Microspheres',
+    clinicalBenefit: '100% of clinical testers demonstrated visibly smoothed dynamic smile and brow lines after 28 days.',
+    skinAffinity: 'Biomechanical Smoothing',
+    featuredInProducts: ['Bio-Lipid Restorative Primer', 'Cashmere Velvet Cushion']
+  },
+  {
+    id: 'ing-04',
+    inciName: 'Bio-Identical Phytoceramides (NP, AP, EOP)',
+    commonName: 'Triple Intercellular Cement Lipids',
+    origin: 'Enzymatically Cleaved Wheat Germ & Olive Pulp · Provence',
+    biomimeticRole: 'Fills stratum corneum gaps so veil makeup glides smoothly over flaky or sensitized skin patches.',
+    replacesSynthetic: 'Mineral Oils (Petrolatum, Liquid Paraffin)',
+    clinicalBenefit: '72-hour moisture seal; eliminates 88% of foundation flaking under dry winter conditions.',
+    skinAffinity: 'Endogenous Lipid Matrix',
+    featuredInProducts: ['Complexion Veil Luminous Tint', 'Living Velvet Setting Essence']
+  },
+  {
+    id: 'ing-05',
+    inciName: 'Botanical Bisabolol & Matricaria Chamomile',
+    commonName: 'Organic French Chamomile Active Fraction',
+    origin: 'Steam-Distilled Organic French Matricaria · Grasse, France',
+    biomimeticRole: 'Downregulates cutaneous histamine release to calm vascular redness and rosacea flare-ups instantaneously.',
+    replacesSynthetic: 'Synthetic Masking Colorants & Chemical Perfumes',
+    clinicalBenefit: 'Clinically proven 48% reduction in surface skin erythema within 15 minutes of application.',
+    skinAffinity: 'Targeted Anti-Erythema',
+    featuredInProducts: ['Botanical Cheek Flush', 'Bio-Lipid Restorative Primer']
+  },
+  {
+    id: 'ing-06',
+    inciName: 'French Sea Fennel (Crithmum Maritimum)',
+    commonName: 'Brittany Coast Botanical Retinoid Alternative',
+    origin: 'Wild Harvested Brittany Coastline, France',
+    biomimeticRole: 'Stimulates cellular renewal without photosensitivity, redness, or peeling, keeping complexion radiant.',
+    replacesSynthetic: 'Synthetic Acids (Glycolic Acid Fillers, Retinyl Palmitate)',
+    clinicalBenefit: '32% improvement in skin surface smoothness after 21 days of daily foundation wear.',
+    skinAffinity: 'Cellular Renewal Alternative',
+    featuredInProducts: ['Complexion Veil Luminous Tint', 'Multi-Use Sculpt & Eye']
+  }
+];
+
+export const MASTERCLASS_REELS: MasterclassReel[] = [
+  {
+    id: 'reel-01',
+    title: 'The 3-Second Epidermal Melt',
+    subtitle: 'Body warmth activation on living skin',
+    artist: 'Laurent Vautier',
+    artistRole: 'Paris Atelier Creative Director',
+    duration: '0:24',
+    thumbnail: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80',
+    viewsCount: '142K views',
+    techniqueBadge: 'No Brushes Needed',
+    stepsSummary: 'Warm on finger cushions for 3 seconds to trigger 37°C phase transition, then stamp gently from center outward.',
+    matchedProductId: 'skin-veil-luminous-tint'
+  },
+  {
+    id: 'reel-02',
+    title: 'Vascular Rosacea Neutralizing',
+    subtitle: 'How to correct cheek flush without a pink mask',
+    artist: 'Hélène Moreau',
+    artistRole: 'Master Colorist',
+    duration: '0:38',
+    thumbnail: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=80',
+    viewsCount: '98K views',
+    techniqueBadge: 'Color Diagnostic',
+    stepsSummary: 'Use collarbone shade matching to prevent the grey oxidation mask common with cool foundations.',
+    matchedProductId: 'skin-veil-luminous-tint'
+  },
+  {
+    id: 'reel-03',
+    title: 'Zygomatic "Z-Glow" Bone Sculpt',
+    subtitle: 'Living architectural dimension',
+    artist: 'Camille Dubois',
+    artistRole: 'Senior Atelier Artist',
+    duration: '0:29',
+    thumbnail: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80',
+    viewsCount: '115K views',
+    techniqueBadge: 'Bone Structure',
+    stepsSummary: 'Trace a gentle Z across the cheek arch, outer orbital bone, and temple. Pat lightly to melt into skin.',
+    matchedProductId: 'botanical-cheek-flush'
+  },
+  {
+    id: 'reel-04',
+    title: 'The 90-Second Self-Level Test',
+    subtitle: 'Why you need 80% less powder',
+    artist: 'Dr. Aris Vane',
+    artistRole: 'Dermatological Director',
+    duration: '0:32',
+    thumbnail: 'https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=600&q=80',
+    viewsCount: '87K views',
+    techniqueBadge: 'Clinical Wear',
+    stepsSummary: 'Wait 90 seconds for phyto-lipids to settle into micro-relief before applying setting powder.',
+    matchedProductId: 'bio-lipid-restorative-primer'
   }
 ];

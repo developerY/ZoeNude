@@ -205,6 +205,8 @@ export default function App() {
             <Route path="/studio" element={<Navigate to="/complexion-studio" replace />} />
             <Route path="/transformations" element={<TransformationsPage />} />
             <Route path="/community" element={<CommunityPage />} />
+            <Route path="/the-collective" element={<Navigate to="/community" replace />} />
+            <Route path="/collective" element={<Navigate to="/community" replace />} />
             <Route
               path="/journal"
               element={

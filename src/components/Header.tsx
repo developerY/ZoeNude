@@ -164,6 +164,18 @@ export const Header: React.FC<HeaderProps> = ({
       description: 'Vascular flush vs true undertone & Golden Hour test',
     },
     {
+      title: 'Biomimetic Ingredient Codex',
+      to: '/journal#ingredient-codex',
+      badge: 'INCI Codex',
+      description: 'Zero silicones · Bio-identical squalane, ectoin & ceramides',
+    },
+    {
+      title: 'Virtual Atelier Concierge',
+      to: '/journal#consultation',
+      badge: 'Free · 15m',
+      description: 'Book 1-on-1 private video shade match with a Paris colorist',
+    },
+    {
       title: 'The Journal (All Stories)',
       to: '/journal',
       badge: 'Editorial',

@@ -65,13 +65,18 @@ export const Footer: React.FC = () => {
               </h4>
               <ul className="space-y-2 text-xs font-sans text-[#4E4542]">
                 <li>
-                  <Link to="/journal" className="hover:text-[#2B211E] text-left transition-colors font-medium text-[#85513f]">
-                    The Journal & Beauty Tips
+                  <Link to="/community" className="hover:text-[#2B211E] text-left transition-colors font-medium text-[#2B211E]">
+                    The Zoe Collective (Real Skin)
                   </Link>
                 </li>
                 <li>
-                  <Link to="/complexion-studio" className="hover:text-[#2B211E] text-left transition-colors font-medium text-[#2B211E]">
+                  <Link to="/complexion-studio" className="hover:text-[#2B211E] text-left transition-colors font-medium text-[#85513f]">
                     Complexion Studio (Shades & Transformations)
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/journal" className="hover:text-[#2B211E] text-left transition-colors">
+                    The Journal & Beauty Tips
                   </Link>
                 </li>
                 <li>
@@ -87,11 +92,6 @@ export const Footer: React.FC = () => {
                 <li>
                   <Link to="/shade-finder" className="hover:text-[#2B211E] text-left transition-colors">
                     Biomimetic Shade Matrix
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/about" className="hover:text-[#2B211E] text-left transition-colors">
-                    Clean Formulation Standards
                   </Link>
                 </li>
               </ul>

@@ -77,6 +77,36 @@ export type JournalCategory =
   | 'SHADE & COLOR SCIENCE'
   | 'SKIN PREP';
 
+export type SkinConcern =
+  | 'ALL'
+  | 'DEHYDRATED_BARRIER'
+  | 'ROSACEA_FLUSH'
+  | 'MATURE_LINES'
+  | 'TEXTURE_PORES'
+  | 'DULL_PIGMENT';
+
+export type SkinClimate =
+  | 'ALL'
+  | 'ARID_COLD'
+  | 'HUMID_HEAT'
+  | 'TEMPERATE'
+  | 'URBAN_POLLUTION';
+
+export interface ClinicalStudyMetric {
+  metric: string;
+  label: string;
+  context: string;
+  duration: string;
+  verifiedBy: string;
+}
+
+export interface RoutineCapsule {
+  bundleTitle: string;
+  savingsNote: string;
+  discountPercent: number;
+  productIds: string[];
+}
+
 export interface JournalArticle {
   id: string;
   slug: string;
@@ -91,12 +121,26 @@ export interface JournalArticle {
     role: string;
     avatar: string;
   };
+  coReviewer?: {
+    name: string;
+    credentials: string;
+    institution: string;
+  };
   heroImage: string;
   excerpt: string;
   atelierRule: string; // The core memorable beauty tip rule
   contentParagraphs: string[];
   keyTips: string[];
   scientificNote?: string;
+  clinicalStudy?: ClinicalStudyMetric;
+  routineCapsule?: RoutineCapsule;
+  skinConcerns?: SkinConcern[];
+  climateFit?: SkinClimate[];
+  videoClip?: {
+    poster: string;
+    title: string;
+    duration: string;
+  };
   pullQuote?: {
     text: string;
     attribution: string;
@@ -116,4 +160,57 @@ export interface QuickBeautyTip {
   tip: string;
   category: string;
   technique: string;
+  skinConcern?: SkinConcern;
 }
+
+export interface AdvisoryExpert {
+  id: string;
+  name: string;
+  title: string;
+  credentials: string;
+  institution: string;
+  location: string;
+  portrait: string;
+  focusArea: string;
+  quote: string;
+  verifiedBadges: string[];
+}
+
+export interface IngredientCodexEntry {
+  id: string;
+  inciName: string;
+  commonName: string;
+  origin: string;
+  biomimeticRole: string;
+  replacesSynthetic: string;
+  clinicalBenefit: string;
+  skinAffinity: string;
+  featuredInProducts: string[];
+}
+
+export interface MasterclassReel {
+  id: string;
+  title: string;
+  subtitle: string;
+  artist: string;
+  artistRole: string;
+  duration: string;
+  thumbnail: string;
+  viewsCount: string;
+  techniqueBadge: string;
+  stepsSummary: string;
+  matchedProductId: string;
+}
+
+export interface ConsultationBooking {
+  id: string;
+  clientName: string;
+  clientEmail: string;
+  date: string;
+  timeSlot: string;
+  atelierLocation: 'Paris Ateliers (Rue Saint-Honoré)' | 'New York Atelier (SoHo)' | 'Virtual Global Concierge';
+  skinConcern: string;
+  shadeAssistance: boolean;
+  notes?: string;
+}
+

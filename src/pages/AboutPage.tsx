@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Sparkles, 
@@ -12,11 +12,45 @@ import {
   Droplets, 
   CheckCircle2, 
   MapPin,
-  X
+  X,
+  Play,
+  Pause,
+  Volume2,
+  VolumeX,
+  RotateCcw,
+  Film,
+  Sun
 } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
   const [isSealVisible, setIsSealVisible] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+    if (isPlaying) {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
+  const toggleMute = () => {
+    if (!videoRef.current) return;
+    videoRef.current.muted = !isMuted;
+    setIsMuted(!isMuted);
+  };
+
+  const handleRestart = () => {
+    if (!videoRef.current) return;
+    videoRef.current.currentTime = 0;
+    videoRef.current.play();
+    setIsPlaying(true);
+  };
   const standards = [
     {
       icon: <Droplets className="w-5 h-5 text-[#85513f]" />,
@@ -84,10 +118,11 @@ export const AboutPage: React.FC = () => {
   ];
 
   return (
-    <div className="bg-[#FCF9F3] min-h-screen pb-24 animate-fadeIn">
-      {/* Editorial Hero Banner */}
-      <section className="bg-[#FAF6F0] py-16 sm:py-24 border-b border-[#E8DFD5] relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-b from-[#FDF7F2] via-[#FAF1E8] to-[#F7ECE1] min-h-screen pb-24 animate-fadeIn">
+      {/* Editorial Hero Banner with Rainbow Skintone Ambient Multi-Glow */}
+      <section className="bg-gradient-to-r from-[#FAF2EB] via-[#FDF6F0] to-[#F5ECE1] py-16 sm:py-24 border-b border-[#EADED5] relative overflow-hidden">
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#E27D86]/8 rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column: Story Header */}
             <div className="lg:col-span-7 space-y-6 text-left">
@@ -173,6 +208,135 @@ export const AboutPage: React.FC = () => {
                     <span>View Atelier Seal</span>
                   </button>
                 )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Atelier Origin Film: The Birth of Living Beauty */}
+      <section className="bg-gradient-to-b from-[#2B211E] via-[#352824] to-[#2B211E] text-white py-20 border-b border-[#4A3832] relative overflow-hidden">
+        {/* Subtle iridescent chromatic glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-gradient-to-r from-[#E27D86]/10 via-[#E9B858]/10 via-[#689775]/10 to-[#8F79B2]/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
+            <div className="inline-flex items-center space-x-2 text-[10px] font-sans font-semibold tracking-[0.25em] text-[#d8a48f] uppercase bg-white/5 px-3.5 py-1.5 rounded-full border border-white/10">
+              <Film size={13} className="text-[#d8a48f]" />
+              <span>ATELIER CINÉMA · ORIGIN FILM</span>
+            </div>
+            <h2 className="font-serif text-3xl sm:text-5xl text-[#FAF6F0] font-normal leading-tight">
+              The Birth of Living Beauty
+            </h2>
+            <p className="font-sans text-xs sm:text-sm text-[#D1C7BD] leading-relaxed max-w-2xl mx-auto">
+              Like Aphrodite emerging from the oceanic foam, ZoeNude celebrates the vital living force born from water, sunlight, and raw skin. Unadorned, unmasked, and eternally radiant.
+            </p>
+          </div>
+
+          {/* Cinema Frame */}
+          <div className="max-w-5xl mx-auto relative group">
+            <div className="relative rounded-3xl overflow-hidden border-2 border-[#52413C] shadow-[0_25px_60px_rgba(0,0,0,0.5)] bg-black aspect-[16/9]">
+              <video
+                ref={videoRef}
+                src="/assets/aistudio/Mermaid_emerging_from_seashell_20261022111320_e18bee16.mp4"
+                autoPlay
+                loop
+                muted={isMuted}
+                playsInline
+                className="w-full h-full object-cover"
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+              />
+
+              {/* Top Film Badge */}
+              <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/15 text-[10px] font-sans uppercase tracking-widest text-[#d8a48f] flex items-center space-x-1.5 shadow-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E27D86] animate-pulse" />
+                <span>4K Cinema Capture · Rue Saint-Honoré Archives</span>
+              </div>
+
+              {/* Bottom Interactive Control Overlay */}
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-auto bg-gradient-to-t from-black/85 via-black/50 to-transparent p-3 sm:p-4 rounded-2xl backdrop-blur-xs">
+                <div className="flex items-center space-x-2.5 sm:space-x-3">
+                  <button
+                    type="button"
+                    onClick={togglePlay}
+                    className="w-10 h-10 rounded-full bg-white/90 hover:bg-white text-[#2B211E] flex items-center justify-center transition-transform hover:scale-105 shadow-md focus:outline-none cursor-pointer"
+                    aria-label={isPlaying ? 'Pause film' : 'Play film'}
+                    title={isPlaying ? 'Pause film' : 'Play film'}
+                  >
+                    {isPlaying ? <Pause size={16} /> : <Play size={16} className="ml-0.5" />}
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={toggleMute}
+                    className="w-9 h-9 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors focus:outline-none cursor-pointer"
+                    aria-label={isMuted ? 'Unmute film' : 'Mute film'}
+                    title={isMuted ? 'Unmute film' : 'Mute film'}
+                  >
+                    {isMuted ? <VolumeX size={15} /> : <Volume2 size={15} />}
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={handleRestart}
+                    className="w-9 h-9 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors focus:outline-none cursor-pointer"
+                    aria-label="Restart film"
+                    title="Restart film"
+                  >
+                    <RotateCcw size={14} />
+                  </button>
+                </div>
+
+                <div className="flex items-center space-x-2 text-[11px] font-sans text-[#D1C7BD]">
+                  <span className="hidden sm:inline font-serif italic text-white text-xs">“Beauty, Without the Evidence”</span>
+                  <span className="hidden sm:inline">·</span>
+                  <span className="text-[#d8a48f] text-[10px] font-mono uppercase tracking-wider">
+                    {isMuted ? 'Muted Preview (Tap to Unmute)' : 'Sound Active'}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Three Thematic Context Cards Underneath Film */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+              <div className="bg-[#362A26] border border-[#52413C] rounded-2xl p-5 text-left shadow-xs hover:border-[#85513f] transition-colors">
+                <div className="flex items-center space-x-2 text-[#d8a48f] text-[10px] font-sans font-bold uppercase tracking-wider mb-1.5">
+                  <Droplets size={13} />
+                  <span>Marine Bio-Lipid Fusion</span>
+                </div>
+                <h4 className="font-serif text-base text-white">
+                  Oceanic Self-Leveling
+                </h4>
+                <p className="text-xs text-[#C5B8AF] mt-1 leading-relaxed">
+                  Inspired by the tidal waters that cradle marine botanicals, our bio-lipid matrix moves like liquid velvet, self-leveling across every curve without drying.
+                </p>
+              </div>
+
+              <div className="bg-[#362A26] border border-[#52413C] rounded-2xl p-5 text-left shadow-xs hover:border-[#85513f] transition-colors">
+                <div className="flex items-center space-x-2 text-[#d8a48f] text-[10px] font-sans font-bold uppercase tracking-wider mb-1.5">
+                  <Sparkles size={13} />
+                  <span>The Aphrodite Mythos</span>
+                </div>
+                <h4 className="font-serif text-base text-white">
+                  Born of Vital Life (&zeta;&omega;&eta;)
+                </h4>
+                <p className="text-xs text-[#C5B8AF] mt-1 leading-relaxed">
+                  Named for the ancient Greek concept of living vitality. Like Aphrodite emerging from the sea, your beauty does not require a mask—only illumination.
+                </p>
+              </div>
+
+              <div className="bg-[#362A26] border border-[#52413C] rounded-2xl p-5 text-left shadow-xs hover:border-[#85513f] transition-colors">
+                <div className="flex items-center space-x-2 text-[#d8a48f] text-[10px] font-sans font-bold uppercase tracking-wider mb-1.5">
+                  <Sun size={13} />
+                  <span>Zero Chalk Reflection</span>
+                </div>
+                <h4 className="font-serif text-base text-white">
+                  Golden Shore Radiance
+                </h4>
+                <p className="text-xs text-[#C5B8AF] mt-1 leading-relaxed">
+                  Translucent micro-prisms capture ambient sunset light rather than reflecting back flat, chalky white. Undetectable even under direct sun.
+                </p>
               </div>
             </div>
           </div>

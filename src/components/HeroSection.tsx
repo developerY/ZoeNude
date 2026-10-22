@@ -18,10 +18,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const [heroView, setHeroView] = useState<'cover' | 'model'>('cover');
   const [isBadgeVisible, setIsBadgeVisible] = useState(true);
 
+  const rainbowHues = [
+    { name: 'Rose Petal', role: 'Vascular Flush & Capillary Radiance', hex: '#E27D86', family: 'Rose' },
+    { name: 'Apricot Peach', role: 'Warm Dermal Vitality & Collagen Glow', hex: '#F08060', family: 'Peach' },
+    { name: 'Sunlit Ochre', role: 'Golden Hour Melanin Reflection', hex: '#E9B858', family: 'Gold' },
+    { name: 'Botanical Sage', role: 'Vascular Flush & Redness Balancer', hex: '#689775', family: 'Olive' },
+    { name: 'Azure Mist', role: 'Atmospheric Undertone Clarifier', hex: '#5E8DB8', family: 'Azure' },
+    { name: 'French Iris', role: 'Anti-Sallow Radiance & Night Reset', hex: '#8F79B2', family: 'Violet' },
+    { name: 'Terracotta Earth', role: 'Zygomatic Bone Dimension', hex: '#C85A3E', family: 'Copper' },
+    { name: 'Blackberry Plum', role: 'Deep Melanin Dimension & Richness', hex: '#4A2033', family: 'Plum' },
+  ];
+  const [activeHue, setActiveHue] = useState<typeof rainbowHues[0] | null>(null);
+
   return (
-    <section className="relative overflow-hidden bg-[#FCF9F3] pt-6 pb-16 lg:py-20 border-b border-[#E8DFD5]">
-      {/* Subtle organic ambient glow */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#f5ede2] rounded-full blur-3xl opacity-60 pointer-events-none -z-0" />
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#FDF7F2] via-[#FAF1E8] to-[#F7ECE1] pt-6 pb-16 lg:py-20 border-b border-[#EADED5]">
+      {/* Rainbow Skintone Ambient Multi-Glows */}
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-br from-[#E27D86]/10 via-[#F08060]/10 to-[#E9B858]/10 rounded-full blur-3xl pointer-events-none -z-0" />
+      <div className="absolute bottom-0 left-10 w-[400px] h-[400px] bg-gradient-to-tr from-[#689775]/10 via-[#E9B858]/10 to-[#8F79B2]/10 rounded-full blur-3xl pointer-events-none -z-0" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -73,33 +86,91 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               </button>
             </div>
 
-            {/* Brand Pillars: KoColor, ZoeWear, ZoeWave */}
-            <div className="pt-8 border-t border-[#E8DFD5] grid grid-cols-3 gap-4 sm:gap-6">
-              <div className="space-y-1">
-                <span className="block font-serif text-sm tracking-wider font-bold text-[#2B211E] uppercase">
-                  KOCOLOR
+            {/* The Rainbow of Living Skin Spectrum & Brand Pillars */}
+            <div className="pt-6 border-t border-[#E8DFD5] space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+                <div className="flex items-center space-x-2">
+                  <span className="text-[10px] font-sans font-bold tracking-[0.2em] text-[#85513f] uppercase">
+                    THE RAINBOW OF LIVING SKIN
+                  </span>
+                  <span className="text-[9px] bg-gradient-to-r from-[#E27D86] via-[#E9B858] via-[#689775] to-[#8F79B2] text-white px-2 py-0.5 rounded-full font-bold uppercase tracking-wider shadow-xs">
+                    KoColor Chromatics
+                  </span>
+                </div>
+                <span className="text-[10px] font-sans text-[#6E625D] font-medium">
+                  {activeHue ? (
+                    <span className="text-[#85513f] font-semibold animate-fadeIn">
+                      {activeHue.name} · {activeHue.role}
+                    </span>
+                  ) : (
+                    <span>Hover or tap to reveal undertone</span>
+                  )}
                 </span>
-                <p className="text-[11px] leading-snug text-[#6E625D] italic">
-                  &ldquo;Precision biomimetic pigment calibration for true vascular undertone harmony.&rdquo;
-                </p>
               </div>
 
-              <div className="space-y-1">
-                <span className="block font-serif text-sm tracking-wider font-bold text-[#2B211E] uppercase">
-                  ZOEWEAR
-                </span>
-                <p className="text-[11px] leading-snug text-[#6E625D] italic">
-                  &ldquo;Undetectable second-skin wear that breathes seamlessly with your natural lipid barrier.&rdquo;
-                </p>
+              {/* Rainbow Swatch Dot Ribbon */}
+              <div className="flex items-center space-x-1.5 sm:space-x-2 p-2 bg-[#FAF6F0] rounded-xl border border-[#E8DFD5]">
+                {rainbowHues.map((hue) => {
+                  const isSelected = activeHue?.name === hue.name;
+                  return (
+                    <button
+                      key={hue.name}
+                      type="button"
+                      onMouseEnter={() => setActiveHue(hue)}
+                      onClick={() => setActiveHue(hue)}
+                      className={`flex-1 h-6 sm:h-7 rounded-md transition-all duration-200 transform hover:scale-110 shadow-xs relative group focus:outline-none cursor-pointer ${
+                        isSelected ? 'ring-2 ring-[#2B211E] scale-105 z-10' : 'hover:opacity-95'
+                      }`}
+                      style={{ backgroundColor: hue.hex }}
+                      aria-label={`${hue.name} - ${hue.role}`}
+                      title={`${hue.name} (${hue.family}) · ${hue.role}`}
+                    >
+                      <span className="sr-only">{hue.name}</span>
+                    </button>
+                  );
+                })}
               </div>
 
-              <div className="space-y-1">
-                <span className="block font-serif text-sm tracking-wider font-bold text-[#2B211E] uppercase">
-                  ZOEWAVE
-                </span>
-                <p className="text-[11px] leading-snug text-[#6E625D] italic">
-                  &ldquo;Multi-dimensional light refraction and cellular vitality moving with your skin.&rdquo;
-                </p>
+              {/* Brand Pillars: KoColor, ZoeWear, ZoeWave */}
+              <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-1">
+                <div className="space-y-1.5 p-3 rounded-xl bg-white border border-[#E8DFD5] hover:border-[#E27D86] transition-colors shadow-2xs group">
+                  <div className="flex items-center justify-between">
+                    <span className="block font-serif text-xs sm:text-sm tracking-wider font-bold text-[#2B211E] uppercase">
+                      KOCOLOR
+                    </span>
+                    <span className="w-2 h-2 rounded-full bg-[#E27D86] group-hover:scale-125 transition-transform" />
+                  </div>
+                  <div className="h-[2px] w-full bg-gradient-to-r from-[#E27D86] via-[#E9B858] to-[#689775] rounded-full" />
+                  <p className="text-[10px] leading-snug text-[#6E625D] italic">
+                    &ldquo;Precision biomimetic pigment calibration for true vascular undertone harmony.&rdquo;
+                  </p>
+                </div>
+
+                <div className="space-y-1.5 p-3 rounded-xl bg-white border border-[#E8DFD5] hover:border-[#F08060] transition-colors shadow-2xs group">
+                  <div className="flex items-center justify-between">
+                    <span className="block font-serif text-xs sm:text-sm tracking-wider font-bold text-[#2B211E] uppercase">
+                      ZOEWEAR
+                    </span>
+                    <span className="w-2 h-2 rounded-full bg-[#F08060] group-hover:scale-125 transition-transform" />
+                  </div>
+                  <div className="h-[2px] w-full bg-gradient-to-r from-[#F08060] via-[#E9B858] to-[#C85A3E] rounded-full" />
+                  <p className="text-[10px] leading-snug text-[#6E625D] italic">
+                    &ldquo;Undetectable second-skin wear that breathes seamlessly with your natural lipid barrier.&rdquo;
+                  </p>
+                </div>
+
+                <div className="space-y-1.5 p-3 rounded-xl bg-white border border-[#E8DFD5] hover:border-[#8F79B2] transition-colors shadow-2xs group">
+                  <div className="flex items-center justify-between">
+                    <span className="block font-serif text-xs sm:text-sm tracking-wider font-bold text-[#2B211E] uppercase">
+                      ZOEWAVE
+                    </span>
+                    <span className="w-2 h-2 rounded-full bg-[#8F79B2] group-hover:scale-125 transition-transform" />
+                  </div>
+                  <div className="h-[2px] w-full bg-gradient-to-r from-[#5E8DB8] via-[#8F79B2] to-[#E27D86] rounded-full" />
+                  <p className="text-[10px] leading-snug text-[#6E625D] italic">
+                    &ldquo;Multi-dimensional light refraction and cellular vitality moving with your skin.&rdquo;
+                  </p>
+                </div>
               </div>
             </div>
           </div>

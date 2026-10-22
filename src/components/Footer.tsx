@@ -13,7 +13,9 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#FAF6F0] border-t border-[#E8DFD5] text-[#2B211E]">
+    <footer className="bg-gradient-to-b from-[#FAF1E8] via-[#FAF6F0] to-[#F5ECE1] border-t border-[#EADED5] text-[#2B211E] relative">
+      {/* Top Rainbow Skintone Spectrum Hairline */}
+      <div className="h-[2.5px] w-full bg-gradient-to-r from-[#E27D86] via-[#F08060] via-[#E9B858] via-[#689775] via-[#5E8DB8] via-[#8F79B2] to-[#C85A3E]" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-14 border-b border-[#E8DFD5]">
           {/* Newsletter Section: Join The Circle (Takes 5 cols on lg) */}

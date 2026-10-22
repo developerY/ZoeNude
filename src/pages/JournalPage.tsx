@@ -245,7 +245,7 @@ export const JournalPage: React.FC<JournalPageProps> = ({
   };
 
   return (
-    <div className="bg-[#FCF9F3] text-[#2B211E] min-h-screen">
+    <div className="bg-gradient-to-b from-[#FDF7F2] via-[#FAF1E8] to-[#F7ECE1] text-[#2B211E] min-h-screen">
       {/* Toast Alert */}
       {toastMessage && (
         <div className="fixed bottom-6 right-6 z-50 bg-[#2B211E] text-[#FCF9F3] px-5 py-3.5 rounded-xl shadow-2xl border border-[#4E4542] flex items-center space-x-2.5 text-xs font-sans tracking-wide animate-slideUp">
@@ -254,9 +254,11 @@ export const JournalPage: React.FC<JournalPageProps> = ({
         </div>
       )}
 
-      {/* Editorial Page Header & Institutional Crest */}
-      <section className="border-b border-[#E8DFD5] bg-[#FAF6F0] pt-14 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      {/* Editorial Page Header & Institutional Crest with Rainbow Skintone Ambient Multi-Glow */}
+      <section className="border-b border-[#EADED5] bg-gradient-to-r from-[#FAF2EB] via-[#FDF6F0] to-[#F5ECE1] pt-14 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#8F79B2]/8 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-10 w-80 h-80 bg-[#E27D86]/8 rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-7xl mx-auto relative z-10">
           {/* Breadcrumbs */}
           <div className="flex items-center space-x-2 text-[11px] font-sans uppercase tracking-[0.16em] text-[#807571] mb-6">
             <button

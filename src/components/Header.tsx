@@ -185,6 +185,9 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className="sticky top-0 z-40 w-full transition-all duration-300">
+      {/* Luxury Chromatic Living Spectrum Hairline */}
+      <div className="h-[2.5px] w-full bg-gradient-to-r from-[#E27D86] via-[#F08060] via-[#E9B858] via-[#689775] via-[#5E8DB8] via-[#8F79B2] to-[#C85A3E]" />
+
       {/* Top Luxury Announcement Banner */}
       <div className="bg-[#2B211E] text-[#F9F6F0] text-[10px] sm:text-[11px] font-medium tracking-[0.14em] py-2 px-4 text-center border-b border-[#3d312e] transition-all">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -210,8 +213,8 @@ export const Header: React.FC<HeaderProps> = ({
       <nav
         className={`w-full transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#FCF9F3]/95 backdrop-blur-md shadow-[0_4px_20px_rgba(43,33,30,0.04)] border-b border-[#E8DFD5]'
-            : 'bg-[#FCF9F3] border-b border-[#E8DFD5]'
+            ? 'bg-gradient-to-r from-[#FDF7F2]/95 via-[#FAF1E8]/95 to-[#F8EDE3]/95 backdrop-blur-md shadow-[0_6px_25px_rgba(43,33,30,0.06)] border-b border-[#EADED5]'
+            : 'bg-gradient-to-r from-[#FDF7F2] via-[#FAF1E8] to-[#F8EDE3] border-b border-[#EADED5]'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

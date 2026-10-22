@@ -439,24 +439,42 @@ export const AboutPage: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {brandPillars.map((p, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-2xl p-8 border border-[#E8DFD5] shadow-xs text-center flex flex-col justify-between"
-            >
-              <p className="font-serif text-base sm:text-lg italic text-[#2B211E] leading-relaxed">
-                &ldquo;{p.quote}&rdquo;
-              </p>
-              <div className="mt-6 pt-4 border-t border-[#F0EEE8]">
-                <span className="text-sm font-serif font-bold tracking-[0.16em] uppercase text-[#2B211E] block">
-                  {p.publication}
-                </span>
-                <span className="text-[10px] font-sans tracking-wider uppercase text-[#85513f] mt-0.5 block">
-                  {p.category}
-                </span>
+          {brandPillars.map((p, idx) => {
+            const gradients = [
+              'from-[#E27D86] via-[#E9B858] to-[#689775]',
+              'from-[#F08060] via-[#E9B858] to-[#C85A3E]',
+              'from-[#5E8DB8] via-[#8F79B2] to-[#E27D86]',
+            ];
+            const dotColors = ['bg-[#E27D86]', 'bg-[#F08060]', 'bg-[#8F79B2]'];
+            return (
+              <div
+                key={idx}
+                className="bg-white rounded-2xl p-8 border border-[#E8DFD5] shadow-xs text-center flex flex-col justify-between hover:shadow-md transition-shadow group"
+              >
+                <div>
+                  <div className="flex items-center justify-center space-x-2 mb-4">
+                    <span className={`w-2.5 h-2.5 rounded-full ${dotColors[idx]} group-hover:scale-125 transition-transform`} />
+                    <span className="text-[10px] font-sans font-bold tracking-[0.2em] uppercase text-[#85513f]">
+                      PILLAR 0{idx + 1}
+                    </span>
+                  </div>
+                  <p className="font-serif text-base sm:text-lg italic text-[#2B211E] leading-relaxed">
+                    &ldquo;{p.quote}&rdquo;
+                  </p>
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-[#F0EEE8]">
+                  <div className={`h-[2.5px] w-16 mx-auto mb-3 bg-gradient-to-r ${gradients[idx]} rounded-full`} />
+                  <span className="text-base font-serif font-bold tracking-[0.16em] uppercase text-[#2B211E] block">
+                    {p.publication}
+                  </span>
+                  <span className="text-[10px] font-sans tracking-wider uppercase text-[#85513f] mt-0.5 block font-semibold">
+                    {p.category}
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 

@@ -67,10 +67,11 @@ export const ShopPage: React.FC<ShopPageProps> = ({
   }
 
   return (
-    <div className="bg-[#FCF9F3] min-h-screen pb-24 animate-fadeIn">
-      {/* Shop Header Banner */}
-      <section className="bg-[#FAF6F0] py-14 sm:py-18 border-b border-[#E8DFD5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+    <div className="bg-gradient-to-b from-[#FDF7F2] via-[#FAF1E8] to-[#F7ECE1] min-h-screen pb-24 animate-fadeIn">
+      {/* Shop Header Banner with Rainbow Skintone Ambient Glow */}
+      <section className="bg-gradient-to-r from-[#FAF2EB] via-[#FDF6F0] to-[#F5ECE1] py-14 sm:py-18 border-b border-[#EADED5] relative overflow-hidden">
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#E9B858]/8 rounded-full blur-3xl pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3 relative z-10">
           <span className="text-[10px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase block">
             ATELIER STAPLES
           </span>

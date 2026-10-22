@@ -3,8 +3,9 @@
 @layer base {
   body {
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    background-color: #fcf9f3;
-    color: #1c1c18;
+    background: linear-gradient(180deg, #FDF7F2 0%, #FAF1E8 25%, #F7F3EB 50%, #FAF0E6 75%, #F8EDE3 100%);
+    background-attachment: fixed;
+    color: #261D1A;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -18,21 +19,70 @@
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+/* Rainbow Skintone Atmospheric Theme Gradients */
+.bg-skintone-spectrum {
+  background: linear-gradient(
+    135deg,
+    #FDF6F0 0%,
+    #FAF0E6 16%,
+    #FCEEE5 33%,
+    #F5E4C6 50%,
+    #EFF3EA 66%,
+    #F6EAE1 83%,
+    #F3E8EE 100%
+  );
+}
+
+.bg-skintone-rose {
+  background: linear-gradient(135deg, #FDF7F4 0%, #FAF0EB 100%);
+}
+
+.bg-skintone-peach {
+  background: linear-gradient(135deg, #FCF5EE 0%, #FAF0E6 100%);
+}
+
+.bg-skintone-gold {
+  background: linear-gradient(135deg, #FAF4E8 0%, #F5ECDB 100%);
+}
+
+.bg-skintone-olive {
+  background: linear-gradient(135deg, #F6F8F3 0%, #EFF3EA 100%);
+}
+
+.bg-skintone-terracotta {
+  background: linear-gradient(135deg, #FAF1EB 0%, #F5E5DC 100%);
+}
+
+.bg-skintone-plum {
+  background: linear-gradient(135deg, #FAF4F7 0%, #F5EBF0 100%);
+}
+
+/* Multi-Chromatic Skintone Rainbow Border & Glow Utilities */
+.border-skintone-rainbow {
+  border-image: linear-gradient(to right, #E27D86, #F08060, #E9B858, #689775, #5E8DB8, #8F79B2, #C85A3E) 1;
+}
+
+.glow-skintone-rainbow {
+  box-shadow: 0 10px 40px -10px rgba(226, 125, 134, 0.15),
+              0 20px 50px -15px rgba(233, 184, 88, 0.12),
+              0 30px 60px -20px rgba(104, 151, 117, 0.1);
+}
+
 /* Custom Scrollbar for Luxury Aesthetic */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f6f3ed;
+  background: #FAF1E8;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d4c3be;
+  background: linear-gradient(180deg, #E27D86, #E9B858, #8F79B2);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #85513f;
+  background: linear-gradient(180deg, #C85A3E, #E27D86, #689775);
 }

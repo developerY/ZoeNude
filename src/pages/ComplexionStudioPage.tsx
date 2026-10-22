@@ -192,11 +192,11 @@ export const ComplexionStudioPage: React.FC<ComplexionStudioPageProps> = ({
   const currentCase = TRANSFORMATION_CASES[activeCaseIndex];
 
   return (
-    <div className="bg-[#FCF9F3] min-h-screen pb-28 animate-fadeIn text-[#2B211E]">
-      {/* Editorial Hero Header */}
-      <section className="bg-[#FAF6F0] py-16 sm:py-24 border-b border-[#E8DFD5] relative overflow-hidden">
-        {/* Subtle decorative motif */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#FAF0E6] rounded-full blur-3xl opacity-60 pointer-events-none -mr-20 -mt-20"></div>
+    <div className="bg-gradient-to-b from-[#FDF7F2] via-[#FAF1E8] to-[#F7ECE1] min-h-screen pb-28 animate-fadeIn text-[#2B211E]">
+      {/* Editorial Hero Header with Rainbow Skintone Ambient Multi-Glow */}
+      <section className="bg-gradient-to-r from-[#FAF2EB] via-[#FDF6F0] to-[#F5ECE1] py-16 sm:py-24 border-b border-[#EADED5] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#E27D86]/8 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#E9B858]/8 rounded-full blur-3xl pointer-events-none -ml-20 -mb-20" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center max-w-3xl mx-auto space-y-4">

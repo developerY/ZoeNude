@@ -167,17 +167,23 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar with Face Logo Emblem */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-sans text-[#6E625D]">
           <div className="flex items-center space-x-3.5">
-            <Link to="/" className="w-8 h-8 rounded-full overflow-hidden border border-[#d2c3c0] bg-[#f5ede2] p-0.5 flex-shrink-0 shadow-xs hover:border-[#85513f] transition-all">
+            <Link to="/" className="w-9 h-9 rounded-full overflow-hidden border border-[#d2c3c0] bg-[#f5ede2] p-0.5 flex-shrink-0 shadow-xs hover:border-[#85513f] transition-all">
               <img
                 src="/favicon.png"
-                alt="ZoeNude Logo Emblem"
+                alt="ZOE Logo Emblem"
                 className="w-full h-full object-cover rounded-full"
               />
             </Link>
-            <div className="flex items-center space-x-3">
-              <Link to="/" className="font-serif text-lg font-medium text-[#2B211E] hover:text-[#85513f] transition-colors">
-                ZoeNude
-              </Link>
+            <div className="flex flex-col sm:flex-row sm:items-baseline sm:space-x-2">
+              <div className="flex items-baseline space-x-1.5">
+                <Link to="/" className="font-serif text-lg font-medium text-[#2B211E] hover:text-[#85513f] transition-colors tracking-wide">
+                  ZOE
+                </Link>
+                <span className="text-[#85513f] font-light text-sm">·</span>
+                <span className="font-serif text-xs font-normal tracking-[0.18em] text-[#5C4D47] uppercase">
+                  NUDE COSMETICS
+                </span>
+              </div>
               <span className="hidden sm:inline text-[#E8DFD5]">•</span>
               <span className="italic font-serif text-xs text-[#85513f]">
                 Beauty, Without the Evidence.
@@ -193,7 +199,7 @@ export const Footer: React.FC = () => {
               TERMS OF SERVICE
             </a>
             <span className="text-[#807571]">
-              &copy; 2027 ZOENUDE ATELIER INC. ALL RIGHTS RESERVED.
+              &copy; 2027 ZOE ATELIER INC. · PIONEERS OF NUDE COSMETICS. ALL RIGHTS RESERVED.
             </span>
           </div>
         </div>

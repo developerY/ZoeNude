@@ -79,7 +79,7 @@ export const TransformationsSection: React.FC = () => {
               Why Biomimetic Lipids Outperform Traditional Foundations
             </h3>
             <p className="font-sans text-xs text-[#4E4542] leading-relaxed">
-              Standard foundations suspend pigments in synthetic silicones and heavy powders that sit atop the skin, settling into pores and exaggerating dry patches. ZoeNude suspends micro-ground mineral pigments in plant-derived bio-identical squalane that fuses directly with your lipid mantle.
+              Standard foundations suspend pigments in synthetic silicones and heavy powders that sit atop the skin, settling into pores and exaggerating dry patches. ZOE suspends micro-ground mineral pigments in plant-derived bio-identical squalane that fuses directly with your lipid mantle.
             </p>
           </div>
 
@@ -98,7 +98,7 @@ export const TransformationsSection: React.FC = () => {
 
             <div className="p-4 rounded-xl bg-[#F6F3ED] border border-[#d2c3c0] space-y-1.5">
               <span className="text-[10px] uppercase font-bold tracking-wider text-[#2F6B43]">
-                ZoeNude Biomimetic
+                ZOE Biomimetic Nudes
               </span>
               <p className="text-[#2B211E] text-[11px] leading-snug">
                 • Zero titanium chalkiness<br />

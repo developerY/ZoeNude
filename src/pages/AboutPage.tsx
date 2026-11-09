@@ -94,7 +94,7 @@ export const AboutPage: React.FC = () => {
     {
       city: 'Athens Flagship',
       neighborhood: 'Kolonaki Square 4, Athens 106 73',
-      description: 'The spiritual birthplace of ZoeNude, celebrating classical Mediterranean botanicals.',
+      description: 'The spiritual birthplace of ZOE, celebrating classical Mediterranean botanicals.',
       hours: 'Mon – Sat, 10am – 6pm EET',
     },
   ];
@@ -128,7 +128,7 @@ export const AboutPage: React.FC = () => {
             <div className="lg:col-span-7 space-y-6 text-left">
               <div className="inline-flex items-center space-x-2 text-[11px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase">
                 <Compass size={14} />
-                <span>THE HOUSE OF ZOENUDE</span>
+                <span>THE HOUSE OF ZOE · NUDE COSMETICS</span>
               </div>
 
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#2B211E] font-normal leading-[1.15]">
@@ -139,9 +139,23 @@ export const AboutPage: React.FC = () => {
                 Born from the Greek word &zeta;&omega;&eta; (&ldquo;vital living force&rdquo;) and the conviction that makeup should never conceal who you are.
               </p>
 
+              {/* The Name Clarification Callout */}
+              <div className="p-4 bg-white/90 rounded-2xl border border-[#E8DFD5] space-y-1.5 shadow-2xs">
+                <div className="flex items-center space-x-2">
+                  <span className="font-serif font-bold text-sm tracking-wide text-[#2B211E]">ZOE</span>
+                  <span className="text-[#85513f] font-light text-base">·</span>
+                  <span className="font-sans font-semibold text-[10.5px] uppercase tracking-wider text-[#85513f]">THE CLASS OF NUDE COSMETICS</span>
+                </div>
+                <p className="font-sans text-xs text-[#5C4D47] leading-relaxed font-light">
+                  When you say our name, we invite an intentional breath. We are not named &ldquo;Zoe Nude.&rdquo; 
+                  <strong> ZOE</strong> is our brand—the sacred pulse of living skin. 
+                  <strong> Nude Cosmetics</strong> is the standard we formulate: biomimetic cosmetics engineered without the masking evidence of synthetic silicones.
+                </p>
+              </div>
+
               <p className="font-sans text-sm sm:text-base text-[#4E4542] leading-relaxed max-w-2xl font-light">
                 For decades, cosmetic formulateurs treated the human complexion as an imperfect surface to be 
-                primed, masked, and locked under layers of heavy talc and synthetic silicones. ZoeNude was created 
+                primed, masked, and locked under layers of heavy talc and synthetic silicones. ZOE was created 
                 to tear down that illusion. We craft biomimetic cosmetics that honor the breath, texture, 
                 and radiance of living skin.
               </p>
@@ -229,7 +243,7 @@ export const AboutPage: React.FC = () => {
               The Birth of Living Beauty
             </h2>
             <p className="font-sans text-xs sm:text-sm text-[#D1C7BD] leading-relaxed max-w-2xl mx-auto">
-              Like Aphrodite emerging from the oceanic foam, ZoeNude celebrates the vital living force born from water, sunlight, and raw skin. Unadorned, unmasked, and eternally radiant.
+              Like Aphrodite emerging from the oceanic foam, ZOE celebrates the vital living force born from water, sunlight, and raw skin. Unadorned, unmasked, and defining the category of Nude Cosmetics.
             </p>
           </div>
 
@@ -373,7 +387,7 @@ export const AboutPage: React.FC = () => {
 
             <div className="space-y-4 text-xs sm:text-sm text-[#4E4542] leading-relaxed">
               <p>
-                ZoeNude began in a small boutique laboratory on the Rue de Castiglione in Paris. 
+                The House of ZOE began in a small boutique laboratory on the Rue de Castiglione in Paris. 
                 Founder Dr. Helena Vance, an aesthetic dermatologist, observed a persistent pattern: 
                 her patients worked tirelessly on skin health, yet covered their results with thick, 
                 occlusive foundations that suffocated pores, created micro-inflammation, and settled into fine lines.
@@ -388,7 +402,7 @@ export const AboutPage: React.FC = () => {
                 &ldquo;True elegance is not an illusion painted on the surface. It is the undeniable presence of life, illuminated from within.&rdquo;
               </blockquote>
               <p>
-                Today, ZoeNude is worn by actresses, editors, brides, and people worldwide who demand makeup 
+                Today, ZOE Nude Cosmetics is worn by actresses, editors, brides, and people worldwide who demand makeup 
                 that looks like breathtaking skin—even under bright morning sun or high-definition cameras.
               </p>
             </div>
@@ -502,7 +516,7 @@ export const AboutPage: React.FC = () => {
               Designed to Leave No Residue On Earth
             </h2>
             <p className="text-xs sm:text-sm text-[#4E4542] leading-relaxed">
-              We believe luxury without environmental responsibility is hollow. ZoeNude vessels are crafted from 
+              We believe luxury without environmental responsibility is hollow. ZOE flacons and vessels are crafted from 
               substantial, endlessly recyclable frosted soda-lime glass sourced in Northern Italy. Each pump is 
               designed for clean separation, and our secondary packaging utilizes 100% FSC-certified post-consumer 
               board printed with waterless soy ink.
@@ -552,7 +566,7 @@ export const AboutPage: React.FC = () => {
               VISIT OUR SPACES
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl text-[#2B211E]">
-              The ZoeNude Ateliers
+              The ZOE Flagship Ateliers
             </h2>
             <p className="text-xs sm:text-sm text-[#6E625D]">
               Experience private shade blending, one-on-one undertone mapping, and formulation consultations.

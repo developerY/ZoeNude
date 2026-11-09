@@ -50,7 +50,7 @@ export const ManifestoModal: React.FC<ManifestoModalProps> = ({
             <div className="max-w-md mx-auto rounded-2xl overflow-hidden border border-[#E8DFD5] shadow-md mb-3 bg-[#f5ede2]">
               <img
                 src="/assets/aistudio/Gemini_Generated_Image_bj462jbj462jbj46_fa1cb5df.jpeg"
-                alt="ZoeNude Cosmetics Cover Art & Crest"
+                alt="ZOE · Nude Cosmetics Cover Art & Crest"
                 className="w-full h-auto object-cover"
               />
             </div>

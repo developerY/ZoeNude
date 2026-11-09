@@ -210,7 +210,7 @@ export const ComplexionStudioPage: React.FC<ComplexionStudioPageProps> = ({
             </h1>
 
             <p className="font-sans text-xs sm:text-sm text-[#4E4542] leading-relaxed max-w-2xl mx-auto">
-              Welcome to the ZoeNude Complexion Atelier. Discover our 24 biomimetic living skin shades, inspect interactive before-and-after transformations across skin concerns, and customize your complimentary swatch trio.
+              Welcome to the ZOE Complexion Atelier. Discover our 24 biomimetic living skin shades across the discipline of Nude Cosmetics, inspect interactive before-and-after transformations, and customize your complimentary swatch trio.
             </p>
 
             {/* Quick studio action buttons */}
@@ -436,7 +436,7 @@ export const ComplexionStudioPage: React.FC<ComplexionStudioPageProps> = ({
                 <div className="p-4 bg-[#FAF0E6]/50 rounded-xl border border-[#d8a48f]/30 flex items-start space-x-3 text-xs">
                   <Info size={16} className="text-[#85513f] flex-shrink-0 mt-0.5" />
                   <div className="space-y-0.5">
-                    <span className="font-semibold text-[#2B211E]">The ZoeNude Melt Test:</span>
+                    <span className="font-semibold text-[#2B211E]">The ZOE Melt Test:</span>
                     <p className="text-[#6E625D] text-[11px] leading-relaxed">
                       Our organic squalane base adapts by 0.5 tone within 90 seconds as it absorbs your skin temperature. When in doubt between two shades, both will blend harmoniously.
                     </p>
@@ -976,7 +976,7 @@ export const ComplexionStudioPage: React.FC<ComplexionStudioPageProps> = ({
 
             <div className="p-7 rounded-2xl bg-[#FCF9F3] border-2 border-[#85513f] space-y-4">
               <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#2F6B43] block">
-                ZoeNude Biomimetic Lipid Fusion (BLF™)
+                ZOE Biomimetic Lipid Fusion (BLF™)
               </span>
               <ul className="space-y-3 text-xs font-sans text-[#2B211E]">
                 <li className="flex items-start space-x-2.5">

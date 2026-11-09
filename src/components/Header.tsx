@@ -21,9 +21,10 @@ export const Header: React.FC<HeaderProps> = ({
   const location = useLocation();
 
   const announcements = [
+    'ZOE · DEFINING THE CATEGORY OF NUDE COSMETICS · LIVING BIOMIMETIC BEAUTY',
     'COMPLIMENTARY STANDARD SHIPPING & SHADE MATCHING SAMPLES WITH EVERY ORDER',
     'THE ATELIER GUARANTEE: FREE COLOR EXCHANGES UNTIL YOUR COMPLEXION SINGS',
-    'DISCOVER BIOMIMETIC NUDES: FORMULATED WITH 94% BIO-LIPID VEIL',
+    'ZOE (LIFE) · FORMULATED WITH 94% SECOND-SKIN BIO-LIPID VEIL',
   ];
 
   useEffect(() => {
@@ -98,10 +99,10 @@ export const Header: React.FC<HeaderProps> = ({
 
   const aboutCategories = [
     {
-      title: 'The House of ZoeNude',
+      title: 'The House of ZOE · Nude Cosmetics',
       to: '/about',
       badge: 'Heritage',
-      description: 'Our origin story, Parisian roots & founders',
+      description: 'Our origin story, Parisian roots & philosophy of life',
     },
     {
       title: 'The Zoe Manifesto',
@@ -241,19 +242,26 @@ export const Header: React.FC<HeaderProps> = ({
                 <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border border-[#d2c3c0] bg-[#f5ede2] p-0.5 flex-shrink-0 shadow-xs group-hover:border-[#85513f] transition-all">
                   <img
                     src="/favicon.png"
-                    alt="ZoeNude Main Logo"
+                    alt="ZOE Logo Emblem"
                     className="w-full h-full object-cover rounded-full"
                   />
                 </div>
 
-                <div className="flex flex-col">
-                  <div className="flex items-baseline">
-                    <span className="font-serif text-2xl sm:text-[28px] tracking-tight text-[#2B211E] font-medium transition-colors group-hover:text-[#85513f]">
-                      ZoeNude<span className="text-[#85513f]">.</span>
+                <div className="flex flex-col justify-center">
+                  <div className="flex items-baseline space-x-1 sm:space-x-2">
+                    <span className="font-serif text-2xl sm:text-[28px] tracking-wider text-[#2B211E] font-medium transition-colors group-hover:text-[#85513f]">
+                      ZOE
+                    </span>
+                    {/* Deliberate luxury breath/pause mark */}
+                    <span className="text-[#85513f] text-sm sm:text-base font-light tracking-widest select-none opacity-85 px-0.5" aria-hidden="true">
+                      ·
+                    </span>
+                    <span className="font-serif text-xs sm:text-[14px] tracking-[0.2em] text-[#5C4D47] font-normal uppercase whitespace-nowrap">
+                      NUDE COSMETICS
                     </span>
                   </div>
-                  <span className="text-[9px] tracking-[0.25em] text-[#6E625D] uppercase font-sans -mt-1 font-medium">
-                    COSMETICS
+                  <span className="text-[8px] sm:text-[8.5px] tracking-[0.28em] text-[#8C7A73] uppercase font-sans font-medium -mt-0.5">
+                    The Class of Living Beauty
                   </span>
                 </div>
               </Link>
@@ -694,7 +702,7 @@ export const Header: React.FC<HeaderProps> = ({
                         onClick={() => setMobileMenuOpen(false)}
                         className="block text-[11px] font-sans text-[#6E625D] hover:text-[#2B211E] py-0.5"
                       >
-                        The House of ZoeNude
+                        The House of ZOE · Nude Cosmetics
                       </Link>
                       <Link
                         to="/manifesto"

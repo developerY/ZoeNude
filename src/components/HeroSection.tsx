@@ -40,17 +40,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Editorial Manifesto Content */}
           <div className="lg:col-span-6 flex flex-col justify-center space-y-7 pr-0 lg:pr-6">
-            {/* Pill Eyebrow */}
-            <div className="inline-flex items-center space-x-2">
-              <span className="inline-flex items-center px-3 py-1 text-[11px] font-sans font-semibold tracking-[0.14em] uppercase rounded-full bg-[#f4ece7] text-[#85513f] border border-[#e8dfd5]/80">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#85513f] mr-2"></span>
-                ATELIER RELEASE 04 · BIOMIMETIC NUDES
+            {/* Brand & Category Hierarchy Eyebrow */}
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="inline-flex items-center space-x-2 px-3 py-1.5 text-[11px] font-sans font-semibold tracking-[0.14em] uppercase rounded-full bg-white/95 text-[#2B211E] border border-[#e8dfd5] shadow-2xs">
+                <span className="font-serif font-bold tracking-wider text-[#2B211E] text-xs">ZOE</span>
+                <span className="text-[#85513f] font-light">·</span>
+                <span className="text-[#85513f] tracking-[0.18em] text-[10px]">THE CLASS OF NUDE COSMETICS</span>
+              </div>
+              <span className="inline-flex items-center px-2.5 py-1 text-[10px] font-sans font-medium tracking-[0.12em] uppercase rounded-full bg-[#f4ece7] text-[#85513f] border border-[#e8dfd5]/80">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#85513f] mr-1.5"></span>
+                ATELIER RELEASE 04
               </span>
             </div>
 
-            {/* Subhead */}
-            <div className="text-[11px] font-sans font-semibold tracking-[0.2em] text-[#6E625D] uppercase">
-              PHILOSOPHY NO. 01
+            {/* Subhead with Concept Breakdown */}
+            <div className="flex items-center space-x-2 text-[11px] font-sans font-semibold tracking-[0.2em] text-[#6E625D] uppercase">
+              <span>PHILOSOPHY NO. 01</span>
+              <span>·</span>
+              <span className="text-[#85513f] italic font-serif capitalize text-xs tracking-normal">Zoe (life) · Nude Cosmetics (the discipline)</span>
             </div>
 
             {/* Display Hero Headline */}
@@ -60,9 +67,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
             {/* Body Description */}
             <p className="font-sans text-base sm:text-lg leading-relaxed text-[#4E4542] max-w-xl font-light">
-              Skin-first formulations engineered with bio-identical lipids that dissolve on
-              contact. Undetectable coverage, breathable wear, and luminous finish that
-              mimics living skin.
+              <strong>ZOE</strong> represents the unmasked vitality of living skin. <strong>Nude Cosmetics</strong> is our exacting discipline: biomimetic formulations engineered with bio-identical lipids that dissolve on contact, moving in unison with your epidermis without the weight of synthetic makeup.
             </p>
 
             {/* CTA Buttons */}
@@ -185,13 +190,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   {heroView === 'cover' ? (
                     <img
                       src="/assets/aistudio/Gemini_Generated_Image_bj462jbj462jbj46_fa1cb5df.jpeg"
-                      alt="ZoeNude Official Cover Art - Beauty, Without The Evidence"
+                      alt="ZOE · Nude Cosmetics Official Cover Art - Beauty, Without The Evidence"
                       className="w-full h-full object-cover object-center filter contrast-[1.02] transform hover:scale-[1.02] transition-transform duration-700"
                     />
                   ) : (
                     <img
                       src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=85"
-                      alt="Radiant bare skin with ZoeNude Skin Veil"
+                      alt="Radiant bare skin with ZOE Skin Veil"
                       className="w-full h-full object-cover object-center filter saturate-[0.98] contrast-[1.02] transform hover:scale-[1.02] transition-transform duration-700"
                     />
                   )}

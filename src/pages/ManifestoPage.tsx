@@ -21,12 +21,12 @@ export const ManifestoPage: React.FC = () => {
           </div>
 
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#2B211E] font-normal max-w-3xl mx-auto leading-tight">
-            The Zoe Manifesto: Five Pillars of Naked Grace
+            The ZOE Manifesto: Five Pillars of Living Grace
           </h1>
 
           <p className="font-sans text-sm sm:text-base text-[#4E4542] max-w-2xl mx-auto leading-relaxed font-light">
             Rooted in the ancient Greek <em>Zoe</em> (&zeta;&omega;&eta;)—the vibrant essence of living breath.
-            We reject the mask to celebrate your living, breathing skin structure.
+            We are <strong>ZOE</strong>, pioneering the exacting cosmetic class of <strong>Nude Cosmetics</strong>.
           </p>
 
           {/* Official Brand Crest Banner */}
@@ -34,7 +34,7 @@ export const ManifestoPage: React.FC = () => {
             <div className="rounded-2xl overflow-hidden border border-[#E8DFD5] shadow-sm bg-[#f5ede2]">
               <img
                 src="/assets/aistudio/Gemini_Generated_Image_bj462jbj462jbj46_fa1cb5df.jpeg"
-                alt="ZoeNude Cosmetics Brand Crest"
+                alt="ZOE · Nude Cosmetics Brand Crest"
                 className="w-full h-auto object-cover"
               />
             </div>

@@ -821,7 +821,7 @@ export const CommunityPage: React.FC = () => {
               Share Your Living Skin Moment
             </h2>
             <p className="font-sans text-xs sm:text-sm text-[#4E4542] leading-relaxed max-w-xl mx-auto">
-              Tag <strong className="text-[#2B211E]">@ZoeNudeAtelier</strong> and <strong className="text-[#2B211E]">#LifeLooksGoodOnYou</strong> on Instagram to be featured in our seasonal client gallery and receive a complimentary bespoke sample trio gift voucher.
+              Tag <strong className="text-[#2B211E]">@ZoeAtelier</strong> and <strong className="text-[#2B211E]">#LifeLooksGoodOnYou</strong> on Instagram to be featured in our seasonal client gallery and receive a complimentary bespoke sample trio gift voucher.
             </p>
           </div>
 
@@ -872,7 +872,7 @@ export const CommunityPage: React.FC = () => {
 
               <div>
                 <label className="block text-[10px] font-sans font-bold uppercase tracking-wider text-[#6E625D] mb-1">
-                  Your ZoeNude Shade Match or Tone
+                  Your ZOE Shade Match or Tone
                 </label>
                 <select
                   value={joinShade}
@@ -918,7 +918,7 @@ export const CommunityPage: React.FC = () => {
               className="inline-flex items-center space-x-2 text-xs font-sans font-semibold tracking-wider uppercase text-[#85513f] hover:text-[#2B211E] border-b border-[#85513f] pb-0.5"
             >
               <Instagram size={14} />
-              <span>Follow @ZoeNudeAtelier on Instagram</span>
+              <span>Follow @ZoeAtelier on Instagram</span>
               <ArrowRight size={13} />
             </a>
           </div>

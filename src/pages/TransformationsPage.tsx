@@ -121,7 +121,7 @@ export const TransformationsPage: React.FC = () => {
 
             <div className="p-6 rounded-2xl bg-[#FAF6F0] border border-[#85513f] space-y-4">
               <span className="text-xs font-sans font-bold uppercase tracking-wider text-[#2F6B43] block">
-                ZoeNude Biomimetic Formula
+                ZOE Biomimetic Formula (Nude Cosmetics)
               </span>
               <ul className="space-y-3 text-xs font-sans text-[#2B211E]">
                 <li className="flex items-start space-x-2">

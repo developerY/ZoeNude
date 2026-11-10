@@ -47,27 +47,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 <span className="text-[#85513f] font-light">·</span>
                 <span className="text-[#85513f] tracking-[0.18em] text-[10px]">NUDE COSMETICS</span>
               </div>
-              <span className="inline-flex items-center px-2.5 py-1 text-[10px] font-sans font-semibold tracking-[0.14em] uppercase rounded-full bg-[#f4ece7] text-[#85513f] border border-[#e8dfd5]/80">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#85513f] mr-1.5 animate-pulse"></span>
-                CELEBRATE YOUR NATURAL BEAUTY
+              <span className="inline-flex items-center px-2.5 py-1 text-[10px] font-sans font-semibold tracking-[0.12em] uppercase rounded-full bg-[#f4ece7] text-[#85513f] border border-[#e8dfd5]/80">
+                BEAUTIFULLY YOU · NATURALLY FREE
               </span>
             </div>
 
             {/* Subhead with Concept Breakdown */}
             <div className="flex items-center space-x-2 text-[11px] font-sans font-semibold tracking-[0.2em] text-[#6E625D] uppercase">
-              <span>BEAUTIFULLY YOU</span>
-              <span>·</span>
-              <span className="text-[#85513f] italic font-serif capitalize text-xs tracking-normal">Naturally Free</span>
+              <span>CELEBRATE YOUR NATURAL BEAUTY</span>
             </div>
 
             {/* Display Hero Headline */}
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-[56px] leading-[1.12] tracking-[-0.02em] text-[#2B211E] font-normal">
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-[54px] leading-[1.12] tracking-[-0.02em] text-[#2B211E] font-normal">
               Feel Free and Comfortable in Your Own Skin.
             </h1>
 
             {/* Body Description */}
             <p className="font-sans text-base sm:text-lg leading-relaxed text-[#4E4542] max-w-xl font-light">
-              Cosmetics should never make someone feel that their natural self isn&rsquo;t enough. They should make you feel even more comfortable, confident, and free to be yourself. <strong>Enhance your beauty. Never hide it.</strong>
+              Cosmetics should never make someone feel that their natural self isn&rsquo;t enough. Zoe &middot; Nude Cosmetics are crafted to enhance rather than hide who you are&mdash;formulated with breathable botanical lipids and living undertones so you feel free, confident, and beautiful.
             </p>
 
             {/* CTA Buttons */}
@@ -149,44 +146,44 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 })}
               </div>
 
-              {/* Brand Pillars: KoColor, ZoeWear, ZoeWave */}
+              {/* 3 Core Pillars: Beautifully You, Naturally Free, Living Spectrum */}
               <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-1">
                 <div className="space-y-1.5 p-3 rounded-xl bg-white border border-[#E8DFD5] hover:border-[#E27D86] transition-colors shadow-2xs group">
                   <div className="flex items-center justify-between">
-                    <span className="block font-serif text-xs sm:text-sm tracking-wider font-bold text-[#2B211E] uppercase">
-                      KOCOLOR
+                    <span className="block font-serif text-[11px] sm:text-xs tracking-wider font-bold text-[#2B211E] uppercase">
+                      BEAUTIFULLY YOU
                     </span>
                     <span className="w-2 h-2 rounded-full bg-[#E27D86] group-hover:scale-125 transition-transform" />
                   </div>
                   <div className="h-[2px] w-full bg-gradient-to-r from-[#E27D86] via-[#E9B858] to-[#689775] rounded-full" />
-                  <p className="text-[10px] leading-snug text-[#6E625D] italic">
-                    &ldquo;Precision biomimetic pigment calibration for true vascular undertone harmony.&rdquo;
+                  <p className="text-[10px] leading-snug text-[#6E625D]">
+                    Enhance your natural beauty. Never hide it.
                   </p>
                 </div>
 
                 <div className="space-y-1.5 p-3 rounded-xl bg-white border border-[#E8DFD5] hover:border-[#F08060] transition-colors shadow-2xs group">
                   <div className="flex items-center justify-between">
-                    <span className="block font-serif text-xs sm:text-sm tracking-wider font-bold text-[#2B211E] uppercase">
-                      ZOEWEAR
+                    <span className="block font-serif text-[11px] sm:text-xs tracking-wider font-bold text-[#2B211E] uppercase">
+                      NATURALLY FREE
                     </span>
                     <span className="w-2 h-2 rounded-full bg-[#F08060] group-hover:scale-125 transition-transform" />
                   </div>
                   <div className="h-[2px] w-full bg-gradient-to-r from-[#F08060] via-[#E9B858] to-[#C85A3E] rounded-full" />
-                  <p className="text-[10px] leading-snug text-[#6E625D] italic">
-                    &ldquo;Undetectable second-skin wear that breathes seamlessly with your natural lipid barrier.&rdquo;
+                  <p className="text-[10px] leading-snug text-[#6E625D]">
+                    Second-skin breathable veil formulas that feel like you.
                   </p>
                 </div>
 
                 <div className="space-y-1.5 p-3 rounded-xl bg-white border border-[#E8DFD5] hover:border-[#8F79B2] transition-colors shadow-2xs group">
                   <div className="flex items-center justify-between">
-                    <span className="block font-serif text-xs sm:text-sm tracking-wider font-bold text-[#2B211E] uppercase">
-                      ZOEWAVE
+                    <span className="block font-serif text-[11px] sm:text-xs tracking-wider font-bold text-[#2B211E] uppercase">
+                      LIVING SPECTRUM
                     </span>
                     <span className="w-2 h-2 rounded-full bg-[#8F79B2] group-hover:scale-125 transition-transform" />
                   </div>
                   <div className="h-[2px] w-full bg-gradient-to-r from-[#5E8DB8] via-[#8F79B2] to-[#E27D86] rounded-full" />
-                  <p className="text-[10px] leading-snug text-[#6E625D] italic">
-                    &ldquo;Multi-dimensional light refraction and cellular vitality moving with your skin.&rdquo;
+                  <p className="text-[10px] leading-snug text-[#6E625D]">
+                    KoColor, ZoeWear &amp; ZoeWave honoring the rainbow of skin.
                   </p>
                 </div>
               </div>

@@ -98,9 +98,9 @@ export const JournalPage: React.FC<JournalPageProps> = ({
   const [consultationSubmitted, setConsultationSubmitted] = useState(false);
   const [bookingName, setBookingName] = useState('');
   const [bookingEmail, setBookingEmail] = useState('');
-  const [bookingAtelier, setBookingAtelier] = useState<'Paris Ateliers (Rue Saint-Honoré)' | 'New York Atelier (SoHo)' | 'Virtual Global Concierge'>('Virtual Global Concierge');
+  const [bookingAtelier, setBookingAtelier] = useState<'Los Angeles R&D Bio-Lab (Silicon Beach)' | 'San Francisco Bioscience Lab (Mission Bay)' | 'New York Atelier (SoHo)' | 'Virtual Global Concierge'>('Virtual Global Concierge');
   const [bookingDate, setBookingDate] = useState('2027-04-12');
-  const [bookingTime, setBookingTime] = useState('14:30 CET (Paris)');
+  const [bookingTime, setBookingTime] = useState('10:00 PST (California Morning)');
   const [bookingConcern, setBookingConcern] = useState('Shade Diagnostic & Biomimetic Match');
 
   // Routine Bundle shade selections inside active article
@@ -283,8 +283,8 @@ export const JournalPage: React.FC<JournalPageProps> = ({
                 Skin Narratives, Masterclasses & Biomimetic Science
               </h1>
               <p className="mt-4 font-sans text-sm sm:text-base text-[#5C504A] max-w-2xl leading-relaxed">
-                Formulation deep-dives, Parisian master artist techniques, and dermatological
-                barrier research direct from our Paris and Kyoto laboratories. All biological truth, zero petrochemical smoke.
+                AI-driven bio-cosmetology breakthroughs, algorithmic shade mapping, and biological
+                barrier research direct from our Los Angeles and San Francisco laboratories. All computational truth, zero petrochemical smoke.
               </p>
 
               {/* Fast Jump Anchor Links */}
@@ -765,7 +765,7 @@ export const JournalPage: React.FC<JournalPageProps> = ({
               <span>THE ATELIER ADVISORY COUNCIL</span>
             </div>
             <h2 className="font-serif text-2xl sm:text-4xl text-[#2B211E] font-normal leading-tight">
-              Clinical Corneobiology Meets Parisian Haute Beauté
+              Clinical Bioscience Meets AI Bio-Cosmetology
             </h2>
             <p className="mt-3 font-sans text-xs sm:text-sm text-[#5C504A] leading-relaxed">
               Every formula and masterclass rule is co-signed by leading barrier dermatologists, green chemists, and couture film artists. Never intuition alone.
@@ -924,10 +924,10 @@ export const JournalPage: React.FC<JournalPageProps> = ({
                 <span>WHITE-GLOVE ATELIER CONCIERGE</span>
               </div>
               <h3 className="font-serif text-2xl sm:text-4xl text-[#FAF6F0] font-normal leading-tight">
-                Complimentary 15-Minute Virtual Consultation with a Paris Colorist
+                Complimentary 15-Minute Virtual Consultation with an AI Bio-Cosmetology Specialist
               </h3>
               <p className="mt-3 font-sans text-xs sm:text-sm text-[#D1C7BD] leading-relaxed max-w-2xl">
-                Still hesitating between sister shades or managing rosacea flare-ups? Meet 1-on-1 via private video link with a certified ZoeNude Paris Atelier Colorist in ambient natural daylight. Zero sales pressure.
+                Still hesitating between sister shades or managing rosacea flare-ups? Meet 1-on-1 via private video link with a certified Zoe &ndash; Nude Cosmetics Bio-Cosmetology Specialist in ambient natural daylight. Zero sales pressure.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-4 text-xs font-sans text-[#FAF6F0]">
@@ -955,7 +955,7 @@ export const JournalPage: React.FC<JournalPageProps> = ({
                 <span>Book Virtual Session</span>
               </button>
               <span className="text-[10px] font-sans text-[#A89C94] mt-3">
-                Paris, New York & Worldwide time slots available
+                California (LA &amp; SF), New York &amp; Worldwide time slots available
               </span>
             </div>
           </div>
@@ -1133,7 +1133,7 @@ export const JournalPage: React.FC<JournalPageProps> = ({
                 <div className="my-8 bg-white border border-[#E8DFD5] rounded-2xl p-6 sm:p-7 shadow-xs">
                   <div className="text-[10px] font-sans font-bold tracking-[0.18em] uppercase text-[#85513f] mb-4 flex items-center justify-between">
                     <span>STEP-BY-STEP APPLICATION MASTERCLASS</span>
-                    <span className="text-[9px] text-[#807571]">Parisian Technique</span>
+                    <span className="text-[9px] text-[#807571]">AI Bio-Formulation Technique</span>
                   </div>
                   <div className="space-y-4">
                     {activeArticle.steps.map(step => (
@@ -1583,7 +1583,7 @@ export const JournalPage: React.FC<JournalPageProps> = ({
                   ATELIER RESERVATION CONFIRMED
                 </span>
                 <h3 className="font-serif text-2xl sm:text-3xl text-[#2B211E]">
-                  Your Paris Consultation is Booked
+                  Your Bio-Cosmetology Consultation is Booked
                 </h3>
                 <p className="font-sans text-xs text-[#5C504A] max-w-md mx-auto leading-relaxed">
                   We have sent your private Google Meet video room pass and digital daylight swatch checklist to <span className="font-semibold text-[#2B211E]">{bookingEmail}</span> for <span className="font-semibold text-[#2B211E]">{bookingDate} at {bookingTime}</span>.
@@ -1662,7 +1662,7 @@ export const JournalPage: React.FC<JournalPageProps> = ({
 
                   <div>
                     <label className="block text-[10px] uppercase font-bold text-[#6E625D] mb-1">
-                      Atelier Location & Timezone
+                      Lab Location & Timezone
                     </label>
                     <select
                       value={bookingAtelier}
@@ -1670,8 +1670,9 @@ export const JournalPage: React.FC<JournalPageProps> = ({
                       className="w-full bg-white border border-[#E8DFD5] rounded-lg px-3 py-2 text-xs font-sans text-[#2B211E] focus:outline-none focus:border-[#85513f]"
                     >
                       <option value="Virtual Global Concierge">Virtual Global Concierge (Direct Video Link)</option>
-                      <option value="Paris Ateliers (Rue Saint-Honoré)">Paris Atelier (Rue Saint-Honoré 1er)</option>
-                      <option value="New York Atelier (SoHo)">New York Atelier (SoHo Greene St)</option>
+                      <option value="Los Angeles R&D Bio-Lab (Silicon Beach)">Los Angeles R&amp;D Bio-Lab (Silicon Beach &amp; Venice Bio-District, LA, CA)</option>
+                      <option value="San Francisco Bioscience Lab (Mission Bay)">San Francisco Bioscience Lab (Mission Bay Biotech Corridor, SF, CA)</option>
+                      <option value="New York Atelier (SoHo)">New York Studio (SoHo, NY, NY)</option>
                     </select>
                   </div>
 
@@ -1696,9 +1697,9 @@ export const JournalPage: React.FC<JournalPageProps> = ({
                         onChange={e => setBookingTime(e.target.value)}
                         className="w-full bg-white border border-[#E8DFD5] rounded-lg px-3 py-2 text-xs font-sans text-[#2B211E] focus:outline-none focus:border-[#85513f]"
                       >
-                        <option value="10:00 CET (Paris Morning Daylight)">10:00 CET (Paris Morning Daylight)</option>
-                        <option value="14:30 CET (Paris Diffuse Midday)">14:30 CET (Paris Diffuse Midday)</option>
-                        <option value="17:00 CET (Golden Hour Session)">17:00 CET (Golden Hour Session)</option>
+                        <option value="10:00 PST (California Morning Daylight)">10:00 PST (California Morning Daylight)</option>
+                        <option value="14:30 PST (California Diffuse Midday)">14:30 PST (California Diffuse Midday)</option>
+                        <option value="17:00 PST (Pacific Golden Hour Session)">17:00 PST (Pacific Golden Hour Session)</option>
                         <option value="11:00 EST (New York Morning)">11:00 EST (New York Morning)</option>
                         <option value="15:00 EST (New York Afternoon)">15:00 EST (New York Afternoon)</option>
                       </select>

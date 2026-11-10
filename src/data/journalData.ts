@@ -28,7 +28,7 @@ export const SKIN_CLIMATE_FILTERS: { id: SkinClimate; label: string; badge: stri
 export const JOURNAL_CATEGORIES: { id: JournalCategory; label: string; count: number; description: string }[] = [
   { id: 'ALL', label: 'All Stories', count: 8, description: 'Complete library of skin narratives, masterclasses, and formulation science.' },
   { id: 'APPLICATION TIPS', label: 'Application Tips', count: 3, description: 'Master artist techniques for seamless, undetectable veil application.' },
-  { id: 'BIOMIMETIC SCIENCE', label: 'Biomimetic Science', count: 2, description: 'Inside our Parisian laboratory: bio-lipids, squalane matrices, and skin biology.' },
+  { id: 'BIOMIMETIC SCIENCE', label: 'Biomimetic Science', count: 2, description: 'Inside our Los Angeles & San Francisco bio-laboratories: AI algorithms, bio-lipids, squalane matrices, and skin biology.' },
   { id: 'LIVING RITUALS', label: 'Living Rituals', count: 2, description: 'Mindful 3-minute ceremonies to awaken, prep, and preserve radiant skin.' },
   { id: 'SHADE & COLOR SCIENCE', label: 'Shade & Color Science', count: 2, description: 'Mastering undertones, vascular flush vs true melanin, and sister shade matching.' },
   { id: 'SKIN PREP', label: 'Skin Prep', count: 2, description: 'Essential stratum corneum hydration and primer layering to eliminate flaking.' },
@@ -81,7 +81,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     readTime: '4 MIN READ',
     author: {
       name: 'Hélène Moreau',
-      role: 'Master Colorist & Formulation Director, Paris Atelier',
+      role: 'Master Colorist & AI Bio-Formulation Director, Los Angeles Lab',
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
     },
     heroImage: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80',
@@ -102,7 +102,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     scientificNote: 'Bio-Lipid Fusion utilizes cold-pressed botanical squalane whose molecular weight closely mirrors human sebum (approx. 422.8 g/mol). Surface tension drops by 45% when warmed to 35-37°C, enabling micro-pigments to slip into skin micro-relief rather than pooling in pores.',
     pullQuote: {
       text: 'Makeup should not disguise the person; it should look as though your own skin decided to behave impeccably.',
-      attribution: 'Hélène Moreau, 2027 Paris Atelier Session'
+      attribution: 'Hélène Moreau, 2027 California Bio-Lab Session'
     },
     steps: [
       {
@@ -210,7 +210,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     id: 'art-03',
     slug: 'three-minute-second-skin-ritual',
     title: 'The 3-Minute Second Skin Morning Ritual: Prep, Veil, and Cashmere',
-    subtitle: 'A Minimalist Parisian Beauty Ceremony for Modern Living',
+    subtitle: 'A Minimalist Bio-Cosmetology Ceremony for Modern Living',
     category: 'LIVING RITUALS',
     categoryLabel: 'Daily Atelier Ritual',
     publishedDate: 'February 2027',
@@ -224,7 +224,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     excerpt: 'Complexity is the enemy of elegance. When your makeup relies on 14 steps, powders, and fixers, your skin cannot breathe. Here is how three biomimetic essentials deliver luminous, unshakeable radiance in under 180 seconds.',
     atelierRule: 'Atelier Rule #3: Layer by density, not by habit. Hydration first, bio-lipid veil second, cushion touchpoints last.',
     contentParagraphs: [
-      'At our Rue Saint-Honoré atelier, clients often arrive carrying cosmetic bags overflowing with 25 products. Yet the most striking skin is almost always created with three deliberate gestures.',
+      'At our California research laboratories, clients often arrive carrying cosmetic bags overflowing with 25 products. Yet the most striking skin is almost always created with three deliberate gestures.',
       'Step One awakens the dermal reservoir with Bio-Lipid Restorative Primer. Containing 3% niacinamide and alpine willowherb, it refines pore appearance without plastic siloxanes that pill or suffocate.',
       'Step Two applies Skin Veil Luminous Tint. Rather than painting the entire face uniformly like a canvas, we deposit pigment only where tone needs harmonizing—the perimeter of the face remains bare and fresh.',
       'Step Three unites lips and cheeks with Radiant Glaze Dew Multi-Stick. Using the same warm earthen nude on both cheeks and lips creates monochromatic harmony that makes the eyes look immediately brighter.'
@@ -263,7 +263,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
       label: 'Rapid Barrier Harmonization Protocol',
       context: 'Demonstrated 94% retention of natural skin luminescence after 12 hours of active wear',
       duration: 'Atelier Time-Motion & Humidity Trials',
-      verifiedBy: 'Paris Atelier Aesthetics Division'
+      verifiedBy: 'California Bio-Cosmetology Research Division'
     },
     routineCapsule: {
       bundleTitle: 'The 3-Minute Second Skin Capsule',
@@ -347,7 +347,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     contentParagraphs: [
       'The era of the heavy instagram contour stripe has concluded. When viewed under the merciless glare of morning sunlight or direct conversation across a cafe table, grey-brown contour lines betray the very illusion they were meant to construct.',
       'Living human bone structure is defined by where ambient light catches the highest curved plane of the zygomatic arch. When that high plane is infused with healthy micro-circulation (warm peach-rose pigment and dewy lipid luster), the eye perceives depth naturally without needing dark shadows.',
-      'The "Z-Glow" technique was pioneered at our Paris masterclasses: you place the multi-stick at the outer corner of the brow bone, angle down across the high cheek apex, and feather slightly back toward the temple in a soft cursive "Z".',
+      'The "Z-Glow" technique was pioneered at our California masterclasses: you place the multi-stick at the outer corner of the brow bone, angle down across the high cheek apex, and feather slightly back toward the temple in a soft cursive "Z".',
       'The result is an instant visual lift that moves with your facial muscles, smiles, and laughter without splitting or collecting in fine expression lines.'
     ],
     keyTips: [
@@ -465,7 +465,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     scientificNote: 'Ceramide NP and plant phytosterols in a 3:1:1 physiological molar ratio accelerate barrier recovery by 58% compared to single-ingredient emollient oils.',
     pullQuote: {
       text: 'Treat your stratum corneum not as an enemy to be scrubbed, but as a living silk fabric to be conditioned.',
-      attribution: 'Sophie Laurent, Atelier Paris 2027'
+      attribution: 'Sophie Laurent, California Bio-Lab 2027'
     },
     steps: [
       {
@@ -542,7 +542,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
       metric: '100% CRI Match',
       label: 'Triple-Ambient Daylight Fidelity',
       context: 'Zero metameric failure under natural solar spectra across all tested shades',
-      duration: '4-Season Paris Trial',
+      duration: '4-Season California R&D Trial',
       verifiedBy: 'Laboratoire de Colorimétrie Cutanée'
     },
     routineCapsule: {
@@ -562,8 +562,8 @@ export const ADVISORY_BOARD_EXPERTS: AdvisoryExpert[] = [
     name: 'Dr. Éléonore de Courcel, MD, PhD',
     title: 'Chief Dermatological Biologist & Barrier Researcher',
     credentials: 'MD (Sorbonne Université), PhD in Corneobiology',
-    institution: 'Laboratoires de Recherche Cutanée Paris',
-    location: 'Paris, France',
+    institution: 'Bioscience Research Labs, San Francisco',
+    location: 'San Francisco, CA',
     portrait: 'https://images.unsplash.com/photo-1594824813583-128a11322055?auto=format&fit=crop&w=600&q=80',
     focusArea: 'Stratum Corneum Lipid Synthesis & Non-Comedogenic Pigment Dispersions',
     quote: '“True skin biocompatibility means the formulation mimics your skin’s own 3:1:1 lipid ratio. When makeup speaks the skin’s biological language, irritation ceases to exist.”',
@@ -573,9 +573,9 @@ export const ADVISORY_BOARD_EXPERTS: AdvisoryExpert[] = [
     id: 'adv-02',
     name: 'Laurent Vautier',
     title: 'Master Atelier Artist & Global Creative Colorist',
-    credentials: '28 Years Paris Haute Couture & Cinema Complexionist',
-    institution: 'Atelier ZoeNude Haute Beauté',
-    location: 'Paris & Milan',
+    credentials: '28 Years Bio-Cosmetics & Cinema Complexionist',
+    institution: 'Zoe – Nude Cosmetics Bio-Lab',
+    location: 'Los Angeles, CA',
     portrait: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
     focusArea: 'Dynamic Skin Reflection under Natural Midday Sun & 8K Macro Cinematography',
     quote: '“If I can see where the makeup begins and where the client’s skin ends through my lens, the formula has failed. ZoeNude is undetectable because it is living skin.”',
@@ -670,7 +670,7 @@ export const MASTERCLASS_REELS: MasterclassReel[] = [
     title: 'The 3-Second Epidermal Melt',
     subtitle: 'Body warmth activation on living skin',
     artist: 'Laurent Vautier',
-    artistRole: 'Paris Atelier Creative Director',
+    artistRole: 'California Lab Creative Director',
     duration: '0:24',
     thumbnail: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80',
     viewsCount: '142K views',

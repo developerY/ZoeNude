@@ -21,11 +21,11 @@ export const Header: React.FC<HeaderProps> = ({
   const location = useLocation();
 
   const announcements = [
-    'BEAUTIFULLY YOU. NATURALLY FREE. · CELEBRATE YOUR NATURAL BEAUTY',
-    'FEEL FREE AND COMFORTABLE IN YOUR OWN SKIN · NOTHING TO HIDE, EVERYTHING TO LOVE',
-    'ENHANCE YOUR BEAUTY. NEVER HIDE IT. · BEAUTY THAT FEELS LIKE YOU',
-    'COSMETICS SHOULD NEVER MAKE SOMEONE FEEL THAT THEIR NATURAL SELF ISN\'T ENOUGH',
-    'BE FREE. BE NATURAL. BE YOU. · COMPLIMENTARY SHADE SAMPLES WITH EVERY ORDER',
+    'ZOE · NUDE COSMETICS — BEAUTIFULLY YOU. NATURALLY FREE.',
+    'FEEL FREE AND COMFORTABLE IN YOUR OWN SKIN',
+    'NOTHING TO HIDE. EVERYTHING TO LOVE. · CELEBRATE YOUR NATURAL BEAUTY',
+    'KOCOLOR, ZOEWEAR & ZOEWAVE — THE RAINBOW OF LIVING SKIN',
+    'COMPLIMENTARY SHIPPING & SHADE EXCHANGE ON ALL ORDERS',
   ];
 
   useEffect(() => {
@@ -100,16 +100,16 @@ export const Header: React.FC<HeaderProps> = ({
 
   const aboutCategories = [
     {
-      title: 'The House of ZOE · Nude Cosmetics',
+      title: 'AI Bio-Cosmetology Lab',
       to: '/about',
-      badge: 'Heritage',
-      description: 'Our origin story, Parisian roots & philosophy of life',
+      badge: 'R&D Lab',
+      description: 'Our origin story, LA & SF labs & computational formulation',
     },
     {
       title: 'The Zoe Manifesto',
       to: '/manifesto',
-      badge: '5 Pillars',
-      description: 'Five foundational truths of living, naked grace',
+      badge: '3 Pillars',
+      description: 'AI bio-cosmetology, advanced bioscience & natural beauty',
       isHighlight: true,
     },
     {
@@ -125,10 +125,10 @@ export const Header: React.FC<HeaderProps> = ({
       description: 'Four commitments to skin biocompatibility',
     },
     {
-      title: 'Global Ateliers',
+      title: 'R&D Labs & Studios',
       to: '/about#ateliers',
-      badge: 'Salons',
-      description: 'Paris · New York · Athens bespoke consultations',
+      badge: 'LA · SF · NY',
+      description: 'Los Angeles · San Francisco · New York consultations',
     },
   ];
 
@@ -175,7 +175,7 @@ export const Header: React.FC<HeaderProps> = ({
       title: 'Virtual Atelier Concierge',
       to: '/journal#consultation',
       badge: 'Free · 15m',
-      description: 'Book 1-on-1 private video shade match with a Paris colorist',
+      description: 'Book 1-on-1 private video shade match with an AI color diagnostic specialist',
     },
     {
       title: 'The Journal (All Stories)',
@@ -703,14 +703,14 @@ export const Header: React.FC<HeaderProps> = ({
                         onClick={() => setMobileMenuOpen(false)}
                         className="block text-[11px] font-sans text-[#6E625D] hover:text-[#2B211E] py-0.5"
                       >
-                        The House of ZOE · Nude Cosmetics
+                        AI Bio-Cosmetology Lab (LA & SF)
                       </Link>
                       <Link
                         to="/manifesto"
                         onClick={() => setMobileMenuOpen(false)}
                         className="flex items-center justify-between text-[11px] font-sans font-medium text-[#85513f] hover:text-[#2B211E] py-0.5"
                       >
-                        <span>The Zoe Manifesto (5 Pillars)</span>
+                        <span>The Zoe Manifesto (3 Pillars)</span>
                         <span className="text-[9px] bg-[#d8a48f]/20 text-[#85513f] px-1.5 py-0.2 rounded font-semibold">
                           Ethos
                         </span>
@@ -727,7 +727,7 @@ export const Header: React.FC<HeaderProps> = ({
                         onClick={() => setMobileMenuOpen(false)}
                         className="block text-[11px] font-sans text-[#6E625D] hover:text-[#2B211E] py-0.5"
                       >
-                        Global Flagship Ateliers
+                        R&D Laboratories (Los Angeles & San Francisco)
                       </Link>
                     </div>
                   )}

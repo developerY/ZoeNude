@@ -44,7 +44,7 @@ const COLLECTIVE_PORTRAITS: ClientPortrait[] = [
     id: 'col-01',
     name: 'Elena Rostova',
     handle: '@elena_rostova',
-    city: 'Paris, France',
+    city: 'San Francisco, CA',
     image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80',
     shadeCode: '03',
     shadeName: 'Bisque Neutral',
@@ -101,7 +101,7 @@ const COLLECTIVE_PORTRAITS: ClientPortrait[] = [
     id: 'col-04',
     name: 'Amara Koné',
     handle: '@amara.kone',
-    city: 'Lagos & Paris',
+    city: 'Lagos & Los Angeles',
     image: 'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=700&q=80',
     shadeCode: '22',
     shadeName: 'Espresso Velvet',
@@ -237,7 +237,7 @@ const VERIFIED_REVIEWS: VerifiedReview[] = [
   },
   {
     id: 'rev-03',
-    author: 'Margot de Saint-Germain',
+    author: 'Margot Vance',
     shadeCode: '02',
     shadeName: 'Alabaster Cool',
     rating: 5,
@@ -832,7 +832,7 @@ export const CommunityPage: React.FC = () => {
                 <span>Welcome to The Zoe Collective, {joinHandle}!</span>
               </div>
               <p className="text-xs text-[#4E4542] leading-relaxed">
-                Your living skin story has been received by our Paris Atelier curation desk. We have dispatched your complimentary sample trio voucher code to <strong className="text-[#2B211E]">{joinEmail}</strong>.
+                Your living skin story has been received by our California Lab curation desk. We have dispatched your complimentary sample trio voucher code to <strong className="text-[#2B211E]">{joinEmail}</strong>.
               </p>
               <div className="bg-[#FAF6F0] p-3 rounded-lg border border-[#E8DFD5] text-center">
                 <span className="text-[10px] text-[#6E625D] uppercase tracking-wider block">Your Bespoke Collective Code</span>

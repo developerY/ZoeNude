@@ -83,7 +83,7 @@ export const Footer: React.FC = () => {
                 </li>
                 <li>
                   <Link to="/about" className="hover:text-[#2B211E] text-left transition-colors">
-                    About The House
+                    AI Bio-Cosmetology Lab (LA & SF)
                   </Link>
                 </li>
                 <li>
@@ -122,7 +122,7 @@ export const Footer: React.FC = () => {
                 </li>
                 <li>
                   <Link to="/community" className="hover:text-[#2B211E] transition-colors">
-                    Contact Atelier
+                    Contact California Labs
                   </Link>
                 </li>
               </ul>
@@ -165,13 +165,20 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Brand Philosophy Banner */}
-        <div className="py-6 border-b border-[#E8DFD5] text-center">
+        <div className="py-8 border-b border-[#E8DFD5] text-center space-y-3">
           <p className="font-serif italic text-sm sm:text-base text-[#4E4542] max-w-2xl mx-auto">
             &ldquo;Cosmetics should never make someone feel that their natural self isn&rsquo;t enough. They should make someone feel even more comfortable, confident, and free to be themselves.&rdquo;
           </p>
-          <span className="text-[10px] font-sans font-bold tracking-[0.22em] text-[#85513f] uppercase block mt-2">
-            ZOE · NUDE COSMETICS · CELEBRATE YOUR NATURAL BEAUTY
-          </span>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-[10px] sm:text-[11px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase">
+            <span>AI BIO-COSMETOLOGY</span>
+            <span className="text-[#d8c2b7]">·</span>
+            <span>ADVANCED BIOSCIENCE</span>
+            <span className="text-[#d8c2b7]">·</span>
+            <span>NATURAL BEAUTY</span>
+          </div>
+          <p className="font-sans text-xs text-[#6E625D] max-w-xl mx-auto">
+            &ldquo;Where Artificial Intelligence Meets the Science of Beauty.&rdquo; &mdash; Research &amp; Development Laboratories in Los Angeles &amp; San Francisco.
+          </p>
         </div>
 
         {/* Bottom Bar with Face Logo Emblem */}
@@ -209,7 +216,7 @@ export const Footer: React.FC = () => {
               TERMS OF SERVICE
             </a>
             <span className="text-[#807571]">
-              &copy; 2027 ZOE ATELIER INC. · BEAUTIFULLY YOU. NATURALLY FREE. ALL RIGHTS RESERVED.
+              &copy; 2027 ZOE &ndash; NUDE COSMETICS &middot; AI BIO-COSMETOLOGY LAB (LA &amp; SF) &middot; ALL RIGHTS RESERVED.
             </span>
           </div>
         </div>

@@ -208,7 +208,7 @@ export interface ConsultationBooking {
   clientEmail: string;
   date: string;
   timeSlot: string;
-  atelierLocation: 'Paris Ateliers (Rue Saint-Honoré)' | 'New York Atelier (SoHo)' | 'Virtual Global Concierge';
+  atelierLocation: 'Los Angeles R&D Bio-Lab (Silicon Beach)' | 'San Francisco Bioscience Lab (Mission Bay)' | 'New York Atelier (SoHo)' | 'Virtual Global Concierge';
   skinConcern: string;
   shadeAssistance: boolean;
   notes?: string;

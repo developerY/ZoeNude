@@ -1053,7 +1053,7 @@ export const ComplexionStudioPage: React.FC<ComplexionStudioPageProps> = ({
               Begin Your Living Complexion Journey
             </h2>
             <p className="font-sans text-xs sm:text-sm text-[#E8DFD5] max-w-lg mx-auto leading-relaxed">
-              Take the 90-second diagnostic or receive personal advice from our Parisian atelier colorists. Free exchanges on every bottle.
+              Take the 90-second diagnostic or receive personal advice from our AI bio-cosmetology specialists. Free exchanges on every bottle.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4 pt-4">

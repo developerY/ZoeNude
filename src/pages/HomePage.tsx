@@ -194,24 +194,24 @@ export const HomePage: React.FC<HomePageProps> = ({
             </div>
           </div>
 
-          {/* About The House Teaser Ribbon */}
+          {/* Zoe Nude Brand Philosophy Ribbon */}
           <div className="mt-10 bg-white/90 rounded-2xl p-6 sm:p-8 border border-[#EADED5] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
             <div className="space-y-1 text-center sm:text-left">
               <span className="text-[10px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase">
-                THE ATELIER HERITAGE
+                THE PHILOSOPHY OF ZOE · NUDE COSMETICS
               </span>
               <h3 className="font-serif text-xl sm:text-2xl text-[#2B211E]">
-                Seven Years of Biomimetic Formulation in Paris
+                Confidence Begins in Your Own Skin
               </h3>
               <p className="text-xs text-[#6E625D] max-w-xl">
-                Discover how our Parisian atelier crafts breathable bio-lipid cosmetics designed to make you feel comfortable, confident, and free to celebrate your natural beauty.
+                Cosmetics should make you feel even more comfortable, confident, and free to be yourself. Discover lightweight second-skin veils, lip cashmeres, and living cheek glazes.
               </p>
             </div>
             <Link
-              to="/about"
+              to="/manifesto"
               className="bg-[#2B211E] hover:bg-[#433430] text-[#FCF9F3] text-xs font-semibold px-6 py-3 rounded tracking-wider uppercase transition-colors whitespace-nowrap inline-flex items-center space-x-2"
             >
-              <span>Explore The House of Zoe</span>
+              <span>Read The Manifesto</span>
               <ArrowRight size={14} />
             </Link>
           </div>
@@ -372,6 +372,50 @@ export const HomePage: React.FC<HomePageProps> = ({
         onShopCollection={() => navigate('/shop')}
         onOpenQuiz={() => navigate('/shade-finder')}
       />
+
+      {/* 7. AT THE VERY BOTTOM: AI BIO-COSMETOLOGY LAB INNOVATION */}
+      <section className="bg-gradient-to-b from-[#140C09] via-[#1A100C] to-[#241712] text-[#FCF9F3] py-16 px-4 sm:px-6 lg:px-8 border-t border-[#3A2A23] relative overflow-hidden">
+        {/* Subtle computational background ambient glow */}
+        <div className="absolute top-0 right-1/4 w-[400px] h-[200px] bg-[#E27D86]/5 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-[400px] h-[200px] bg-[#5E8DB8]/5 rounded-full blur-[100px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="bg-white/[0.04] rounded-3xl p-8 sm:p-12 border border-white/10 backdrop-blur-sm flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">
+            <div className="space-y-4 max-w-2xl text-center lg:text-left">
+              <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-[#85513f]/30 border border-[#d8a48f]/30 text-[#e8b9a7] text-[10px] font-sans font-semibold tracking-[0.2em] uppercase">
+                <Sparkles size={12} className="text-[#e8b9a7]" />
+                <span>INNOVATION &amp; FORMULATION &middot; LOS ANGELES &amp; SAN FRANCISCO</span>
+              </div>
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-normal tracking-tight text-[#FAF6F0] leading-snug">
+                Where Artificial Intelligence Meets the Science of Beauty.
+              </h2>
+              <p className="font-sans text-xs sm:text-sm text-[#D1C7BD] leading-relaxed">
+                Behind Zoe &ndash; Nude Cosmetics is our AI-powered Bio-Cosmetology Lab with research and development in Los Angeles and San Francisco. We leverage computational intelligence and advanced bioscience to formulate second-skin cosmetics that enhance rather than mask your natural beauty.
+              </p>
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 text-[11px] font-sans text-[#D8A48F]">
+                <span>1. AI Bio-Cosmetology</span>
+                <span className="text-[#85513f]">&middot;</span>
+                <span>2. Advanced Bioscience</span>
+                <span className="text-[#85513f]">&middot;</span>
+                <span>3. Natural Beauty</span>
+              </div>
+            </div>
+
+            <div className="flex-shrink-0 flex flex-col items-center gap-3">
+              <Link
+                to="/about"
+                className="bg-[#FAF6F0] hover:bg-white text-[#140C09] text-xs font-sans font-bold tracking-[0.16em] uppercase px-8 py-4 rounded transition-all shadow-md hover:shadow-xl inline-flex items-center space-x-2"
+              >
+                <span>DISCOVER THE AI BIO-LAB</span>
+                <ArrowRight size={14} />
+              </Link>
+              <span className="text-[10px] text-[#A89C94] uppercase tracking-wider font-light">
+                The Future of Beauty Is Being Formulated
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

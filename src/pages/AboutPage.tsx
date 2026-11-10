@@ -80,40 +80,40 @@ export const AboutPage: React.FC = () => {
 
   const ateliers = [
     {
-      city: 'Paris Atelier',
-      neighborhood: '12 Place Vendôme, 75001 Paris',
-      description: 'Private color blending salon and custom formulation archive by appointment.',
-      hours: 'Mon – Sat, 10am – 7pm CET',
+      city: 'Los Angeles R&D Bio-Lab',
+      neighborhood: 'Silicon Beach & Venice Bio-District, LA, CA',
+      description: 'AI bio-cosmetology research, computational spectral mapping, and customized bio-lipid synthesis.',
+      hours: 'Mon – Fri, 9am – 6pm PST',
     },
     {
-      city: 'New York Studio',
-      neighborhood: '84 Wooster Street, SoHo, NY 10012',
-      description: 'Full chromatic shade diagnostics and personal artist masterclasses.',
+      city: 'San Francisco Bioscience Lab',
+      neighborhood: 'Mission Bay Biotech Corridor, SF, CA',
+      description: 'Advanced biological modeling, cellular lipid mechanics, and machine-learning shade intelligence.',
+      hours: 'Mon – Fri, 9am – 6pm PST',
+    },
+    {
+      city: 'New York Atelier & Studio',
+      neighborhood: 'SoHo, NY, NY',
+      description: 'Physical client diagnostics, live spectrometer consultations, and personal formulation masterclasses.',
       hours: 'Tue – Sun, 11am – 8pm EST',
-    },
-    {
-      city: 'Athens Flagship',
-      neighborhood: 'Kolonaki Square 4, Athens 106 73',
-      description: 'The spiritual birthplace of ZOE, celebrating classical Mediterranean botanicals.',
-      hours: 'Mon – Sat, 10am – 6pm EET',
     },
   ];
 
   const brandPillars = [
     {
-      quote: "Precision biomimetic pigment calibration engineered to mirror true vascular undertones without artificial masking.",
-      publication: "KoColor",
-      category: "Color Science",
+      quote: "AI-driven computational discovery and biomimetic pigment calibration engineered to mirror true vascular undertones.",
+      publication: "AI Bio-Cosmetology",
+      category: "Computational R&D",
     },
     {
-      quote: "Undetectable second-skin wear formulated with bio-lipids that move in harmony with your natural lipid barrier.",
-      publication: "ZoeWear",
-      category: "Living Wear",
+      quote: "Applying emerging biological science to cosmetic innovation with bio-lipids that move in harmony with natural skin.",
+      publication: "Advanced Bioscience",
+      category: "Cellular Mechanics",
     },
     {
-      quote: "Multi-dimensional light refraction and cellular frequency that preserves vitality and radiant skin luminescence.",
-      publication: "ZoeWave",
-      category: "Cellular Radiance",
+      quote: "Technology that enhances rather than masks individual beauty, celebrating who you are in your own skin.",
+      publication: "Natural Beauty",
+      category: "Human Ethos",
     },
   ];
 
@@ -128,15 +128,15 @@ export const AboutPage: React.FC = () => {
             <div className="lg:col-span-7 space-y-6 text-left">
               <div className="inline-flex items-center space-x-2 text-[11px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase">
                 <Compass size={14} />
-                <span>THE HOUSE OF ZOE · NUDE COSMETICS</span>
+                <span>AI-POWERED BIO-COSMETOLOGY LAB · LOS ANGELES & SAN FRANCISCO</span>
               </div>
 
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#2B211E] font-normal leading-[1.15]">
-                Beautifully You. Naturally Free.
+                The Future of Beauty Is Being Formulated.
               </h1>
 
               <p className="font-serif text-lg sm:text-xl text-[#85513f] italic font-normal">
-                Celebrate your natural beauty. Born from the conviction that cosmetics should never hide who you are.
+                Where Artificial Intelligence Meets the Science of Beauty.
               </p>
 
               {/* The Core Brand Philosophy Callout */}
@@ -157,10 +157,7 @@ export const AboutPage: React.FC = () => {
               </div>
 
               <p className="font-sans text-sm sm:text-base text-[#4E4542] leading-relaxed max-w-2xl font-light">
-                For decades, cosmetic formulateurs treated the human complexion as an imperfect surface to be 
-                primed, masked, and locked under layers of heavy talc and synthetic silicones. Zoe was created 
-                to tear down that illusion. We craft biomimetic cosmetics that honor the breath, texture, 
-                and radiance of living skin.
+                Zoe – Nude Cosmetics is an AI-powered Bio-Cosmetology Lab redefining the science of beauty. At the intersection of artificial intelligence, advanced bioscience, and cosmetic innovation, we are pioneering a new approach to cosmetic research and formulation. Every formulation begins with AI-driven R&D, leveraging cutting-edge biological science and computational intelligence to explore new possibilities.
               </p>
 
               <div className="pt-2 flex flex-wrap items-center gap-4">
@@ -268,7 +265,7 @@ export const AboutPage: React.FC = () => {
               {/* Top Film Badge */}
               <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/15 text-[10px] font-sans uppercase tracking-widest text-[#d8a48f] flex items-center space-x-1.5 shadow-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E27D86] animate-pulse" />
-                <span>4K Cinema Capture · Rue Saint-Honoré Archives</span>
+                <span>4K Cinema Capture · California Bio-Cosmetology Archives</span>
               </div>
 
               {/* Bottom Interactive Control Overlay */}
@@ -374,7 +371,7 @@ export const AboutPage: React.FC = () => {
                 />
               </div>
               <div className="absolute -top-4 -right-4 bg-[#2B211E] text-white text-[11px] font-sans tracking-[0.18em] px-4 py-2 rounded-full uppercase shadow-md">
-                EST. 2027 · PARIS
+                EST. 2027 · CALIFORNIA (LA & SF)
               </div>
             </div>
           </div>
@@ -382,32 +379,56 @@ export const AboutPage: React.FC = () => {
           {/* Narrative Content */}
           <div className="lg:col-span-7 order-1 lg:order-2 space-y-6">
             <span className="text-[10px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase block">
-              THE GENESIS
+              THE AI BIO-COSMETOLOGY LAB
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl text-[#2B211E] leading-snug">
-              Why Masking What Is Alive Makes No Sense
+              Where Artificial Intelligence Meets the Science of Beauty.
             </h2>
 
             <div className="space-y-4 text-xs sm:text-sm text-[#4E4542] leading-relaxed">
-              <p>
-                The House of ZOE began in a small boutique laboratory on the Rue de Castiglione in Paris. 
-                Founder Dr. Helena Vance, an aesthetic dermatologist, observed a persistent pattern: 
-                her patients worked tirelessly on skin health, yet covered their results with thick, 
-                occlusive foundations that suffocated pores, created micro-inflammation, and settled into fine lines.
+              <p className="font-medium text-[#2B211E]">
+                Zoe – Nude Cosmetics is an AI-powered Bio-Cosmetology Lab redefining the science of beauty.
               </p>
               <p>
-                Partnering with veteran Parisian editorial makeup artist Marc de Saint-Germain, Dr. Vance spent 
-                seven years developing the <strong>Bio-Lipid Matrix</strong>. Rather than suspending dry minerals 
-                in heavy silicones, they engineered skin-identical liposomes derived from Italian olive squalane, 
-                jojoba esters, and phytoceramides.
+                At the intersection of artificial intelligence, advanced bioscience, and cosmetic innovation, we are pioneering a new approach to cosmetic research and formulation.
+              </p>
+              <p>
+                Every formulation begins with AI-driven research and development, leveraging cutting-edge biological science, computational intelligence, and advanced formulation methodologies to explore new possibilities in cosmetic science.
+              </p>
+              <p>
+                With research and development laboratories in <strong>Los Angeles and San Francisco</strong>, Zoe – Nude Cosmetics is pushing the boundaries of what cosmetic formulations can achieve.
               </p>
               <blockquote className="border-l-2 border-[#85513f] pl-4 italic text-[#2B211E] text-sm sm:text-base font-serif my-4">
-                &ldquo;True elegance is not an illusion painted on the surface. It is the undeniable presence of life, illuminated from within.&rdquo;
+                &ldquo;We believe the future of beauty isn&rsquo;t about concealing who you are. It&rsquo;s about understanding, enhancing, and celebrating your natural beauty through science and innovation.&rdquo;
               </blockquote>
-              <p>
-                Today, ZOE Nude Cosmetics is worn by actresses, editors, brides, and people worldwide who demand makeup 
-                that looks like breathtaking skin—even under bright morning sun or high-definition cameras.
+              <p className="font-medium text-[#85513f]">
+                This is more than the evolution of cosmetics. It&rsquo;s a paradigm shift in how beauty is researched, developed, and experienced.
               </p>
+
+              {/* 3 Pillars */}
+              <div className="pt-2 space-y-2">
+                <div className="p-3 bg-[#FAF6F0] rounded-xl border border-[#E8DFD5] flex items-start space-x-2.5">
+                  <span className="font-mono text-xs font-bold text-[#85513f]">1.</span>
+                  <div>
+                    <strong className="text-xs text-[#2B211E] font-sans">AI Bio-Cosmetology:</strong>{' '}
+                    <span className="text-xs text-[#6E625D]">AI-driven research, discovery, and formulation.</span>
+                  </div>
+                </div>
+                <div className="p-3 bg-[#FAF6F0] rounded-xl border border-[#E8DFD5] flex items-start space-x-2.5">
+                  <span className="font-mono text-xs font-bold text-[#85513f]">2.</span>
+                  <div>
+                    <strong className="text-xs text-[#2B211E] font-sans">Advanced Bioscience:</strong>{' '}
+                    <span className="text-xs text-[#6E625D]">Applying emerging biological science to cosmetic innovation.</span>
+                  </div>
+                </div>
+                <div className="p-3 bg-[#FAF6F0] rounded-xl border border-[#E8DFD5] flex items-start space-x-2.5">
+                  <span className="font-mono text-xs font-bold text-[#85513f]">3.</span>
+                  <div>
+                    <strong className="text-xs text-[#2B211E] font-sans">Natural Beauty:</strong>{' '}
+                    <span className="text-xs text-[#6E625D]">Technology that enhances rather than masks individual beauty.</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -566,13 +587,13 @@ export const AboutPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
             <span className="text-[10px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase">
-              VISIT OUR SPACES
+              R&D LABORATORIES & STUDIOS
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl text-[#2B211E]">
-              The ZOE Flagship Ateliers
+              Our Bio-Cosmetology Labs
             </h2>
             <p className="text-xs sm:text-sm text-[#6E625D]">
-              Experience private shade blending, one-on-one undertone mapping, and formulation consultations.
+              With research and development laboratories in Los Angeles and San Francisco, pushing the boundaries of what cosmetic formulations can achieve.
             </p>
           </div>
 

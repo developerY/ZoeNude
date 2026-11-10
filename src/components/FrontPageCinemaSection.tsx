@@ -16,13 +16,14 @@ export const FrontPageCinemaSection: React.FC<FrontPageCinemaSectionProps> = ({
 }) => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
+  const [isCcOn, setIsCcOn] = useState(false);
 
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // YouTube embed URL with JS API enabled so postMessage commands work
+  // YouTube embed URL with cc_load_policy=0 to turn off captions by default
   const embedUrl = videoId
-    ? `https://www.youtube-nocookie.com/embed/${videoId}?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=${videoId}&playsinline=1&controls=0&disablekb=1&modestbranding=1&rel=0&iv_load_policy=3&origin=${
+    ? `https://www.youtube-nocookie.com/embed/${videoId}?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=${videoId}&playsinline=1&controls=0&disablekb=1&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&hl=en&origin=${
         typeof window !== 'undefined' ? window.location.origin : ''
       }`
     : '';
@@ -46,6 +47,10 @@ export const FrontPageCinemaSection: React.FC<FrontPageCinemaSectionProps> = ({
         JSON.stringify({ event: 'listening' }),
         '*'
       );
+      // Suppress closed captions so they do not show under the controls
+      postMessageToPlayer('unloadModule', ['captions']);
+      postMessageToPlayer('setOption', ['captions', 'track', {}]);
+      postMessageToPlayer('setOption', ['cc', 'track', {}]);
     }
   };
 
@@ -103,10 +108,27 @@ export const FrontPageCinemaSection: React.FC<FrontPageCinemaSectionProps> = ({
     if (isMuted) {
       postMessageToPlayer('unMute');
       postMessageToPlayer('setVolume', [100]);
+      // Maintain caption preference
+      if (!isCcOn) {
+        postMessageToPlayer('unloadModule', ['captions']);
+        postMessageToPlayer('setOption', ['captions', 'track', {}]);
+      }
       setIsMuted(false);
     } else {
       postMessageToPlayer('mute');
       setIsMuted(true);
+    }
+  };
+
+  const toggleCc = () => {
+    if (isCcOn) {
+      postMessageToPlayer('unloadModule', ['captions']);
+      postMessageToPlayer('setOption', ['captions', 'track', {}]);
+      setIsCcOn(false);
+    } else {
+      postMessageToPlayer('loadModule', ['captions']);
+      postMessageToPlayer('setOption', ['captions', 'track', { languageCode: 'en' }]);
+      setIsCcOn(true);
     }
   };
 
@@ -120,6 +142,10 @@ export const FrontPageCinemaSection: React.FC<FrontPageCinemaSectionProps> = ({
 
     postMessageToPlayer('seekTo', [0, true]);
     postMessageToPlayer('playVideo');
+    if (!isCcOn) {
+      postMessageToPlayer('unloadModule', ['captions']);
+      postMessageToPlayer('setOption', ['captions', 'track', {}]);
+    }
     setIsPlaying(true);
   };
 
@@ -163,7 +189,11 @@ export const FrontPageCinemaSection: React.FC<FrontPageCinemaSectionProps> = ({
           </div>
 
           {/* Bottom Interactive Control Overlay matching About Page */}
-          <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-auto bg-gradient-to-t from-black/85 via-black/50 to-transparent p-3 sm:p-4 rounded-2xl backdrop-blur-xs z-20">
+          <div
+            className={`absolute left-4 right-4 flex items-center justify-between pointer-events-auto bg-gradient-to-t from-black/85 via-black/50 to-transparent p-3 sm:p-4 rounded-2xl backdrop-blur-xs z-20 transition-all duration-300 ${
+              isCcOn ? 'bottom-16 sm:bottom-20' : 'bottom-4'
+            }`}
+          >
             <div className="flex items-center space-x-2.5 sm:space-x-3">
               <button
                 type="button"
@@ -194,6 +224,23 @@ export const FrontPageCinemaSection: React.FC<FrontPageCinemaSectionProps> = ({
               >
                 <RotateCcw size={14} />
               </button>
+
+              {/* CC Toggle Button */}
+              {videoId && (
+                <button
+                  type="button"
+                  onClick={toggleCc}
+                  className={`w-9 h-9 rounded-full flex items-center justify-center transition-all focus:outline-none cursor-pointer text-[10px] font-mono font-bold tracking-wider ${
+                    isCcOn
+                      ? 'bg-[#d8a48f] text-[#2B211E] shadow-sm font-black'
+                      : 'bg-black/60 hover:bg-black/80 text-white/80 hover:text-white border border-white/20'
+                  }`}
+                  aria-label={isCcOn ? 'Hide closed captions' : 'Show closed captions'}
+                  title={isCcOn ? 'Hide closed captions' : 'Show closed captions'}
+                >
+                  CC
+                </button>
+              )}
             </div>
 
             <div className="flex items-center space-x-2 text-[11px] font-sans text-[#D1C7BD]">

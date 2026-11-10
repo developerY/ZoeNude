@@ -132,30 +132,33 @@ export const AboutPage: React.FC = () => {
               </div>
 
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#2B211E] font-normal leading-[1.15]">
-                Beauty, Without the Evidence.
+                Beautifully You. Naturally Free.
               </h1>
 
               <p className="font-serif text-lg sm:text-xl text-[#85513f] italic font-normal">
-                Born from the Greek word &zeta;&omega;&eta; (&ldquo;vital living force&rdquo;) and the conviction that makeup should never conceal who you are.
+                Celebrate your natural beauty. Born from the conviction that cosmetics should never hide who you are.
               </p>
 
-              {/* The Name Clarification Callout */}
-              <div className="p-4 bg-white/90 rounded-2xl border border-[#E8DFD5] space-y-1.5 shadow-2xs">
+              {/* The Core Brand Philosophy Callout */}
+              <div className="p-5 bg-white/95 rounded-2xl border border-[#85513f]/30 space-y-2 shadow-xs">
                 <div className="flex items-center space-x-2">
-                  <span className="font-serif font-bold text-sm tracking-wide text-[#2B211E]">ZOE</span>
+                  <span className="font-serif font-bold text-sm tracking-wide text-[#2B211E]">THE UNDERLYING PHILOSOPHY</span>
                   <span className="text-[#85513f] font-light text-base">·</span>
-                  <span className="font-sans font-semibold text-[10.5px] uppercase tracking-wider text-[#85513f]">THE CLASS OF NUDE COSMETICS</span>
+                  <span className="font-sans font-semibold text-[10.5px] uppercase tracking-wider text-[#85513f]">CELEBRATE YOUR NATURAL BEAUTY</span>
                 </div>
-                <p className="font-sans text-xs text-[#5C4D47] leading-relaxed font-light">
-                  When you say our name, we invite an intentional breath. We are not named &ldquo;Zoe Nude.&rdquo; 
-                  <strong> ZOE</strong> is our brand—the sacred pulse of living skin. 
-                  <strong> Nude Cosmetics</strong> is the standard we formulate: biomimetic cosmetics engineered without the masking evidence of synthetic silicones.
+                <p className="font-serif italic text-sm sm:text-base text-[#2B211E] leading-relaxed">
+                  &ldquo;Cosmetics should never make someone feel that their natural self isn&rsquo;t enough. They should make someone feel even more comfortable, confident, and free to be themselves.&rdquo;
                 </p>
+                <div className="pt-2 flex flex-wrap gap-2 text-[10.5px] font-sans text-[#6E625D]">
+                  <span className="bg-[#FAF2EB] px-2.5 py-0.5 rounded-full">Feel free. Feel beautiful. Feel like you.</span>
+                  <span className="bg-[#FAF2EB] px-2.5 py-0.5 rounded-full">Enhance your beauty. Never hide it.</span>
+                  <span className="bg-[#FAF2EB] px-2.5 py-0.5 rounded-full">Nothing to hide. Everything to love.</span>
+                </div>
               </div>
 
               <p className="font-sans text-sm sm:text-base text-[#4E4542] leading-relaxed max-w-2xl font-light">
                 For decades, cosmetic formulateurs treated the human complexion as an imperfect surface to be 
-                primed, masked, and locked under layers of heavy talc and synthetic silicones. ZOE was created 
+                primed, masked, and locked under layers of heavy talc and synthetic silicones. Zoe was created 
                 to tear down that illusion. We craft biomimetic cosmetics that honor the breath, texture, 
                 and radiance of living skin.
               </p>
@@ -183,7 +186,7 @@ export const AboutPage: React.FC = () => {
                 <div className="rounded-3xl overflow-hidden border-2 border-[#E8DFD5] shadow-2xl bg-[#F5EDE2] p-2 group hover:shadow-3xl transition-shadow duration-500">
                   <img
                     src="/assets/aistudio/Gemini_Generated_Image_t98fi1t98fi1t98f__1__ebb6a715.jpeg"
-                    alt="ZoeNude Cosmetics Embossed Insignia - Beauty, Without the Evidence"
+                    alt="Zoe · Nude Cosmetics Embossed Insignia - Beautifully You. Naturally Free."
                     className="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.02]"
                   />
                 </div>
@@ -303,7 +306,7 @@ export const AboutPage: React.FC = () => {
                 </div>
 
                 <div className="flex items-center space-x-2 text-[11px] font-sans text-[#D1C7BD]">
-                  <span className="hidden sm:inline font-serif italic text-white text-xs">“Beauty, Without the Evidence”</span>
+                  <span className="hidden sm:inline font-serif italic text-white text-xs">“Beautifully You. Naturally Free.”</span>
                   <span className="hidden sm:inline">·</span>
                   <span className="text-[#d8a48f] text-[10px] font-mono uppercase tracking-wider">
                     {isMuted ? 'Muted Preview (Tap to Unmute)' : 'Sound Active'}
@@ -366,7 +369,7 @@ export const AboutPage: React.FC = () => {
               <div className="rounded-3xl overflow-hidden border border-[#E8DFD5] shadow-lg aspect-[4/5] bg-[#F2EDE4]">
                 <img
                   src="/assets/aistudio/Gemini_Generated_Image_bj462jbj462jbj46_fa1cb5df.jpeg"
-                  alt="ZoeNude Muse & Formulation Origins"
+                  alt="Zoe · Nude Cosmetics Muse & Formulation Origins"
                   className="w-full h-full object-cover"
                 />
               </div>

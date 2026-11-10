@@ -43,31 +43,31 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             {/* Brand & Category Hierarchy Eyebrow */}
             <div className="flex flex-wrap items-center gap-2">
               <div className="inline-flex items-center space-x-2 px-3 py-1.5 text-[11px] font-sans font-semibold tracking-[0.14em] uppercase rounded-full bg-white/95 text-[#2B211E] border border-[#e8dfd5] shadow-2xs">
-                <span className="font-serif font-bold tracking-wider text-[#2B211E] text-xs">ZOE</span>
+                <span className="font-serif font-bold tracking-wider text-[#2B211E] text-xs">Zoe</span>
                 <span className="text-[#85513f] font-light">·</span>
-                <span className="text-[#85513f] tracking-[0.18em] text-[10px]">THE CLASS OF NUDE COSMETICS</span>
+                <span className="text-[#85513f] tracking-[0.18em] text-[10px]">NUDE COSMETICS</span>
               </div>
-              <span className="inline-flex items-center px-2.5 py-1 text-[10px] font-sans font-medium tracking-[0.12em] uppercase rounded-full bg-[#f4ece7] text-[#85513f] border border-[#e8dfd5]/80">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#85513f] mr-1.5"></span>
-                ATELIER RELEASE 04
+              <span className="inline-flex items-center px-2.5 py-1 text-[10px] font-sans font-semibold tracking-[0.14em] uppercase rounded-full bg-[#f4ece7] text-[#85513f] border border-[#e8dfd5]/80">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#85513f] mr-1.5 animate-pulse"></span>
+                CELEBRATE YOUR NATURAL BEAUTY
               </span>
             </div>
 
             {/* Subhead with Concept Breakdown */}
             <div className="flex items-center space-x-2 text-[11px] font-sans font-semibold tracking-[0.2em] text-[#6E625D] uppercase">
-              <span>PHILOSOPHY NO. 01</span>
+              <span>BEAUTIFULLY YOU</span>
               <span>·</span>
-              <span className="text-[#85513f] italic font-serif capitalize text-xs tracking-normal">Zoe (life) · Nude Cosmetics (the discipline)</span>
+              <span className="text-[#85513f] italic font-serif capitalize text-xs tracking-normal">Naturally Free</span>
             </div>
 
             {/* Display Hero Headline */}
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-[58px] leading-[1.12] tracking-[-0.02em] text-[#2B211E] font-normal">
-              Beauty, Without the Evidence.
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-[56px] leading-[1.12] tracking-[-0.02em] text-[#2B211E] font-normal">
+              Feel Free and Comfortable in Your Own Skin.
             </h1>
 
             {/* Body Description */}
             <p className="font-sans text-base sm:text-lg leading-relaxed text-[#4E4542] max-w-xl font-light">
-              <strong>ZOE</strong> represents the unmasked vitality of living skin. <strong>Nude Cosmetics</strong> is our exacting discipline: biomimetic formulations engineered with bio-identical lipids that dissolve on contact, moving in unison with your epidermis without the weight of synthetic makeup.
+              Cosmetics should never make someone feel that their natural self isn&rsquo;t enough. They should make you feel even more comfortable, confident, and free to be yourself. <strong>Enhance your beauty. Never hide it.</strong>
             </p>
 
             {/* CTA Buttons */}
@@ -89,6 +89,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   className="transform transition-transform group-hover:translate-x-1"
                 />
               </button>
+            </div>
+
+            {/* Mode Affirmations Row */}
+            <div className="flex flex-wrap items-center gap-2 pt-1 text-[11px] font-sans text-[#5C4D47]">
+              <span className="inline-flex items-center bg-white/90 border border-[#E8DFD5] px-3 py-1 rounded-full shadow-2xs font-light">
+                ✨ Nothing to hide. Everything to love.
+              </span>
+              <span className="inline-flex items-center bg-white/90 border border-[#E8DFD5] px-3 py-1 rounded-full shadow-2xs font-light">
+                🌿 Beauty that feels like you.
+              </span>
+              <span className="inline-flex items-center bg-white/90 border border-[#E8DFD5] px-3 py-1 rounded-full shadow-2xs font-light">
+                💫 Less hiding. More shining.
+              </span>
             </div>
 
             {/* The Rainbow of Living Skin Spectrum & Brand Pillars */}

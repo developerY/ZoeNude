@@ -55,10 +55,10 @@ export const ManifestoModal: React.FC<ManifestoModalProps> = ({
               />
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl text-[#2B211E] font-normal">
-              Beauty, Without the Evidence.
+              Beautifully You. Naturally Free.
             </h2>
             <p className="font-sans text-xs sm:text-sm text-[#4E4542] max-w-xl mx-auto leading-relaxed">
-              From the ancient Greek <em>Zoe</em> (&zeta;&omega;&eta;), meaning vitality, life, and living breath. We believe true luxury cosmetics should never mask your humanity.
+              Cosmetics should never make someone feel that their natural self isn&rsquo;t enough. They should make someone feel even more comfortable, confident, and free to be themselves. Celebrate your natural beauty.
             </p>
           </div>
 

@@ -18,17 +18,36 @@ export const QuietConfidenceSection: React.FC<QuietConfidenceSectionProps> = ({
       <div className="max-w-4xl mx-auto relative z-10 space-y-6">
         <span className="inline-flex items-center space-x-1.5 text-[11px] font-sans font-semibold tracking-[0.24em] uppercase text-[#d8a48f]">
           <Sparkles size={13} />
-          <span>QUIET CONFIDENCE</span>
+          <span>CELEBRATE YOUR NATURAL BEAUTY</span>
         </span>
 
         <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#FCF9F3] font-normal tracking-[-0.01em]">
-          Less Makeup. More You.
+          Beautifully You. Naturally Free.
         </h2>
 
         <p className="font-sans text-sm sm:text-base text-[#dcdad4] max-w-2xl mx-auto leading-relaxed font-light">
-          Discover the clean biomimetic formulas that celebrate who you are when you&rsquo;re
-          not trying to be anyone else.
+          Cosmetics should never make someone feel that their natural self isn&rsquo;t enough. They should make you feel even more comfortable, confident, and free to be yourself.
         </p>
+
+        {/* 4 Affirmations Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 max-w-3xl mx-auto text-left">
+          <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-1">
+            <span className="text-[10px] uppercase font-bold tracking-wider text-[#d8a48f] block">Mantra 01</span>
+            <p className="text-xs text-[#FAF6F0] font-serif leading-snug">Feel free. Feel beautiful. Feel like you.</p>
+          </div>
+          <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-1">
+            <span className="text-[10px] uppercase font-bold tracking-wider text-[#d8a48f] block">Mantra 02</span>
+            <p className="text-xs text-[#FAF6F0] font-serif leading-snug">Nothing to hide. Everything to love.</p>
+          </div>
+          <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-1">
+            <span className="text-[10px] uppercase font-bold tracking-wider text-[#d8a48f] block">Mantra 03</span>
+            <p className="text-xs text-[#FAF6F0] font-serif leading-snug">Enhance your beauty. Never hide it.</p>
+          </div>
+          <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-1">
+            <span className="text-[10px] uppercase font-bold tracking-wider text-[#d8a48f] block">Mantra 04</span>
+            <p className="text-xs text-[#FAF6F0] font-serif leading-snug">Less hiding. More shining.</p>
+          </div>
+        </div>
 
         {/* Action Buttons matching Image_9 */}
         <div className="pt-4 flex flex-wrap items-center justify-center gap-4">

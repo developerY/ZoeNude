@@ -1,5 +1,6 @@
 import React from 'react';
 import { HeroSection } from '../components/HeroSection';
+import { FrontPageCinemaSection } from '../components/FrontPageCinemaSection';
 import { RainbowSpectrumSection } from '../components/RainbowSpectrumSection';
 import { QuietConfidenceSection } from '../components/QuietConfidenceSection';
 import { PRODUCTS, PILLARS, ALL_SHADES } from '../data/cosmeticsData';
@@ -30,7 +31,10 @@ export const HomePage: React.FC<HomePageProps> = ({
         featuredProduct={PRODUCTS[0]}
       />
 
-      {/* 2. The Rainbow of Living Skin & Botanical Color Spectrum */}
+      {/* 2. Atelier Cinéma Showcase: Living Nude in Motion (Auto-starts & cycles forever) */}
+      <FrontPageCinemaSection videoId="qtA4q3gqk4w" />
+
+      {/* 3. The Rainbow of Living Skin & Botanical Color Spectrum */}
       <RainbowSpectrumSection
         onAddToCart={onAddToCart}
         onQuickView={onQuickView}
@@ -43,10 +47,10 @@ export const HomePage: React.FC<HomePageProps> = ({
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
               <span className="text-[11px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase block mb-1">
-                THE ZOE MANIFESTO
+                THE ZOE MANIFESTO · CELEBRATE YOUR NATURAL BEAUTY
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl text-[#2B211E] font-normal">
-                Five Pillars of Naked Grace
+                Beautifully You. Naturally Free.
               </h2>
             </div>
             <Link
@@ -99,68 +103,92 @@ export const HomePage: React.FC<HomePageProps> = ({
             ))}
           </div>
 
-          {/* Dedicated Concept Showcase: ZOE (pause) NUDE COSMETICS */}
-          <div className="mt-14 bg-gradient-to-r from-[#FAF0E6] via-[#FCF7F1] to-[#F5ECE1] rounded-3xl p-8 sm:p-10 border border-[#EADED5] shadow-sm relative overflow-hidden">
-            <div className="text-center max-w-2xl mx-auto space-y-3 mb-8">
-              <div className="inline-flex items-center space-x-2 text-[10px] font-sans font-semibold tracking-[0.22em] text-[#85513f] uppercase bg-white/80 px-3 py-1 rounded-full border border-[#E8DFD5]">
-                <span>THE IDENTITY CODE</span>
+          {/* Dedicated Philosophy Centerpiece: Celebrate Your Natural Beauty */}
+          <div className="mt-14 bg-gradient-to-r from-[#FAF0E6] via-[#FCF7F1] to-[#F5ECE1] rounded-3xl p-8 sm:p-12 border border-[#EADED5] shadow-sm relative overflow-hidden">
+            <div className="text-center max-w-3xl mx-auto space-y-4 mb-10">
+              <div className="inline-flex items-center space-x-2 text-[10px] font-sans font-semibold tracking-[0.24em] text-[#85513f] uppercase bg-white/85 px-4 py-1.5 rounded-full border border-[#E8DFD5] shadow-2xs">
+                <span>ZOE · NUDE COSMETICS</span>
+                <span>·</span>
+                <span className="text-[#2B211E]">THE BRAND PHILOSOPHY</span>
               </div>
-              <h3 className="font-serif text-2xl sm:text-3xl text-[#2B211E] tracking-tight">
-                Why We Say <span className="italic">ZOE</span> <span className="text-[#85513f] font-light">·</span> <span className="underline decoration-[#85513f]/40 underline-offset-4">NUDE COSMETICS</span>
+
+              <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#2B211E] tracking-tight font-normal">
+                Beautifully You. Naturally Free.
               </h3>
-              <p className="font-sans text-xs sm:text-sm text-[#5C4D47] leading-relaxed">
-                When you visit our house, we invite a deliberate pause. We are not named &ldquo;Zoe Nude&rdquo; as a singular label. 
-                <strong> ZOE</strong> is the living entity; <strong>Nude Cosmetics</strong> is the standard we pioneer.
-              </p>
+
+              <div className="p-6 bg-white/95 rounded-2xl border border-[#85513f]/25 shadow-xs max-w-2xl mx-auto">
+                <p className="font-serif italic text-base sm:text-lg text-[#2B211E] leading-relaxed">
+                  &ldquo;Cosmetics should never make someone feel that their natural self isn&rsquo;t enough. They should make someone feel even more comfortable, confident, and free to be themselves.&rdquo;
+                </p>
+                <span className="text-[10px] font-sans font-bold tracking-[0.2em] text-[#85513f] uppercase block mt-3">
+                  — CELEBRATE YOUR NATURAL BEAUTY
+                </span>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {/* Pillar 1: ZOE */}
-              <div className="bg-white/95 rounded-2xl p-6 border border-[#E8DFD5] space-y-3 shadow-2xs relative">
+            {/* 4 Thematic Mode Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {/* Pillar 1 */}
+              <div className="bg-white/90 rounded-2xl p-6 border border-[#E8DFD5] space-y-3 shadow-2xs hover:border-[#85513f] transition-all">
                 <div className="flex items-center justify-between">
-                  <span className="font-serif text-lg font-bold text-[#2B211E] tracking-wider">
-                    ZOE <span className="text-xs font-sans text-[#85513f] font-normal tracking-normal">(noun)</span>
-                  </span>
+                  <h4 className="font-serif text-lg font-bold text-[#2B211E]">
+                    Feel Free & Comfortable in Your Own Skin
+                  </h4>
                   <span className="text-[10px] bg-[#FAF2EB] text-[#85513f] px-2 py-0.5 rounded-full font-semibold uppercase">
-                    The Living Force
-                  </span>
-                </div>
-                <div className="h-[2px] w-12 bg-[#85513f] rounded-full" />
-                <p className="text-xs text-[#4E4542] leading-relaxed font-light">
-                  From classical Greek <em className="font-serif">&zeta;&omega;&eta;</em>—the elemental pulse of life itself. Skin is not a passive canvas to be primed and hidden; it is a breathing organ of radiance, circulation, and warmth.
-                </p>
-              </div>
-
-              {/* Pillar 2: THE PAUSE */}
-              <div className="bg-white/95 rounded-2xl p-6 border border-[#85513f]/30 space-y-3 shadow-2xs relative bg-gradient-to-b from-white to-[#FAF4ED]">
-                <div className="flex items-center justify-between">
-                  <span className="font-serif text-lg font-bold text-[#85513f] tracking-widest flex items-center space-x-1.5">
-                    <span>( PAUSE )</span>
-                    <span className="w-2 h-2 rounded-full bg-[#85513f] animate-ping" />
-                  </span>
-                  <span className="text-[10px] bg-[#85513f] text-white px-2 py-0.5 rounded-full font-semibold uppercase">
-                    The Breath
+                    Mantra 01
                   </span>
                 </div>
                 <div className="h-[2px] w-12 bg-[#E27D86] rounded-full" />
                 <p className="text-xs text-[#4E4542] leading-relaxed font-light">
-                  The stillness where you shed the weight of full-coverage masks and heavy talc powders. That breath of fresh air where you choose skin harmony over artificial disguise.
+                  Feel free. Feel beautiful. Feel like you. Feel comfortable in your own skin. Be free. Be natural. Be you. Love your skin. Embrace your beauty. Confidence begins in your own skin.
                 </p>
               </div>
 
-              {/* Pillar 3: NUDE COSMETICS */}
-              <div className="bg-white/95 rounded-2xl p-6 border border-[#E8DFD5] space-y-3 shadow-2xs relative">
+              {/* Pillar 2 */}
+              <div className="bg-white/90 rounded-2xl p-6 border border-[#E8DFD5] space-y-3 shadow-2xs hover:border-[#85513f] transition-all">
                 <div className="flex items-center justify-between">
-                  <span className="font-serif text-lg font-bold text-[#2B211E] tracking-wider">
-                    NUDE COSMETICS
-                  </span>
+                  <h4 className="font-serif text-lg font-bold text-[#2B211E]">
+                    Nothing to Hide. Everything to Love.
+                  </h4>
                   <span className="text-[10px] bg-[#FAF2EB] text-[#85513f] px-2 py-0.5 rounded-full font-semibold uppercase">
-                    The Discipline
+                    Mantra 02
                   </span>
                 </div>
-                <div className="h-[2px] w-12 bg-[#2B211E] rounded-full" />
+                <div className="h-[2px] w-12 bg-[#F08060] rounded-full" />
                 <p className="text-xs text-[#4E4542] leading-relaxed font-light">
-                  Not a single beige swatch or temporary trend, but an exacting cosmetic classification: bio-lipid matrices (KoColor, ZoeWear, ZoeWave) that fuse with natural sebum for undetectable, living beauty.
+                  Your beauty. Your way. Enhance your beauty. Never hide it. Beauty that feels like you. Reveal your natural beauty. Simply you. Naturally beautiful. Let your natural beauty shine.
+                </p>
+              </div>
+
+              {/* Pillar 3 */}
+              <div className="bg-white/90 rounded-2xl p-6 border border-[#E8DFD5] space-y-3 shadow-2xs hover:border-[#85513f] transition-all">
+                <div className="flex items-center justify-between">
+                  <h4 className="font-serif text-lg font-bold text-[#2B211E]">
+                    Beauty Begins With Being Yourself
+                  </h4>
+                  <span className="text-[10px] bg-[#FAF2EB] text-[#85513f] px-2 py-0.5 rounded-full font-semibold uppercase">
+                    Mantra 03
+                  </span>
+                </div>
+                <div className="h-[2px] w-12 bg-[#E9B858] rounded-full" />
+                <p className="text-xs text-[#4E4542] leading-relaxed font-light">
+                  Be comfortable. Be confident. Be beautiful. Your skin. Your beauty. Your freedom. Own your beauty. Own your confidence. Celebrate the beauty of being you. Feel good in the skin you&rsquo;re in.
+                </p>
+              </div>
+
+              {/* Pillar 4 */}
+              <div className="bg-white/90 rounded-2xl p-6 border border-[#E8DFD5] space-y-3 shadow-2xs hover:border-[#85513f] transition-all">
+                <div className="flex items-center justify-between">
+                  <h4 className="font-serif text-lg font-bold text-[#2B211E]">
+                    Beauty Without Boundaries
+                  </h4>
+                  <span className="text-[10px] bg-[#FAF2EB] text-[#85513f] px-2 py-0.5 rounded-full font-semibold uppercase">
+                    Mantra 04
+                  </span>
+                </div>
+                <div className="h-[2px] w-12 bg-[#689775] rounded-full" />
+                <p className="text-xs text-[#4E4542] leading-relaxed font-light">
+                  Naturally beautiful. Unapologetically you. The freedom to be beautiful. Less hiding. More shining. Beauty, without pretending. Simply beautiful. Completely you. Uncover confidence. Embrace beauty.
                 </p>
               </div>
             </div>
@@ -176,14 +204,14 @@ export const HomePage: React.FC<HomePageProps> = ({
                 Seven Years of Biomimetic Formulation in Paris
               </h3>
               <p className="text-xs text-[#6E625D] max-w-xl">
-                Discover how Dr. Helena Vance and Parisian master colorists developed breathable bio-lipid cosmetics that refuse to mask your living skin.
+                Discover how our Parisian atelier crafts breathable bio-lipid cosmetics designed to make you feel comfortable, confident, and free to celebrate your natural beauty.
               </p>
             </div>
             <Link
               to="/about"
               className="bg-[#2B211E] hover:bg-[#433430] text-[#FCF9F3] text-xs font-semibold px-6 py-3 rounded tracking-wider uppercase transition-colors whitespace-nowrap inline-flex items-center space-x-2"
             >
-              <span>The House of ZOE · Nude Cosmetics</span>
+              <span>Explore The House of Zoe</span>
               <ArrowRight size={14} />
             </Link>
           </div>

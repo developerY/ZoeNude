@@ -297,44 +297,44 @@ export const PRODUCTS: Product[] = [
 export const PILLARS: Pillar[] = [
   {
     number: '01',
-    tag: 'THE FLAGSHIP CONCEPT',
-    badge: 'MOST DISTINCTIVE',
-    title: 'Beauty, Without the Evidence.',
-    description: 'The boldest expression of our founding ethos. Featherlight, breathable micro-pigments suspend in organic botanical squalane to dissolve invisibly while balancing redness.',
-    extendedStory: 'This is the foundational soul of ZoeNude. We reject the cakey masks of traditional cosmetic cover-ups. Our philosophy is predicated on harmony: makeup should be so closely matched to your skin physiology that onlookers cannot discern where your biology ends and our formula begins.',
+    tag: 'CORE PHILOSOPHY',
+    badge: 'FOUNDING ETHOS',
+    title: 'Beautifully You. Naturally Free.',
+    description: 'Cosmetics should never make someone feel that their natural self isn\'t enough. They should make you feel even more comfortable, confident, and free to be yourself.',
+    extendedStory: 'The foundational ethos of Zoe Nude Cosmetics. Cosmetics should never make someone feel that their natural self isn\'t enough. They should make someone feel even more comfortable, confident, and free to be themselves. Confidence begins in your own skin: enhance your beauty, never hide it.',
     image: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=800&q=80'
   },
   {
     number: '02',
-    tag: 'IDENTITY',
+    tag: 'AUTHENTIC RADIANCE',
     badge: 'CUSTOMER-FIRST',
-    title: 'Still You. Just Radiant.',
-    description: 'Emotionally grounded. Our products never disguise your expressions, freckles, or character—they simply light your features from within.',
-    extendedStory: 'The most emotionally resonant pillar of our atelier. Beauty does not mean erasing your lived history, laughter lines, or unique freckles. Our formulas are engineered to highlight the genuine luminance already present in your features.',
+    title: 'Nothing to Hide. Everything to Love.',
+    description: 'Enhance your beauty. Never hide it. Beauty that feels like you—celebrating every natural nuance, contour, and expression.',
+    extendedStory: 'Your beauty. Your way. Reveal your natural beauty. Simply you. Naturally beautiful. Let your natural beauty shine. Be beautiful. Be authentic. Be you.',
     image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80'
   },
   {
     number: '03',
-    tag: 'VERSATILITY',
-    title: 'Your Skin. Elevated.',
-    description: 'Where high performance merges seamlessly into restorative dermatology. Biomimetic ceramides and plant sterols enrich every application.',
-    extendedStory: 'The boundary between makeup and dermatological skincare is formally erased. Each tint, glaze, and powder is active skincare in disguise, reinforcing the lipid barrier while enhancing complexion.',
+    tag: 'SKIN FREEDOM',
+    title: 'Feel Free & Comfortable in Your Own Skin.',
+    description: 'Feel free. Feel beautiful. Feel like you. Featherweight second-skin wear formulated with bio-lipids that move in harmony with your natural lipid barrier.',
+    extendedStory: 'Love your skin. Embrace your beauty. Confidence begins in your own skin. Beautifully you. Naturally free. When you are comfortable in your own skin, your genuine radiance commands the room.',
     image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80'
   },
   {
     number: '04',
-    tag: 'THE PROMISE',
-    title: 'Less Makeup. More You.',
-    description: 'Effortless three-minute morning routines. One swipe melts into the epidermis, eliminating chalky layers and creasing.',
-    extendedStory: 'Modern life does not require a 15-step masking ritual. With intuitive melting textures and fingertip-friendly application, you achieve flawless editorial skin in under 180 seconds.',
+    tag: 'UNAPOLOGETIC CONFIDENCE',
+    title: 'Less Hiding. More Shining.',
+    description: 'Beauty begins with being yourself. Beauty, without pretending. Uncover confidence and embrace effortless, unmasked grace.',
+    extendedStory: 'Be comfortable. Be confident. Be beautiful. Your skin. Your beauty. Your freedom. Own your beauty. Own your confidence. Celebrate the beauty of being you. Feel good in the skin you\'re in.',
     image: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=80'
   },
   {
     number: '05',
-    tag: 'ZOE ("LIFE")',
-    title: 'Life Looks Good on You.',
-    description: 'From the Greek \'Zoe\', life itself. 100% vegan, refillable glass vessels, and circular cruelty-free formulation crafted for vibrant everyday living.',
-    extendedStory: 'Rooted in the ancient Greek word for vitality and living energy. Zoe is cosmetics designed for moving, dancing, sweating, hugging, and living fully without worrying about makeup sliding or fading.',
+    tag: 'CELEBRATE LIFE',
+    title: 'Celebrate Your Natural Beauty.',
+    description: 'Beauty without boundaries. Naturally beautiful. Unapologetically you. The freedom to be completely you.',
+    extendedStory: 'Rooted in the ancient Greek Zoe (\'vital living force\'). Cosmetics designed for moving, dancing, sweating, hugging, and living fully. Beauty without boundaries. Simply beautiful. Completely you.',
     image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80',
     isDarkCard: true
   }

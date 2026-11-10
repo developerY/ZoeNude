@@ -1,6 +1,6 @@
 {
-  "name": "ZoeNude Cosmetics",
-  "description": "Beauty, Without the Evidence. Skin-first biomimetic luxury cosmetics celebrating living skin structure with undetectable, breathable wear.",
+  "name": "Zoe · Nude Cosmetics",
+  "description": "Beautifully You. Naturally Free. Cosmetics should never make someone feel that their natural self isn't enough. They should make you feel even more comfortable, confident, and free to be yourself.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

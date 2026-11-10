@@ -21,10 +21,11 @@ export const Header: React.FC<HeaderProps> = ({
   const location = useLocation();
 
   const announcements = [
-    'ZOE · DEFINING THE CATEGORY OF NUDE COSMETICS · LIVING BIOMIMETIC BEAUTY',
-    'COMPLIMENTARY STANDARD SHIPPING & SHADE MATCHING SAMPLES WITH EVERY ORDER',
-    'THE ATELIER GUARANTEE: FREE COLOR EXCHANGES UNTIL YOUR COMPLEXION SINGS',
-    'ZOE (LIFE) · FORMULATED WITH 94% SECOND-SKIN BIO-LIPID VEIL',
+    'BEAUTIFULLY YOU. NATURALLY FREE. · CELEBRATE YOUR NATURAL BEAUTY',
+    'FEEL FREE AND COMFORTABLE IN YOUR OWN SKIN · NOTHING TO HIDE, EVERYTHING TO LOVE',
+    'ENHANCE YOUR BEAUTY. NEVER HIDE IT. · BEAUTY THAT FEELS LIKE YOU',
+    'COSMETICS SHOULD NEVER MAKE SOMEONE FEEL THAT THEIR NATURAL SELF ISN\'T ENOUGH',
+    'BE FREE. BE NATURAL. BE YOU. · COMPLIMENTARY SHADE SAMPLES WITH EVERY ORDER',
   ];
 
   useEffect(() => {
@@ -260,8 +261,8 @@ export const Header: React.FC<HeaderProps> = ({
                       NUDE COSMETICS
                     </span>
                   </div>
-                  <span className="text-[8px] sm:text-[8.5px] tracking-[0.28em] text-[#8C7A73] uppercase font-sans font-medium -mt-0.5">
-                    The Class of Living Beauty
+                  <span className="text-[8px] sm:text-[8.5px] tracking-[0.24em] text-[#8C7A73] uppercase font-sans font-medium -mt-0.5">
+                    Beautifully You · Naturally Free
                   </span>
                 </div>
               </Link>

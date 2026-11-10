@@ -164,6 +164,16 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
+        {/* Brand Philosophy Banner */}
+        <div className="py-6 border-b border-[#E8DFD5] text-center">
+          <p className="font-serif italic text-sm sm:text-base text-[#4E4542] max-w-2xl mx-auto">
+            &ldquo;Cosmetics should never make someone feel that their natural self isn&rsquo;t enough. They should make someone feel even more comfortable, confident, and free to be themselves.&rdquo;
+          </p>
+          <span className="text-[10px] font-sans font-bold tracking-[0.22em] text-[#85513f] uppercase block mt-2">
+            ZOE · NUDE COSMETICS · CELEBRATE YOUR NATURAL BEAUTY
+          </span>
+        </div>
+
         {/* Bottom Bar with Face Logo Emblem */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-sans text-[#6E625D]">
           <div className="flex items-center space-x-3.5">
@@ -186,7 +196,7 @@ export const Footer: React.FC = () => {
               </div>
               <span className="hidden sm:inline text-[#E8DFD5]">•</span>
               <span className="italic font-serif text-xs text-[#85513f]">
-                Beauty, Without the Evidence.
+                Beautifully You. Naturally Free.
               </span>
             </div>
           </div>
@@ -199,7 +209,7 @@ export const Footer: React.FC = () => {
               TERMS OF SERVICE
             </a>
             <span className="text-[#807571]">
-              &copy; 2027 ZOE ATELIER INC. · PIONEERS OF NUDE COSMETICS. ALL RIGHTS RESERVED.
+              &copy; 2027 ZOE ATELIER INC. · BEAUTIFULLY YOU. NATURALLY FREE. ALL RIGHTS RESERVED.
             </span>
           </div>
         </div>

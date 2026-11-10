@@ -28,6 +28,10 @@ import {
   Globe,
   Percent,
   Play,
+  Pause,
+  Volume2,
+  VolumeX,
+  RotateCcw,
   UserCheck,
   ExternalLink,
   Layers,
@@ -88,6 +92,33 @@ export const JournalPage: React.FC<JournalPageProps> = ({
 
   // Selected reel for video masterclass modal
   const [activeReel, setActiveReel] = useState<MasterclassReel | null>(null);
+  const [reelPlaying, setReelPlaying] = useState(true);
+  const [reelMuted, setReelMuted] = useState(true);
+  const reelVideoRef = React.useRef<HTMLVideoElement>(null);
+
+  const toggleReelPlay = () => {
+    if (!reelVideoRef.current) return;
+    if (reelPlaying) {
+      reelVideoRef.current.pause();
+      setReelPlaying(false);
+    } else {
+      reelVideoRef.current.play();
+      setReelPlaying(true);
+    }
+  };
+
+  const toggleReelMute = () => {
+    if (!reelVideoRef.current) return;
+    reelVideoRef.current.muted = !reelMuted;
+    setReelMuted(!reelMuted);
+  };
+
+  const handleReelRestart = () => {
+    if (!reelVideoRef.current) return;
+    reelVideoRef.current.currentTime = 0;
+    reelVideoRef.current.play();
+    setReelPlaying(true);
+  };
 
   // Selected ingredient for Codex detail modal
   const [activeIngredient, setActiveIngredient] = useState<IngredientCodexEntry | null>(null);
@@ -1401,37 +1432,83 @@ export const JournalPage: React.FC<JournalPageProps> = ({
             className="w-full max-w-xl bg-[#2B211E] text-white rounded-3xl overflow-hidden shadow-2xl border border-[#433430] animate-scaleUp"
             onClick={e => e.stopPropagation()}
           >
-            <div className="relative aspect-[16/10] bg-black overflow-hidden">
-              <img
-                src={activeReel.thumbnail}
-                alt={activeReel.title}
-                className="w-full h-full object-cover opacity-90"
+            <div className="relative aspect-[16/10] bg-black overflow-hidden group">
+              <video
+                ref={reelVideoRef}
+                src="/assets/aistudio/Mermaid_emerging_from_seashell_20261022111320_e18bee16.mp4"
+                poster={activeReel.thumbnail}
+                autoPlay
+                loop
+                muted={reelMuted}
+                playsInline
+                controls={false}
+                disablePictureInPicture
+                disableRemotePlayback
+                controlsList="nodownload nofullscreen noremoteplayback noplaybackrate"
+                tabIndex={-1}
+                className="w-full h-full object-cover pointer-events-none select-none"
+                onPlay={() => setReelPlaying(true)}
+                onPause={() => setReelPlaying(false)}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2B211E] via-transparent to-black/40" />
 
               {/* Close Button */}
               <button
                 onClick={() => setActiveReel(null)}
-                className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-white hover:text-[#2B211E] transition-colors"
+                className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-white hover:text-[#2B211E] transition-colors z-30 focus:outline-none"
                 aria-label="Close video"
               >
                 <X size={18} />
               </button>
 
-              {/* Mock Ambient Video Player Playhead */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md border border-white/40 flex items-center justify-center text-white">
-                  <Play size={28} className="ml-1 fill-white" />
-                </div>
+              {/* Top Film Badge */}
+              <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/15 text-[10px] font-sans uppercase tracking-widest text-[#d8a48f] flex items-center space-x-1.5 shadow-sm z-20 pointer-events-none">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E27D86] animate-pulse" />
+                <span>4K Masterclass Reel · {activeReel.duration}</span>
               </div>
 
-              <div className="absolute bottom-4 left-4 right-4">
-                <span className="text-[10px] font-mono bg-black/60 px-2 py-0.5 rounded text-[#d8a48f]">
-                  4K 60FPS AMBIENT DEMO · {activeReel.duration}
-                </span>
-                <h3 className="font-serif text-2xl text-white mt-1">
-                  {activeReel.title}
-                </h3>
+              {/* Bottom Interactive Control Overlay matching About Page */}
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-auto bg-gradient-to-t from-black/85 via-black/50 to-transparent p-3 sm:p-4 rounded-2xl backdrop-blur-xs z-20">
+                <div className="flex items-center space-x-2.5 sm:space-x-3">
+                  <button
+                    type="button"
+                    onClick={toggleReelPlay}
+                    className="w-10 h-10 rounded-full bg-white/90 hover:bg-white text-[#2B211E] flex items-center justify-center transition-transform hover:scale-105 shadow-md focus:outline-none cursor-pointer"
+                    aria-label={reelPlaying ? 'Pause film' : 'Play film'}
+                    title={reelPlaying ? 'Pause film' : 'Play film'}
+                  >
+                    {reelPlaying ? <Pause size={16} /> : <Play size={16} className="ml-0.5" />}
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={toggleReelMute}
+                    className="w-9 h-9 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors focus:outline-none cursor-pointer"
+                    aria-label={reelMuted ? 'Unmute film' : 'Mute film'}
+                    title={reelMuted ? 'Unmute film' : 'Mute film'}
+                  >
+                    {reelMuted ? <VolumeX size={15} /> : <Volume2 size={15} />}
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={handleReelRestart}
+                    className="w-9 h-9 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors focus:outline-none cursor-pointer"
+                    aria-label="Restart film"
+                    title="Restart film"
+                  >
+                    <RotateCcw size={14} />
+                  </button>
+                </div>
+
+                <div className="flex items-center space-x-2 text-[11px] font-sans text-[#D1C7BD]">
+                  <span className="hidden sm:inline font-serif italic text-white text-xs">
+                    “Beautifully You. Naturally Free.”
+                  </span>
+                  <span className="hidden sm:inline">·</span>
+                  <span className="text-[#d8a48f] text-[10px] font-mono uppercase tracking-wider">
+                    {reelMuted ? 'Muted Preview (Tap to Unmute)' : 'Sound Active'}
+                  </span>
+                </div>
               </div>
             </div>
 

@@ -257,7 +257,12 @@ export const AboutPage: React.FC = () => {
                 loop
                 muted={isMuted}
                 playsInline
-                className="w-full h-full object-cover"
+                controls={false}
+                disablePictureInPicture
+                disableRemotePlayback
+                controlsList="nodownload nofullscreen noremoteplayback noplaybackrate"
+                tabIndex={-1}
+                className="w-full h-full object-cover pointer-events-none select-none"
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
               />

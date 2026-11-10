@@ -86,7 +86,11 @@ export const ShopPage: React.FC<ShopPageProps> = ({
       </section>
 
       {/* Living Nude in Motion Video Showcase */}
-      <FrontPageCinemaSection videoId="qtA4q3gqk4w" />
+      <FrontPageCinemaSection
+        videoId="qtA4q3gqk4w"
+        badgeTitle="4K Cinema Capture · Formulations in Motion"
+        quote="“Pure Living Dimension. Second-Skin Veil.”"
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
         {/* Controls Bar: Categories, Search, Sort */}

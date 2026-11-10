@@ -5,7 +5,7 @@ interface FrontPageCinemaSectionProps {
 }
 
 export const FrontPageCinemaSection: React.FC<FrontPageCinemaSectionProps> = ({
-  videoId = 'qtA4q3gqk4w',
+  videoId = 'EzTReAG2Ctk',
 }) => {
   // Pure video: autostart and cycle forever, no controls, no annotations, no suggestions
   const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&playsinline=1&controls=0&disablekb=1&modestbranding=1&rel=0&iv_load_policy=3`;

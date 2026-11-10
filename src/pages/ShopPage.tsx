@@ -4,6 +4,7 @@ import { PRODUCTS } from '../data/cosmeticsData';
 import { Product, Shade } from '../types';
 import { ProductCard } from '../components/ProductCard';
 import { SlidersHorizontal, Search, ArrowUpDown, Sparkles } from 'lucide-react';
+import { FrontPageCinemaSection } from '../components/FrontPageCinemaSection';
 
 interface ShopPageProps {
   onAddToCart: (product: Product, shade: Shade) => void;
@@ -83,6 +84,9 @@ export const ShopPage: React.FC<ShopPageProps> = ({
           </p>
         </div>
       </section>
+
+      {/* Living Nude in Motion Video Showcase */}
+      <FrontPageCinemaSection videoId="qtA4q3gqk4w" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
         {/* Controls Bar: Categories, Search, Sort */}

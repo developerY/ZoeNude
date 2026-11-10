@@ -32,7 +32,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       />
 
       {/* 2. Atelier Cinéma Showcase: Living Nude in Motion (Auto-starts & cycles forever) */}
-      <FrontPageCinemaSection videoId="qtA4q3gqk4w" />
+      <FrontPageCinemaSection videoId="EzTReAG2Ctk" />
 
       {/* 3. The Rainbow of Living Skin & Botanical Color Spectrum */}
       <RainbowSpectrumSection

@@ -186,7 +186,7 @@ export const Footer: React.FC = () => {
           <div className="flex items-center space-x-3.5">
             <Link to="/" className="w-9 h-9 rounded-full overflow-hidden border border-[#d2c3c0] bg-[#f5ede2] p-0.5 flex-shrink-0 shadow-xs hover:border-[#85513f] transition-all">
               <img
-                src="/favicon.png"
+                src={`${import.meta.env.BASE_URL}favicon.png`}
                 alt="ZOE Logo Emblem"
                 className="w-full h-full object-cover rounded-full"
               />

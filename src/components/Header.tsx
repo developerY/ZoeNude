@@ -242,7 +242,7 @@ export const Header: React.FC<HeaderProps> = ({
                 {/* Main Logo Emblem with the Venus face */}
                 <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border border-[#d2c3c0] bg-[#f5ede2] p-0.5 flex-shrink-0 shadow-xs group-hover:border-[#85513f] transition-all">
                   <img
-                    src="/favicon.png"
+                    src={`${import.meta.env.BASE_URL}favicon.png`}
                     alt="ZOE Logo Emblem"
                     className="w-full h-full object-cover rounded-full"
                   />

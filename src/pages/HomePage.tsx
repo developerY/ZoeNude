@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { HeroSection } from '../components/HeroSection';
-import { FrontPageCinemaSection } from '../components/FrontPageCinemaSection';
 import { RainbowSpectrumSection } from '../components/RainbowSpectrumSection';
 import { QuietConfidenceSection } from '../components/QuietConfidenceSection';
 import { PRODUCTS, PILLARS, ALL_SHADES } from '../data/cosmeticsData';
 import { JOURNAL_ARTICLES } from '../data/journalData';
 import { Product, Shade } from '../types';
 import { Link, useNavigate } from 'react-router-dom';
-import { ArrowRight, Sparkles, ShieldCheck, Gift, Droplets, Star, BookOpen } from 'lucide-react';
+import { ArrowRight, Sparkles, ShieldCheck, Gift, Droplets, Star, BookOpen, Play, Pause, Volume2, VolumeX, RotateCcw } from 'lucide-react';
 import { ProductCard } from '../components/ProductCard';
 
 interface HomePageProps {
@@ -20,6 +19,85 @@ export const HomePage: React.FC<HomePageProps> = ({
   onQuickView,
 }) => {
   const navigate = useNavigate();
+  const manifestoIframeRef = useRef<HTMLIFrameElement>(null);
+  const [isManifestoPlaying, setIsManifestoPlaying] = useState(true);
+  const [isManifestoMuted, setIsManifestoMuted] = useState(true);
+
+  const postMessageToManifestoPlayer = (func: string, args: any[] = []) => {
+    if (manifestoIframeRef.current && manifestoIframeRef.current.contentWindow) {
+      manifestoIframeRef.current.contentWindow.postMessage(
+        JSON.stringify({ event: 'command', func, args }),
+        '*'
+      );
+    }
+  };
+
+  const toggleManifestoPlay = () => {
+    if (isManifestoPlaying) {
+      postMessageToManifestoPlayer('pauseVideo');
+      setIsManifestoPlaying(false);
+    } else {
+      postMessageToManifestoPlayer('playVideo');
+      setIsManifestoPlaying(true);
+    }
+  };
+
+  const toggleManifestoMute = () => {
+    if (isManifestoMuted) {
+      postMessageToManifestoPlayer('unMute');
+      postMessageToManifestoPlayer('setVolume', [100]);
+      setIsManifestoMuted(false);
+    } else {
+      postMessageToManifestoPlayer('mute');
+      setIsManifestoMuted(true);
+    }
+  };
+
+  const handleManifestoRestart = () => {
+    postMessageToManifestoPlayer('seekTo', [0, true]);
+    postMessageToManifestoPlayer('playVideo');
+    setIsManifestoPlaying(true);
+  };
+
+  const essentialsIframeRef = useRef<HTMLIFrameElement>(null);
+  const [isEssentialsPlaying, setIsEssentialsPlaying] = useState(true);
+  const [isEssentialsMuted, setIsEssentialsMuted] = useState(true);
+
+  const postMessageToEssentialsPlayer = (func: string, args: any[] = []) => {
+    if (essentialsIframeRef.current && essentialsIframeRef.current.contentWindow) {
+      essentialsIframeRef.current.contentWindow.postMessage(
+        JSON.stringify({ event: 'command', func, args }),
+        '*'
+      );
+    }
+  };
+
+  const toggleEssentialsPlay = () => {
+    if (isEssentialsPlaying) {
+      postMessageToEssentialsPlayer('pauseVideo');
+      setIsEssentialsPlaying(false);
+    } else {
+      postMessageToEssentialsPlayer('playVideo');
+      setIsEssentialsPlaying(true);
+    }
+  };
+
+  const toggleEssentialsMute = () => {
+    if (isEssentialsMuted) {
+      postMessageToEssentialsPlayer('unMute');
+      postMessageToEssentialsPlayer('setVolume', [100]);
+      setIsEssentialsMuted(false);
+    } else {
+      postMessageToEssentialsPlayer('mute');
+      setIsEssentialsMuted(true);
+    }
+  };
+
+  const handleEssentialsRestart = () => {
+    postMessageToEssentialsPlayer('seekTo', [0, true]);
+    postMessageToEssentialsPlayer('playVideo');
+    setIsEssentialsPlaying(true);
+  };
 
   return (
     <div className="space-y-0 animate-fadeIn">
@@ -31,8 +109,6 @@ export const HomePage: React.FC<HomePageProps> = ({
         featuredProduct={PRODUCTS[0]}
       />
 
-      {/* 2. Atelier Cinéma Showcase: Living Nude in Motion (Auto-starts & cycles forever) */}
-      <FrontPageCinemaSection videoId="EzTReAG2Ctk" />
 
       {/* 3. The Rainbow of Living Skin & Botanical Color Spectrum */}
       <RainbowSpectrumSection
@@ -44,22 +120,91 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section className="bg-gradient-to-br from-[#FAF2EB] via-[#FDF6F0] to-[#F6EDE4] py-20 border-b border-[#EADED5] relative overflow-hidden">
         <div className="absolute top-0 right-10 w-96 h-96 bg-[#E27D86]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-            <div>
-              <span className="text-[11px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase block mb-1">
+          {/* Header Row: Manifesto Title & Philosophy on Left + Cinema Video on Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12">
+            {/* Left: Manifesto Headline & Ethos */}
+            <div className="lg:col-span-5 space-y-4">
+              <span className="text-[11px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase block">
                 THE ZOE MANIFESTO · CELEBRATE YOUR NATURAL BEAUTY
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl text-[#2B211E] font-normal">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#2B211E] font-normal leading-tight">
                 Beautifully You. Naturally Free.
               </h2>
+              <p className="font-sans text-xs sm:text-sm text-[#4E4542] leading-relaxed font-light">
+                Cosmetics should never make someone feel that their natural self isn&rsquo;t enough. They should make someone feel even more comfortable, confident, and free to be themselves.
+              </p>
+              <div className="pt-2">
+                <Link
+                  to="/manifesto"
+                  className="inline-flex items-center space-x-2 text-xs font-sans font-semibold tracking-[0.16em] uppercase text-[#2B211E] hover:text-[#85513f] transition-colors group"
+                >
+                  <span>EXPLORE COMPLETE MANIFESTO</span>
+                  <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
             </div>
-            <Link
-              to="/manifesto"
-              className="inline-flex items-center space-x-2 text-xs font-sans font-semibold tracking-[0.16em] uppercase text-[#2B211E] hover:text-[#85513f] transition-colors group"
-            >
-              <span>EXPLORE COMPLETE MANIFESTO</span>
-              <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
-            </Link>
+
+            {/* Right: The Video next to the Header Title */}
+            <div className="lg:col-span-7">
+              <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black shadow-xl border border-[#3A2A23] group">
+                <iframe
+                  ref={manifestoIframeRef}
+                  src={`https://www.youtube-nocookie.com/embed/EzTReAG2Ctk?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=EzTReAG2Ctk&playsinline=1&controls=0&disablekb=1&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&hl=en&origin=${
+                    typeof window !== 'undefined' ? window.location.origin : ''
+                  }`}
+                  title="Zoe · Nude Cosmetics Manifesto Cinema"
+                  className="w-full h-full border-0 absolute inset-0 pointer-events-none select-none"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+
+                {/* Top Film Badge */}
+                <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/15 text-[10px] font-sans uppercase tracking-widest text-[#d8a48f] flex items-center space-x-1.5 shadow-sm z-20 pointer-events-none">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#E27D86] animate-pulse" />
+                  <span>Atelier Film Capture</span>
+                </div>
+
+                {/* Bottom Interactive Control Overlay */}
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-auto bg-gradient-to-t from-black/85 via-black/50 to-transparent p-2.5 sm:p-3 rounded-xl backdrop-blur-xs z-20">
+                  <div className="flex items-center space-x-2">
+                    <button
+                      type="button"
+                      onClick={toggleManifestoPlay}
+                      className="w-8 h-8 rounded-full bg-white/90 hover:bg-white text-[#2B211E] flex items-center justify-center transition-transform hover:scale-105 shadow-sm cursor-pointer"
+                      aria-label={isManifestoPlaying ? 'Pause film' : 'Play film'}
+                    >
+                      {isManifestoPlaying ? <Pause size={13} /> : <Play size={13} className="ml-0.5" />}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={toggleManifestoMute}
+                      className="w-7 h-7 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors cursor-pointer"
+                      aria-label={isManifestoMuted ? 'Unmute film' : 'Mute film'}
+                    >
+                      {isManifestoMuted ? <VolumeX size={12} /> : <Volume2 size={12} />}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleManifestoRestart}
+                      className="w-7 h-7 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors cursor-pointer"
+                      aria-label="Restart film"
+                    >
+                      <RotateCcw size={12} />
+                    </button>
+                  </div>
+
+                  <div className="flex items-center space-x-2 text-[10px] text-[#D1C7BD]">
+                    <span className="hidden sm:inline font-serif italic text-white text-[11px]">
+                      &ldquo;Naturally Free.&rdquo;
+                    </span>
+                    <span className="hidden sm:inline">&middot;</span>
+                    <span className="text-[#d8a48f] font-mono uppercase tracking-wider">
+                      {isManifestoMuted ? 'Muted Preview' : 'Sound Active'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -222,22 +367,91 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section className="bg-gradient-to-br from-[#F8F6F1] via-[#F3F4ED] to-[#FAF3EC] py-20 border-b border-[#EADED5] relative overflow-hidden">
         <div className="absolute bottom-0 left-10 w-80 h-80 bg-[#689775]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-            <div>
-              <span className="text-[11px] font-sans font-semibold tracking-[0.2em] text-[#6E625D] uppercase block mb-1">
+          {/* Header Row: Atelier Staples / Bespoke Essentials + First Cinema Video */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12">
+            {/* Left: Section Title & Navigation */}
+            <div className="lg:col-span-5 space-y-4">
+              <span className="text-[11px] font-sans font-semibold tracking-[0.2em] text-[#6E625D] uppercase block">
                 ATELIER STAPLES
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl text-[#2B211E] font-normal">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#2B211E] font-normal leading-tight">
                 Bespoke Essentials
               </h2>
+              <p className="font-sans text-xs sm:text-sm text-[#4E4542] leading-relaxed font-light">
+                Handcrafted formulations engineered with second-skin breathability, bio-identical lipids, and living mineral undertones to enhance your authentic radiance.
+              </p>
+              <div className="pt-2">
+                <Link
+                  to="/shop"
+                  className="inline-flex items-center space-x-2 text-xs font-sans font-semibold tracking-[0.14em] uppercase text-[#2B211E] hover:text-[#85513f] transition-colors group"
+                >
+                  <span>VIEW ALL FORMULATIONS IN SHOP</span>
+                  <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
             </div>
-            <Link
-              to="/shop"
-              className="inline-flex items-center space-x-2 text-xs font-sans font-semibold tracking-[0.14em] uppercase text-[#2B211E] hover:text-[#85513f] transition-colors group"
-            >
-              <span>VIEW ALL FORMULATIONS IN SHOP</span>
-              <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
-            </Link>
+
+            {/* Right: The First Video (OPj5GAZ3v5I) in this Header */}
+            <div className="lg:col-span-7">
+              <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black shadow-xl border border-[#3A2A23] group">
+                <iframe
+                  ref={essentialsIframeRef}
+                  src={`https://www.youtube-nocookie.com/embed/OPj5GAZ3v5I?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=OPj5GAZ3v5I&playsinline=1&controls=0&disablekb=1&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&hl=en&origin=${
+                    typeof window !== 'undefined' ? window.location.origin : ''
+                  }`}
+                  title="Zoe · Nude Cosmetics Bespoke Essentials Cinema"
+                  className="w-full h-full border-0 absolute inset-0 pointer-events-none select-none"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+
+                {/* Top Film Badge */}
+                <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/15 text-[10px] font-sans uppercase tracking-widest text-[#d8a48f] flex items-center space-x-1.5 shadow-sm z-20 pointer-events-none">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#E27D86] animate-pulse" />
+                  <span>4K Cinema Capture · Living Nude in Motion</span>
+                </div>
+
+                {/* Bottom Interactive Control Overlay */}
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-auto bg-gradient-to-t from-black/85 via-black/50 to-transparent p-2.5 sm:p-3 rounded-xl backdrop-blur-xs z-20">
+                  <div className="flex items-center space-x-2">
+                    <button
+                      type="button"
+                      onClick={toggleEssentialsPlay}
+                      className="w-8 h-8 rounded-full bg-white/90 hover:bg-white text-[#2B211E] flex items-center justify-center transition-transform hover:scale-105 shadow-sm cursor-pointer"
+                      aria-label={isEssentialsPlaying ? 'Pause film' : 'Play film'}
+                    >
+                      {isEssentialsPlaying ? <Pause size={13} /> : <Play size={13} className="ml-0.5" />}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={toggleEssentialsMute}
+                      className="w-7 h-7 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors cursor-pointer"
+                      aria-label={isEssentialsMuted ? 'Unmute film' : 'Mute film'}
+                    >
+                      {isEssentialsMuted ? <VolumeX size={12} /> : <Volume2 size={12} />}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleEssentialsRestart}
+                      className="w-7 h-7 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors cursor-pointer"
+                      aria-label="Restart film"
+                    >
+                      <RotateCcw size={12} />
+                    </button>
+                  </div>
+
+                  <div className="flex items-center space-x-2 text-[10px] text-[#D1C7BD]">
+                    <span className="hidden sm:inline font-serif italic text-white text-[11px]">
+                      &ldquo;Enhance your beauty. Never hide it.&rdquo;
+                    </span>
+                    <span className="hidden sm:inline">&middot;</span>
+                    <span className="text-[#d8a48f] font-mono uppercase tracking-wider">
+                      {isEssentialsMuted ? 'Muted Preview' : 'Sound Active'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

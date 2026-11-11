@@ -220,16 +220,6 @@ export const Footer: React.FC = () => {
             </span>
           </div>
         </div>
-
-        {/* Clear AI-Assisted Development Note */}
-        <div className="mt-8 pt-6 border-t border-[#E8DFD5] text-center">
-          <div className="inline-block max-w-3xl mx-auto px-5 py-3 rounded-xl bg-white/70 border border-[#E8DFD5] shadow-2xs">
-            <p className="text-[11px] sm:text-xs font-sans text-[#6E605B] leading-relaxed">
-              <span className="font-semibold text-[#85513f] uppercase tracking-wider text-[10px] block sm:inline sm:mr-2">Notice:</span>
-              AI-assisted development in progress. Content may contain inaccuracies (including AI hallucinations) as we co-build, review, and continuously improve our websites.
-            </p>
-          </div>
-        </div>
       </div>
     </footer>
   );

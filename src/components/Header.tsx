@@ -239,10 +239,10 @@ export const Header: React.FC<HeaderProps> = ({
                 to="/"
                 className="group flex items-center space-x-3 text-left focus:outline-none mr-2 sm:mr-4"
               >
-                {/* Main Logo Emblem with the Shell Muse */}
+                {/* Main Logo Emblem with the Venus face */}
                 <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border border-[#d2c3c0] bg-[#f5ede2] p-0.5 flex-shrink-0 shadow-xs group-hover:border-[#85513f] transition-all">
                   <img
-                    src="/assets/aistudio/shell_logo.jpeg_040943c9_2K_2cad8f67.jpg"
+                    src="/favicon.png"
                     alt="ZOE Logo Emblem"
                     className="w-full h-full object-cover rounded-full"
                   />
@@ -609,8 +609,8 @@ export const Header: React.FC<HeaderProps> = ({
                 className="w-8 h-8 rounded-full overflow-hidden border border-[#E8DFD5] hover:border-[#85513f] transition-all focus:outline-none"
               >
                 <img
-                  src="/assets/aistudio/shell_logo.jpeg_040943c9_2K_2cad8f67.jpg"
-                  alt="Zoe Nude Cosmetics Muse"
+                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80"
+                  alt="Client Profile"
                   className="w-full h-full object-cover"
                 />
               </Link>

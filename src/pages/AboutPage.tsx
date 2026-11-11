@@ -370,7 +370,7 @@ export const AboutPage: React.FC = () => {
             <div className="relative">
               <div className="rounded-3xl overflow-hidden border border-[#E8DFD5] shadow-lg aspect-[4/5] bg-[#F2EDE4]">
                 <img
-                  src="/assets/aistudio/shell_logo.jpeg_040943c9_2K_2cad8f67.jpg"
+                  src="/assets/aistudio/Gemini_Generated_Image_bj462jbj462jbj46_fa1cb5df.jpeg"
                   alt="Zoe · Nude Cosmetics Muse & Formulation Origins"
                   className="w-full h-full object-cover"
                 />

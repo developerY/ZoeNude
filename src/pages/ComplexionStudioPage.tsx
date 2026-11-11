@@ -197,7 +197,7 @@ export const ComplexionStudioPage: React.FC<ComplexionStudioPageProps> = ({
       <div
         className="fixed inset-0 pointer-events-none -z-10 bg-cover bg-center opacity-[0.06] filter saturate-[1.25]"
         style={{
-          backgroundImage: "url('/assets/aistudio/shell_logo.jpeg_040943c9_2K_2cad8f67.jpg')",
+          backgroundImage: `url('${import.meta.env.BASE_URL}assets/aistudio/image_3527ead4.png')`,
         }}
       />
 
@@ -205,7 +205,7 @@ export const ComplexionStudioPage: React.FC<ComplexionStudioPageProps> = ({
       <section
         className="relative py-20 sm:py-28 border-b border-[#EADED5] overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/assets/aistudio/shell_logo.jpeg_040943c9_2K_2cad8f67.jpg')",
+          backgroundImage: `url('${import.meta.env.BASE_URL}assets/aistudio/image_3527ead4.png')`,
         }}
       >
         {/* Editorial Ambient Scrim Overlay for optimal contrast and readability */}

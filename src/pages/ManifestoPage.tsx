@@ -41,7 +41,7 @@ export const ManifestoPage: React.FC = () => {
           <div className="pt-6 max-w-md mx-auto">
             <div className="rounded-2xl overflow-hidden border border-[#E8DFD5] shadow-sm bg-[#f5ede2]">
               <img
-                src="/assets/aistudio/shell_logo.jpeg_040943c9_2K_2cad8f67.jpg"
+                src={`${import.meta.env.BASE_URL}assets/aistudio/image_3527ead4.png`}
                 alt="ZOE · Nude Cosmetics Brand Crest"
                 className="w-full h-auto object-cover"
               />

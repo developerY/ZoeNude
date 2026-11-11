@@ -182,7 +182,7 @@ export const AboutPage: React.FC = () => {
               <div className="relative mx-auto max-w-sm sm:max-w-md">
                 <div className="rounded-3xl overflow-hidden border-2 border-[#E8DFD5] shadow-2xl bg-[#F5EDE2] p-2 group hover:shadow-3xl transition-shadow duration-500">
                   <img
-                    src="/assets/aistudio/Gemini_Generated_Image_t98fi1t98fi1t98f__1__ebb6a715.jpeg"
+                    src={`${import.meta.env.BASE_URL}assets/aistudio/image_3527ead4.png`}
                     alt="Zoe · Nude Cosmetics Embossed Insignia - Beautifully You. Naturally Free."
                     className="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.02]"
                   />
@@ -370,7 +370,7 @@ export const AboutPage: React.FC = () => {
             <div className="relative">
               <div className="rounded-3xl overflow-hidden border border-[#E8DFD5] shadow-lg aspect-[4/5] bg-[#F2EDE4]">
                 <img
-                  src="/assets/aistudio/shell_logo.jpeg_040943c9_2K_2cad8f67.jpg"
+                  src={`${import.meta.env.BASE_URL}assets/aistudio/image_3527ead4.png`}
                   alt="Zoe · Nude Cosmetics Muse & Formulation Origins"
                   className="w-full h-full object-cover"
                 />

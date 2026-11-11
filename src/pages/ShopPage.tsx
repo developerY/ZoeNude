@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { PRODUCTS } from '../data/cosmeticsData';
 import { Product, Shade } from '../types';
 import { ProductCard } from '../components/ProductCard';
-import { SlidersHorizontal, Search, ArrowUpDown, Sparkles } from 'lucide-react';
-import { FrontPageCinemaSection } from '../components/FrontPageCinemaSection';
+import { SlidersHorizontal, Search, ArrowUpDown, Sparkles, Play, Pause, Volume2, VolumeX, RotateCcw } from 'lucide-react';
 
 interface ShopPageProps {
   onAddToCart: (product: Product, shade: Shade) => void;
@@ -21,6 +20,46 @@ export const ShopPage: React.FC<ShopPageProps> = ({
   const [selectedCategory, setSelectedCategory] = useState<string>(initialCategory);
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc' | 'rating'>('featured');
+
+  const videoIframeRef = useRef<HTMLIFrameElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const postMessageToPlayer = (func: string, args: any[] = []) => {
+    if (videoIframeRef.current && videoIframeRef.current.contentWindow) {
+      videoIframeRef.current.contentWindow.postMessage(
+        JSON.stringify({ event: 'command', func, args }),
+        '*'
+      );
+    }
+  };
+
+  const togglePlay = () => {
+    if (isPlaying) {
+      postMessageToPlayer('pauseVideo');
+      setIsPlaying(false);
+    } else {
+      postMessageToPlayer('playVideo');
+      setIsPlaying(true);
+    }
+  };
+
+  const toggleMute = () => {
+    if (isMuted) {
+      postMessageToPlayer('unMute');
+      postMessageToPlayer('setVolume', [100]);
+      setIsMuted(false);
+    } else {
+      postMessageToPlayer('mute');
+      setIsMuted(true);
+    }
+  };
+
+  const handleRestart = () => {
+    postMessageToPlayer('seekTo', [0, true]);
+    postMessageToPlayer('playVideo');
+    setIsPlaying(true);
+  };
 
   useEffect(() => {
     const cat = searchParams.get('category');
@@ -69,28 +108,100 @@ export const ShopPage: React.FC<ShopPageProps> = ({
 
   return (
     <div className="bg-gradient-to-b from-[#FDF7F2] via-[#FAF1E8] to-[#F7ECE1] min-h-screen pb-24 animate-fadeIn">
-      {/* Shop Header Banner with Rainbow Skintone Ambient Glow */}
-      <section className="bg-gradient-to-r from-[#FAF2EB] via-[#FDF6F0] to-[#F5ECE1] py-14 sm:py-18 border-b border-[#EADED5] relative overflow-hidden">
+      {/* Shop Header Banner with Video next to the words */}
+      <section className="bg-gradient-to-r from-[#FAF2EB] via-[#FDF6F0] to-[#F5ECE1] py-12 sm:py-16 border-b border-[#EADED5] relative overflow-hidden">
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#E9B858]/8 rounded-full blur-3xl pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3 relative z-10">
-          <span className="text-[10px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase block">
-            ATELIER STAPLES
-          </span>
-          <h1 className="font-serif text-4xl sm:text-5xl text-[#2B211E] font-normal">
-            Bespoke Formulations
-          </h1>
-          <p className="font-sans text-xs sm:text-sm text-[#4E4542] max-w-xl mx-auto leading-relaxed">
-            Every formulation is small-batch compounded with plant-derived bio-identical squalane, restorative ceramides, and living mineral pigments.
-          </p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left: Atelier Staples & Bespoke Formulations text */}
+            <div className="lg:col-span-5 space-y-4">
+              <span className="text-[10px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase block">
+                ATELIER STAPLES
+              </span>
+              <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#2B211E] font-normal leading-tight">
+                Bespoke Formulations
+              </h1>
+              <p className="font-sans text-xs sm:text-sm text-[#4E4542] leading-relaxed font-light">
+                Every formulation is small-batch compounded with plant-derived bio-identical squalane, restorative ceramides, and living mineral pigments.
+              </p>
+              
+              <div className="flex flex-wrap items-center gap-2 pt-2">
+                <span className="px-3 py-1 rounded-full bg-white/80 border border-[#E8DFD5] text-[11px] font-sans text-[#6E625D]">
+                  ✨ Bio-Identical Squalane
+                </span>
+                <span className="px-3 py-1 rounded-full bg-white/80 border border-[#E8DFD5] text-[11px] font-sans text-[#6E625D]">
+                  🌿 Restorative Ceramides
+                </span>
+                <span className="px-3 py-1 rounded-full bg-white/80 border border-[#E8DFD5] text-[11px] font-sans text-[#6E625D]">
+                  💫 Living Mineral Pigments
+                </span>
+              </div>
+            </div>
+
+            {/* Right: Video in the header next to the words */}
+            <div className="lg:col-span-7">
+              <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black shadow-xl border border-[#3A2A23] group">
+                <iframe
+                  ref={videoIframeRef}
+                  src={`https://www.youtube-nocookie.com/embed/qtA4q3gqk4w?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=qtA4q3gqk4w&playsinline=1&controls=0&disablekb=1&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&hl=en&origin=${
+                    typeof window !== 'undefined' ? window.location.origin : ''
+                  }`}
+                  title="Zoe · Nude Cosmetics Formulations in Motion"
+                  className="w-full h-full border-0 absolute inset-0 pointer-events-none select-none"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+
+                {/* Top Film Badge */}
+                <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/15 text-[10px] font-sans uppercase tracking-widest text-[#d8a48f] flex items-center space-x-1.5 shadow-sm z-20 pointer-events-none">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#E27D86] animate-pulse" />
+                  <span>4K Cinema Capture · Formulations in Motion</span>
+                </div>
+
+                {/* Bottom Interactive Control Overlay */}
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-auto bg-gradient-to-t from-black/85 via-black/50 to-transparent p-2.5 sm:p-3 rounded-xl backdrop-blur-xs z-20">
+                  <div className="flex items-center space-x-2">
+                    <button
+                      type="button"
+                      onClick={togglePlay}
+                      className="w-8 h-8 rounded-full bg-white/90 hover:bg-white text-[#2B211E] flex items-center justify-center transition-transform hover:scale-105 shadow-sm cursor-pointer"
+                      aria-label={isPlaying ? 'Pause film' : 'Play film'}
+                    >
+                      {isPlaying ? <Pause size={13} /> : <Play size={13} className="ml-0.5" />}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={toggleMute}
+                      className="w-7 h-7 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors cursor-pointer"
+                      aria-label={isMuted ? 'Unmute film' : 'Mute film'}
+                    >
+                      {isMuted ? <VolumeX size={12} /> : <Volume2 size={12} />}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleRestart}
+                      className="w-7 h-7 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors cursor-pointer"
+                      aria-label="Restart film"
+                    >
+                      <RotateCcw size={12} />
+                    </button>
+                  </div>
+
+                  <div className="flex items-center space-x-2 text-[10px] text-[#D1C7BD]">
+                    <span className="hidden sm:inline font-serif italic text-white text-[11px]">
+                      &ldquo;Pure Living Dimension. Second-Skin Veil.&rdquo;
+                    </span>
+                    <span className="hidden sm:inline">&middot;</span>
+                    <span className="text-[#d8a48f] font-mono uppercase tracking-wider">
+                      {isMuted ? 'Muted Preview' : 'Sound Active'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-
-      {/* Living Nude in Motion Video Showcase */}
-      <FrontPageCinemaSection
-        videoId="qtA4q3gqk4w"
-        badgeTitle="4K Cinema Capture · Formulations in Motion"
-        quote="“Pure Living Dimension. Second-Skin Veil.”"
-      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
         {/* Controls Bar: Categories, Search, Sort */}

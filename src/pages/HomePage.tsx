@@ -120,91 +120,23 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section className="bg-gradient-to-br from-[#FAF2EB] via-[#FDF6F0] to-[#F6EDE4] py-20 border-b border-[#EADED5] relative overflow-hidden">
         <div className="absolute top-0 right-10 w-96 h-96 bg-[#E27D86]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Header Row: Manifesto Title & Philosophy on Left + Cinema Video on Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12">
-            {/* Left: Manifesto Headline & Ethos */}
-            <div className="lg:col-span-5 space-y-4">
-              <span className="text-[11px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase block">
-                THE ZOE MANIFESTO · CELEBRATE YOUR NATURAL BEAUTY
+          {/* Section Header: The Zoe Manifesto */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+            <div>
+              <span className="text-[11px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase block mb-1">
+                THE ZOE MANIFESTO
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#2B211E] font-normal leading-tight">
-                Beautifully You. Naturally Free.
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#2B211E] font-normal">
+                The Pillars of Natural Radiance
               </h2>
-              <p className="font-sans text-xs sm:text-sm text-[#4E4542] leading-relaxed font-light">
-                Cosmetics should never make someone feel that their natural self isn&rsquo;t enough. They should make someone feel even more comfortable, confident, and free to be themselves.
-              </p>
-              <div className="pt-2">
-                <Link
-                  to="/manifesto"
-                  className="inline-flex items-center space-x-2 text-xs font-sans font-semibold tracking-[0.16em] uppercase text-[#2B211E] hover:text-[#85513f] transition-colors group"
-                >
-                  <span>EXPLORE COMPLETE MANIFESTO</span>
-                  <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
             </div>
-
-            {/* Right: The Video next to the Header Title */}
-            <div className="lg:col-span-7">
-              <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black shadow-xl border border-[#3A2A23] group">
-                <iframe
-                  ref={manifestoIframeRef}
-                  src={`https://www.youtube-nocookie.com/embed/EzTReAG2Ctk?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=EzTReAG2Ctk&playsinline=1&controls=0&disablekb=1&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&hl=en&origin=${
-                    typeof window !== 'undefined' ? window.location.origin : ''
-                  }`}
-                  title="Zoe · Nude Cosmetics Manifesto Cinema"
-                  className="w-full h-full border-0 absolute inset-0 pointer-events-none select-none"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-
-                {/* Top Film Badge */}
-                <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/15 text-[10px] font-sans uppercase tracking-widest text-[#d8a48f] flex items-center space-x-1.5 shadow-sm z-20 pointer-events-none">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#E27D86] animate-pulse" />
-                  <span>Atelier Film Capture</span>
-                </div>
-
-                {/* Bottom Interactive Control Overlay */}
-                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-auto bg-gradient-to-t from-black/85 via-black/50 to-transparent p-2.5 sm:p-3 rounded-xl backdrop-blur-xs z-20">
-                  <div className="flex items-center space-x-2">
-                    <button
-                      type="button"
-                      onClick={toggleManifestoPlay}
-                      className="w-8 h-8 rounded-full bg-white/90 hover:bg-white text-[#2B211E] flex items-center justify-center transition-transform hover:scale-105 shadow-sm cursor-pointer"
-                      aria-label={isManifestoPlaying ? 'Pause film' : 'Play film'}
-                    >
-                      {isManifestoPlaying ? <Pause size={13} /> : <Play size={13} className="ml-0.5" />}
-                    </button>
-                    <button
-                      type="button"
-                      onClick={toggleManifestoMute}
-                      className="w-7 h-7 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors cursor-pointer"
-                      aria-label={isManifestoMuted ? 'Unmute film' : 'Mute film'}
-                    >
-                      {isManifestoMuted ? <VolumeX size={12} /> : <Volume2 size={12} />}
-                    </button>
-                    <button
-                      type="button"
-                      onClick={handleManifestoRestart}
-                      className="w-7 h-7 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors cursor-pointer"
-                      aria-label="Restart film"
-                    >
-                      <RotateCcw size={12} />
-                    </button>
-                  </div>
-
-                  <div className="flex items-center space-x-2 text-[10px] text-[#D1C7BD]">
-                    <span className="hidden sm:inline font-serif italic text-white text-[11px]">
-                      &ldquo;Naturally Free.&rdquo;
-                    </span>
-                    <span className="hidden sm:inline">&middot;</span>
-                    <span className="text-[#d8a48f] font-mono uppercase tracking-wider">
-                      {isManifestoMuted ? 'Muted Preview' : 'Sound Active'}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Link
+              to="/manifesto"
+              className="inline-flex items-center space-x-2 text-xs font-sans font-semibold tracking-[0.16em] uppercase text-[#2B211E] hover:text-[#85513f] transition-colors group"
+            >
+              <span>EXPLORE COMPLETE MANIFESTO</span>
+              <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -248,26 +180,85 @@ export const HomePage: React.FC<HomePageProps> = ({
             ))}
           </div>
 
-          {/* Dedicated Philosophy Centerpiece: Celebrate Your Natural Beauty */}
+          {/* Dedicated Philosophy Centerpiece: Beautifully You. Naturally Free. + Manifesto Video */}
           <div className="mt-14 bg-gradient-to-r from-[#FAF0E6] via-[#FCF7F1] to-[#F5ECE1] rounded-3xl p-8 sm:p-12 border border-[#EADED5] shadow-sm relative overflow-hidden">
-            <div className="text-center max-w-3xl mx-auto space-y-4 mb-10">
-              <div className="inline-flex items-center space-x-2 text-[10px] font-sans font-semibold tracking-[0.24em] text-[#85513f] uppercase bg-white/85 px-4 py-1.5 rounded-full border border-[#E8DFD5] shadow-2xs">
-                <span>ZOE · NUDE COSMETICS</span>
-                <span>·</span>
-                <span className="text-[#2B211E]">THE BRAND PHILOSOPHY</span>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-10">
+              {/* Left: Brand Philosophy & Quote */}
+              <div className="lg:col-span-5 space-y-4">
+                <div className="inline-flex items-center space-x-2 text-[10px] font-sans font-semibold tracking-[0.24em] text-[#85513f] uppercase bg-white/85 px-4 py-1.5 rounded-full border border-[#E8DFD5] shadow-2xs">
+                  <span>ZOE · NUDE COSMETICS</span>
+                  <span>·</span>
+                  <span className="text-[#2B211E]">THE BRAND PHILOSOPHY</span>
+                </div>
+
+                <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#2B211E] tracking-tight font-normal leading-tight">
+                  Beautifully You. Naturally Free.
+                </h3>
+
+                <div className="p-6 bg-white/95 rounded-2xl border border-[#85513f]/25 shadow-xs">
+                  <p className="font-serif italic text-base sm:text-lg text-[#2B211E] leading-relaxed">
+                    &ldquo;Cosmetics should never make someone feel that their natural self isn&rsquo;t enough. They should make someone feel even more comfortable, confident, and free to be themselves.&rdquo;
+                  </p>
+                  <span className="text-[10px] font-sans font-bold tracking-[0.2em] text-[#85513f] uppercase block mt-3">
+                    — CELEBRATE YOUR NATURAL BEAUTY
+                  </span>
+                </div>
               </div>
 
-              <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#2B211E] tracking-tight font-normal">
-                Beautifully You. Naturally Free.
-              </h3>
+              {/* Right: The Video next to the Lower Words */}
+              <div className="lg:col-span-7">
+                <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black shadow-xl border border-[#3A2A23] group">
+                  <iframe
+                    ref={manifestoIframeRef}
+                    src={`https://www.youtube-nocookie.com/embed/EzTReAG2Ctk?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=EzTReAG2Ctk&playsinline=1&controls=0&disablekb=1&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&hl=en&origin=${
+                      typeof window !== 'undefined' ? window.location.origin : ''
+                    }`}
+                    title="Zoe · Nude Cosmetics Manifesto Cinema"
+                    className="w-full h-full border-0 absolute inset-0 pointer-events-none select-none"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
 
-              <div className="p-6 bg-white/95 rounded-2xl border border-[#85513f]/25 shadow-xs max-w-2xl mx-auto">
-                <p className="font-serif italic text-base sm:text-lg text-[#2B211E] leading-relaxed">
-                  &ldquo;Cosmetics should never make someone feel that their natural self isn&rsquo;t enough. They should make someone feel even more comfortable, confident, and free to be themselves.&rdquo;
-                </p>
-                <span className="text-[10px] font-sans font-bold tracking-[0.2em] text-[#85513f] uppercase block mt-3">
-                  — CELEBRATE YOUR NATURAL BEAUTY
-                </span>
+                  {/* Bottom Interactive Control Overlay */}
+                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-auto bg-gradient-to-t from-black/85 via-black/50 to-transparent p-2.5 sm:p-3 rounded-xl backdrop-blur-xs z-20">
+                    <div className="flex items-center space-x-2">
+                      <button
+                        type="button"
+                        onClick={toggleManifestoPlay}
+                        className="w-8 h-8 rounded-full bg-white/90 hover:bg-white text-[#2B211E] flex items-center justify-center transition-transform hover:scale-105 shadow-sm cursor-pointer"
+                        aria-label={isManifestoPlaying ? 'Pause film' : 'Play film'}
+                      >
+                        {isManifestoPlaying ? <Pause size={13} /> : <Play size={13} className="ml-0.5" />}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={toggleManifestoMute}
+                        className="w-7 h-7 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors cursor-pointer"
+                        aria-label={isManifestoMuted ? 'Unmute film' : 'Mute film'}
+                      >
+                        {isManifestoMuted ? <VolumeX size={12} /> : <Volume2 size={12} />}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={handleManifestoRestart}
+                        className="w-7 h-7 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors cursor-pointer"
+                        aria-label="Restart film"
+                      >
+                        <RotateCcw size={12} />
+                      </button>
+                    </div>
+
+                    <div className="flex items-center space-x-2 text-[10px] text-[#D1C7BD]">
+                      <span className="hidden sm:inline font-serif italic text-white text-[11px]">
+                        &ldquo;Naturally Free.&rdquo;
+                      </span>
+                      <span className="hidden sm:inline">&middot;</span>
+                      <span className="text-[#d8a48f] font-mono uppercase tracking-wider">
+                        {isManifestoMuted ? 'Muted Preview' : 'Sound Active'}
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -404,12 +395,6 @@ export const HomePage: React.FC<HomePageProps> = ({
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
-
-                {/* Top Film Badge */}
-                <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/15 text-[10px] font-sans uppercase tracking-widest text-[#d8a48f] flex items-center space-x-1.5 shadow-sm z-20 pointer-events-none">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#E27D86] animate-pulse" />
-                  <span>4K Cinema Capture · Living Nude in Motion</span>
-                </div>
 
                 {/* Bottom Interactive Control Overlay */}
                 <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-auto bg-gradient-to-t from-black/85 via-black/50 to-transparent p-2.5 sm:p-3 rounded-xl backdrop-blur-xs z-20">

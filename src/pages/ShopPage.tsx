@@ -152,12 +152,6 @@ export const ShopPage: React.FC<ShopPageProps> = ({
                   allowFullScreen
                 />
 
-                {/* Top Film Badge */}
-                <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/15 text-[10px] font-sans uppercase tracking-widest text-[#d8a48f] flex items-center space-x-1.5 shadow-sm z-20 pointer-events-none">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#E27D86] animate-pulse" />
-                  <span>4K Cinema Capture · Formulations in Motion</span>
-                </div>
-
                 {/* Bottom Interactive Control Overlay */}
                 <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-auto bg-gradient-to-t from-black/85 via-black/50 to-transparent p-2.5 sm:p-3 rounded-xl backdrop-blur-xs z-20">
                   <div className="flex items-center space-x-2">

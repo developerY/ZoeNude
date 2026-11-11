@@ -1460,12 +1460,6 @@ export const JournalPage: React.FC<JournalPageProps> = ({
                 <X size={18} />
               </button>
 
-              {/* Top Film Badge */}
-              <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/15 text-[10px] font-sans uppercase tracking-widest text-[#d8a48f] flex items-center space-x-1.5 shadow-sm z-20 pointer-events-none">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#E27D86] animate-pulse" />
-                <span>4K Masterclass Reel · {activeReel.duration}</span>
-              </div>
-
               {/* Bottom Interactive Control Overlay matching About Page */}
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-auto bg-gradient-to-t from-black/85 via-black/50 to-transparent p-3 sm:p-4 rounded-2xl backdrop-blur-xs z-20">
                 <div className="flex items-center space-x-2.5 sm:space-x-3">

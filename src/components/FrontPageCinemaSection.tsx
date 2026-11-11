@@ -11,7 +11,6 @@ interface FrontPageCinemaSectionProps {
 export const FrontPageCinemaSection: React.FC<FrontPageCinemaSectionProps> = ({
   videoId = 'EzTReAG2Ctk',
   videoSrc,
-  badgeTitle = '4K Cinema Capture · Living Nude in Motion',
   quote = '“Beautifully You. Naturally Free.”',
 }) => {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -181,12 +180,6 @@ export const FrontPageCinemaSection: React.FC<FrontPageCinemaSectionProps> = ({
               onLoad={handleIframeLoad}
             />
           )}
-
-          {/* Top Film Badge */}
-          <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/15 text-[10px] font-sans uppercase tracking-widest text-[#d8a48f] flex items-center space-x-1.5 shadow-sm z-20 pointer-events-none">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#E27D86] animate-pulse" />
-            <span>{badgeTitle}</span>
-          </div>
 
           {/* Bottom Interactive Control Overlay matching About Page */}
           <div

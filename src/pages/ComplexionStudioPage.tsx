@@ -192,15 +192,33 @@ export const ComplexionStudioPage: React.FC<ComplexionStudioPageProps> = ({
   const currentCase = TRANSFORMATION_CASES[activeCaseIndex];
 
   return (
-    <div className="bg-gradient-to-b from-[#FDF7F2] via-[#FAF1E8] to-[#F7ECE1] min-h-screen pb-28 animate-fadeIn text-[#2B211E]">
-      {/* Editorial Hero Header with Rainbow Skintone Ambient Multi-Glow */}
-      <section className="bg-gradient-to-r from-[#FAF2EB] via-[#FDF6F0] to-[#F5ECE1] py-16 sm:py-24 border-b border-[#EADED5] relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#E27D86]/8 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#E9B858]/8 rounded-full blur-3xl pointer-events-none -ml-20 -mb-20" />
+    <div className="bg-gradient-to-b from-[#FDF7F2] via-[#FAF1E8] to-[#F7ECE1] min-h-screen pb-28 animate-fadeIn text-[#2B211E] relative">
+      {/* Oceanic Shell & Shore Muse Ambient Fixed Background */}
+      <div
+        className="fixed inset-0 pointer-events-none -z-10 bg-cover bg-center opacity-[0.06] filter saturate-[1.25]"
+        style={{
+          backgroundImage: "url('/assets/aistudio/shell_logo.jpeg_040943c9_2K_2cad8f67.jpg')",
+        }}
+      />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      {/* Editorial Hero Header with Seashell Mermaid Background */}
+      <section
+        className="relative py-20 sm:py-28 border-b border-[#EADED5] overflow-hidden bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/assets/aistudio/shell_logo.jpeg_040943c9_2K_2cad8f67.jpg')",
+        }}
+      >
+        {/* Editorial Ambient Scrim Overlay for optimal contrast and readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#FDF7F2]/88 via-[#FAF1E8]/82 to-[#F7ECE1]/92 backdrop-blur-[1px]" />
+        <div className="absolute inset-0 bg-radial-at-c from-transparent via-white/20 to-white/60 pointer-events-none" />
+
+        {/* Ambient color blooms */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#E27D86]/10 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#E9B858]/10 rounded-full blur-3xl pointer-events-none -ml-20 -mb-20" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto space-y-4">
-            <div className="inline-flex items-center space-x-2 text-[10px] sm:text-[11px] font-sans font-semibold tracking-[0.25em] text-[#85513f] uppercase bg-[#FAF0E6] px-3.5 py-1.5 rounded-full border border-[#d8a48f]/40">
+            <div className="inline-flex items-center space-x-2 text-[10px] sm:text-[11px] font-sans font-semibold tracking-[0.25em] text-[#85513f] uppercase bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#d8a48f]/40 shadow-xs">
               <Sparkles size={13} className="text-[#85513f]" />
               <span>THE ATELIER COMPLEXION STUDIO · 2027</span>
             </div>
@@ -226,7 +244,7 @@ export const ComplexionStudioPage: React.FC<ComplexionStudioPageProps> = ({
 
               <a
                 href="#interactive-transformations"
-                className="bg-white hover:bg-[#F2EDE4] text-[#2B211E] border border-[#E8DFD5] text-xs font-semibold px-6 py-3.5 rounded tracking-wider uppercase transition-colors"
+                className="bg-white/95 hover:bg-white text-[#2B211E] border border-[#E8DFD5] text-xs font-semibold px-6 py-3.5 rounded tracking-wider uppercase transition-colors shadow-xs"
               >
                 Inspect Transformations ↓
               </a>
@@ -234,17 +252,25 @@ export const ComplexionStudioPage: React.FC<ComplexionStudioPageProps> = ({
 
             {/* Value guarantees */}
             <div className="flex flex-wrap items-center justify-center gap-6 pt-6 text-[11px] font-sans text-[#6E625D]">
-              <span className="flex items-center space-x-1.5">
+              <span className="flex items-center space-x-1.5 bg-white/80 backdrop-blur-xs px-3 py-1 rounded-full border border-[#E8DFD5]/60 shadow-2xs">
                 <ShieldCheck size={15} className="text-[#85513f]" />
                 <span>Free Shade Exchange Guarantee</span>
               </span>
-              <span className="flex items-center space-x-1.5">
+              <span className="flex items-center space-x-1.5 bg-white/80 backdrop-blur-xs px-3 py-1 rounded-full border border-[#E8DFD5]/60 shadow-2xs">
                 <Gift size={15} className="text-[#85513f]" />
                 <span>Complimentary Trio Swatch Card</span>
               </span>
-              <span className="flex items-center space-x-1.5">
+              <span className="flex items-center space-x-1.5 bg-white/80 backdrop-blur-xs px-3 py-1 rounded-full border border-[#E8DFD5]/60 shadow-2xs">
                 <Droplets size={15} className="text-[#85513f]" />
                 <span>94% Bio-Identical Lipid Mantle</span>
+              </span>
+            </div>
+
+            {/* Studio Artwork Attribution Badge */}
+            <div className="pt-2">
+              <span className="inline-flex items-center space-x-1.5 text-[10px] font-sans text-[#85513f] bg-white/70 backdrop-blur-xs px-3 py-0.5 rounded-full border border-[#E8DFD5]/70">
+                <Sparkles size={10} className="text-[#85513f]" />
+                <span>Atelier Muse &middot; Living Vitality Emerging From Seashell</span>
               </span>
             </div>
           </div>

@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { HeroSection } from '../components/HeroSection';
 import { RainbowSpectrumSection } from '../components/RainbowSpectrumSection';
 import { QuietConfidenceSection } from '../components/QuietConfidenceSection';
-import { PRODUCTS, PILLARS, ALL_SHADES } from '../data/cosmeticsData';
+import { PRODUCTS, ALL_SHADES } from '../data/cosmeticsData';
 import { JOURNAL_ARTICLES } from '../data/journalData';
 import { Product, Shade } from '../types';
 import { Link, useNavigate } from 'react-router-dom';
@@ -120,68 +120,8 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section className="bg-gradient-to-br from-[#FAF2EB] via-[#FDF6F0] to-[#F6EDE4] py-20 border-b border-[#EADED5] relative overflow-hidden">
         <div className="absolute top-0 right-10 w-96 h-96 bg-[#E27D86]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Section Header: The Zoe Manifesto */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-            <div>
-              <span className="text-[11px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase block mb-1">
-                THE ZOE MANIFESTO
-              </span>
-              <h2 className="font-serif text-3xl sm:text-4xl text-[#2B211E] font-normal">
-                The Pillars of Natural Radiance
-              </h2>
-            </div>
-            <Link
-              to="/manifesto"
-              className="inline-flex items-center space-x-2 text-xs font-sans font-semibold tracking-[0.16em] uppercase text-[#2B211E] hover:text-[#85513f] transition-colors group"
-            >
-              <span>EXPLORE COMPLETE MANIFESTO</span>
-              <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {PILLARS.slice(0, 3).map((pillar) => (
-              <div
-                key={pillar.number}
-                onClick={() => navigate('/manifesto')}
-                className="bg-white/95 rounded-xl p-6 border border-[#E8DFD5] hover:border-[#85513f] transition-all cursor-pointer shadow-xs hover:shadow-md flex flex-col justify-between group"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-[10px] font-sans font-semibold tracking-wider text-[#6E625D] uppercase">
-                      Pillar {pillar.number} · {pillar.tag}
-                    </span>
-                    {pillar.badge && (
-                      <span className="text-[9px] uppercase px-2 py-0.5 rounded-full bg-[#f4ece7] text-[#85513f] font-semibold">
-                        {pillar.badge}
-                      </span>
-                    )}
-                  </div>
-                  <div className="aspect-[16/10] w-full rounded-lg overflow-hidden bg-[#FAF6F0] mb-4 border border-[#E8DFD5]">
-                    <img
-                      src={pillar.image}
-                      alt={pillar.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <h3 className="font-serif text-xl text-[#2B211E] group-hover:text-[#85513f] transition-colors mb-2">
-                    {pillar.title}
-                  </h3>
-                  <p className="font-sans text-xs text-[#4E4542] leading-relaxed line-clamp-2">
-                    {pillar.description}
-                  </p>
-                </div>
-
-                <div className="mt-5 pt-3 border-t border-[#F0EEE8] flex items-center justify-between text-[11px] font-sans text-[#85513f] font-semibold">
-                  <span>Read Philosophy</span>
-                  <ArrowRight size={13} className="transform group-hover:translate-x-0.5 transition-transform" />
-                </div>
-              </div>
-            ))}
-          </div>
-
           {/* Dedicated Philosophy Centerpiece: Beautifully You. Naturally Free. + Manifesto Video */}
-          <div className="mt-14 bg-gradient-to-r from-[#FAF0E6] via-[#FCF7F1] to-[#F5ECE1] rounded-3xl p-8 sm:p-12 border border-[#EADED5] shadow-sm relative overflow-hidden">
+          <div className="bg-gradient-to-r from-[#FAF0E6] via-[#FCF7F1] to-[#F5ECE1] rounded-3xl p-8 sm:p-12 border border-[#EADED5] shadow-sm relative overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-10">
               {/* Left: Brand Philosophy & Quote */}
               <div className="lg:col-span-5 space-y-4">

@@ -266,7 +266,7 @@ export const TechPackagingPage: React.FC = () => {
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black shadow-xl border border-[#3A2A23]">
               <iframe
                 ref={videoIframeRef}
-                src={`https://www.youtube-nocookie.com/embed/Or0n2PGVh14?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=Or0n2PGVh14&playsinline=1&controls=0&disablekb=1&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&hl=en&origin=${
+                src={`https://www.youtube-nocookie.com/embed/63YzoeFWR-U?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=63YzoeFWR-U&playsinline=1&controls=0&disablekb=1&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&hl=en&origin=${
                   typeof window !== 'undefined' ? window.location.origin : ''
                 }`}
                 title="Zoe Nude Cosmetics Packaging Innovation Film"

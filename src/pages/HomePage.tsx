@@ -6,7 +6,7 @@ import { PRODUCTS, ALL_SHADES } from '../data/cosmeticsData';
 import { JOURNAL_ARTICLES } from '../data/journalData';
 import { Product, Shade } from '../types';
 import { Link, useNavigate } from 'react-router-dom';
-import { ArrowRight, Sparkles, ShieldCheck, Gift, Droplets, Star, BookOpen, Play, Pause, Volume2, VolumeX, RotateCcw } from 'lucide-react';
+import { ArrowRight, Sparkles, ShieldCheck, Gift, Droplets, Star, BookOpen, Play, Pause, Volume2, VolumeX, RotateCcw, Leaf, Recycle } from 'lucide-react';
 import { ProductCard } from '../components/ProductCard';
 
 interface HomePageProps {
@@ -506,7 +506,86 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 6. Quiet Confidence Dark Velvet Banner */}
+      {/* 7. NEW PACKAGING TECHNOLOGY: REUSABLE, MODULAR & COMPOSTABLE BAMBOO */}
+      <section className="bg-gradient-to-br from-[#F7F3EC] via-[#FCF9F3] to-[#F3EDE3] py-20 border-b border-[#EADED5] relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            {/* Left: Explanatory Copy */}
+            <div className="lg:col-span-5 space-y-6">
+              <div className="space-y-2.5">
+                <span className="text-[11px] font-sans font-semibold tracking-[0.18em] text-[#55715E] uppercase block">
+                  New Packaging Technology · Nude by Nature
+                </span>
+                <h2 className="font-serif text-3xl sm:text-4xl text-[#2B211E] font-normal leading-tight text-balance">
+                  Reusable, Modular &amp; Compostable Bamboo Tech
+                </h2>
+                <p className="font-sans text-sm text-[#4E4542] leading-relaxed font-light">
+                  Our next-generation vessel architecture rethinks cosmetic hardware from the inside out. Rather than sealing formulas inside single-use plastics, each bamboo tube is engineered as a reusable, composable system—separating cleanly into a bamboo cap, precision dispenser, durable outer tube, and removable base for effortless refill cycles.
+                </p>
+                <p className="font-sans text-xs text-[#5C4D47] leading-relaxed font-light">
+                  Crafted from natural bamboo fiber where packaging components meet applicable compostability requirements, this lighter-footprint structure keeps precision dosing intact while eliminating excess waste.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <div className="bg-white/90 rounded-xl p-4 border border-[#E4DDD4] space-y-1.5">
+                  <div className="flex items-center space-x-2 text-[#55715E]">
+                    <Recycle size={15} />
+                    <span className="text-xs font-sans font-semibold text-[#2B211E]">
+                      Reusable &amp; Composable
+                    </span>
+                  </div>
+                  <p className="text-xs text-[#6E625D] leading-relaxed font-light">
+                    Modular four-part architecture—cap, dispenser, tube, and base—built for simple refilling and long-term reuse.
+                  </p>
+                </div>
+
+                <div className="bg-white/90 rounded-xl p-4 border border-[#E4DDD4] space-y-1.5">
+                  <div className="flex items-center space-x-2 text-[#55715E]">
+                    <Leaf size={15} />
+                    <span className="text-xs font-sans font-semibold text-[#2B211E]">
+                      Compostable Bamboo
+                    </span>
+                  </div>
+                  <p className="text-xs text-[#6E625D] leading-relaxed font-light">
+                    Unbleached botanical bamboo parts designed for a lower carbon footprint where compostability criteria are met.
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-1 flex flex-wrap items-center gap-3">
+                <Link
+                  to="/about/tech/packaging"
+                  className="bg-[#2B211E] hover:bg-[#433430] text-[#FCF9F3] text-xs font-sans font-semibold tracking-[0.14em] uppercase px-6 py-3.5 rounded-lg transition-colors inline-flex items-center space-x-2 whitespace-nowrap shrink-0"
+                >
+                  <span>Explore Packaging Tech</span>
+                  <ArrowRight size={14} />
+                </Link>
+                <Link
+                  to="/about/tech"
+                  className="bg-white hover:bg-[#FAF1E8] text-[#2B211E] border border-[#DFD2C7] text-xs font-sans font-semibold tracking-[0.14em] uppercase px-5 py-3.5 rounded-lg transition-colors inline-flex items-center space-x-2 whitespace-nowrap shrink-0"
+                >
+                  <span>View Tech Hub</span>
+                  <ArrowRight size={14} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Right: Infographic Visual */}
+            <div className="lg:col-span-7">
+              <div className="rounded-2xl overflow-hidden border border-[#E4DDD4] bg-[#F5ECE2] shadow-lg">
+                <img
+                  src={`${import.meta.env.BASE_URL}assets/aistudio/image_e2ccaccb.png`}
+                  alt="Zoe Nude Cosmetics reusable and compostable bamboo packaging tube exploded architecture showing bamboo cap, precision dispenser, bamboo tube, and bamboo base"
+                  className="w-full h-auto block object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. Quiet Confidence Dark Velvet Banner */}
       <QuietConfidenceSection
         onShopCollection={() => navigate('/shop')}
         onOpenQuiz={() => navigate('/shade-finder')}

@@ -98,37 +98,92 @@ export const Header: React.FC<HeaderProps> = ({
     },
   ];
 
-  const aboutCategories = [
+  interface AboutNavItem {
+    title: string;
+    to: string;
+    kind: string;
+    description: string;
+    isSubItem?: boolean;
+    isHighlight?: boolean;
+  }
+
+  interface AboutNavGroup {
+    heading: string;
+    meta: string;
+    items: AboutNavItem[];
+  }
+
+  const aboutGroups: AboutNavGroup[] = [
     {
-      title: 'AI Bio-Cosmetology Lab',
-      to: '/about',
-      badge: 'R&D Lab',
-      description: 'Our origin story, LA & SF labs & computational formulation',
+      heading: 'About Page',
+      meta: 'est. 2027',
+      items: [
+        {
+          title: 'AI Bio-Cosmetology Lab',
+          to: '/about',
+          kind: 'Page Overview',
+          description: 'Origin story, LA & SF labs & formulation science',
+        },
+        {
+          title: 'Biomimetic Lipid Fusion (BLF™)',
+          to: '/about#commitments',
+          kind: 'Section',
+          isSubItem: true,
+          description: 'Four commitments to skin biocompatibility',
+        },
+        {
+          title: 'R&D Labs & Studios',
+          to: '/about#ateliers',
+          kind: 'Section',
+          isSubItem: true,
+          description: 'Los Angeles · San Francisco · New York',
+        },
+      ],
     },
     {
-      title: 'The Zoe Manifesto',
-      to: '/manifesto',
-      badge: '3 Pillars',
-      description: 'AI bio-cosmetology, advanced bioscience & natural beauty',
-      isHighlight: true,
+      heading: 'Technology Pages',
+      meta: '/about/tech',
+      items: [
+        {
+          title: 'Tech & Infrastructure',
+          to: '/about/tech',
+          kind: 'Hub Page',
+          isHighlight: true,
+          description: 'Packaging materials & automated retail network',
+        },
+        {
+          title: 'Packaging Innovation',
+          to: '/about/tech/packaging',
+          kind: 'Sub-Page',
+          isSubItem: true,
+          description: 'Nude by Nature — compostable bamboo vessels',
+        },
+        {
+          title: 'Distribution Architecture',
+          to: '/about/tech/distribution',
+          kind: 'Sub-Page',
+          isSubItem: true,
+          description: 'App, Cloud & NFC dispenser infrastructure',
+        },
+      ],
     },
     {
-      title: 'The Zoe Collective',
-      to: '/community',
-      badge: 'Community',
-      description: 'Our client community, unretouched portraits & reviews',
-    },
-    {
-      title: 'Biomimetic Lipid Fusion (BLF™)',
-      to: '/about#commitments',
-      badge: 'Formulation',
-      description: 'Four commitments to skin biocompatibility',
-    },
-    {
-      title: 'R&D Labs & Studios',
-      to: '/about#ateliers',
-      badge: 'LA · SF · NY',
-      description: 'Los Angeles · San Francisco · New York consultations',
+      heading: 'Philosophy & Community',
+      meta: 'Dedicated Pages',
+      items: [
+        {
+          title: 'The Zoe Manifesto',
+          to: '/manifesto',
+          kind: 'Page',
+          description: 'Three core pillars of living natural beauty',
+        },
+        {
+          title: 'The Zoe Collective',
+          to: '/community',
+          kind: 'Page',
+          description: 'Unretouched client portraits & shade stories',
+        },
+      ],
     },
   ];
 
@@ -273,7 +328,7 @@ export const Header: React.FC<HeaderProps> = ({
               {navLinks.map((link) => {
                 const isAboutActive =
                   link.to === '/about' &&
-                  (location.pathname === '/about' || location.pathname === '/manifesto');
+                  (location.pathname.startsWith('/about') || location.pathname === '/manifesto');
                 const isStudioActive =
                   link.to === '/complexion-studio' &&
                   (location.pathname === '/complexion-studio' ||
@@ -496,43 +551,105 @@ export const Header: React.FC<HeaderProps> = ({
                         <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#2B211E]"></span>
                       )}
 
-                      {/* Dropdown Menu for About with Manifesto */}
+                      {/* Structured Dropdown Menu for About */}
                       {aboutDropdownOpen && (
-                        <div className="absolute top-full right-0 w-72 bg-[#FCF9F3] border border-[#E8DFD5] rounded-xl shadow-xl py-3 px-2 z-50 animate-fadeIn">
-                          <div className="text-[9px] font-sans font-bold tracking-[0.18em] uppercase text-[#85513f] px-3 pb-2 mb-1 border-b border-[#F0EEE8] flex items-center justify-between">
-                            <span>THE HOUSE & ETHOS</span>
-                            <span className="text-[8px] text-[#807571] font-normal lowercase tracking-normal">
+                        <div className="absolute top-full right-0 w-[560px] bg-[#FCF9F3] border border-[#E8DFD5] rounded-xl shadow-xl p-4 z-50 animate-fadeIn">
+                          <div className="flex items-center justify-between px-2 pb-2.5 mb-3 border-b border-[#EFE6DC]">
+                            <span className="text-[10px] font-sans font-bold tracking-[0.18em] uppercase text-[#85513f]">
+                              THE HOUSE, TECHNOLOGY &amp; ETHOS
+                            </span>
+                            <span className="text-[10px] font-sans text-[#807571]">
                               est. 2027
                             </span>
                           </div>
-                          {aboutCategories.map((item) => (
-                            <Link
-                              key={item.title}
-                              to={item.to}
-                              onClick={() => setAboutDropdownOpen(false)}
-                              className={`block px-3 py-2.5 rounded-lg transition-colors group ${
-                                item.isHighlight
-                                  ? 'bg-[#FAF0E6]/70 hover:bg-[#FAF0E6] border border-[#d8a48f]/30 my-0.5'
-                                  : 'hover:bg-[#F2EDE4]'
-                              }`}
-                            >
-                              <div className="flex items-center justify-between">
-                                <span className={`text-xs font-sans font-medium transition-colors ${
-                                  item.isHighlight
-                                    ? 'text-[#85513f] font-semibold group-hover:text-[#2B211E]'
-                                    : 'text-[#2B211E]'
-                                }`}>
-                                  {item.title}
+
+                          <div className="grid grid-cols-2 gap-4">
+                            {/* Left Column: About Page + Philosophy & Community */}
+                            <div className="space-y-4">
+                              {[aboutGroups[0], aboutGroups[2]].map((group) => (
+                                <div key={group.heading} className="space-y-1">
+                                  <div className="flex items-center justify-between px-2.5 pb-1 border-b border-[#F3ECE4]">
+                                    <span className="text-[10px] font-sans font-semibold tracking-[0.14em] uppercase text-[#5C4D47]">
+                                      {group.heading}
+                                    </span>
+                                    <span className="text-[9px] font-sans text-[#9A8A83]">
+                                      {group.meta}
+                                    </span>
+                                  </div>
+                                  {group.items.map((item) => (
+                                    <Link
+                                      key={item.title}
+                                      to={item.to}
+                                      onClick={() => setAboutDropdownOpen(false)}
+                                      className={`block px-2.5 py-2 rounded-lg transition-colors group ${
+                                        item.isSubItem ? 'pl-4' : ''
+                                      } ${
+                                        item.isHighlight
+                                          ? 'bg-[#FAF0E6]/80 hover:bg-[#FAF0E6]'
+                                          : 'hover:bg-[#F2EDE4]'
+                                      }`}
+                                    >
+                                      <div className="flex items-baseline justify-between gap-2">
+                                        <span className="text-xs font-sans font-medium text-[#2B211E] group-hover:text-[#85513f] transition-colors">
+                                          {item.isSubItem ? `· ${item.title}` : item.title}
+                                        </span>
+                                        <span className="text-[9px] font-sans text-[#8C7A73] shrink-0">
+                                          {item.kind}
+                                        </span>
+                                      </div>
+                                      <p className="text-[10px] font-sans text-[#6E625D] mt-0.5 line-clamp-1 font-light">
+                                        {item.description}
+                                      </p>
+                                    </Link>
+                                  ))}
+                                </div>
+                              ))}
+                            </div>
+
+                            {/* Right Column: Technology Pages */}
+                            <div className="space-y-1 bg-[#FAF5EE] rounded-lg p-2.5 border border-[#EFE6DC]">
+                              <div className="flex items-center justify-between px-2 pb-1.5 mb-1 border-b border-[#EAE0D5]">
+                                <span className="text-[10px] font-sans font-semibold tracking-[0.14em] uppercase text-[#85513f]">
+                                  {aboutGroups[1].heading}
                                 </span>
-                                <span className="text-[9px] font-sans tracking-wider uppercase px-1.5 py-0.5 rounded bg-white/80 border border-[#E8DFD5] text-[#85513f]">
-                                  {item.badge}
+                                <span className="text-[9px] font-mono text-[#8C7A73]">
+                                  {aboutGroups[1].meta}
                                 </span>
                               </div>
-                              <p className="text-[10px] font-sans text-[#6E625D] mt-0.5 line-clamp-1">
-                                {item.description}
-                              </p>
-                            </Link>
-                          ))}
+                              {aboutGroups[1].items.map((item) => (
+                                <Link
+                                  key={item.title}
+                                  to={item.to}
+                                  onClick={() => setAboutDropdownOpen(false)}
+                                  className={`block px-2.5 py-2.5 rounded-lg transition-colors group ${
+                                    item.isSubItem ? 'pl-4' : ''
+                                  } ${
+                                    item.isHighlight
+                                      ? 'bg-white hover:bg-[#FCF9F3] border border-[#E6D9CE]'
+                                      : 'hover:bg-white/80'
+                                  }`}
+                                >
+                                  <div className="flex items-baseline justify-between gap-2">
+                                    <span
+                                      className={`text-xs font-sans transition-colors ${
+                                        item.isHighlight
+                                          ? 'font-semibold text-[#85513f] group-hover:text-[#2B211E]'
+                                          : 'font-medium text-[#2B211E] group-hover:text-[#85513f]'
+                                      }`}
+                                    >
+                                      {item.isSubItem ? `· ${item.title}` : item.title}
+                                    </span>
+                                    <span className="text-[9px] font-sans text-[#8C7A73] shrink-0">
+                                      {item.kind}
+                                    </span>
+                                  </div>
+                                  <p className="text-[10px] font-sans text-[#6E625D] mt-0.5 line-clamp-1 font-light">
+                                    {item.description}
+                                  </p>
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
                         </div>
                       )}
                     </div>
@@ -695,40 +812,29 @@ export const Header: React.FC<HeaderProps> = ({
                     </div>
                   )}
 
-                  {/* Mobile sub-links for About including The Manifesto */}
+                  {/* Mobile sub-links for About with Clear Section Headers */}
                   {link.label === 'ABOUT' && (
-                    <div className="pl-3 py-1 space-y-1.5 border-l border-[#E8DFD5] my-1 ml-1">
-                      <Link
-                        to="/about"
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="block text-[11px] font-sans text-[#6E625D] hover:text-[#2B211E] py-0.5"
-                      >
-                        AI Bio-Cosmetology Lab (LA & SF)
-                      </Link>
-                      <Link
-                        to="/manifesto"
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="flex items-center justify-between text-[11px] font-sans font-medium text-[#85513f] hover:text-[#2B211E] py-0.5"
-                      >
-                        <span>The Zoe Manifesto (3 Pillars)</span>
-                        <span className="text-[9px] bg-[#d8a48f]/20 text-[#85513f] px-1.5 py-0.2 rounded font-semibold">
-                          Ethos
-                        </span>
-                      </Link>
-                      <Link
-                        to="/about#commitments"
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="block text-[11px] font-sans text-[#6E625D] hover:text-[#2B211E] py-0.5"
-                      >
-                        Biomimetic Lipid Fusion (BLF™)
-                      </Link>
-                      <Link
-                        to="/about#ateliers"
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="block text-[11px] font-sans text-[#6E625D] hover:text-[#2B211E] py-0.5"
-                      >
-                        R&D Laboratories (Los Angeles & San Francisco)
-                      </Link>
+                    <div className="pl-3 py-2 space-y-3 border-l border-[#E8DFD5] my-1 ml-1">
+                      {aboutGroups.map((group) => (
+                        <div key={group.heading} className="space-y-1">
+                          <div className="text-[9px] font-sans font-bold tracking-[0.14em] uppercase text-[#85513f] pt-1">
+                            {group.heading}
+                          </div>
+                          {group.items.map((item) => (
+                            <Link
+                              key={item.title}
+                              to={item.to}
+                              onClick={() => setMobileMenuOpen(false)}
+                              className={`flex items-center justify-between text-[11px] font-sans py-0.5 ${
+                                item.isSubItem ? 'pl-2 text-[#6E625D]' : 'text-[#2B211E] font-medium'
+                              } hover:text-[#85513f]`}
+                            >
+                              <span>{item.isSubItem ? `· ${item.title}` : item.title}</span>
+                              <span className="text-[9px] text-[#8C7A73]">{item.kind}</span>
+                            </Link>
+                          ))}
+                        </div>
+                      ))}
                     </div>
                   )}
                 </div>

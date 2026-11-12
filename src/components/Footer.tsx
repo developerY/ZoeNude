@@ -87,6 +87,21 @@ export const Footer: React.FC = () => {
                   </Link>
                 </li>
                 <li>
+                  <Link to="/about/tech" className="hover:text-[#2B211E] text-left transition-colors font-medium text-[#2B211E]">
+                    Tech &amp; Infrastructure
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/about/tech/packaging" className="hover:text-[#2B211E] text-left transition-colors">
+                    Packaging Innovation
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/about/tech/distribution" className="hover:text-[#2B211E] text-left transition-colors">
+                    Distribution Architecture
+                  </Link>
+                </li>
+                <li>
                   <Link to="/manifesto" className="hover:text-[#2B211E] text-left transition-colors">
                     The Five Pillars Manifesto
                   </Link>

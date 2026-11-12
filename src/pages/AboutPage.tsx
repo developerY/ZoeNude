@@ -169,6 +169,13 @@ export const AboutPage: React.FC = () => {
                   <ArrowRight size={14} />
                 </Link>
                 <Link
+                  to="/about/tech"
+                  className="bg-white hover:bg-[#FAF0E6] text-[#2B211E] border border-[#2B211E] text-xs font-semibold px-7 py-3.5 rounded tracking-wider uppercase transition-colors inline-flex items-center space-x-2"
+                >
+                  <span>Tech &amp; Infrastructure</span>
+                  <ArrowRight size={14} />
+                </Link>
+                <Link
                   to="/shade-finder"
                   className="bg-transparent hover:bg-[#FAF0E6] text-[#2B211E] border border-[#2B211E] text-xs font-semibold px-7 py-3.5 rounded tracking-wider uppercase transition-colors"
                 >
@@ -676,6 +683,72 @@ export const AboutPage: React.FC = () => {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      {/* Technology & Infrastructure Navigation Hub */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div className="bg-[#FAF4EC] rounded-3xl p-8 sm:p-12 border border-[#E4DDD4]">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+            <div className="space-y-2 max-w-2xl">
+              <span className="text-[11px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase block">
+                ABOUT / TECH
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#2B211E] font-normal">
+                Technology &amp; Infrastructure
+              </h2>
+              <p className="text-xs sm:text-sm text-[#4E4542] font-light leading-relaxed">
+                Explore how Zoe Nude pairs responsible compostable bamboo packaging with a cloud-managed, app-first dispenser network.
+              </p>
+            </div>
+            <Link
+              to="/about/tech"
+              className="inline-flex items-center space-x-2 text-xs font-sans font-semibold tracking-[0.14em] uppercase text-[#2B211E] hover:text-[#85513f] transition-colors whitespace-nowrap shrink-0"
+            >
+              <span>Visit Tech Hub</span>
+              <ArrowRight size={14} />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Link
+              to="/about/tech/packaging"
+              className="bg-white rounded-2xl p-7 border border-[#E4DDD4] hover:border-[#85513f] transition-colors flex flex-col justify-between group"
+            >
+              <div className="space-y-2">
+                <span className="text-xs font-sans font-medium text-[#55715E]">01 · About / Tech / Packaging</span>
+                <h3 className="font-serif text-2xl text-[#2B211E] group-hover:text-[#85513f] transition-colors">
+                  Nude by Nature. Kind to Nature.
+                </h3>
+                <p className="text-xs sm:text-sm text-[#4E4542] font-light leading-relaxed">
+                  Refillable vessels and compostable bamboo packaging components engineered for beauty with a lighter footprint.
+                </p>
+              </div>
+              <div className="pt-5 mt-5 border-t border-[#F0E8DF] flex items-center justify-between text-xs font-semibold text-[#2B211E]">
+                <span>Explore Packaging Innovation</span>
+                <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Link>
+
+            <Link
+              to="/about/tech/distribution"
+              className="bg-white rounded-2xl p-7 border border-[#E4DDD4] hover:border-[#85513f] transition-colors flex flex-col justify-between group"
+            >
+              <div className="space-y-2">
+                <span className="text-xs font-sans font-medium text-[#85513f]">02 · About / Tech / Distribution</span>
+                <h3 className="font-serif text-2xl text-[#2B211E] group-hover:text-[#85513f] transition-colors">
+                  Beauty. Without the Baggage.
+                </h3>
+                <p className="text-xs sm:text-sm text-[#4E4542] font-light leading-relaxed">
+                  The app is the store. The machine is fulfillment. Distributed cloud intelligence with NFC energy harvesting &amp; solar-assisted dispensing.
+                </p>
+              </div>
+              <div className="pt-5 mt-5 border-t border-[#F0E8DF] flex items-center justify-between text-xs font-semibold text-[#2B211E]">
+                <span>Explore Distribution Architecture</span>
+                <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -14,6 +14,9 @@ import { SearchModal } from './components/SearchModal';
 import { ManifestoModal } from './components/ManifestoModal';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
+import { TechPage } from './pages/TechPage';
+import { TechPackagingPage } from './pages/TechPackagingPage';
+import { TechDistributionPage } from './pages/TechDistributionPage';
 import { ManifestoPage } from './pages/ManifestoPage';
 import { ShopPage } from './pages/ShopPage';
 import { ShadeFinderPage } from './pages/ShadeFinderPage';
@@ -173,6 +176,9 @@ export default function App() {
               }
             />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/about/tech" element={<TechPage />} />
+            <Route path="/about/tech/packaging" element={<TechPackagingPage />} />
+            <Route path="/about/tech/distribution" element={<TechDistributionPage />} />
             <Route path="/manifesto" element={<ManifestoPage />} />
             <Route
               path="/shop"

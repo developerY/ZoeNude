@@ -7,7 +7,6 @@ import { JOURNAL_ARTICLES } from '../data/journalData';
 import { Product, Shade } from '../types';
 import { Link, useNavigate } from 'react-router-dom';
 import { ArrowRight, Sparkles, ShieldCheck, Gift, Droplets, Star, BookOpen, Play, Pause, Volume2, VolumeX, RotateCcw, Leaf, Recycle } from 'lucide-react';
-import { ProductCard } from '../components/ProductCard';
 
 interface HomePageProps {
   onAddToCart: (product: Product, shade: Shade) => void;
@@ -299,7 +298,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         <div className="absolute bottom-0 left-10 w-80 h-80 bg-[#689775]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header Row: Atelier Staples / Bespoke Essentials + First Cinema Video */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left: Section Title & Navigation */}
             <div className="lg:col-span-5 space-y-4">
               <span className="text-[11px] font-sans font-semibold tracking-[0.2em] text-[#6E625D] uppercase block">
@@ -377,17 +376,6 @@ export const HomePage: React.FC<HomePageProps> = ({
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {PRODUCTS.slice(0, 4).map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                onAddToCart={onAddToCart}
-                onQuickView={onQuickView}
-              />
-            ))}
           </div>
         </div>
       </section>

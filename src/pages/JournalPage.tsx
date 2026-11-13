@@ -35,9 +35,7 @@ import {
   UserCheck,
   ExternalLink,
   Layers,
-  ChevronDown,
-  Leaf,
-  Recycle
+  ChevronDown
 } from 'lucide-react';
 import {
   JOURNAL_ARTICLES,
@@ -1004,7 +1002,7 @@ export const JournalPage: React.FC<JournalPageProps> = ({
       </section>
 
       {/* SECTION 9: THE ZOE COLLECTIVE / REAL SKIN STORIES BANNER */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
         <div className="bg-[#FAF6F0] border border-[#E8DFD5] rounded-3xl p-8 sm:p-12 relative overflow-hidden">
           <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             <div className="max-w-2xl">
@@ -1034,85 +1032,6 @@ export const JournalPage: React.FC<JournalPageProps> = ({
               >
                 <span>Find Your Shade</span>
               </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 10: BAMBOO RESIN PACKAGING & SUSTAINABLE DESIGN */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="bg-white border border-[#E8DFD5] rounded-3xl p-6 sm:p-10 shadow-xs">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left: Bamboo Resin Infographic Image */}
-            <div className="lg:col-span-5">
-              <div className="rounded-2xl overflow-hidden border border-[#E8DFD5] bg-[#F5ECE2] shadow-sm">
-                <img
-                  src={`${import.meta.env.BASE_URL}assets/aistudio/image_70549471.png`}
-                  alt="Zoe Nude Cosmetics 100% bamboo resin lip vessel with compostable packaging and reusable design"
-                  className="w-full h-auto block object-contain"
-                />
-              </div>
-            </div>
-
-            {/* Right: Explanatory Copy */}
-            <div className="lg:col-span-7 space-y-5">
-              <div className="space-y-2">
-                <span className="text-[10px] sm:text-[11px] font-sans font-semibold tracking-[0.22em] text-[#55715E] uppercase block">
-                  Nude by Nature · Kind to Nature
-                </span>
-                <h3 className="font-serif text-2xl sm:text-4xl text-[#2B211E] font-normal leading-tight text-balance">
-                  100% Bamboo Resin: Reusable Design for a Greener Tomorrow
-                </h3>
-                <p className="font-sans text-xs sm:text-sm text-[#4E4542] leading-relaxed font-light">
-                  True skin-first formulation belongs in vessels that treat the earth with the same respect. Our botanical lip cashmeres and solid complexion sticks are housed in precision-turned <strong>100% bamboo resin</strong> tubes engineered with a modular, reusable design so you keep the outer hardware while replenishing only the inner bullet.
-                </p>
-                <p className="font-sans text-xs text-[#5C4D47] leading-relaxed font-light">
-                  Built to replace conventional single-use petrochemical plastics, our outer casings integrate compostable bamboo packaging components wherever those parts meet applicable compostability requirements—uniting effortless daily beauty with a lighter footprint.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                <div className="bg-[#FAF6F0] rounded-xl p-4 border border-[#E8DFD5] space-y-1">
-                  <div className="flex items-center space-x-2 text-[#55715E]">
-                    <Leaf size={14} />
-                    <span className="text-xs font-sans font-semibold text-[#2B211E]">
-                      100% Bamboo Resin &amp; Compostable Packaging
-                    </span>
-                  </div>
-                  <p className="text-[11px] text-[#6E625D] leading-relaxed font-light">
-                    Warm, tactile bamboo construction using compostable materials where component standards apply.
-                  </p>
-                </div>
-
-                <div className="bg-[#FAF6F0] rounded-xl p-4 border border-[#E8DFD5] space-y-1">
-                  <div className="flex items-center space-x-2 text-[#55715E]">
-                    <Recycle size={14} />
-                    <span className="text-xs font-sans font-semibold text-[#2B211E]">
-                      Reusable Design · A Greener Tomorrow
-                    </span>
-                  </div>
-                  <p className="text-[11px] text-[#6E625D] leading-relaxed font-light">
-                    Crafted for lasting refill cycles—helping keep single-use cosmetic clutter out of daily rituals.
-                  </p>
-                </div>
-              </div>
-
-              <div className="pt-2 flex flex-wrap items-center gap-3">
-                <button
-                  onClick={() => navigate('/about/tech/packaging')}
-                  className="bg-[#2B211E] hover:bg-[#433430] text-white px-6 py-3 rounded-lg text-xs font-sans font-semibold tracking-wider uppercase transition-colors inline-flex items-center space-x-2 whitespace-nowrap cursor-pointer"
-                >
-                  <span>Explore Packaging Tech</span>
-                  <ArrowRight size={14} />
-                </button>
-                <button
-                  onClick={() => navigate('/shop')}
-                  className="bg-white hover:bg-[#FAF1E8] text-[#2B211E] border border-[#DFD2C7] px-5 py-3 rounded-lg text-xs font-sans font-semibold tracking-wider uppercase transition-colors inline-flex items-center space-x-2 whitespace-nowrap cursor-pointer"
-                >
-                  <span>Shop Formulations</span>
-                  <ArrowRight size={14} />
-                </button>
-              </div>
             </div>
           </div>
         </div>

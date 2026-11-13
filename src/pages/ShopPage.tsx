@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import { PRODUCTS } from '../data/cosmeticsData';
 import { Product, Shade } from '../types';
 import { ProductCard } from '../components/ProductCard';
-import { Search, ArrowUpDown, Play, Pause, Volume2, VolumeX, RotateCcw, Leaf, Recycle, PackageCheck } from 'lucide-react';
+import { Search, ArrowUpDown, ArrowRight, Play, Pause, Volume2, VolumeX, RotateCcw, Smartphone, Zap, RotateCw, PackageCheck, Leaf, Recycle } from 'lucide-react';
 
 interface ShopPageProps {
   onAddToCart: (product: Product, shade: Shade) => void;
@@ -15,6 +15,7 @@ export const ShopPage: React.FC<ShopPageProps> = ({
   onQuickView,
 }) => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
   const initialCategory = searchParams.get('category') || 'ALL';
 
   const [selectedCategory, setSelectedCategory] = useState<string>(initialCategory);
@@ -108,20 +109,20 @@ export const ShopPage: React.FC<ShopPageProps> = ({
 
   return (
     <div className="bg-gradient-to-b from-[#FDF7F2] via-[#FAF1E8] to-[#F7ECE1] min-h-screen pb-24 animate-fadeIn">
-      {/* Conscious Packaging Section: Reusable & Compostable Containers and Tubs */}
-      <section className="bg-gradient-to-br from-[#F6F5EE] via-[#FAF7F1] to-[#F3F5EC] py-12 sm:py-16 border-b border-[#EADED5] relative overflow-hidden">
-        <div className="absolute -bottom-16 -left-16 w-80 h-80 bg-[#689775]/8 rounded-full blur-3xl pointer-events-none" />
+      {/* Self-Powered Dispenser Flow Section: Shop, Tap, Turn, Collect */}
+      <section className="bg-gradient-to-br from-[#FAF2EB] via-[#FDF6F0] to-[#F5ECE1] py-12 sm:py-16 border-b border-[#EADED5] relative overflow-hidden">
+        <div className="absolute -bottom-16 -left-16 w-80 h-80 bg-[#d8a48f]/12 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left: Packaging Video (Or0n2PGVh14) */}
+            {/* Left: Self-Powered Dispenser Video (fsfoCDkXf80) */}
             <div className="lg:col-span-6">
               <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black shadow-xl border border-[#3A2A23] group">
                 <iframe
                   ref={packagingIframeRef}
-                  src={`https://www.youtube-nocookie.com/embed/Or0n2PGVh14?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=Or0n2PGVh14&playsinline=1&controls=0&disablekb=1&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&hl=en&origin=${
+                  src={`https://www.youtube-nocookie.com/embed/fsfoCDkXf80?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=fsfoCDkXf80&playsinline=1&controls=0&disablekb=1&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&hl=en&origin=${
                     typeof window !== 'undefined' ? window.location.origin : ''
                   }`}
-                  title="Zoe · Nude Cosmetics Reusable & Compostable Packaging"
+                  title="Zoe · Nude Cosmetics Self-Powered Dispenser Experience"
                   className="w-full h-full border-0 absolute inset-0 pointer-events-none select-none"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -158,7 +159,7 @@ export const ShopPage: React.FC<ShopPageProps> = ({
 
                   <div className="flex items-center space-x-2 text-[10px] text-[#D1C7BD]">
                     <span className="hidden sm:inline font-serif italic text-white text-[11px]">
-                      &ldquo;Bare Beauty. A Lighter Footprint.&rdquo;
+                      &ldquo;Shop. Tap. Turn. Collect.&rdquo;
                     </span>
                     <span className="hidden sm:inline">&middot;</span>
                     <span className="text-[#d8a48f] font-mono uppercase tracking-wider">
@@ -169,67 +170,72 @@ export const ShopPage: React.FC<ShopPageProps> = ({
               </div>
             </div>
 
-            {/* Right: Reusable & Compostable Packaging Copy */}
+            {/* Right: 4-Step Shop, Tap, Turn, Collect Guide */}
             <div className="lg:col-span-6 space-y-5">
-              <div className="space-y-2.5">
-                <span className="text-[10px] font-sans font-semibold tracking-[0.2em] text-[#55715E] uppercase block">
-                  NUDE BY NATURE · KIND TO NATURE
+              <div className="space-y-2">
+                <span className="text-[10px] font-sans font-semibold tracking-[0.2em] text-[#85513f] uppercase block">
+                  ZOE NUDE APP &amp; SELF-POWERED DISPENSER
                 </span>
                 <h1 className="font-serif text-3xl sm:text-4xl text-[#2B211E] font-normal leading-tight">
-                  Naturally Nude. Thoughtfully Packaged.
+                  Shop, Tap, Turn &amp; Collect
                 </h1>
-                <p className="font-sans text-xs sm:text-sm text-[#4E4542] leading-relaxed font-light">
-                  Beauty in its natural form deserves packaging in harmony with nature. Every order ships in reusable containers and compostable tubs crafted so nothing unnecessary stands between your skin and the earth.
-                </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-1">
-                <div className="bg-white/90 rounded-xl p-4 border border-[#E8DFD5] space-y-1.5 shadow-2xs">
-                  <div className="flex items-center space-x-2 text-[#55715E]">
-                    <Recycle size={15} />
-                    <span className="text-[11px] font-sans font-semibold uppercase tracking-wider text-[#2B211E]">
-                      Reusable Containers
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
+                <div className="bg-white/95 rounded-xl p-4 border border-[#E8DFD5] space-y-1.5 shadow-2xs">
+                  <div className="flex items-center space-x-2 text-[#85513f]">
+                    <Smartphone size={15} />
+                    <span className="text-xs font-sans font-semibold tracking-wider uppercase text-[#2B211E]">
+                      1. SHOP
                     </span>
                   </div>
-                  <p className="text-[11px] text-[#6E625D] leading-relaxed font-light">
-                    Refillable atelier jars and durable tubs designed to be kept, rinsed, and reused again.
+                  <p className="text-xs text-[#4E4542] leading-relaxed font-light">
+                    Open the Zoe Nude app, choose your beauty product and pay.
                   </p>
                 </div>
 
-                <div className="bg-white/90 rounded-xl p-4 border border-[#E8DFD5] space-y-1.5 shadow-2xs">
-                  <div className="flex items-center space-x-2 text-[#55715E]">
-                    <Leaf size={15} />
-                    <span className="text-[11px] font-sans font-semibold uppercase tracking-wider text-[#2B211E]">
-                      Compostable Tubs
+                <div className="bg-white/95 rounded-xl p-4 border border-[#E8DFD5] space-y-1.5 shadow-2xs">
+                  <div className="flex items-center space-x-2 text-[#85513f]">
+                    <Zap size={15} />
+                    <span className="text-xs font-sans font-semibold tracking-wider uppercase text-[#2B211E]">
+                      2. TAP
                     </span>
                   </div>
-                  <p className="text-[11px] text-[#6E625D] leading-relaxed font-light">
-                    From nature, with nature, back to nature—plant-fiber shipping tubs break down cleanly.
+                  <p className="text-xs text-[#4E4542] leading-relaxed font-light">
+                    Tap your phone on the Zoe Nude dispenser to authorize your purchase.
                   </p>
                 </div>
 
-                <div className="bg-white/90 rounded-xl p-4 border border-[#E8DFD5] space-y-1.5 shadow-2xs">
-                  <div className="flex items-center space-x-2 text-[#55715E]">
+                <div className="bg-white/95 rounded-xl p-4 border border-[#E8DFD5] space-y-1.5 shadow-2xs">
+                  <div className="flex items-center space-x-2 text-[#85513f]">
+                    <RotateCw size={15} />
+                    <span className="text-xs font-sans font-semibold tracking-wider uppercase text-[#2B211E]">
+                      3. TURN
+                    </span>
+                  </div>
+                  <p className="text-xs text-[#4E4542] leading-relaxed font-light">
+                    Give the beautiful hand crank a turn and enjoy the music-box moment!
+                  </p>
+                </div>
+
+                <div className="bg-white/95 rounded-xl p-4 border border-[#E8DFD5] space-y-1.5 shadow-2xs">
+                  <div className="flex items-center space-x-2 text-[#85513f]">
                     <PackageCheck size={15} />
-                    <span className="text-[11px] font-sans font-semibold uppercase tracking-wider text-[#2B211E]">
-                      Zero Excess
+                    <span className="text-xs font-sans font-semibold tracking-wider uppercase text-[#2B211E]">
+                      4. COLLECT
                     </span>
                   </div>
-                  <p className="text-[11px] text-[#6E625D] leading-relaxed font-light">
-                    Nothing to hide, nothing unnecessary—less waste, more beauty, and a lighter footprint.
+                  <p className="text-xs text-[#4E4542] leading-relaxed font-light">
+                    Your product is dispensed. Pick it up and enjoy!
                   </p>
                 </div>
               </div>
-
-              <p className="font-serif italic text-sm text-[#85513f] pt-1">
-                &ldquo;Less Waste. More Beauty. Closer to Nature.&rdquo;
-              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+      <div id="shop-catalog" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 scroll-mt-24">
         {/* Controls Bar: Categories, Search, Sort */}
         <div className="space-y-6 mb-10 pb-6 border-b border-[#E8DFD5]">
           {/* Category Navigation Pills */}
@@ -336,6 +342,88 @@ export const ShopPage: React.FC<ShopPageProps> = ({
             Explore Complexion
           </button>
         </div>
+
+        {/* Nude by Nature · Kind to Nature: 100% Bamboo Resin Packaging Section */}
+        <section className="mt-16">
+          <div className="bg-white border border-[#E8DFD5] rounded-3xl p-6 sm:p-10 shadow-xs">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              {/* Left: Bamboo Resin Infographic Image */}
+              <div className="lg:col-span-5">
+                <div className="rounded-2xl overflow-hidden border border-[#E8DFD5] bg-[#F5ECE2] shadow-sm">
+                  <img
+                    src={`${import.meta.env.BASE_URL}assets/aistudio/image_70549471.png`}
+                    alt="Zoe Nude Cosmetics 100% bamboo resin lip vessel with compostable packaging and reusable design"
+                    className="w-full h-auto block object-contain"
+                  />
+                </div>
+              </div>
+
+              {/* Right: Explanatory Copy */}
+              <div className="lg:col-span-7 space-y-5">
+                <div className="space-y-2">
+                  <span className="text-[10px] sm:text-[11px] font-sans font-semibold tracking-[0.22em] text-[#55715E] uppercase block">
+                    Nude by Nature · Kind to Nature
+                  </span>
+                  <h2 className="font-serif text-2xl sm:text-4xl text-[#2B211E] font-normal leading-tight text-balance">
+                    100% Bamboo Resin: Reusable Design for a Greener Tomorrow
+                  </h2>
+                  <p className="font-sans text-xs sm:text-sm text-[#4E4542] leading-relaxed font-light">
+                    True skin-first formulation belongs in vessels that treat the earth with the same respect. Our botanical lip cashmeres and solid complexion sticks are housed in precision-turned <strong>100% bamboo resin</strong> tubes engineered with a modular, reusable design so you keep the outer hardware while replenishing only the inner bullet.
+                  </p>
+                  <p className="font-sans text-xs text-[#5C4D47] leading-relaxed font-light">
+                    Built to replace conventional single-use petrochemical plastics, our outer casings integrate compostable bamboo packaging components wherever those parts meet applicable compostability requirements—uniting effortless daily beauty with a lighter footprint.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                  <div className="bg-[#FAF6F0] rounded-xl p-4 border border-[#E8DFD5] space-y-1">
+                    <div className="flex items-center space-x-2 text-[#55715E]">
+                      <Leaf size={14} />
+                      <span className="text-xs font-sans font-semibold text-[#2B211E]">
+                        100% Bamboo Resin &amp; Compostable Packaging
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-[#6E625D] leading-relaxed font-light">
+                      Warm, tactile bamboo construction using compostable materials where component standards apply.
+                    </p>
+                  </div>
+
+                  <div className="bg-[#FAF6F0] rounded-xl p-4 border border-[#E8DFD5] space-y-1">
+                    <div className="flex items-center space-x-2 text-[#55715E]">
+                      <Recycle size={14} />
+                      <span className="text-xs font-sans font-semibold text-[#2B211E]">
+                        Reusable Design · A Greener Tomorrow
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-[#6E625D] leading-relaxed font-light">
+                      Crafted for lasting refill cycles—helping keep single-use cosmetic clutter out of daily rituals.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="pt-2 flex flex-wrap items-center gap-3">
+                  <button
+                    onClick={() => navigate('/about/tech/packaging')}
+                    className="bg-[#2B211E] hover:bg-[#433430] text-white px-6 py-3 rounded-lg text-xs font-sans font-semibold tracking-wider uppercase transition-colors inline-flex items-center space-x-2 whitespace-nowrap cursor-pointer"
+                  >
+                    <span>Explore Packaging Tech</span>
+                    <ArrowRight size={14} />
+                  </button>
+                  <button
+                    onClick={() => {
+                      const el = document.getElementById('shop-catalog');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="bg-white hover:bg-[#FAF1E8] text-[#2B211E] border border-[#DFD2C7] px-5 py-3 rounded-lg text-xs font-sans font-semibold tracking-wider uppercase transition-colors inline-flex items-center space-x-2 whitespace-nowrap cursor-pointer"
+                  >
+                    <span>Shop Formulations</span>
+                    <ArrowRight size={14} />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import {
   Cpu,
   Sun,
   Zap,
+  RotateCw,
   ShieldCheck,
   Database,
   Building2,
@@ -18,7 +19,7 @@ import mobileDispenseImg from '../assets/images/zoe_mobile_dispense_179451573677
 
 export const TechDistributionPage: React.FC = () => {
   const [activeStep, setActiveStep] = useState(0);
-  const [powerMode, setPowerMode] = useState<'nfc' | 'solar'>('nfc');
+  const [powerMode, setPowerMode] = useState<'solar' | 'crank' | 'nfc'>('nfc');
   const [activeArchLayer, setActiveArchLayer] = useState<'cloud' | 'phone' | 'dispenser'>('cloud');
 
   const purchaseSteps = [
@@ -401,81 +402,86 @@ export const TechDistributionPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Section 2 & 3: Ultra-Low Power Engineering (NFC Energy Harvesting & Solar) */}
+      {/* Section 2 & 3: Ultra-Low Power Engineering (Solar, Hand Crank & NFC Energy Harvesting) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-[#EADED5]">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
           <div className="max-w-2xl space-y-2">
             <span className="text-xs font-sans font-medium tracking-[0.16em] text-[#55715E] uppercase block">
               02 &amp; 03. Power Engineering
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl text-[#2B211E] font-normal text-balance">
-              Ultra-Low-Power &amp; Solar Dispensing Directions
+              Three Power Sources: Solar, Hand Crank &amp; NFC Energy Harvesting
             </h2>
             <p className="text-sm text-[#4E4542] leading-relaxed font-light">
-              Ambient-temperature cosmetics require zero refrigeration, heating, or compressor loads—unlocking passive NFC energy harvesting and compact solar architectures.
+              Ambient-temperature cosmetics require zero refrigeration, heating, or compressor loads—allowing our self-powered dispenser architecture to combine photovoltaic harvesting, human hand-crank mechanical drive, and smartphone NFC energy harvesting.
             </p>
           </div>
 
-          {/* Interactive Comparison Switch */}
-          <div className="inline-flex p-1 bg-[#F1E7DC] rounded-lg shrink-0">
-            <button
-              type="button"
-              onClick={() => setPowerMode('nfc')}
-              className={`px-4 py-2 text-xs font-sans font-medium rounded-md transition-colors cursor-pointer whitespace-nowrap shrink-0 flex items-center space-x-1.5 ${
-                powerMode === 'nfc' ? 'bg-white text-[#2B211E] shadow-2xs font-semibold' : 'text-[#5C4D47]'
-              }`}
-            >
-              <Zap size={13} />
-              <span>Passive NFC Dispenser</span>
-            </button>
+          {/* Interactive 3-Source Power Switch */}
+          <div className="inline-flex flex-wrap sm:flex-nowrap p-1 bg-[#F1E7DC] rounded-lg shrink-0 gap-1">
             <button
               type="button"
               onClick={() => setPowerMode('solar')}
-              className={`px-4 py-2 text-xs font-sans font-medium rounded-md transition-colors cursor-pointer whitespace-nowrap shrink-0 flex items-center space-x-1.5 ${
+              className={`px-3.5 py-2 text-xs font-sans font-medium rounded-md transition-colors cursor-pointer whitespace-nowrap shrink-0 flex items-center space-x-1.5 ${
                 powerMode === 'solar' ? 'bg-white text-[#2B211E] shadow-2xs font-semibold' : 'text-[#5C4D47]'
               }`}
             >
               <Sun size={13} />
-              <span>Solar-Assisted Dispenser</span>
+              <span>1. Solar</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setPowerMode('crank')}
+              className={`px-3.5 py-2 text-xs font-sans font-medium rounded-md transition-colors cursor-pointer whitespace-nowrap shrink-0 flex items-center space-x-1.5 ${
+                powerMode === 'crank' ? 'bg-white text-[#2B211E] shadow-2xs font-semibold' : 'text-[#5C4D47]'
+              }`}
+            >
+              <RotateCw size={13} />
+              <span>2. Hand Crank</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setPowerMode('nfc')}
+              className={`px-3.5 py-2 text-xs font-sans font-medium rounded-md transition-colors cursor-pointer whitespace-nowrap shrink-0 flex items-center space-x-1.5 ${
+                powerMode === 'nfc' ? 'bg-white text-[#2B211E] shadow-2xs font-semibold' : 'text-[#5C4D47]'
+              }`}
+            >
+              <Zap size={13} />
+              <span>3. NFC Energy Harvesting</span>
             </button>
           </div>
         </div>
 
-        {/* Active Power Specification Detail */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
+        {/* Self-Powered Zoe Nude Dispenser Flow Graphic */}
+        <div className="mb-10 rounded-2xl overflow-hidden border border-[#EADED5] bg-white shadow-sm">
+          <div className="px-6 py-4 bg-[#FAF4EC] border-b border-[#EADED5] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <span className="text-xs font-sans font-semibold tracking-[0.14em] text-[#2B211E] uppercase">
+              Self-Powered Dispenser Sequence
+            </span>
+            <span className="text-xs font-sans text-[#6E625D]">
+              NFC Field Unlock + Hand Crank Mechanical Drive
+            </span>
+          </div>
+          <div className="bg-white p-4 sm:p-6">
+            <img
+              src={`${import.meta.env.BASE_URL}assets/aistudio/image_5c4e7ab7.png`}
+              alt="The self-powered Zoe Nude dispenser workflow: 1. Phone authorizes, 2. NFC unlocks, 3. Customer turns the crank, 4. Product dispenses"
+              className="w-full h-auto max-w-4xl mx-auto rounded-xl block"
+            />
+          </div>
+        </div>
+
+        {/* Active Power Specification Detail & Power Matrix */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-7 bg-white rounded-2xl border border-[#EADED5] p-8 space-y-5">
-            {powerMode === 'nfc' ? (
-              <>
-                <div className="space-y-1">
-                  <span className="text-xs font-sans font-medium text-[#85513f]">
-                    Infineon Passive NFC Controller Benchmark
-                  </span>
-                  <h3 className="font-serif text-2xl sm:text-3xl text-[#2B211E]">
-                    NFC Energy Harvesting (~20–50 mW)
-                  </h3>
-                </div>
-                <p className="text-sm text-[#4E4542] leading-relaxed font-light">
-                  Documented passive NFC lock systems harvest roughly <strong>20–50 mW</strong> directly from a smartphone&rsquo;s NFC electromagnetic field—supplying both cryptographic verification and micro-actuator power upon tap without internal batteries or grid hookups.
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-[#F0E8DF] text-xs text-[#4E4542]">
-                  <div>
-                    <strong className="text-[#2B211E] block mb-1">Eliminated Subsystems</strong>
-                    No machine battery for NFC logic, no Wi-Fi, no Bluetooth, no cellular modem, no screen, and no always-on CPU.
-                  </div>
-                  <div>
-                    <strong className="text-[#2B211E] block mb-1">Mechanical Design Constraint</strong>
-                    Because 20–50 mW will not drive conventional vending auger motors, hardware uses a spring-loaded latch and gravity-fed release.
-                  </div>
-                </div>
-              </>
-            ) : (
+            {powerMode === 'solar' ? (
               <>
                 <div className="space-y-1">
                   <span className="text-xs font-sans font-medium text-[#55715E]">
-                    Off-Grid Micro-Storage Architecture
+                    01 · Off-Grid Photovoltaic Buffer
                   </span>
                   <h3 className="font-serif text-2xl sm:text-3xl text-[#2B211E]">
-                    Solar Panel + Capacitor / Battery Buffer
+                    1. Solar Panel + Supercapacitor Storage
                   </h3>
                 </div>
                 <p className="text-sm text-[#4E4542] leading-relaxed font-light">
@@ -492,38 +498,92 @@ export const TechDistributionPage: React.FC = () => {
                   </div>
                 </div>
               </>
+            ) : powerMode === 'crank' ? (
+              <>
+                <div className="space-y-1">
+                  <span className="text-xs font-sans font-medium text-[#85513f]">
+                    02 · Human-Powered Actuation &amp; Rituality
+                  </span>
+                  <h3 className="font-serif text-2xl sm:text-3xl text-[#2B211E]">
+                    2. Customer Hand Crank Drive
+                  </h3>
+                </div>
+                <p className="text-sm text-[#4E4542] leading-relaxed font-light">
+                  Once the NFC unlock releases the mechanical clutch, the customer supplies the primary dispensing torque by turning the exterior hand crank. Mechanical energy drives the precision feed mechanism—and can simultaneously wind a music-box chime or index a mechanical vend counter.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-[#F0E8DF] text-xs text-[#4E4542]">
+                  <div>
+                    <strong className="text-[#2B211E] block mb-1">Zero High-Draw Motors</strong>
+                    Eliminates heavy electric auger motors and lithium battery banks—human motion provides reliable, grid-free delivery force.
+                  </div>
+                  <div>
+                    <strong className="text-[#2B211E] block mb-1">Mechanical Vend Verification</strong>
+                    A mechanical counter or low-power sensor registers the completed dispense cycle and reports back through the customer&rsquo;s smartphone.
+                  </div>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="space-y-1">
+                  <span className="text-xs font-sans font-medium text-[#85513f]">
+                    03 · Infineon Passive NFC Controller Benchmark
+                  </span>
+                  <h3 className="font-serif text-2xl sm:text-3xl text-[#2B211E]">
+                    3. NFC Energy Harvesting (~20–50 mW)
+                  </h3>
+                </div>
+                <p className="text-sm text-[#4E4542] leading-relaxed font-light">
+                  Documented passive NFC lock systems harvest roughly <strong>20–50 mW</strong> directly from a smartphone&rsquo;s NFC electromagnetic field—supplying both cryptographic verification and micro-actuator power to unlock the crank or latch upon tap without internal batteries or grid hookups.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-[#F0E8DF] text-xs text-[#4E4542]">
+                  <div>
+                    <strong className="text-[#2B211E] block mb-1">Eliminated Subsystems</strong>
+                    No machine battery for NFC logic, no Wi-Fi, no Bluetooth, no cellular modem, no screen, and no always-on CPU.
+                  </div>
+                  <div>
+                    <strong className="text-[#2B211E] block mb-1">Targeted Power Handoff</strong>
+                    The harvested 20–50 mW powers the ultra-low-energy unlock latch so the customer&rsquo;s hand crank or gravity-fed drop finishes the vend.
+                  </div>
+                </div>
+              </>
             )}
           </div>
 
-          {/* Hardware Comparison Table */}
+          {/* 3-Source Power Matrix Table */}
           <div className="lg:col-span-5 bg-white rounded-2xl border border-[#EADED5] overflow-hidden">
             <div className="px-6 py-4 bg-[#FAF4EC] border-b border-[#EADED5]">
-              <h3 className="font-serif text-lg text-[#2B211E]">Power Architecture Matrix</h3>
+              <h3 className="font-serif text-lg text-[#2B211E]">3-Source Power Matrix</h3>
             </div>
             <table className="w-full text-left border-collapse text-xs font-sans">
               <thead>
                 <tr className="border-b border-[#F0E8DF] text-[#6E625D]">
-                  <th className="py-3 px-5 font-semibold">Design</th>
                   <th className="py-3 px-5 font-semibold">Power Source</th>
+                  <th className="py-3 px-5 font-semibold">Engineering Role</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#F0E8DF] text-[#2B211E]">
                 <tr>
-                  <td className="py-4 px-5 font-medium">Passive NFC Dispenser</td>
-                  <td className="py-4 px-5 text-[#4E4542] font-light">
-                    Energy harvested directly from customer smartphone NFC field (~20–50 mW)
+                  <td className="py-3.5 px-5 font-medium whitespace-nowrap">1. Solar</td>
+                  <td className="py-3.5 px-5 text-[#4E4542] font-light">
+                    Compact photovoltaic panel + supercapacitor / cell buffer for autonomous ambient standby &amp; sensing
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-4 px-5 font-medium">Solar-Assisted Dispenser</td>
-                  <td className="py-4 px-5 text-[#4E4542] font-light">
-                    Small solar panel, supercapacitor or rechargeable cell storage, low-draw actuator
+                  <td className="py-3.5 px-5 font-medium whitespace-nowrap">2. Hand Crank</td>
+                  <td className="py-3.5 px-5 text-[#4E4542] font-light">
+                    Customer mechanical torque drives the dispenser feed, music-box chime, and vend counter
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-4 px-5 font-medium">Release Mechanics</td>
-                  <td className="py-4 px-5 text-[#4E4542] font-light">
-                    Spring-loaded latch &amp; gravity-fed drop (zero heavy motors or cooling)
+                  <td className="py-3.5 px-5 font-medium whitespace-nowrap">3. NFC Harvesting</td>
+                  <td className="py-3.5 px-5 text-[#4E4542] font-light">
+                    Smartphone NFC field (~20–50 mW) powers cryptographic validation &amp; crank/latch unlock
+                  </td>
+                </tr>
+                <tr>
+                  <td className="py-3.5 px-5 font-medium whitespace-nowrap">Release Mechanics</td>
+                  <td className="py-3.5 px-5 text-[#4E4542] font-light">
+                    Spring-loaded latch, crank feed &amp; gravity drop (zero cooling compressors or high-wattage motors)
                   </td>
                 </tr>
               </tbody>

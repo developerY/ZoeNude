@@ -60,7 +60,6 @@ import {
   MasterclassReel,
   IngredientCodexEntry
 } from '../types';
-import shellLogoImg from '../assets/images/shell_logo.jpg';
 
 interface JournalPageProps {
   onAddToCart: (product: Product, shade: Shade) => void;
@@ -354,12 +353,12 @@ export const JournalPage: React.FC<JournalPageProps> = ({
               </div>
             </div>
 
-            {/* Right: Mermaid Crest Graphic + Institutional Standards Card */}
+            {/* Right: Mermaid Seashell Visual + Institutional Standards Card */}
             <div className="lg:col-span-5 flex flex-col justify-end space-y-4 text-xs font-sans text-[#6E625D]">
               <div className="rounded-2xl overflow-hidden border border-[#E8DFD5] bg-[#F5EDE2] p-1.5 shadow-md">
                 <img
-                  src={shellLogoImg}
-                  alt="Zoe Nude Cosmetics Seashell Mermaid Crest - Beauty, Without the Evidence"
+                  src={`${import.meta.env.BASE_URL}assets/aistudio/shellLlogo.jpg`}
+                  alt="Zoe Nude Cosmetics Mermaid Emerging From Seashell"
                   className="w-full h-auto object-cover rounded-xl block"
                 />
               </div>

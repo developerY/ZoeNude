@@ -132,7 +132,7 @@ export const TechPage: React.FC = () => {
                   </div>
                   <div className="flex items-center space-x-2">
                     <Cpu size={14} className="text-[#85513f] shrink-0" />
-                    <span>Passive NFC energy harvesting &amp; solar-assisted mechanical dispensers</span>
+                    <span>Self-powered dispensers: solar, hand crank &amp; NFC energy harvesting</span>
                   </div>
                 </div>
               </div>

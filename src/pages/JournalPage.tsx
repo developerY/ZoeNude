@@ -60,6 +60,7 @@ import {
   MasterclassReel,
   IngredientCodexEntry
 } from '../types';
+import shellLogoImg from '../assets/images/shell_logo.jpg';
 
 interface JournalPageProps {
   onAddToCart: (product: Product, shade: Shade) => void;
@@ -304,8 +305,8 @@ export const JournalPage: React.FC<JournalPageProps> = ({
             <span className="text-[#85513f] font-semibold">Articles, Beauty Tips & Scientific Codex</span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-            <div className="lg:col-span-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            <div className="lg:col-span-7">
               <div className="flex items-center space-x-2 text-[10px] sm:text-[11px] font-sans font-semibold tracking-[0.25em] text-[#85513f] uppercase mb-3">
                 <span className="w-2 h-2 rounded-full bg-[#85513f]" />
                 <span>LES NARRATIVES DU TEINT · EDITION 2027</span>
@@ -353,8 +354,16 @@ export const JournalPage: React.FC<JournalPageProps> = ({
               </div>
             </div>
 
-            {/* Right: Institutional Standards Card */}
-            <div className="lg:col-span-4 flex flex-col justify-end space-y-3 text-xs font-sans text-[#6E625D]">
+            {/* Right: Mermaid Crest Graphic + Institutional Standards Card */}
+            <div className="lg:col-span-5 flex flex-col justify-end space-y-4 text-xs font-sans text-[#6E625D]">
+              <div className="rounded-2xl overflow-hidden border border-[#E8DFD5] bg-[#F5EDE2] p-1.5 shadow-md">
+                <img
+                  src={shellLogoImg}
+                  alt="Zoe Nude Cosmetics Seashell Mermaid Crest - Beauty, Without the Evidence"
+                  className="w-full h-auto object-cover rounded-xl block"
+                />
+              </div>
+
               <div className="bg-white/90 border border-[#E8DFD5] rounded-xl p-5 shadow-xs">
                 <div className="flex items-center space-x-2 text-[#85513f] font-semibold text-[11px] uppercase tracking-wider mb-2">
                   <ShieldCheck size={15} />

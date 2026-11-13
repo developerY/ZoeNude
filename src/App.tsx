@@ -16,6 +16,7 @@ import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { TechPage } from './pages/TechPage';
 import { TechPackagingPage } from './pages/TechPackagingPage';
+import { TechPackagingEngineeringPage } from './pages/TechPackagingEngineeringPage';
 import { TechDistributionPage } from './pages/TechDistributionPage';
 import { ManifestoPage } from './pages/ManifestoPage';
 import { ShopPage } from './pages/ShopPage';
@@ -178,6 +179,7 @@ export default function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/about/tech" element={<TechPage />} />
             <Route path="/about/tech/packaging" element={<TechPackagingPage />} />
+            <Route path="/about/tech/packaging/engineering" element={<TechPackagingEngineeringPage />} />
             <Route path="/about/tech/distribution" element={<TechDistributionPage />} />
             <Route path="/manifesto" element={<ManifestoPage />} />
             <Route

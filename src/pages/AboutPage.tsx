@@ -189,7 +189,7 @@ export const AboutPage: React.FC = () => {
               <div className="relative mx-auto max-w-sm sm:max-w-md">
                 <div className="rounded-3xl overflow-hidden border-2 border-[#E8DFD5] shadow-2xl bg-[#F5EDE2] p-2 group hover:shadow-3xl transition-shadow duration-500">
                   <img
-                    src={`${import.meta.env.BASE_URL}assets/aistudio/image_3527ead4.png`}
+                    src={`${import.meta.env.BASE_URL}assets/aistudio/image_1f17fb6c.png`}
                     alt="Zoe · Nude Cosmetics Embossed Insignia - Beautifully You. Naturally Free."
                     className="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.02]"
                   />

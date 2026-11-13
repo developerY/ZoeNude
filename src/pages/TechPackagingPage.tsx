@@ -169,6 +169,16 @@ export const TechPackagingPage: React.FC = () => {
               <p className="text-xs font-sans text-[#5C4D47] bg-white/90 border border-[#E4DDD4] rounded-xl p-4 leading-relaxed">
                 <strong>Material Precision Standard:</strong> We use the term <em>compostable bamboo packaging</em> strictly where the actual packaging components meet the relevant compostability requirements—keeping every sustainability claim verifiable as our materials scale.
               </p>
+
+              <div className="pt-1 flex flex-wrap gap-3">
+                <Link
+                  to="/about/tech/packaging/engineering"
+                  className="bg-[#2B211E] hover:bg-[#433430] text-[#FCF9F3] text-xs font-sans font-semibold tracking-[0.14em] uppercase px-5 py-3 rounded-lg transition-colors inline-flex items-center space-x-2 whitespace-nowrap shrink-0"
+                >
+                  <span>Materials &amp; Manufacturing Monograph</span>
+                  <ArrowRight size={14} />
+                </Link>
+              </div>
             </div>
 
             <div className="lg:col-span-6">
@@ -329,8 +339,15 @@ export const TechPackagingPage: React.FC = () => {
             </p>
             <div className="pt-2 flex flex-wrap gap-3">
               <Link
-                to="/shop"
+                to="/about/tech/packaging/engineering"
                 className="bg-[#2B211E] hover:bg-[#433430] text-[#FCF9F3] text-xs font-sans font-semibold tracking-[0.14em] uppercase px-5 py-3 rounded-lg transition-colors inline-flex items-center space-x-2 whitespace-nowrap shrink-0"
+              >
+                <span>Engineering Monograph</span>
+                <ArrowRight size={14} />
+              </Link>
+              <Link
+                to="/shop"
+                className="bg-white hover:bg-[#FAF1E8] text-[#2B211E] border border-[#DFD2C7] text-xs font-sans font-semibold tracking-[0.14em] uppercase px-5 py-3 rounded-lg transition-colors inline-flex items-center space-x-2 whitespace-nowrap shrink-0"
               >
                 <span>Shop Formulations</span>
                 <ArrowRight size={14} />

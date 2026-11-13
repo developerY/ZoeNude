@@ -1,0 +1,402 @@
+﻿Engineering Biocompostable and Reusable Cosmetic Packaging: Material Science, Mechanical Architecture, and Manufacturing Execution
+Resolving the Reusability-Compostability Paradox via Split-Lifecycle Architecture
+Manufacturing a lipstick tube or cosmetic container that is simultaneously reusable and biocompostable presents a fundamental thermodynamic and kinetic contradiction. A polymer matrix engineered to undergo rapid enzymatic and hydrolytic cleavage in ambient backyard soil (  ) inherently lacks the long-term hydrolytic stability, creep resistance, and gas barrier performance required to survive multi-year consumer reuse, repeated mechanical actuation, and exposure to aggressive cosmetic lipids1. Conversely, thick-walled, high-crystallinity biocomposite structures capable of surviving drops, dishwashing cycles, and prolonged contact with water-in-oil emulsions will not disintegrate within acceptable timeframes in low-temperature home compost piles2.
+To resolve this material paradox without resorting to fossil-fuel plastics or greenwashing, contemporary packaging engineering relies on a split-lifecycle modular architecture5. Rather than forcing a single material grade to perform contradictory functions, the container is decoupled into two distinct functional assemblies, each optimized for its specific mechanical duty cycle and certified end-of-life pathway5. The first assembly comprises the durable, reusable outer casing and actuation mechanism, within which all mechanical complexity, torque-bearing threads, snap-fit undercuts, and structural impact resistance are permanently isolated6. For a zero-petrochemical system, these structural components are injection-molded from high-density wood-biopolymer composites—such as Sulapac Luxe Flex or Sulapac Solid 2.0—or nucleated Polyhydroxyalkanoate (PHA) copolymers4. These materials match the mechanical precision of Acrylonitrile Butadiene Styrene (ABS) and Polypropylene (PP), withstand dishwashing and cosmetic oils across dozens of refill cycles, and are certified for industrial composting (ASTM D6400 / EN 13432 at   ) or chemical depolymerization at the end of their multi-year service life2.
+The second assembly consists of the ultra-lightweight, home-compostable refill cartridge. The disposable primary package that holds the cosmetic bulk is stripped of all moving parts and manufactured as a simple, thin-walled insert via dry-in-mold thermoforming of agricultural by-products—specifically bamboo and sugarcane bagasse pulp, as commercialized in the Morrama and PPK Packaging Maya architecture—or thin-walled injection-molded PHA5. Lined with a bio-derived moisture and lipid barrier, this cartridge slides or snaps into the reusable mechanism and is certified for ambient home composting (TÜV OK Compost HOME / ISO 17427 at   ), returning to fertile soil within 6 to 12 months3.
+  
+
+By segregating these duties, brands eliminate up to    of virgin plastic waste while avoiding the structural failures that plague single-layer biodegradable containers5. When a consumer finishes a lipstick or skincare cream, the outer casing—which accounts for the vast majority of the system's mass and embodied energy—is retained, while only the lightweight, wax- or nanocellulose-sealed cartridge enters the organic waste stream5.
+Advanced Biopolymer and Biocomposite Material Selection
+Selecting the exact polymer matrix for each component requires balancing rheology, crystallinity, heat deflection temperature (HDT), and chemical compatibility with cosmetic formulations9. Conventional bioplastics like neat Polylactic Acid (PLA) or thermoplastic starch blends soften at elevated transit temperatures, crack under hoop stress in threaded closures, or degrade hydrolytically when exposed to water-based emulsions2. A robust biocompostable container system instead draws from four specialized material families engineered for complementary structural roles4.
+Polyhydroxyalkanoates (PHA Copolymers: PHBV, P3HB, PHBHHx, and P4HB)
+Synthesized intracellularly via the microbial fermentation of renewable plant sugars or lipids, PHAs represent the premier bio-material for functional cosmetic mechanisms and primary contact surfaces9. Unlike polyolefins or PLA, PHA is completely resistant to complex cosmetic fats, esters, and oils; it will not soften, swell, stress-crack, or leach plasticizers when immersed in anhydrous lip balms or oil-rich serums9. Furthermore, PHA is biocompatible, non-toxic, and certified biodegradable across industrial compost, home compost, soil, and marine environments (TÜV OK Compost Home and Marine)3.
+However, selecting the correct monomer ratio within the PHA family is essential for mechanical survival. Pure poly(3-hydroxybutyrate) (PHB) homopolymer is highly crystalline and excessively brittle, exhibiting a Young's modulus of   , a tensile strength of   , and an elongation at break of only   9. In a multi-component lipstick mechanism, pure PHB snap-fits fracture upon initial assembly9. By copolymerizing 3-hydroxybutyrate with 3-hydroxyvalerate to form PHBV (up to    HV content) or with    3-hydroxyhexanoate to form PHBHHx, the Young's modulus can be systematically tuned down from    to    while expanding elongation at break up to   9. This copolymer elasticity enables high-tolerance injection molding of living hinges, interference snap-fit lugs, and smooth-gliding lipstick cam sleeves that replicate the acoustic "click" of virgin ABS and PP9.
+A persistent failure point in sustainable cosmetic jars is the cap liner or airless piston gasket, which traditionally relies on non-compostable silicone or petrochemical thermoplastic vulcanizates21. To resolve this without introducing foreign polymers, packaging engineers can utilize poly-4-hydroxybutyrate (P4HB) and its 4HB/3HB copolymers18. Whereas PHB and PHBV are rigid semi-crystalline thermoplastics, P4HB exhibits true elastomeric behavior, characterized by a Young's modulus of just    (  ), a high tensile strength of   , and an extension to break of approximately   18. Molding the jar closure gasket or lipstick wiper seal from a P4HB copolymer maintains a    mono-family PHA composition while delivering exceptional compression-set recovery and hermetic sealing18.
+Wood- and Agricultural-Fiber Biocomposites (Sulapac Portfolio)
+For thick-walled reusable outer lipstick cases, jar bodies, and heavy luxury closures, wood-filled biodegradable biocomposites provide superior dimensional stability, lower mold shrinkage, inherently lower microbial susceptibility than paperboard, and a high-end tactile aesthetic4. Pioneered by Sulapac—and scaled commercially in luxury applications such as the lids and massage accessories for the N°1 de Chanel collection, Les Eaux de Chanel fragrance caps, and Byredo Mojave Ghost caps—these materials compound FSC-certified industrial wood side-streams (or upcycled, micronized camellia seed shells) with biodegradable polyester matrices such as PLA, PHA, PBAT, and PBS4. Incorporating inherently hydrophilic agricultural waste like camellia seed shells required bespoke surface compatibilization to prevent moisture uptake during molding, ultimately yielding a high-density (  ) composite (>85% biobased) that produces a ceramic-like acoustic clink and smooth gloss or matte finish directly from the mold without secondary exterior varnish4.
+Within the injection-molding portfolio, material engineers match specific composite grades to component geometry and mechanical stress. Sulapac Luxe (IM1025.2NC) and Sulapac Luxe Flex (IM1024.0NC and black granule grade IM1024.0BP) are engineered specifically to replace hard petro-plastics like ABS in fragrance caps, compacts, pencils, and lipstick casings4. While standard Luxe offers higher stiffness (   tensile modulus and    tensile strength at    biobased content), Luxe Flex (   USDA-certified biobased content) modifies the biopolymer binder to achieve a tenfold increase in ductility (   tensile strain at break compared to    for standard Luxe) and more than doubles the Melt Flow Index (   versus    at   )4. This high melt flow and elasticity allow Luxe Flex to fill thin-walled (  ) lipstick sleeves and strip cleanly off mold thread cores without micro-cracking10.
+For heavier structural containers, Sulapac Solid 2.0 and Sulapac Premium are formulated with    USDA-certified biobased content to replace thermosetting plastics such as Bakelite or urea-formaldehyde (Thermodur)4. Solid 2.0 provides high impact strength and is both microwave- and dishwasher-safe, making it uniquely suited for reusable cosmetic tubs that consumers wash between refills, while carrying BPI industrial compostability certification and LOOPLA chemical recyclability verification1. Sulapac Premium integrates visible wood chips to create a distinct organic haptic texture and ceramic weight for outer jars, whereas Sulapac Universal offers a general-purpose    biobased rigid grade that achieves    biodegradation in marine environments within 280 days (ASTM D6691) and    accelerated landfill biodegradation in 160 days (ASTM D5511)4. Finally, for thin-walled (  ) inner refill pods in direct contact with water-based emulsions, Sulapac Barrier (   biobased content) resists hydrolytic swelling, limiting evaporative weight loss in a 4-part emulsion jar to just    over 12 weeks at    (equivalent to a 1-year retail shelf life) while achieving    biodegradation in natural seawater within 56 days (ISO 22403 / ASTM D6691)4.
+  
+
+Nucleated Polylactic Acid (PLA) and Cork Hybrids
+Derived from fermented corn starch, maize, or sugarcane (   density,    tensile strength,    flexural strength), neat PLA suffers from a low glass transition temperature (   of   ), slow crystallization kinetics, and strictly industrial compostability2. Unmodified PLA should be restricted to thin secondary components or paired with natural thermal and mechanical insulators17. For example, in pressed powder or solid lip compacts, 3D Cork pairs a molded PLA structural base and magnetic pan insert with an agglomerated cork lid colored with water-based pigments and bonded via bio-based adhesives; the entire assembly is engineered for tool-free manual disassembly so the consumer can separate the cork lid, PLA structure, and magnet at end-of-life32. Similarly, HNB Corporation utilizes    PLA handles paired with    corn-fiber bristles in eco-designed cosmetic brushes8. When PLA must be used in higher-stress structural applications, compounding it with    zeolite shifts its crystalline morphology from the   -phase to the more stable   -phase, elevating tensile strength from    to   33.
+Molded Agricultural Pulp (Bamboo and Sugarcane Bagasse)
+To achieve true backyard compostability for the disposable refill cartridge, non-wood agricultural by-products—specifically bamboo pulp and sugarcane bagasse—are blended into an aqueous slurry and thermoformed into rigid, paper-like cylinders or cups5. Commercialized in the Maya refillable lipstick series (adopted by Wild) and European deodorant refills (adopted by Fler), these agricultural fibers regenerate rapidly without forest clearing, carry a minimal carbon footprint, and disintegrate in ambient home soil without leaving microplastic residues5.
+
+
+Material Grade
+	Primary Feedstock & Composition
+	Density (g/cm3\text{g/cm}^3g/cm3)
+	Tensile Strength (MPa\text{MPa}MPa)
+	Tensile Modulus (GPa\text{GPa}GPa)
+	Strain at Break (%\%%)
+	Target Packaging Component
+	End-of-Life Certification Pathway
+	Sulapac Luxe (IM1025.2NC)
+	  
+ biobased; wood flour + biodegradable biopolymers4
+	  
+10
+	  
+10
+	  
+10
+	  
+10
+	Thick-walled fragrance caps, heavy outer lipstick sleeves10
+	Industrial Compostable (TÜV / BPI); LOOPLA Chemically Recyclable4
+	Sulapac Luxe Flex (IM1024.0NC)
+	  
+ biobased; wood flour + toughened biopolyesters4
+	  
+10
+	  
+10
+	  
+10
+	  
+10
+	Thin-walled (  ) lipstick barrels, threaded jar lids, compacts4
+	Industrial Compostable (TÜV Austria); Recyclable by design4
+	Sulapac Solid 2.0
+	  
+ USDA biobased wood-biopolymer composite4
+	  
+10
+	High impact (Bakelite replacement)4
+	Rigid4
+	Moderate4
+	Dishwasher- and microwave-safe reusable outer cosmetic tubs4
+	Industrial Compostable (BPI); LOOPLA Chemically Recyclable4
+	Sulapac Barrier
+	  
+ USDA biobased; moisture-resistant biopolymer blend4
+	  
+10
+	Rigid4
+	Rigid4
+	Moderate4
+	Direct-contact inner refill cups for water-based emulsions (  )4
+	Marine Biodegradable (   in 56 days, ISO 22403 / ASTM D6691)4
+	Pure PHB Homopolymer
+	  
+ bio-fermented poly(3-hydroxybutyrate)9
+	  
+34
+	  
+18
+	  
+18
+	  
+18
+	Unsuitable for snap-fits alone; used as rigidity modifier in blends9
+	Home & Industrial Compostable; Marine & Soil Biodegradable9
+	PHBV / PHBHHx Copolymer
+	Bio-fermented    with    (up to   ) or    (  )18
+	  
+34
+	  
+18
+	  
+18
+	  
+18
+	High-precision lipstick twist mechanisms, elevator cups, living hinges9
+	Home & Industrial Compostable (TÜV OK Compost Home / Marine)9
+	P4HB Elastomer
+	  
+ bio-fermented poly-4-hydroxybutyrate18
+	  
+18
+	  
+18
+	  
+18
+	  
+18
+	Compressible jar closure gaskets, airless pistons, lipstick wiper seals18
+	Home & Industrial Compostable; Biocompatible / Resorbable18
+	Nucleated PLA
+	Corn starch / sugarcane polylactic acid + zeolite or TMC-32822
+	  
+22
+	  
+22
+	  
+22
+	  
+22
+	Secondary structural frames, brush handles, cork-hybrid compacts8
+	Industrial Compostable Only (ASTM D6400 / EN 13432)2
+	Bamboo & Bagasse Pulp
+	  
+ agricultural waste fiber slurry5
+	  
+ (hot-pressed)35
+	High specific stiffness35
+	High35
+	  
+
+	Disposable primary lipstick refill sleeves and dry powder pans5
+	Home & Soil Compostable (OK Compost HOME / AS 5810)5
+	Mechanical Engineering and Structural Design of the Containers
+Translating these biomaterials into functional packaging requires rethinking conventional cosmetic mechanics. Standard petro-plastic assemblies rely on dissimilar polymer tribology—pairing Polyoxymethylene (POM) spirals against ABS cam sleeves and PP elevator cups—to prevent galling and friction lock, while incorporating metal coil springs or zamac weights for haptics38. Because mixed-material assemblies cannot be recycled or composted without manual destruction, a biocompostable container must utilize mono-material mechanical engineering9.
+Engineering the Refillable Lipstick Mechanism
+In a split-lifecycle lipstick, the reusable base houses the actuation drive, while the refill cartridge consists of the solid wax-oil bullet pre-cast or inserted into a coated bamboo-bagasse pulp sleeve6. Three distinct mechanical drive architectures can be executed using mono-material PHA (specifically nucleated PHBV) and Sulapac outer housings.
+The first approach is a mono-material three-piece cam-and-spiral swivel that retains the classic rotational gesture5. In this configuration, the inner slotted body, the helically grooved cam sleeve (A-shell), and the central elevator cup (godet) are all injection-molded from nucleated PHBV9. To prevent friction welding or stick-slip chattering when two identical biopolymers rotate against one another, the mold tooling for the helical cam track is textured with a micro-matte EDM finish while the elevator lugs are polished to a mirror finish, reducing the interfacial contact area9. Incorporating    bio-based fatty acid amide slip agents into the PHBV masterbatch further stabilizes the operating torque across the entire stroke10.
+A second, mechanically simpler approach utilizes a two-part self-threading conveying drive that eliminates the thin-walled spiral sleeve entirely14. This mono-material mechanism employs a stationary central screw spindle molded directly into the twist base14. When the consumer inserts a hexagonally cross-sectioned solid refill cartridge and twists the base, the internal thread cuts directly into the base of the product or its molded carrier, driving the bullet forward and backward with zero auxiliary pins, cams, or springs14. The hexagonal inner profile of the outer barrel acts as a geometric anti-rotation keyway that prevents the bullet from spinning during actuation while simultaneously increasing shipping packing density14.
+A third option replaces rotational kinematics altogether with a linear slider mechanism41. Because semi-crystalline biopolymers can exhibit slight dimensional drift under fluctuating humidity, helical twist tracks with tight radial clearances (  ) risk binding if improperly conditioned12. Adopting a patented thumb-slider actuator—as demonstrated in the Toujours Lipstick or bottom-loading Glide Compact—eliminates helical friction paths by guiding a single PHA elevator shuttle along a straight axial slot inside the Sulapac outer case, engaging detents at the top and bottom of the stroke41.
+The Refill Locking Interface and Torque Specifications
+Regardless of the chosen drive kinematics, the mechanical junction where the home-compostable refill cartridge meets the reusable elevator mechanism represents the most critical tolerance zone in the assembly44. In the award-winning Maya system developed by Morrama and PPK Packaging, the bamboo-bagasse refill cartridge features a removable pulp hood that shields the bullet during transit and slides smoothly into the reusable case with a simple twist6. The base of the refill cartridge locks into the reusable actuator via an annular snap-fit—comprising cantilevered PHA snap lugs engaging snap slots on the refill collar—or a two-lug bayonet fitting44.
+To ensure the consumer can swap refills effortlessly without crushing the pulp cylinder or accidentally dislodging the refill when uncapping the lipstick, the mechanical retention forces must be strictly tiered. The cap pull-off release force, engineered via a precision interference rib inside the Sulapac Luxe cap, is tuned to require    of axial pull force accompanied by a crisp acoustic "click"9. Conversely, the refill cartridge retention force securing the refill sleeve into the reusable base must exceed the cap pull-off force by at least a factor of two—requiring    of axial extraction force, or an orthogonal counter-rotation release gesture in a bayonet mount or push-and-pull reload system—so routine uncapping never unseats the cartridge42. Finally, validated on an automated motorized torque tester such as a Mecmesin Vortex-xt, the rotational operating and release torque required to twist the lipstick barrel up and down must remain smoothly within    (  ), free of spike anomalies that signal mold flash or helical binding50.
+Engineering the Reusable Cosmetic Tub and Jar
+For skincare creams, balms, and loose powders, the container utilizes a double-walled pod architecture consisting of four primary components: a heavy-walled outer vessel, a threaded outer closure, a replaceable inner refill cup, and a hermetic sealing element5. The reusable outer jar (molded at    wall thickness from Sulapac Solid 2.0 or Premium) and the matching lid (molded from Sulapac Luxe Flex) are machined to standardized Glass Packaging Institute (GPI) continuous thread specifications, such as the beauty industry benchmark 53-400 neck finish for wide-mouth    (  ) containers4. However, because wood-filled biocomposites exhibit higher notch sensitivity than virgin PP (with notched Charpy impact strength of    versus unnotched impact strength of   )10, sharp V-threads must be avoided. Specifying a modified buttress or rounded-knuckle thread profile distributes axial clamping loads evenly and provides the high-torque resistance necessary to prevent thread stripping9.
+The replaceable inner refill cup (   wall thickness, molded from Sulapac Barrier or thermoformed coated bagasse pulp) features an upper seating flange and an undercut retention bead around its circumference4. Pressing the refill pod into the outer jar deflects the rim slightly to produce an audible "click" when closed, locking the pod against rotation when the consumer unscrews the outer cap14. To replace the non-recyclable foamed Polyethylene (PE) cap liner used in conventional jars, two microplastic-free hermetic sealing architectures can be deployed. First, a compressible ring of P4HB elastomer (   elongation) can be two-shot overmolded or press-fitted into an undercut channel inside the Sulapac lid; when the 53-400 cap is torqued down, the P4HB gasket compresses against the top rim of the inner refill cup to form an airtight seal5. Second, as pioneered by YOM Beauty for The Pebble lip care vessel, both the inner seal disk and integrated application spatula can be precision-molded directly from Sulapac grades, creating a    wood-biocomposite friction plug seal27.
+Barrier Coating Engineering for Formula Compatibility
+The single greatest technical vulnerability of bio-based primary refills—especially molded bamboo/bagasse pulp and thin-walled biopolymers—is their permeability to water vapor, oxygen, and low-molecular-weight cosmetic oils1. Uncoated molded pulp is inherently hydrophilic and porous; it rapidly wicks liquid esters and castor oil out of a lipstick bullet (leaving the product dry, brittle, and prone to oxidative rancidity) while losing structural stiffness in humid bathrooms1. Similarly, if a water-in-oil skincare emulsion loses more than    of its water mass over a 12-week accelerated aging test at   , the emulsion phase-separates4. To achieve commercial cosmetic shelf life (12 to 36 months) without fluorochemicals (PFAS) or polyethylene laminations, manufacturers apply one of three biocompostable barrier technologies to the interior of the refill cartridge58.
+Modified Nanocellulose (CNF and CNC) Multilayer Coatings
+Cellulose nanofibrils (CNF) and cellulose nanocrystals (CNC) derived from wood or agricultural waste (such as fique or sugarcane bagasse) form dense, hydrogen-bonded crystalline networks when cast or sprayed onto porous pulp substrates35. Produced via TEMPO-mediated oxidation (introducing    of anionic    carboxyl groups at the C6 glucose position at energy inputs of   ) or carboxymethylation (degree of substitution    at   ), followed by 3 to 5 passes through a high-pressure homogenizer at   , the resulting nanofibrils measure    in diameter and    in length with specific surface areas of   35.
+Because neither non-polar oxygen gas nor hydrophobic cosmetic oils and greases interact with or disrupt the tight hydrogen-bonded crystalline lattice of nanocellulose, a thin    (  ) CNF coating delivers an exceptional lipid and oxygen barrier that rivals synthetic Ethylene Vinyl Alcohol (EVOH) and aluminum oxide films35. However, pristine nanocellulose is sensitive to moisture; high relative humidity swells the fibrils and degrades the Water Vapor Transmission Rate (WVTR)36.
+To make nanocellulose impervious to both cosmetic oils and water vapor, chemical engineers utilize three distinct formulation strategies. First, formulating    carboxymethylated CNF with    water-soluble biodegradable Polyvinyl Alcohol (PVOH,   ) and    layered silicate nanoclay (montmorillonite or hectorite) creates an extreme tortuous path that reduces oxygen permeability by an additional   36. When spray-coated onto a molded pulp substrate and densified via hot-pressing at    and    for   , the film density increases by    (reaching   ), reducing Oxygen Transmission Rate (OTR) to    at    and WVTR to    at   —a 5- to 10-fold improvement over unmodified nanocellulose35. Second, for a    polysaccharide barrier free of synthetic PVOH, blending    CNF with    xylan hemicellulose (  ) and    chitosan (degree of deacetylation   ) triggers ionic complexation between the cationic amino groups of chitosan and the anionic carboxyl groups on the nanocellulose, locking out water vapor while chitosan's hydrophobic acetyl groups repel liquid emulsions36. Third, to coat the interior of a lipstick pulp sleeve against both moisture and wax bleed without surfactants, cellulose nanocrystals (CNC) are used to stabilize an oil-in-water Pickering emulsion of Acrylated Epoxidized Soybean Oil (AESO), or chemically modified via transesterification with canola oil fatty acid methyl esters (FAME), stearic acid, or crude tall oil59. Applied as a reactive dispersion coating on paper or pulp, the CNC-AESO Pickering emulsion achieves a hydrophobic water contact angle of    (   water absorption of just   ), an oil contact angle of   , and a maximum 12/12 Kit oil-resistance rating59.
+High-Barrier Bio-Polyesters (Polyglycolic Acid and Sulapac Barrier)
+When dispersion-coating pulp is insufficient for aggressive water-based skincare serums, the refill pod can be co-extruded or lined with Polyglycolic Acid (PGA)58. Structurally analogous to PLA but lacking the pendant methyl side group, PGA packs into a highly dense crystalline structure that achieves a moisture permeability of    and an oxygen permeability of   —orders of magnitude tighter than semi-crystalline PBS (  ) or PCL/PEG blends58. Alternatively, injection-molding the inner cup directly from Sulapac Barrier eliminates secondary coating steps altogether, holding emulsion moisture loss to    over 12 weeks at   4.
+Atomic-Scale PECVD Silica Bilayer and Trilayer Deposition
+For premium skincare, sunscreens, or volatile active formulations—such as retinoids, antioxidants, or Anjac Group's high-water AquaStick solid emulsions8—where zero gas permeation and zero flavor or fragrance scalping are mandatory, Plasma-Enhanced Chemical Vapor Deposition (PECVD) provides an invisible glass barrier inside the molded biopolymer or pulp refill cup61. Depositing brittle inorganic silica (  ) directly onto a relatively flexible biodegradable polyester (like PHA, PBS, or Sulapac) creates severe interfacial residual stress, causing the glass layer to fracture when the refill cup flexes during snap-fit insertion64.
+To eliminate residual stress, an automated Radio-Frequency (RF) PECVD reactor rotates the vessel holders to deposit a functional bilayer or trilayer architecture on the interior surface61. The process begins by depositing a flexible plasma-polymerized organosilicon buffer/tie layer (  , containing    carbon normalized to total carbon plus oxygen plus silicon) directly onto the biopolymer wall or over a smoothing bio-lacquer primer to absorb mechanical strain61. Next, the precursor gas ratio is adjusted to deposit a pure, dense inorganic    barrier layer at an optimal thickness of just   61. Finally, for aqueous or high-pH cosmetic emulsions that could slowly etch nanoscale silica over a multi-year shelf life, a third pH-protective carbon-rich cap layer is deposited over the    layer61. Because the entire PECVD barrier stack is only nanometers thick, deposition times are exceptionally short for industrial scalability, container leachables are blocked from migrating into the cosmetic formula, and the coating adds virtually zero mass—preserving    certified industrial and home compostability61.
+
+
+Barrier Technology & Chemistry
+	Coating / Layer Thickness
+	Water Vapor Barrier (WVTR / Contact Angle)
+	Oxygen & Lipid / Grease Barrier (OTR / Kit Rating)
+	Optimal Cosmetic Formula Application
+	Compostability Impact
+	Carboxymethylated CNF + PVOH + Nanoclay (  )
+	  
+ (  ), hot-pressed36
+	  
+ at   36
+	  
+ at   36
+	Molded bamboo/bagasse lipstick sleeves & balm refills8
+	Fully home & industrial compostable35
+	CNC-Stabilized AESO Pickering Emulsion / FAME Graft
+	Thin reactive dispersion coat on pulp59
+	Contact angle   ;   59
+	Oil contact angle   ; Kit Rating 12/1259
+	Oil- and ester-rich anhydrous lipsticks, salves, solid sticks9
+	  
+ bio-derived, surfactant- & fluorine-free59
+	CNF (  ) + Xylan (  ) + Chitosan (  )
+	  
+ multilayer filtration / spray35
+	High moisture resistance via ionic crosslinking36
+	  
+ even at   36
+	Humid-environment bathroom refills, pressed powders15
+	  
+ polysaccharide; home compostable36
+	Polyglycolic Acid (PGA) Liner / Coating
+	Thin co-extruded or dispersion film58
+	  
+58
+	  
+58
+	High-water emulsions, serums, and volatile creams9
+	Rapidly hydrolyzes in industrial/home compost58
+	PLA / Cerium-Grafted CNF Composite
+	Solvent/dispersion coat on    paper62
+	  
+ at   62
+	Moderate gas & oil resistance58
+	Dry setting powders, blush pans, secondary cartons5
+	Industrial compostable17
+	Sulapac Barrier (Injection Molded Wall)
+	  
+ structural cup wall30
+	  
+ mass loss over 12 wks at    (1-yr shelf life)4
+	Inherent PHA/biopolyester lipid holdout4
+	Rigid snap-in jar refill cups for oil-in-water creams4
+	Industrial compostable & marine biodegradable (56 d)4
+	RF-PECVD    /    Trilayer
+	  
+ inorganic oxide over organosilicon buffer61
+	Near-zero permeation (glass-equivalent barrier)61
+	Near-zero OTR; blocks leachables & fragrance scalping61
+	Retinoids, antioxidants, fragrances, AquaStick water sticks8
+	Nanoscale silica preserves    host compostability61
+	End-to-End Manufacturing Execution: From Prototype to Mass Production
+Transitioning a biocompostable cosmetic line from CAD models to high-cavitation mass production requires strict adherence to biopolymer thermal physics. Unlike petrochemical ABS or PP—which tolerate wide barrel temperature swings and stabilize dimensionally within minutes of ejection—PHA and wood-filled biocomposites are highly sensitive to thermal shear, moisture hydrolysis, and post-molding secondary crystallization10.
+  
+
+Rapid Prototyping and Small-Batch Validation
+Before cutting hardened steel injection molds, packaging engineers validate snap-fit retention forces, thread engagement, and helical cam clearances (  ) using functional prototypes fabricated from pure PHA and wood-biocomposite 3D printing filaments29. Prototyping lipstick mechanisms with    PHA filament (such as colorFabb allPHA, density   , heat resistant up to   ) requires inverting standard fused deposition modeling (FDM) thermal protocols34. Whereas ABS and PLA require a heated build plate (  ) to prevent warping, heating the bed when printing pure PHA induces rapid spherulitic crystallization and severe bottom-layer warping70. Because PHA has a glass transition temperature (  ) around   , keeping the extruded polymer warm accelerates crystal contraction and part distortion66.
+To print dimensionally accurate, warp-free cosmetic mechanisms, engineers enforce an aggressive cold-quench protocol. The build plate temperature must be set to    (unheated ambient room temperature) on a smooth or textured PEI flex-plate treated with 3DLac or PVA glue stick, utilizing a    outer brim with a tight    brim-to-object gap to anchor cylindrical lipstick barrels34. Extrusion is performed at a nozzle temperature of    (up to    for higher flow), with the flow ratio calibrated to    to prevent over-extrusion into thread roots, pressure advance set to   , and Arachne wall generation enabled with the layer seam forced inside the model34. Furthermore, printing at a fine    layer height at moderate speeds of    (volumetric flow rate of   ) minimizes the heat dumped into the part by the nozzle34. Keeping the cooling fan off for the first layer and locking cooling at    fan speed from layer 2 onward—ideally supplemented by auxiliary high-flow blower fans or a cooled ambient chamber (  )—quenches the PHA matrix immediately upon deposition and eliminates crystallization warping34.
+For visual mockups, ergonomic focus groups, or artisanal small-batch casting, 3D-printed master patterns are used to pour custom platinum-cure silicone molds capable of withstanding temperatures up to    (  )73. Treated with an industrial mold-release agent to prevent resin adhesion and silicone degradation, these flexible molds enable small-series casting of bio-based epoxies or direct hot-pouring of solid lipstick bullets73.
+Industrial Injection Molding of Sulapac and PHA
+Scaling to mass production utilizes existing multi-cavity injection molding machinery and valve-gated hot-runner systems (such as Cromes tooling paired with Oerlikon HRSflow hot runners), provided the process parameters account for biopolymer moisture sensitivity and crystallization kinetics4. All biopolyesters undergo rapid hydrolytic chain scission if moisture is present in the melt barrel, resulting in loss of molecular weight and brittle parts10. Consequently, Sulapac Luxe and Luxe Flex granules must be dried in a dehumidifying dryer at    for    (or in a vacuum dryer at    for at least   ) until residual moisture drops strictly below   10. Neat PHA copolymers (such as PHBHHx and PHBV) require hot-air or desiccant drying at    prior to melt processing20. To maintain compostability certifications, color masterbatches must use biodegradable carriers (PLA, PHA, PBAT, or PBS); crucially, when dosing color masterbatch into dried Sulapac granules, the base granules must first be cooled to    to prevent the masterbatch carrier from softening and agglomerating in the feed throat10.
+During plastication and injection, melt temperatures must never exceed    for Sulapac (above which wood fibers scorch and release fumes) or    for neat PHA (above which thermal degradation collapses mechanical properties and causes demolding failures)10. Residence dwell time in the barrel must be kept to an absolute minimum, and both the plasticization unit and hot runner must be purged with PE or PP before production, during stoppages, and at shutdown10.
+
+
+Process Parameter
+	Sulapac Luxe & Luxe Flex (IM1025 / IM1024)
+	P3HB / Nucleated PHBV (Lipstick Mechanism)
+	PHBHHx Copolymer (Aonilex X151A, 10.5 mol% 3HHx10.5\text{ mol\% 3HHx}10.5 mol% 3HHx)
+	Pre-Drying Protocol
+	  
+ for    (dehumidifying) or    (vacuum) to    moisture10
+	  
+ desiccant drying to    moisture10
+	  
+ circulating hot air for up to   20
+	Feed Throat Temperature
+	  
+ (   max if dosing masterbatch)10
+	  
+ (Zone 1 initial softening:   )56
+	  
+ (ambient water-cooled throat)20
+	Feed Zone Temperature
+	  
+10
+	  
+ (Zones 2–3)56
+	  
+20
+	Compression Zone Temperature
+	  
+10
+	  
+ (Zones 3–4)56
+	  
+20
+	Homogenizing / Metering Zone
+	  
+10
+	  
+ (Zone 5)56
+	  
+20
+	Nozzle & Hot Runner Temp
+	  
+ (Strict Ceiling:   )10
+	  
+56
+	  
+ (Degrades if    with cold mold)20
+	Mold Tooling Temperature
+	  
+10
+	  
+ (   optimal for crystallization)56
+	  
+ (Avoid    when melt is   )20
+	Injection & Holding Pressure
+	Back pressure:   10
+	Hold at    of peak pressure for   56
+	Injection:    (  ); Hold:    (  )20
+	Linear Mold Shrinkage
+	  
+10
+	  
+ (stabilized via BN nucleation + annealing)56
+	  
+ (depends on cooling & conditioning)20
+	Post-Mold Conditioning
+	Ready for assembly; purge barrel with PE/PP10
+	Inline anneal at    for   56
+	Condition at    or inline anneal20
+	Solving the PHA Secondary Crystallization and Shrinkage Trap
+The most critical engineering hurdle in manufacturing PHA lipstick mechanisms involves controlling post-molding secondary crystallization43. Because the glass transition temperature of PHA (  ) lies well below ambient room temperature (  ), the amorphous polymer chains in a newly molded lipstick cam sleeve retain high segmental mobility after ejection66. If an un-nucleated PHA part is quenched in a cold mold, it ejects in a partially amorphous, sticky state and subsequently undergoes slow secondary crystallization in the warehouse over 14 to 28 days (  ) at    and   20. During this two-to-four-week aging period, the polymer's modulus of elasticity climbs by    and the part undergoes    secondary volumetric shrinkage, warping thin cylindrical sleeves and jamming precision lipstick swivel tracks after assembly43.
+To achieve fast molding cycle times and immediate dimensional stability off the press, manufacturers must combine heterogeneous nucleation, warm mold tooling, and inline thermal annealing. First, the PHBV or P3HB resin should be compounded with    Boron Nitride (BN) or specialized organic nucleating agents such as    TMC-328,    EBH/EBS, or zinc phenylphosphonate (PPZn, which slashes crystallization half-time in biopolyester blends from    to under   )33. While talc is frequently used as a cheap nucleator, aging studies demonstrate that in fiber-reinforced PHBV systems at   , localized shrinkage stress around talc particles combines with moisture uptake to weaken the talc-PHBV interface;    Boron Nitride provides superior nucleation without interfacial failure and maintains stable non-isothermal crystallization behavior (   for PHBV;    for PHBHHx) over a full year of aging67. Second, mold tooling for PHA must never be chilled; keeping the mold temperature controlled at    (  ) balances flow length with rapid in-mold crystallization during the    holding phase (   of peak injection pressure)20. Third, routing ejected PHA mechanism parts directly through an inline annealing oven at    for    drives crystallinity from its as-molded    directly to its equilibrium plateau of   , exhausting secondary shrinkage prior to automated assembly56.
+Dry-in-Mold Thermoforming of Pulp Refills and Eco-Decoration
+In parallel with injection molding the reusable housings, the home-compostable bamboo and sugarcane bagasse refill sleeves are produced on automated PLC-controlled dry-in-mold (transfer-in-mold) thermoforming lines5. The raw agricultural fibers first undergo alkaline pretreatment (   or    at   ) to remove residual hemicellulose and enhance crystallinity, followed by sodium chlorite bleaching (   at    for   )36. The aqueous pulp slurry is vacuum-filtered onto a porous forming die under a    pressure differential to form the wet cylindrical preform, which an automated transfer robot moves into a heated compression mold for hot-pressing at    and    for   11. This in-mold drying step densifies the cellulose wall to   , eliminates porosity, and produces a smooth, tight-tolerance exterior8. The dried sleeves are then spray-coated internally with the nanocellulose/AESO or PECVD    barrier and filled with the cosmetic formula36.
+For exterior branding on the reusable Sulapac cases and secondary FSC-certified paperboard cartons, manufacturers avoid solvent-based UV coatings and synthetic foils that hinder composting or recycling15. Instead, luxury aesthetics are achieved through mold surface polishing (alternating shiny and matte finishes), embossed logos, bespoke marbled masterbatch injection (as engineered by FaiveleyTech and Sulapac for Dix Hectares), and printing with water-based, soy-, or algae-derived inks10.
+Certification, Regulatory Compliance, and Supply Chain Stability
+Bringing a biocompostable, reusable cosmetic container to market requires navigating strict statutory labeling laws in North America and Europe while managing the unique warehouse shelf-life constraints of biodegradable polymers2. Under US state legislation—specifically California AB 1201, Washington, and Colorado—as well as European standards, brands are legally prohibited from printing the unqualified word "biodegradable" on plastic or bioplastic packaging because the term fails to specify a breakdown timeframe or environment2. Indeed, materials tested solely for marine or accelerated landfill degradation (such as ASTM D6691 or ASTM D5511) must explicitly note that they are not considered biodegradable in California4.
+Consequently, the split-lifecycle container must hold a dual third-party certification stack verified by ISO 17025 accredited laboratories such as TÜV Austria, the Biodegradable Products Institute (BPI), or Intertek2. The reusable outer case and PHA mechanism must be certified to industrial compostability standards (ASTM D6400 in the US; EN 13432 and ISO 17088 in the EU/internationally), which verify    biodegradation within 90 to 180 days in commercial facilities operating at    (  ) without leaving toxic residues or microplastics2. To comply with Colorado and California labeling rules, components certified only to industrial standards must carry clear "Commercially Compostable Only" markings2. Simultaneously, the disposable pulp refill cartridge and barrier coating must be certified to home compostability standards (TÜV OK Compost HOME, Australian standard AS 5810, and ISO 17427), proving    disintegration and biodegradation within 6 to 12 months in ambient backyard compost bins operating at    (  )2.
+Finally, supply chain and operations managers must account for the finite pre-use storage stability of biodegradable polymers12. While petrochemical plastics have an indefinite warehouse shelf life, PHA-based packaging components have a standard shelf life of 10 to 12 months from the date of manufacture (compared to 9–18 months for PLA and 6–12 months for PBAT/starch blends) before ambient heat and humidity initiate gradual hydrolytic aging12. To prevent premature embrittlement of unfilled refill pods or lipstick mechanisms prior to retail sale, manufacturers must store all molded components in dark, climate-controlled warehouses maintained strictly at    (  ) with relative humidity below   12. Unfilled parts must be kept sealed inside moisture-barrier master carton liners away from heat sources, rotated under strict First-In, First-Out (FIFO) inventory protocols, and validated via 12-week accelerated stability testing at    with the target cosmetic formulation before commercial release2.
+Conclusions and Execution Roadmap
+Manufacturing a commercial-grade, biocompostable, and reusable lipstick tube or cosmetic tub cannot be achieved by substituting a single biodegradable resin into legacy multi-material molds. Success requires a systems-engineering approach that reconciles polymer physics with consumer mechanics. By adopting a split-lifecycle architecture, brands isolate moving mechanisms, threads, and structural wall thickness within a durable, reusable outer housing while reducing the consumable refill to a zero-mechanism insert5. Molding the reusable outer shells and threaded closures from wood-biopolymer composites (Sulapac Luxe Flex or Solid 2.0), molding precision mono-material lipstick swivel mechanisms from Boron Nitride-nucleated PHBV copolymers, molding hermetic closure gaskets from P4HB elastomers, and thermoforming disposable refill cartridges from bamboo and sugarcane bagasse pulp (or Sulapac Barrier) aligns each material's mechanical modulus with its intended lifecycle4. Pairing these structures with multi-mechanism internal barriers—specifically CNC-stabilized AESO Pickering emulsions or carboxymethylated CNF/nanoclay coatings for anhydrous lipsticks, and Sulapac Barrier walls or    RF-PECVD    plasma coatings for aqueous emulsions—while enforcing strict desiccant drying (   moisture), sub-   melt processing, and inline thermal annealing (  ) delivers a luxury cosmetic package that performs indistinguishably from virgin petrochemical plastic while returning cleanly to the biosphere4.
+Works cited
+1. Can molded pulp finally challenge plastic? - Packaging Europe, https://www.packagingeurope.com/can-molded-pulp-finally-challenge-plastic/
+2. Certified Compostable Packaging for US Brands | Achieve Pack, https://www.achievepack.com/usa/compostable-packaging
+3. Intertek Compostable Certification Program, https://www.intertek.com/sustainability/certification/compostable-program/
+4. Sustainable materials for injection molding - Sulapac, https://www.sulapac.com/materials-injection-molding/
+5. PPK Packaging — Refillable Cosmetics & Sustainable Packaging, https://www.ppkpackaging.com/
+6. Wild - Harry Mason Design, https://harrymasondesign.com/copy-of-maya
+7. Maya - Harry Mason Design, https://harrymasondesign.com/copy-of-kankan-8
+8. Beauty Innovations found at MakeUp in Paris - re-sources, https://re-sources.co/the-gems-that-we-found-at-makeup-in-paris/
+9. PHA: Next-Gen Sustainable Cosmetic Packaging - Sales Plastics, https://salesplastics.com/pha-sustainable-cosmetic-packaging/
+10. TECHNICAL DATA SHEET - Sulapac, http://sulapac.com/app/uploads/2025/03/TDS-Sulapac-Luxe-Luxe-Flex-ID-16216.pdf
+11. Jwell Automatic Robot Paper Fiber Sugarcane Pulp Molding, https://m.made-in-china.com/product/Jwell-Automatic-Robot-Paper-Fiber-Sugarcane-Pulp-Molding-Tableware-Thermoforming-Pulpmolding-Machine-for-Fast-Food-Box-Tray-Dish-Plate-Bowl-Box-Bowl-Cup-Lid-2128287345.html
+12. Compostable Bags Shelf Life: How Long Do They Last & Storage, https://hemcbags.com/compostable-bags-shelf-life-storage-tips/
+13. Compostable Pouches | Biodegradable Pouches & Packaging Bags, https://qiyupack.com/compostable-pouch/
+14. New Reusable/Refillable Packaging Materials/Containers, https://www.packworld.com/leaders-new/materials/flexible-packaging/article/22657390/new-reusablerefillable-packaging-materialscontainers
+15. Best Materials for Eco-Friendly Makeup Packaging - Lansbox, https://lansbox.com/best-eco-friendly-makeup-packaging-materials/
+16. Biodegradable & Compostable Packaging Buying Guide, https://www.packaging-labelling.com/buying-guide/biodegradable-compostable-packaging-buying-guide
+17. Biodegradable Cosmetic Packaging: Materials, Claims, and, https://www.nb-huihe.com/news/biodegradable-cosmetic-packaging-materials-claims-and-realistic-design-rules.html
+18. Medical devices and applications of polyhydroxyalkanoate polymers, https://patents.google.com/patent/US6548569B1/en
+19. Polymeric foams structure-property-performance: a design guide, https://dokumen.pub/polymeric-foams-structure-property-performance-a-design-guide-9781455777556-1455777552.html
+20. Extrusion and Injection Molding of Poly(3-Hydroxybutyrate-co ... - PMC, https://pmc.ncbi.nlm.nih.gov/articles/PMC8622142/
+21. biodegradable elastomer polyglycerol: Topics by Science.gov, https://www.science.gov/topicpages/b/biodegradable+elastomer+polyglycerol
+22. The New Generation of Cosmetics Packaging: A Paradigm Shift, https://www.researchgate.net/publication/390782186_The_New_Generation_of_Cosmetics_Packaging_A_Paradigm_Shift
+23. Luxury fragrance caps go sustainable, https://journals.co.za/doi/pdf/10.10520/ejc-im_sapcr_v50_n4_a19
+24. N° 1 de CHANEL – New range of beauty with sustainable ... - Sulapac, https://www.sulapac.com/blog/new-range-of-beauty-innovation-from-chanel-with-sustainable-sulapac-material/
+25. Chanel and Sulapac create innovative bio-based luxury jar lids for, https://www.premiumbeautynews.com/en/chanel-and-sulapac-create,19827,en
+26. CHANEL massage accessory made with Sulapac, https://www.sulapac.com/blog/chanel-massage-accessory/
+27. Sustainable and luxurious materials for cosmetic packaging - Sulapac, https://www.sulapac.com/cosmetics/
+28. Chanel and Sulapac create innovative bio-based luxury jar lids for, https://www.parispackagingweek.com/en/2022/02/09/chanel-and-sulapac-create-innovative-bio-based-luxury-jar-lids-for-skincare/
+29. Sulapac launches a bio based alternative to hard plastics, including, https://www.premiumbeautynews.com/en/sulapac-launches-a-bio-based,21673
+30. MATERIAL COMPARISON CHART - Sulapac, https://www.sulapac.com/app/uploads/2025/04/Sulapac-Material-Comparison-Chart-ID-12039-1.pdf
+31. pla/pha natural - ColorFabb, https://colorfabb.com/natural
+32. LUXEPACK Monaco 2026 - ACTUALITES - Vue détaillée, https://www.luxepackmonaco.com/en/actualites/le-rechargeable-au-c-ur-des-innovations-presentees-a-luxe-pack-monaco-2026
+33. The Effects of Nucleating Agents and Processing on the ... - PMC - NIH, https://pmc.ncbi.nlm.nih.gov/articles/PMC11206032/
+34. Colorfabb allPHA - first test prints and settings : r/3DPrinting_PHA, https://www.reddit.com/r/3DPrinting_PHA/comments/1dqci5x/colorfabb_allpha_first_test_prints_and_settings/
+35. Nanocellulose Packaging Material: Advanced Barrier Properties, https://eureka.patsnap.com/materials/nanocellulose-packaging
+36. Nanocellulose Barrier Film: Advanced Engineering Strategies For, https://eureka.patsnap.com/materials/nanocellulose-barrier-film
+37. Sustainable Sachet Packaging: Materials, Recycling Challenges, https://www.packagedsustainable.com/sustainable-packaging-solutions/sustainable-sachet-packaging
+38. On Becoming Sustainable ASAP - Beauty Packaging, https://www.beautypackaging.com/on-becoming-sustainable-asap/
+39. Lip Care Products Packaging Market Size, Share [2026-2034], https://www.fortunebusinessinsights.com/lip-care-products-packaging-market-119598
+40. Biopolymer Coatings Market Size | Industry Insights [2035], https://www.marketreportsworld.com/market-reports/biopolymer-coatings-market-14729765
+41. Trends and innovations from LuxePack Monaco - BW Confidential, https://www.bwconfidential.com/trends-and-talking-points-from-luxepack-monaco/
+42. Show Review: Sustainable Solutions at Luxe Pack Monaco 2025, https://www.beautypackaging.com/lightening-the-weight-and-the-recycling-burden-at-luxe-pack-monaco-2025/
+43. (PDF) Post-Processing Time Dependence of Shrinkage and, https://www.researchgate.net/publication/347839827_Post-Processing_Time_Dependence_of_Shrinkage_and_Mechanical_Properties_of_Injection-Molded_Polypropylene
+44. What Is Refillable Lipstick Packaging? - Linghui, https://www.linghuicospkg.com/blog/understanding-refillable-lipstick-packaging-and-its-benefits/
+45. Refillable Packaging: Beauty Market & Supplier Guide, https://www.eseneco.com/news/refillable-packaging-beauty-market-supplier-guide/
+46. US20210386984A1 - Metered dose topical applicator, https://patents.google.com/patent/US20210386984A1/en
+47. ÉCLOS lipstick — Refillable lipstick · Bahareh Arianejad - MALINYX, https://malinyx.com/work/eclos-lipstick/
+48. Cosmetic product packaging assembly forming a refill provided with, https://patents.google.com/patent/FR3143290A1/en
+49. 2ml Refillable Glass Bayonet Perfume Bottles... From Ddmymay, https://www.dhgate.com/product/100pcs-1-5ml-2ml-bayonet-bottle-sample-french/997538164.html
+50. Mecmesin Vortex-i: Computer-Controlled Torque Testing System for, https://manuals.plus/m/85bc1398447c74b8ab1b83d32da337e37d239bf30eac4d97f9fd588319431cb6
+51. Vortex-i - Cloudinary, https://res.cloudinary.com/iwh/image/upload/q_auto,g_center/assets/1/26/MecmesinVortex_Torque_Tester-DataSheet.pdf
+52. Beauty Love Is in the Air at Luxe Pack & MakeUp in LA, https://www.beautypackaging.com/beauty-love-is-in-the-air-at-luxe-pack-makeup-in-la/
+53. amber round 2oz glass cosmetic jars Straight Round Bulk, https://sunronpack.com/product/amber-round-2oz-glass-cosmetic-jars/
+54. Colored Glass Cosmetic Jars Wholesale | 90-day credit terms, https://sunronpack.com/product/colored-glass-cosmetic-jars/
+55. Bottle Neck Finish: The Ultimate Guide - UKPACK, https://www.ukpackchina.com/guide-to-bottle-neck-finish/
+56. Poly Beta Hydroxybutyric Acid Injection Molding Grade, https://eureka.patsnap.com/materials/p3hb-injection-molding
+57. Nanocellulose in thin films, coatings, and plies for packaging, https://bioresources.cnr.ncsu.edu/resources/nanocellulose-in-thin-films-coatings-and-plies-for-packaging-applications-a-review/
+58. Bio-based materials for barrier coatings on paper packaging - PMC, https://pmc.ncbi.nlm.nih.gov/articles/PMC9439277/
+59. Water vapor barrier coating based on nanocellulose crystals, https://www.researchgate.net/publication/354102666_Water_vapor_barrier_coating_based_on_nanocellulose_crystals_stabilized_AESO_oil-in-water_Pickering_emulsion
+60. PPK Showcases MAYA Series at Cosmoprof Bologna, https://www.ppkpackaging.com/news/1.html
+61. Biodegradable and compostable vessels, such as coffee pods, https://patents.google.com/patent/US20220169430A1/en
+62. Improving Hydrophobicity and Water Vapor Barrier Properties in, https://www.mdpi.com/2079-6412/14/10/1310
+63. Enhancing Barrier and Antioxidant Properties of Nanocellulose, https://pubs.acs.org/aanmf6/article/8/9/4397/3645625/Enhancing-Barrier-and-Antioxidant-Properties-of
+64. Plasma Deposition to Improve Barrier Performance of ... - MDPI, https://www.mdpi.com/2571-6182/5/4/33
+65. Nano-Coatings Improve Barrier Performance in Flexible Packaging, https://www.packagingworldinsights.com/trends/nano-coatings-improve-barrier-performance-in-flexible-packaging/
+66. Commercial Grade of P(3HB‐co‐3HHX) Final Properties ... - RiuNet, https://riunet.upv.es/bitstreams/a3ff6cd3-d57e-45c6-b16a-c070234e349a/download
+67. based Wood Plastic Composites (WPCs) Modifie - UQ eSpace, https://espace.library.uq.edu.au/view/UQ:705428/UQ705428_OA.pdf
+68. COMPOUNDS FOR WIRE AND CABLE 3D PRINT MATERIALS, https://content.yudu.com/web/1rl19/0A1rl2p/CWMay23/html/print/CW%20May%202023%20pdf%20for%20download.pdf
+69. colorFabb allPHA Black, 1.75 mm / 750g - 3DJake, https://www.3djake.com/colorfabb/allpha-black
+70. PLA / PHA Printer Settings - Helpcenter - ColorFabb, https://support.colorfabb.com/hc/en-150/articles/14729133442577-PLA-PHA-Printer-Settings
+71. allPHA, https://3d.nice-cdn.com/upload/file/TDS_E_ColorFabb_allPHA.pdf
+72. Austin's PHA Printing Journey - Bambu Lab Community Forum, https://forum.bambulab.com/t/austins-pha-printing-journey/171094
+73. Silicone Mold, Mini Packaging Casing Mold, Casing Shaker ... - Etsy, https://www.etsy.com/listing/4436524332/silicone-mold-mini-packaging-casing-mold
+74. Silicone Mold for Epoxy Resin Casting - 18" x 12" x 2" (RED), https://www.upstartepoxy.com/products/silicone-mold-18-x-12-x-2
+75. custom silicone mold making service - mb prototyping Ltd., https://www.mbprototyping.com/silicone-molds
+76. Biodegradable Material Injection Molding Solutions | Simblong, https://www.simblong.com/biodegradable-material-injection-molding-solutions.html
+77. Injection molding PHA bioplastics: Validating moldability for paper, https://www.researchgate.net/publication/295332751_Injection_molding_PHA_bioplastics_Validating_moldability_for_paper_mate_pens
+78. US9346948B2 - Toughened polyhydroxyalkanoate compositions, https://patents.google.com/patent/US9346948B2/en
+79. Impact of Processing Temperature and Composition on Foaming of, https://pubs.acs.org/doi/abs/10.1021/ie5021766
+80. The Distributor's Guide to Next-Generation Compostable Packaging, https://www.plantswitch.com/blog/distributor-guide-compostable-packaging

@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 
 interface TechSubNavProps {
-  active: 'overview' | 'packaging' | 'distribution';
+  active: 'overview' | 'packaging' | 'packaging-engineering' | 'distribution';
 }
 
 export const TechSubNav: React.FC<TechSubNavProps> = ({ active }) => {
   const tabs = [
     { id: 'overview' as const, label: 'Tech Overview', to: '/about/tech' },
     { id: 'packaging' as const, label: 'Packaging Innovation', to: '/about/tech/packaging' },
+    { id: 'packaging-engineering' as const, label: 'Materials & Manufacturing', to: '/about/tech/packaging/engineering' },
     { id: 'distribution' as const, label: 'Distribution Architecture', to: '/about/tech/distribution' },
   ];
 
@@ -37,13 +38,29 @@ export const TechSubNav: React.FC<TechSubNavProps> = ({ active }) => {
           >
             Tech
           </Link>
-          {activeLabel && (
+          {active === 'packaging-engineering' ? (
             <>
               <ChevronRight size={13} className="text-[#A89891] shrink-0" aria-hidden="true" />
+              <Link
+                to="/about/tech/packaging"
+                className="hover:text-[#2B211E] transition-colors whitespace-nowrap shrink-0"
+              >
+                Packaging
+              </Link>
+              <ChevronRight size={13} className="text-[#A89891] shrink-0" aria-hidden="true" />
               <span className="text-[#2B211E] font-semibold whitespace-nowrap shrink-0">
-                {activeLabel}
+                Materials &amp; Manufacturing
               </span>
             </>
+          ) : (
+            activeLabel && (
+              <>
+                <ChevronRight size={13} className="text-[#A89891] shrink-0" aria-hidden="true" />
+                <span className="text-[#2B211E] font-semibold whitespace-nowrap shrink-0">
+                  {activeLabel}
+                </span>
+              </>
+            )
           )}
         </nav>
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Heart, ShoppingBag, Menu, X, ArrowRight } from 'lucide-react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import mermaidShellSealImg from '../assets/images/mermaid_shell_seal_1794526715606.jpg';
 
 interface HeaderProps {
   cartCount: number;
@@ -157,6 +158,13 @@ export const Header: React.FC<HeaderProps> = ({
           kind: 'Sub-Page',
           isSubItem: true,
           description: 'Nude by Nature — compostable bamboo vessels',
+        },
+        {
+          title: 'Biocompostable Engineering',
+          to: '/about/tech/packaging/engineering',
+          kind: 'Materials & Mfg',
+          isSubItem: true,
+          description: 'Split-lifecycle PHA, Sulapac, barriers & molding',
         },
         {
           title: 'Distribution Architecture',
@@ -719,16 +727,17 @@ export const Header: React.FC<HeaderProps> = ({
                 )}
               </button>
 
-              {/* User Avatar Portrait */}
+              {/* Header Mermaid Shell Icon */}
               <Link
                 to="/manifesto"
-                aria-label="Client Account / Manifesto"
-                className="w-8 h-8 rounded-full overflow-hidden border border-[#E8DFD5] hover:border-[#85513f] transition-all focus:outline-none"
+                aria-label="Zoe Nude Manifesto Crest"
+                className="w-9 h-9 rounded-full overflow-hidden border border-[#d2c3c0] bg-[#f5ede2] hover:border-[#85513f] transition-all focus:outline-none flex-shrink-0"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80"
-                  alt="Client Profile"
-                  className="w-full h-full object-cover"
+                  src={mermaidShellSealImg}
+                  alt="Zoe Nude Mermaid Shell Emblem"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover object-[50%_26%] scale-[1.85]"
                 />
               </Link>
             </div>

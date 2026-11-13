@@ -97,6 +97,11 @@ export const Footer: React.FC = () => {
                   </Link>
                 </li>
                 <li>
+                  <Link to="/about/tech/packaging/engineering" className="hover:text-[#2B211E] text-left transition-colors">
+                    Biocompostable Engineering
+                  </Link>
+                </li>
+                <li>
                   <Link to="/about/tech/distribution" className="hover:text-[#2B211E] text-left transition-colors">
                     Distribution Architecture
                   </Link>

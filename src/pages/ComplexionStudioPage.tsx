@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { ALL_SHADES, PRODUCTS, TESTIMONIALS } from '../data/cosmeticsData';
 import { Shade, Product } from '../types';
+import { YouTubeCoverPlayer } from '../components/YouTubeCoverPlayer';
 import {
   Sparkles,
   ShieldCheck,
@@ -13,11 +14,6 @@ import {
   Star,
   Info,
   Sparkle,
-  Play,
-  Pause,
-  Volume2,
-  VolumeX,
-  RotateCcw,
   Leaf,
   Recycle,
   PackageCheck
@@ -131,47 +127,6 @@ export const ComplexionStudioPage: React.FC<ComplexionStudioPageProps> = ({
   const [selectedFoundation] = useState(PRODUCTS[0]); // Skin Veil
   const [selectedLip] = useState(PRODUCTS[1]); // Lip Cashmere
   const [routineAddedToast, setRoutineAddedToast] = useState(false);
-
-  // Naturally Nude Conscious Packaging Video State
-  const packagingIframeRef = useRef<HTMLIFrameElement>(null);
-  const [isPackagingPlaying, setIsPackagingPlaying] = useState(true);
-  const [isPackagingMuted, setIsPackagingMuted] = useState(true);
-
-  const postMessageToPackagingPlayer = (func: string, args: any[] = []) => {
-    if (packagingIframeRef.current && packagingIframeRef.current.contentWindow) {
-      packagingIframeRef.current.contentWindow.postMessage(
-        JSON.stringify({ event: 'command', func, args }),
-        '*'
-      );
-    }
-  };
-
-  const togglePackagingPlay = () => {
-    if (isPackagingPlaying) {
-      postMessageToPackagingPlayer('pauseVideo');
-      setIsPackagingPlaying(false);
-    } else {
-      postMessageToPackagingPlayer('playVideo');
-      setIsPackagingPlaying(true);
-    }
-  };
-
-  const togglePackagingMute = () => {
-    if (isPackagingMuted) {
-      postMessageToPackagingPlayer('unMute');
-      postMessageToPackagingPlayer('setVolume', [100]);
-      setIsPackagingMuted(false);
-    } else {
-      postMessageToPackagingPlayer('mute');
-      setIsPackagingMuted(true);
-    }
-  };
-
-  const handlePackagingRestart = () => {
-    postMessageToPackagingPlayer('seekTo', [0, true]);
-    postMessageToPackagingPlayer('playVideo');
-    setIsPackagingPlaying(true);
-  };
 
   const spectrums: ('Fair' | 'Light-Med' | 'Tan' | 'Deep')[] = ['Fair', 'Light-Med', 'Tan', 'Deep'];
   const undertones = ['ALL', 'Warm', 'Neutral', 'Cool', 'Olive'];
@@ -1157,58 +1112,11 @@ export const ComplexionStudioPage: React.FC<ComplexionStudioPageProps> = ({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left: Packaging Video (Or0n2PGVh14) */}
             <div className="lg:col-span-6">
-              <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black shadow-xl border border-[#3A2A23] group">
-                <iframe
-                  ref={packagingIframeRef}
-                  src={`https://www.youtube-nocookie.com/embed/Or0n2PGVh14?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=Or0n2PGVh14&playsinline=1&controls=0&disablekb=1&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&hl=en&origin=${
-                    typeof window !== 'undefined' ? window.location.origin : ''
-                  }`}
-                  title="Zoe · Nude Cosmetics Reusable & Compostable Packaging"
-                  className="w-full h-full border-0 absolute inset-0 pointer-events-none select-none"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-
-                {/* Bottom Interactive Control Overlay */}
-                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-auto bg-gradient-to-t from-black/85 via-black/50 to-transparent p-2.5 sm:p-3 rounded-xl backdrop-blur-xs z-20">
-                  <div className="flex items-center space-x-2">
-                    <button
-                      type="button"
-                      onClick={togglePackagingPlay}
-                      className="w-8 h-8 rounded-full bg-white/90 hover:bg-white text-[#2B211E] flex items-center justify-center transition-transform hover:scale-105 shadow-sm cursor-pointer"
-                      aria-label={isPackagingPlaying ? 'Pause film' : 'Play film'}
-                    >
-                      {isPackagingPlaying ? <Pause size={13} /> : <Play size={13} className="ml-0.5" />}
-                    </button>
-                    <button
-                      type="button"
-                      onClick={togglePackagingMute}
-                      className="w-7 h-7 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors cursor-pointer"
-                      aria-label={isPackagingMuted ? 'Unmute film' : 'Mute film'}
-                    >
-                      {isPackagingMuted ? <VolumeX size={12} /> : <Volume2 size={12} />}
-                    </button>
-                    <button
-                      type="button"
-                      onClick={handlePackagingRestart}
-                      className="w-7 h-7 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors cursor-pointer"
-                      aria-label="Restart film"
-                    >
-                      <RotateCcw size={12} />
-                    </button>
-                  </div>
-
-                  <div className="flex items-center space-x-2 text-[10px] text-[#D1C7BD]">
-                    <span className="hidden sm:inline font-serif italic text-white text-[11px]">
-                      &ldquo;Bare Beauty. A Lighter Footprint.&rdquo;
-                    </span>
-                    <span className="hidden sm:inline">&middot;</span>
-                    <span className="text-[#d8a48f] font-mono uppercase tracking-wider">
-                      {isPackagingMuted ? 'Muted Preview' : 'Sound Active'}
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <YouTubeCoverPlayer
+                videoId="Or0n2PGVh14"
+                title="Zoe · Nude Cosmetics Reusable & Compostable Packaging"
+                quote="“Bare Beauty. A Lighter Footprint.”"
+              />
             </div>
 
             {/* Right: Reusable & Compostable Packaging Copy */}

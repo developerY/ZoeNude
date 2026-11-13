@@ -13,16 +13,27 @@ export const FrontPageCinemaSection: React.FC<FrontPageCinemaSectionProps> = ({
   videoSrc,
   quote = '“Beautifully You. Naturally Free.”',
 }) => {
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isVideoVisible, setIsVideoVisible] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [isCcOn, setIsCcOn] = useState(false);
+  const [posterUrl, setPosterUrl] = useState(
+    `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`
+  );
 
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const iframeLoadedRef = useRef(false);
+  const pendingPlayRef = useRef(false);
+  const revealTimeoutRef = useRef<number | null>(null);
 
-  // YouTube embed URL with cc_load_policy=0 to turn off captions by default
+  useEffect(() => {
+    setPosterUrl(`https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`);
+  }, [videoId]);
+
+  // YouTube embed URL with autoplay=0 and cc_load_policy=0 so videos start stopped until clicked
   const embedUrl = videoId
-    ? `https://www.youtube-nocookie.com/embed/${videoId}?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=${videoId}&playsinline=1&controls=0&disablekb=1&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&hl=en&origin=${
+    ? `https://www.youtube-nocookie.com/embed/${videoId}?enablejsapi=1&autoplay=0&mute=1&loop=1&playlist=${videoId}&playsinline=1&controls=0&disablekb=1&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&hl=en&origin=${
         typeof window !== 'undefined' ? window.location.origin : ''
       }`
     : '';
@@ -40,7 +51,22 @@ export const FrontPageCinemaSection: React.FC<FrontPageCinemaSectionProps> = ({
     }
   };
 
+  const clearRevealTimeout = () => {
+    if (revealTimeoutRef.current !== null) {
+      window.clearTimeout(revealTimeoutRef.current);
+      revealTimeoutRef.current = null;
+    }
+  };
+
+  const scheduleRevealFallback = () => {
+    clearRevealTimeout();
+    revealTimeoutRef.current = window.setTimeout(() => {
+      setIsVideoVisible(true);
+    }, 550);
+  };
+
   const handleIframeLoad = () => {
+    iframeLoadedRef.current = true;
     if (iframeRef.current && iframeRef.current.contentWindow) {
       iframeRef.current.contentWindow.postMessage(
         JSON.stringify({ event: 'listening' }),
@@ -50,19 +76,40 @@ export const FrontPageCinemaSection: React.FC<FrontPageCinemaSectionProps> = ({
       postMessageToPlayer('unloadModule', ['captions']);
       postMessageToPlayer('setOption', ['captions', 'track', {}]);
       postMessageToPlayer('setOption', ['cc', 'track', {}]);
+
+      if (pendingPlayRef.current) {
+        pendingPlayRef.current = false;
+        if (!isMuted) {
+          postMessageToPlayer('unMute');
+          postMessageToPlayer('setVolume', [100]);
+        }
+        postMessageToPlayer('playVideo');
+        scheduleRevealFallback();
+      }
     }
   };
 
-  // Sync state from YouTube messages if available
+  // Sync state from YouTube messages scoped to this iframe
   useEffect(() => {
     const handleMessage = (e: MessageEvent) => {
+      if (!iframeRef.current || e.source !== iframeRef.current.contentWindow) {
+        return;
+      }
       try {
         const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
         if (data && data.event === 'infoDelivery' && data.info) {
           if (typeof data.info.playerState === 'number') {
             // 1 = playing, 2 = paused, 0 = ended
-            if (data.info.playerState === 1) setIsPlaying(true);
-            if (data.info.playerState === 2) setIsPlaying(false);
+            if (data.info.playerState === 1) {
+              clearRevealTimeout();
+              setIsPlaying(true);
+              setIsVideoVisible(true);
+            }
+            if (data.info.playerState === 2) {
+              clearRevealTimeout();
+              setIsPlaying(false);
+              setIsVideoVisible(false);
+            }
           }
           if (typeof data.info.muted === 'boolean') {
             setIsMuted(data.info.muted);
@@ -73,7 +120,10 @@ export const FrontPageCinemaSection: React.FC<FrontPageCinemaSectionProps> = ({
       }
     };
     window.addEventListener('message', handleMessage);
-    return () => window.removeEventListener('message', handleMessage);
+    return () => {
+      clearRevealTimeout();
+      window.removeEventListener('message', handleMessage);
+    };
   }, []);
 
   const togglePlay = () => {
@@ -89,11 +139,23 @@ export const FrontPageCinemaSection: React.FC<FrontPageCinemaSectionProps> = ({
     }
 
     if (isPlaying) {
+      pendingPlayRef.current = false;
+      clearRevealTimeout();
       postMessageToPlayer('pauseVideo');
       setIsPlaying(false);
+      setIsVideoVisible(false);
     } else {
-      postMessageToPlayer('playVideo');
       setIsPlaying(true);
+      if (iframeLoadedRef.current) {
+        if (!isMuted) {
+          postMessageToPlayer('unMute');
+          postMessageToPlayer('setVolume', [100]);
+        }
+        postMessageToPlayer('playVideo');
+        scheduleRevealFallback();
+      } else {
+        pendingPlayRef.current = true;
+      }
     }
   };
 
@@ -139,13 +201,22 @@ export const FrontPageCinemaSection: React.FC<FrontPageCinemaSectionProps> = ({
       return;
     }
 
-    postMessageToPlayer('seekTo', [0, true]);
-    postMessageToPlayer('playVideo');
-    if (!isCcOn) {
-      postMessageToPlayer('unloadModule', ['captions']);
-      postMessageToPlayer('setOption', ['captions', 'track', {}]);
-    }
     setIsPlaying(true);
+    if (iframeLoadedRef.current) {
+      postMessageToPlayer('seekTo', [0, true]);
+      if (!isMuted) {
+        postMessageToPlayer('unMute');
+        postMessageToPlayer('setVolume', [100]);
+      }
+      postMessageToPlayer('playVideo');
+      if (!isCcOn) {
+        postMessageToPlayer('unloadModule', ['captions']);
+        postMessageToPlayer('setOption', ['captions', 'track', {}]);
+      }
+      scheduleRevealFallback();
+    } else {
+      pendingPlayRef.current = true;
+    }
   };
 
   return (
@@ -156,10 +227,10 @@ export const FrontPageCinemaSection: React.FC<FrontPageCinemaSectionProps> = ({
             <video
               ref={videoRef}
               src={videoSrc}
-              autoPlay
               loop
               muted={isMuted}
               playsInline
+              preload="metadata"
               controls={false}
               disablePictureInPicture
               disableRemotePlayback
@@ -170,15 +241,32 @@ export const FrontPageCinemaSection: React.FC<FrontPageCinemaSectionProps> = ({
               onPause={() => setIsPlaying(false)}
             />
           ) : (
-            <iframe
-              ref={iframeRef}
-              src={embedUrl}
-              title="Zoe · Nude Cosmetics Cinema"
-              className="w-full h-full border-0 absolute inset-0 pointer-events-none select-none"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              onLoad={handleIframeLoad}
-            />
+            <>
+              <iframe
+                ref={iframeRef}
+                src={embedUrl}
+                title="Zoe · Nude Cosmetics Cinema"
+                className="w-full h-full border-0 absolute inset-0 pointer-events-none select-none"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                onLoad={handleIframeLoad}
+              />
+              {videoId && (
+                <img
+                  src={posterUrl}
+                  alt="Zoe · Nude Cosmetics Cinema"
+                  onError={() => {
+                    const fallback = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+                    if (posterUrl !== fallback) {
+                      setPosterUrl(fallback);
+                    }
+                  }}
+                  className={`absolute inset-0 w-full h-full object-cover pointer-events-none select-none z-10 transition-opacity duration-300 ${
+                    isVideoVisible ? 'opacity-0' : 'opacity-100'
+                  }`}
+                />
+              )}
+            </>
           )}
 
           {/* Bottom Interactive Control Overlay matching About Page */}

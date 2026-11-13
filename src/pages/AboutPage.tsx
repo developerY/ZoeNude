@@ -25,7 +25,7 @@ import {
 export const AboutPage: React.FC = () => {
   const [isSealVisible, setIsSealVisible] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
 
   const togglePlay = () => {
@@ -260,10 +260,10 @@ export const AboutPage: React.FC = () => {
               <video
                 ref={videoRef}
                 src="/assets/aistudio/Mermaid_emerging_from_seashell_20261022111320_e18bee16.mp4"
-                autoPlay
                 loop
                 muted={isMuted}
                 playsInline
+                preload="metadata"
                 controls={false}
                 disablePictureInPicture
                 disableRemotePlayback
@@ -275,7 +275,7 @@ export const AboutPage: React.FC = () => {
               />
 
               {/* Bottom Interactive Control Overlay */}
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-auto bg-gradient-to-t from-black/85 via-black/50 to-transparent p-3 sm:p-4 rounded-2xl backdrop-blur-xs">
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-auto bg-gradient-to-t from-black/85 via-black/50 to-transparent p-3 sm:p-4 rounded-2xl backdrop-blur-xs z-20">
                 <div className="flex items-center space-x-2.5 sm:space-x-3">
                   <button
                     type="button"

@@ -92,7 +92,7 @@ export const JournalPage: React.FC<JournalPageProps> = ({
 
   // Selected reel for video masterclass modal
   const [activeReel, setActiveReel] = useState<MasterclassReel | null>(null);
-  const [reelPlaying, setReelPlaying] = useState(true);
+  const [reelPlaying, setReelPlaying] = useState(false);
   const [reelMuted, setReelMuted] = useState(true);
   const reelVideoRef = React.useRef<HTMLVideoElement>(null);
 
@@ -410,7 +410,10 @@ export const JournalPage: React.FC<JournalPageProps> = ({
           {MASTERCLASS_REELS.map(reel => (
             <div
               key={reel.id}
-              onClick={() => setActiveReel(reel)}
+              onClick={() => {
+                setReelPlaying(false);
+                setActiveReel(reel);
+              }}
               className="group bg-white border border-[#E8DFD5] rounded-2xl overflow-hidden shadow-xs hover:shadow-lg hover:border-[#85513f]/60 transition-all cursor-pointer flex flex-col justify-between"
             >
               <div className="relative aspect-[4/5] overflow-hidden bg-[#2B211E]">
@@ -1445,10 +1448,10 @@ export const JournalPage: React.FC<JournalPageProps> = ({
                 ref={reelVideoRef}
                 src="/assets/aistudio/Mermaid_emerging_from_seashell_20261022111320_e18bee16.mp4"
                 poster={activeReel.thumbnail}
-                autoPlay
                 loop
                 muted={reelMuted}
                 playsInline
+                preload="metadata"
                 controls={false}
                 disablePictureInPicture
                 disableRemotePlayback

@@ -1,12 +1,13 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import { HeroSection } from '../components/HeroSection';
 import { RainbowSpectrumSection } from '../components/RainbowSpectrumSection';
 import { QuietConfidenceSection } from '../components/QuietConfidenceSection';
+import { YouTubeCoverPlayer } from '../components/YouTubeCoverPlayer';
 import { PRODUCTS, ALL_SHADES } from '../data/cosmeticsData';
 import { JOURNAL_ARTICLES } from '../data/journalData';
 import { Product, Shade } from '../types';
 import { Link, useNavigate } from 'react-router-dom';
-import { ArrowRight, Sparkles, ShieldCheck, Gift, Droplets, Star, BookOpen, Play, Pause, Volume2, VolumeX, RotateCcw, Leaf, Recycle } from 'lucide-react';
+import { ArrowRight, Sparkles, ShieldCheck, Gift, Droplets, Star, BookOpen, Leaf, Recycle } from 'lucide-react';
 
 interface HomePageProps {
   onAddToCart: (product: Product, shade: Shade) => void;
@@ -18,85 +19,6 @@ export const HomePage: React.FC<HomePageProps> = ({
   onQuickView,
 }) => {
   const navigate = useNavigate();
-  const manifestoIframeRef = useRef<HTMLIFrameElement>(null);
-  const [isManifestoPlaying, setIsManifestoPlaying] = useState(true);
-  const [isManifestoMuted, setIsManifestoMuted] = useState(true);
-
-  const postMessageToManifestoPlayer = (func: string, args: any[] = []) => {
-    if (manifestoIframeRef.current && manifestoIframeRef.current.contentWindow) {
-      manifestoIframeRef.current.contentWindow.postMessage(
-        JSON.stringify({ event: 'command', func, args }),
-        '*'
-      );
-    }
-  };
-
-  const toggleManifestoPlay = () => {
-    if (isManifestoPlaying) {
-      postMessageToManifestoPlayer('pauseVideo');
-      setIsManifestoPlaying(false);
-    } else {
-      postMessageToManifestoPlayer('playVideo');
-      setIsManifestoPlaying(true);
-    }
-  };
-
-  const toggleManifestoMute = () => {
-    if (isManifestoMuted) {
-      postMessageToManifestoPlayer('unMute');
-      postMessageToManifestoPlayer('setVolume', [100]);
-      setIsManifestoMuted(false);
-    } else {
-      postMessageToManifestoPlayer('mute');
-      setIsManifestoMuted(true);
-    }
-  };
-
-  const handleManifestoRestart = () => {
-    postMessageToManifestoPlayer('seekTo', [0, true]);
-    postMessageToManifestoPlayer('playVideo');
-    setIsManifestoPlaying(true);
-  };
-
-  const essentialsIframeRef = useRef<HTMLIFrameElement>(null);
-  const [isEssentialsPlaying, setIsEssentialsPlaying] = useState(true);
-  const [isEssentialsMuted, setIsEssentialsMuted] = useState(true);
-
-  const postMessageToEssentialsPlayer = (func: string, args: any[] = []) => {
-    if (essentialsIframeRef.current && essentialsIframeRef.current.contentWindow) {
-      essentialsIframeRef.current.contentWindow.postMessage(
-        JSON.stringify({ event: 'command', func, args }),
-        '*'
-      );
-    }
-  };
-
-  const toggleEssentialsPlay = () => {
-    if (isEssentialsPlaying) {
-      postMessageToEssentialsPlayer('pauseVideo');
-      setIsEssentialsPlaying(false);
-    } else {
-      postMessageToEssentialsPlayer('playVideo');
-      setIsEssentialsPlaying(true);
-    }
-  };
-
-  const toggleEssentialsMute = () => {
-    if (isEssentialsMuted) {
-      postMessageToEssentialsPlayer('unMute');
-      postMessageToEssentialsPlayer('setVolume', [100]);
-      setIsEssentialsMuted(false);
-    } else {
-      postMessageToEssentialsPlayer('mute');
-      setIsEssentialsMuted(true);
-    }
-  };
-
-  const handleEssentialsRestart = () => {
-    postMessageToEssentialsPlayer('seekTo', [0, true]);
-    postMessageToEssentialsPlayer('playVideo');
-    setIsEssentialsPlaying(true);
-  };
 
   return (
     <div className="space-y-0 animate-fadeIn">
@@ -146,58 +68,11 @@ export const HomePage: React.FC<HomePageProps> = ({
 
               {/* Right: The Video next to the Lower Words */}
               <div className="lg:col-span-7">
-                <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black shadow-xl border border-[#3A2A23] group">
-                  <iframe
-                    ref={manifestoIframeRef}
-                    src={`https://www.youtube-nocookie.com/embed/EzTReAG2Ctk?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=EzTReAG2Ctk&playsinline=1&controls=0&disablekb=1&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&hl=en&origin=${
-                      typeof window !== 'undefined' ? window.location.origin : ''
-                    }`}
-                    title="Zoe · Nude Cosmetics Manifesto Cinema"
-                    className="w-full h-full border-0 absolute inset-0 pointer-events-none select-none"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-
-                  {/* Bottom Interactive Control Overlay */}
-                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-auto bg-gradient-to-t from-black/85 via-black/50 to-transparent p-2.5 sm:p-3 rounded-xl backdrop-blur-xs z-20">
-                    <div className="flex items-center space-x-2">
-                      <button
-                        type="button"
-                        onClick={toggleManifestoPlay}
-                        className="w-8 h-8 rounded-full bg-white/90 hover:bg-white text-[#2B211E] flex items-center justify-center transition-transform hover:scale-105 shadow-sm cursor-pointer"
-                        aria-label={isManifestoPlaying ? 'Pause film' : 'Play film'}
-                      >
-                        {isManifestoPlaying ? <Pause size={13} /> : <Play size={13} className="ml-0.5" />}
-                      </button>
-                      <button
-                        type="button"
-                        onClick={toggleManifestoMute}
-                        className="w-7 h-7 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors cursor-pointer"
-                        aria-label={isManifestoMuted ? 'Unmute film' : 'Mute film'}
-                      >
-                        {isManifestoMuted ? <VolumeX size={12} /> : <Volume2 size={12} />}
-                      </button>
-                      <button
-                        type="button"
-                        onClick={handleManifestoRestart}
-                        className="w-7 h-7 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors cursor-pointer"
-                        aria-label="Restart film"
-                      >
-                        <RotateCcw size={12} />
-                      </button>
-                    </div>
-
-                    <div className="flex items-center space-x-2 text-[10px] text-[#D1C7BD]">
-                      <span className="hidden sm:inline font-serif italic text-white text-[11px]">
-                        &ldquo;Naturally Free.&rdquo;
-                      </span>
-                      <span className="hidden sm:inline">&middot;</span>
-                      <span className="text-[#d8a48f] font-mono uppercase tracking-wider">
-                        {isManifestoMuted ? 'Muted Preview' : 'Sound Active'}
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                <YouTubeCoverPlayer
+                  videoId="EzTReAG2Ctk"
+                  title="Zoe · Nude Cosmetics Manifesto Cinema"
+                  quote="“Naturally Free.”"
+                />
               </div>
             </div>
 
@@ -323,58 +198,11 @@ export const HomePage: React.FC<HomePageProps> = ({
 
             {/* Right: The First Video (OPj5GAZ3v5I) in this Header */}
             <div className="lg:col-span-7">
-              <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-black shadow-xl border border-[#3A2A23] group">
-                <iframe
-                  ref={essentialsIframeRef}
-                  src={`https://www.youtube-nocookie.com/embed/OPj5GAZ3v5I?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=OPj5GAZ3v5I&playsinline=1&controls=0&disablekb=1&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&hl=en&origin=${
-                    typeof window !== 'undefined' ? window.location.origin : ''
-                  }`}
-                  title="Zoe · Nude Cosmetics Bespoke Essentials Cinema"
-                  className="w-full h-full border-0 absolute inset-0 pointer-events-none select-none"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-
-                {/* Bottom Interactive Control Overlay */}
-                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-auto bg-gradient-to-t from-black/85 via-black/50 to-transparent p-2.5 sm:p-3 rounded-xl backdrop-blur-xs z-20">
-                  <div className="flex items-center space-x-2">
-                    <button
-                      type="button"
-                      onClick={toggleEssentialsPlay}
-                      className="w-8 h-8 rounded-full bg-white/90 hover:bg-white text-[#2B211E] flex items-center justify-center transition-transform hover:scale-105 shadow-sm cursor-pointer"
-                      aria-label={isEssentialsPlaying ? 'Pause film' : 'Play film'}
-                    >
-                      {isEssentialsPlaying ? <Pause size={13} /> : <Play size={13} className="ml-0.5" />}
-                    </button>
-                    <button
-                      type="button"
-                      onClick={toggleEssentialsMute}
-                      className="w-7 h-7 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors cursor-pointer"
-                      aria-label={isEssentialsMuted ? 'Unmute film' : 'Mute film'}
-                    >
-                      {isEssentialsMuted ? <VolumeX size={12} /> : <Volume2 size={12} />}
-                    </button>
-                    <button
-                      type="button"
-                      onClick={handleEssentialsRestart}
-                      className="w-7 h-7 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 flex items-center justify-center transition-colors cursor-pointer"
-                      aria-label="Restart film"
-                    >
-                      <RotateCcw size={12} />
-                    </button>
-                  </div>
-
-                  <div className="flex items-center space-x-2 text-[10px] text-[#D1C7BD]">
-                    <span className="hidden sm:inline font-serif italic text-white text-[11px]">
-                      &ldquo;Enhance your beauty. Never hide it.&rdquo;
-                    </span>
-                    <span className="hidden sm:inline">&middot;</span>
-                    <span className="text-[#d8a48f] font-mono uppercase tracking-wider">
-                      {isEssentialsMuted ? 'Muted Preview' : 'Sound Active'}
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <YouTubeCoverPlayer
+                videoId="OPj5GAZ3v5I"
+                title="Zoe · Nude Cosmetics Bespoke Essentials Cinema"
+                quote="“Enhance your beauty. Never hide it.”"
+              />
             </div>
           </div>
         </div>

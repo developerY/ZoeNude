@@ -14,6 +14,7 @@ import {
   Check,
 } from 'lucide-react';
 import { TechSubNav } from '../components/TechSubNav';
+import { YouTubeCoverPlayer } from '../components/YouTubeCoverPlayer';
 import nfcDispenserImg from '../assets/images/nfc_beauty_dispenser_1794515736580.jpg';
 import mobileDispenseImg from '../assets/images/zoe_mobile_dispense_1794515736779.jpg';
 
@@ -643,11 +644,58 @@ export const TechDistributionPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Section 5 & 6: Economic Advantages & Real-World Venues */}
+      {/* Section 5: Mechanical Dispense Sequence (Shop, Tap, Press, Pull, Collect) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-[#EADED5]">
+        <div className="max-w-2xl mb-10 space-y-2">
+          <span className="text-xs font-sans font-medium tracking-[0.16em] text-[#85513f] uppercase block">
+            05. Mechanical Dispense Sequence
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl text-[#2B211E] font-normal text-balance">
+            Shop, Tap, Press, Pull &amp; Collect
+          </h2>
+          <p className="text-sm text-[#4E4542] leading-relaxed font-light">
+            Five physical steps unite app-authorized security with an effortless mechanical release—delivering Zoe Nude products in seconds without onboard displays or external power cords.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          {/* Left: Mechanical Dispenser Demonstration Video (lkhaGDaLZvo) */}
+          <div className="lg:col-span-6">
+            <YouTubeCoverPlayer
+              videoId="lkhaGDaLZvo"
+              title="Zoe Nude Mechanical Dispenser: Shop, Tap, Press, Pull, Collect"
+              quote="“Shop. Tap. Press. Pull. Collect.”"
+            />
+          </div>
+
+          {/* Right: 5-Step Mechanical Dispense Flow Graphic */}
+          <div className="lg:col-span-6">
+            <div className="rounded-2xl overflow-hidden border border-[#EADED5] bg-white shadow-sm">
+              <div className="px-6 py-3.5 bg-[#FAF4EC] border-b border-[#EADED5] flex items-center justify-between gap-2">
+                <span className="text-xs font-sans font-semibold tracking-[0.14em] text-[#2B211E] uppercase">
+                  5-Step Customer Dispense Flow
+                </span>
+                <span className="text-xs font-sans text-[#6E625D]">
+                  NFC Authorization + Mechanical Pull
+                </span>
+              </div>
+              <div className="bg-white p-3 sm:p-5">
+                <img
+                  src={`${import.meta.env.BASE_URL}assets/aistudio/image_6a90d25a.png`}
+                  alt="Zoe Nude dispenser 5-step sequence: 01 Shop, 02 Tap, 03 Press, 04 Pull, 05 Collect"
+                  className="w-full h-auto rounded-xl block"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6: Economic Advantages & Real-World Venues */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-2xl mb-10 space-y-2">
           <span className="text-xs font-sans font-medium tracking-[0.16em] text-[#85513f] uppercase block">
-            05. Network Economics
+            06. Network Economics
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl text-[#2B211E] font-normal text-balance">
             Five Structural Cost Reductions

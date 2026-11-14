@@ -691,11 +691,11 @@ export const TechDistributionPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Section 6: Economic Advantages & Real-World Venues */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      {/* Network Economics: Five Structural Cost Reductions */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-b border-[#EADED5]">
         <div className="max-w-2xl mb-10 space-y-2">
           <span className="text-xs font-sans font-medium tracking-[0.16em] text-[#85513f] uppercase block">
-            06. Network Economics
+            Network Economics
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl text-[#2B211E] font-normal text-balance">
             Five Structural Cost Reductions
@@ -705,7 +705,7 @@ export const TechDistributionPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {costReductions.map((item) => (
             <div key={item.num} className="bg-white rounded-xl border border-[#E4DDD4] p-6 space-y-2">
               <span className="font-mono tabular-nums text-xs text-[#85513f] block">{item.num}.</span>
@@ -728,8 +728,10 @@ export const TechDistributionPage: React.FC = () => {
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Closing Company Positioning Statement */}
+      {/* Closing Company Positioning Statement */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
         <div className="bg-[#2B211E] text-[#FCF9F3] rounded-2xl p-8 sm:p-12 text-center space-y-5">
           <div className="space-y-1">
             <span className="font-serif text-xl tracking-wider block">Zoe</span>

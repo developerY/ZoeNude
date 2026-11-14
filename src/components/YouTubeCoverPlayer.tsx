@@ -19,7 +19,7 @@ export const YouTubeCoverPlayer: React.FC<YouTubeCoverPlayerProps> = ({
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [isVideoVisible, setIsVideoVisible] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
   const [posterUrl, setPosterUrl] = useState(
     `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`
   );
@@ -28,7 +28,7 @@ export const YouTubeCoverPlayer: React.FC<YouTubeCoverPlayerProps> = ({
     setPosterUrl(`https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`);
   }, [videoId]);
 
-  const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?enablejsapi=1&autoplay=0&mute=1&loop=1&playlist=${videoId}&playsinline=1&controls=0&disablekb=1&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&hl=en&origin=${
+  const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?enablejsapi=1&autoplay=0&mute=0&loop=1&playlist=${videoId}&playsinline=1&controls=0&disablekb=1&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&hl=en&origin=${
     typeof window !== 'undefined' ? window.location.origin : ''
   }`;
 
@@ -65,6 +65,11 @@ export const YouTubeCoverPlayer: React.FC<YouTubeCoverPlayerProps> = ({
       postMessageToPlayer('unloadModule', ['captions']);
       postMessageToPlayer('setOption', ['captions', 'track', {}]);
       postMessageToPlayer('setOption', ['cc', 'track', {}]);
+
+      if (!isMuted) {
+        postMessageToPlayer('unMute');
+        postMessageToPlayer('setVolume', [100]);
+      }
 
       if (pendingPlayRef.current) {
         pendingPlayRef.current = false;

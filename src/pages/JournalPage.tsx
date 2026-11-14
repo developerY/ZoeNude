@@ -93,7 +93,7 @@ export const JournalPage: React.FC<JournalPageProps> = ({
   // Selected reel for video masterclass modal
   const [activeReel, setActiveReel] = useState<MasterclassReel | null>(null);
   const [reelPlaying, setReelPlaying] = useState(false);
-  const [reelMuted, setReelMuted] = useState(true);
+  const [reelMuted, setReelMuted] = useState(false);
   const reelVideoRef = React.useRef<HTMLVideoElement>(null);
 
   const toggleReelPlay = () => {
@@ -102,6 +102,7 @@ export const JournalPage: React.FC<JournalPageProps> = ({
       reelVideoRef.current.pause();
       setReelPlaying(false);
     } else {
+      reelVideoRef.current.muted = reelMuted;
       reelVideoRef.current.play();
       setReelPlaying(true);
     }
@@ -116,6 +117,7 @@ export const JournalPage: React.FC<JournalPageProps> = ({
   const handleReelRestart = () => {
     if (!reelVideoRef.current) return;
     reelVideoRef.current.currentTime = 0;
+    reelVideoRef.current.muted = reelMuted;
     reelVideoRef.current.play();
     setReelPlaying(true);
   };
@@ -412,6 +414,7 @@ export const JournalPage: React.FC<JournalPageProps> = ({
               key={reel.id}
               onClick={() => {
                 setReelPlaying(false);
+                setReelMuted(false);
                 setActiveReel(reel);
               }}
               className="group bg-white border border-[#E8DFD5] rounded-2xl overflow-hidden shadow-xs hover:shadow-lg hover:border-[#85513f]/60 transition-all cursor-pointer flex flex-col justify-between"

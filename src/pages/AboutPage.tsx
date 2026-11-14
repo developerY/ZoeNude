@@ -26,7 +26,7 @@ export const AboutPage: React.FC = () => {
   const [isSealVisible, setIsSealVisible] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
 
   const togglePlay = () => {
     if (!videoRef.current) return;
@@ -34,6 +34,7 @@ export const AboutPage: React.FC = () => {
       videoRef.current.pause();
       setIsPlaying(false);
     } else {
+      videoRef.current.muted = isMuted;
       videoRef.current.play();
       setIsPlaying(true);
     }
@@ -48,6 +49,7 @@ export const AboutPage: React.FC = () => {
   const handleRestart = () => {
     if (!videoRef.current) return;
     videoRef.current.currentTime = 0;
+    videoRef.current.muted = isMuted;
     videoRef.current.play();
     setIsPlaying(true);
   };

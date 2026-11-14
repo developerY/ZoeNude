@@ -15,7 +15,7 @@ export const FrontPageCinemaSection: React.FC<FrontPageCinemaSectionProps> = ({
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isVideoVisible, setIsVideoVisible] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
   const [isCcOn, setIsCcOn] = useState(false);
   const [posterUrl, setPosterUrl] = useState(
     `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`
@@ -31,9 +31,9 @@ export const FrontPageCinemaSection: React.FC<FrontPageCinemaSectionProps> = ({
     setPosterUrl(`https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`);
   }, [videoId]);
 
-  // YouTube embed URL with autoplay=0 and cc_load_policy=0 so videos start stopped until clicked
+  // YouTube embed URL with autoplay=0, mute=0, and cc_load_policy=0 so videos start stopped with sound enabled on play
   const embedUrl = videoId
-    ? `https://www.youtube-nocookie.com/embed/${videoId}?enablejsapi=1&autoplay=0&mute=1&loop=1&playlist=${videoId}&playsinline=1&controls=0&disablekb=1&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&hl=en&origin=${
+    ? `https://www.youtube-nocookie.com/embed/${videoId}?enablejsapi=1&autoplay=0&mute=0&loop=1&playlist=${videoId}&playsinline=1&controls=0&disablekb=1&modestbranding=1&rel=0&iv_load_policy=3&cc_load_policy=0&hl=en&origin=${
         typeof window !== 'undefined' ? window.location.origin : ''
       }`
     : '';
@@ -76,6 +76,11 @@ export const FrontPageCinemaSection: React.FC<FrontPageCinemaSectionProps> = ({
       postMessageToPlayer('unloadModule', ['captions']);
       postMessageToPlayer('setOption', ['captions', 'track', {}]);
       postMessageToPlayer('setOption', ['cc', 'track', {}]);
+
+      if (!isMuted) {
+        postMessageToPlayer('unMute');
+        postMessageToPlayer('setVolume', [100]);
+      }
 
       if (pendingPlayRef.current) {
         pendingPlayRef.current = false;

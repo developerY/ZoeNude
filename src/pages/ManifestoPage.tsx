@@ -3,6 +3,7 @@ import { PILLARS } from '../data/cosmeticsData';
 import { Pillar } from '../types';
 import { Sparkles, Check, ArrowRight, Feather, BookOpen, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { NudeMagicSection } from '../components/NudeMagicSection';
 
 export const ManifestoPage: React.FC = () => {
   const [selectedPillar, setSelectedPillar] = useState<Pillar>(PILLARS[0]);
@@ -49,6 +50,9 @@ export const ManifestoPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Why We Believe Nude Makeup Is Magic */}
+      <NudeMagicSection />
 
       {/* The 5 Pillars Full Exhibition */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">

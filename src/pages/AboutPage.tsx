@@ -21,7 +21,13 @@ import {
   Film,
   Sun
 } from 'lucide-react';
-import { YouTubeCoverPlayer } from '../components/YouTubeCoverPlayer';
+import { LocalVideoPlayer } from '../components/LocalVideoPlayer';
+import muse1BeforeImg from '../assets/images/nude_magic_muse1_before_1795569638521.jpg';
+import muse1AfterImg from '../assets/images/nude_magic_muse1_after_1795569681988.jpg';
+import muse2BeforeImg from '../assets/images/nude_magic_muse2_before_1795569638358.jpg';
+import muse2AfterImg from '../assets/images/nude_magic_muse2_after_v2_1795569709962.jpg';
+import film1PosterImg from '../assets/images/nude_magic_film1_step1_1795569684502.jpg';
+import film2PosterImg from '../assets/images/nude_magic_film2_step1_1795569683867.jpg';
 
 export const AboutPage: React.FC = () => {
   const [isSealVisible, setIsSealVisible] = useState(true);
@@ -436,7 +442,7 @@ export const AboutPage: React.FC = () => {
                 <figure className="space-y-3">
                   <div className="rounded-2xl overflow-hidden border border-[#E4DDD4] bg-[#F2EDE4] aspect-[8/9] shadow-sm">
                     <img
-                      src={`${import.meta.env.BASE_URL}assets/aistudio/image_6af41d85.png`}
+                      src={muse1BeforeImg}
                       alt="Before: Natural bare skin before minimal nude makeup"
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover object-top"
@@ -458,7 +464,7 @@ export const AboutPage: React.FC = () => {
                 <figure className="space-y-3">
                   <div className="rounded-2xl overflow-hidden border border-[#E4DDD4] bg-[#F2EDE4] aspect-[8/9] shadow-sm">
                     <img
-                      src={`${import.meta.env.BASE_URL}assets/aistudio/image_4bd0f2ec.png`}
+                      src={muse1AfterImg}
                       alt="After: Radiant transformation achieved with minimal nude makeup"
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover object-top"
@@ -486,8 +492,9 @@ export const AboutPage: React.FC = () => {
           {/* Bottom Row: Transformation Film */}
           <div className="mt-14 pt-12 border-t border-[#EADED5] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-7">
-              <YouTubeCoverPlayer
-                videoId="Taox_3O4-go"
+              <LocalVideoPlayer
+                src={`${import.meta.env.BASE_URL}assets/videos/zoe_nude_magic_study1.mp4`}
+                poster={film1PosterImg}
                 title="Why Nude Makeup Is Magic — Minimal Makeup, Magical Transformation"
                 quote="“The transformation is magic. The makeup is minimal.”"
               />
@@ -536,7 +543,7 @@ export const AboutPage: React.FC = () => {
                 <figure className="space-y-3">
                   <div className="rounded-2xl overflow-hidden border border-[#E4DDD4] bg-[#EFE7DC] aspect-[8/9] shadow-sm">
                     <img
-                      src={`${import.meta.env.BASE_URL}assets/aistudio/image_7316e2b2.png`}
+                      src={muse2BeforeImg}
                       alt="Before: Bare complexion prior to minimal sculpted nude makeup"
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover object-top"
@@ -558,7 +565,7 @@ export const AboutPage: React.FC = () => {
                 <figure className="space-y-3">
                   <div className="rounded-2xl overflow-hidden border border-[#E4DDD4] bg-[#EFE7DC] aspect-[8/9] shadow-sm">
                     <img
-                      src={`${import.meta.env.BASE_URL}assets/aistudio/image_c3246c56.png`}
+                      src={muse2AfterImg}
                       alt="After: Soft sculpted nude finish with real skin texture still visible"
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover object-top"
@@ -641,12 +648,21 @@ export const AboutPage: React.FC = () => {
             </div>
 
             <div className="lg:col-span-7 order-1 lg:order-2">
-              <YouTubeCoverPlayer
-                videoId="doqQyoiWjMU"
+              <LocalVideoPlayer
+                src={`${import.meta.env.BASE_URL}assets/videos/zoe_nude_magic_study2.mp4`}
+                poster={film2PosterImg}
                 title="Minimal Nude Makeup Transformation — Real Skin Elevated"
                 quote="“Real skin, softly elevated.”"
               />
             </div>
+          </div>
+
+          {/* Plain AI-Generated Demonstration Disclosure */}
+          <div className="mt-12 pt-6 border-t border-[#E4D7C9]">
+            <p className="text-xs font-sans text-[#5C4D47] leading-relaxed">
+              <strong className="font-semibold text-[#2B211E]">Disclosure:</strong>{' '}
+              All images and videos shown in this section are AI-generated and provided strictly for demonstration purposes to illustrate our minimal nude makeup philosophy.
+            </p>
           </div>
         </div>
       </section>

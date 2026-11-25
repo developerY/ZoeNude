@@ -21,6 +21,7 @@ import {
   Film,
   Sun
 } from 'lucide-react';
+import { YouTubeCoverPlayer } from '../components/YouTubeCoverPlayer';
 
 export const AboutPage: React.FC = () => {
   const [isSealVisible, setIsSealVisible] = useState(true);
@@ -360,6 +361,291 @@ export const AboutPage: React.FC = () => {
                   Translucent micro-prisms capture ambient sunset light rather than reflecting back flat, chalky white. Undetectable even under direct sun.
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why We Believe Nude Makeup Is Magic */}
+      <section id="nude-is-magic" className="bg-[#FCF9F3] py-20 border-b border-[#EADED5] scroll-mt-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Top Row: Narrative + Side-by-Side Before & After Portraits */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+            {/* Left: Editorial Narrative */}
+            <div className="lg:col-span-6 space-y-6">
+              <div className="space-y-3">
+                <span className="text-xs font-sans font-medium tracking-[0.16em] text-[#85513f] uppercase block">
+                  The Philosophy of Minimal Magic
+                </span>
+                <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-[#2B211E] font-normal leading-[1.15] text-balance">
+                  Why We Believe Nude Makeup Is Magic
+                </h2>
+                <p className="font-serif italic text-lg sm:text-xl text-[#85513f]">
+                  The transformation is magic. The makeup is minimal.
+                </p>
+              </div>
+
+              <p className="font-sans text-sm sm:text-base text-[#4E4542] leading-relaxed font-light">
+                True cosmetic magic has nothing to do with hiding under layers of opaque coverage. When a formula works in harmony with living skin, the lightest, most restrained touch shifts light, warmth, and presence—creating an unmistakable transformation while the makeup itself stays barely there.
+              </p>
+
+              {/* Three Hairline-Separated Principles */}
+              <div className="pt-2 divide-y divide-[#EADED5] border-t border-[#EADED5]">
+                <div className="py-4 space-y-1">
+                  <div className="flex items-baseline gap-2.5">
+                    <span className="font-mono text-xs text-[#85513f] tabular-nums">01</span>
+                    <h3 className="font-serif text-lg text-[#2B211E] font-normal">
+                      Maximum Shift, Minimum Product
+                    </h3>
+                  </div>
+                  <p className="text-xs sm:text-sm text-[#4E4542] leading-relaxed font-light pl-6">
+                    Traditional makeup asks you to paint over your face to feel finished. Nude makeup uses a fraction of the pigment—just enough to soften shadow, balance undertone, and wake up natural luminosity without weight or texture.
+                  </p>
+                </div>
+
+                <div className="py-4 space-y-1">
+                  <div className="flex items-baseline gap-2.5">
+                    <span className="font-mono text-xs text-[#85513f] tabular-nums">02</span>
+                    <h3 className="font-serif text-lg text-[#2B211E] font-normal">
+                      Invisible Craft, Visible Presence
+                    </h3>
+                  </div>
+                  <p className="text-xs sm:text-sm text-[#4E4542] leading-relaxed font-light pl-6">
+                    Like the best illusion, the real artistry is that no one can point to the trick. Skin still reads as real, breathing skin—yet the eyes look brighter, cheekbones catch softer light, and a single intentional accent transforms the whole room.
+                  </p>
+                </div>
+
+                <div className="py-4 space-y-1">
+                  <div className="flex items-baseline gap-2.5">
+                    <span className="font-mono text-xs text-[#85513f] tabular-nums">03</span>
+                    <h3 className="font-serif text-lg text-[#2B211E] font-normal">
+                      Still Unmistakably You
+                    </h3>
+                  </div>
+                  <p className="text-xs sm:text-sm text-[#4E4542] leading-relaxed font-light pl-6">
+                    That is why we call nude makeup magic: it never replaces your face with a mask. With minimal steps and weightless bio-lipids, it reveals the most effortless, radiant version of yourself.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Before & After Minimal Transformation Portraits */}
+            <div className="lg:col-span-6 space-y-4">
+              <div className="grid grid-cols-2 gap-4 sm:gap-5">
+                {/* Before Portrait */}
+                <figure className="space-y-3">
+                  <div className="rounded-2xl overflow-hidden border border-[#E4DDD4] bg-[#F2EDE4] aspect-[8/9] shadow-sm">
+                    <img
+                      src={`${import.meta.env.BASE_URL}assets/aistudio/image_6af41d85.png`}
+                      alt="Before: Natural bare skin before minimal nude makeup"
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                  <figcaption className="space-y-0.5 px-1">
+                    <div className="flex items-center gap-2 text-xs font-sans text-[#85513f]">
+                      <span className="font-mono tabular-nums">01</span>
+                      <span aria-hidden="true">·</span>
+                      <span className="font-medium text-[#2B211E]">Before</span>
+                    </div>
+                    <p className="text-xs text-[#6E625D] font-light">
+                      Bare skin, unaltered light, natural vitality.
+                    </p>
+                  </figcaption>
+                </figure>
+
+                {/* After Portrait */}
+                <figure className="space-y-3">
+                  <div className="rounded-2xl overflow-hidden border border-[#E4DDD4] bg-[#F2EDE4] aspect-[8/9] shadow-sm">
+                    <img
+                      src={`${import.meta.env.BASE_URL}assets/aistudio/image_4bd0f2ec.png`}
+                      alt="After: Radiant transformation achieved with minimal nude makeup"
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                  <figcaption className="space-y-0.5 px-1">
+                    <div className="flex items-center gap-2 text-xs font-sans text-[#85513f]">
+                      <span className="font-mono tabular-nums">02</span>
+                      <span aria-hidden="true">·</span>
+                      <span className="font-medium text-[#2B211E]">After</span>
+                    </div>
+                    <p className="text-xs text-[#6E625D] font-light">
+                      Minimal nude veil, luminous lift, effortless transformation.
+                    </p>
+                  </figcaption>
+                </figure>
+              </div>
+
+              <p className="text-xs font-sans text-[#6E625D] leading-relaxed pt-2 border-t border-[#EADED5]">
+                Notice what stayed untouched: natural skin texture, warmth, and expression. The shift feels magical precisely because the makeup stays minimal.
+              </p>
+            </div>
+          </div>
+
+          {/* Bottom Row: Transformation Film */}
+          <div className="mt-14 pt-12 border-t border-[#EADED5] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="lg:col-span-7">
+              <YouTubeCoverPlayer
+                videoId="Taox_3O4-go"
+                title="Why Nude Makeup Is Magic — Minimal Makeup, Magical Transformation"
+                quote="“The transformation is magic. The makeup is minimal.”"
+              />
+            </div>
+
+            <div className="lg:col-span-5 space-y-4">
+              <span className="text-xs font-sans font-medium tracking-[0.16em] text-[#85513f] uppercase block">
+                Watch the Transformation
+              </span>
+              <h3 className="font-serif text-2xl sm:text-3xl text-[#2B211E] font-normal leading-snug text-balance">
+                Less on the Skin. Everything in the Result.
+              </h3>
+              <p className="text-sm text-[#4E4542] leading-relaxed font-light">
+                See in motion how a restrained nude approach elevates radiance and poise in moments—proving that the most compelling beauty transformations never rely on heavy coverage.
+              </p>
+              <div className="pt-2 flex flex-wrap items-center gap-4">
+                <Link
+                  to="/complexion-studio"
+                  className="bg-[#2B211E] hover:bg-[#433430] text-white text-xs font-sans font-semibold tracking-[0.14em] uppercase px-6 py-3 rounded-lg transition-colors inline-flex items-center space-x-2 whitespace-nowrap shrink-0"
+                >
+                  <span>Explore Complexion Studio</span>
+                  <ArrowRight size={14} />
+                </Link>
+                <Link
+                  to="/shade-finder"
+                  className="text-xs font-sans font-semibold tracking-[0.14em] uppercase text-[#2B211E] hover:text-[#85513f] transition-colors inline-flex items-center space-x-1.5 whitespace-nowrap shrink-0"
+                >
+                  <span>Find Your Shade</span>
+                  <ArrowRight size={13} />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Study 02: Close-Up Minimal Nude Transformation */}
+      <section id="nude-magic-study" className="bg-[#F7EFE6] py-20 border-b border-[#EADED5] scroll-mt-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Top Row: Side-by-Side Close-Up Portraits + Editorial Breakdown */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            {/* Left: Before & After Close-Up Portraits */}
+            <div className="lg:col-span-6 space-y-4">
+              <div className="grid grid-cols-2 gap-4 sm:gap-5">
+                {/* Before Portrait */}
+                <figure className="space-y-3">
+                  <div className="rounded-2xl overflow-hidden border border-[#E4DDD4] bg-[#EFE7DC] aspect-[8/9] shadow-sm">
+                    <img
+                      src={`${import.meta.env.BASE_URL}assets/aistudio/image_7316e2b2.png`}
+                      alt="Before: Bare complexion prior to minimal sculpted nude makeup"
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                  <figcaption className="space-y-0.5 px-1">
+                    <div className="flex items-center gap-2 text-xs font-sans text-[#85513f]">
+                      <span className="font-mono tabular-nums">01</span>
+                      <span aria-hidden="true">·</span>
+                      <span className="font-medium text-[#2B211E]">Before</span>
+                    </div>
+                    <p className="text-xs text-[#6E625D] font-light">
+                      Bare complexion, natural freckles, untouched bone structure.
+                    </p>
+                  </figcaption>
+                </figure>
+
+                {/* After Portrait */}
+                <figure className="space-y-3">
+                  <div className="rounded-2xl overflow-hidden border border-[#E4DDD4] bg-[#EFE7DC] aspect-[8/9] shadow-sm">
+                    <img
+                      src={`${import.meta.env.BASE_URL}assets/aistudio/image_c3246c56.png`}
+                      alt="After: Soft sculpted nude finish with real skin texture still visible"
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                  <figcaption className="space-y-0.5 px-1">
+                    <div className="flex items-center gap-2 text-xs font-sans text-[#85513f]">
+                      <span className="font-mono tabular-nums">02</span>
+                      <span aria-hidden="true">·</span>
+                      <span className="font-medium text-[#2B211E]">After</span>
+                    </div>
+                    <p className="text-xs text-[#6E625D] font-light">
+                      Sheer warmth, softly lifted eyes, velvety tonal nude lip.
+                    </p>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+
+            {/* Right: Editorial Narrative */}
+            <div className="lg:col-span-6 space-y-5">
+              <div className="space-y-3">
+                <span className="text-xs font-sans font-medium tracking-[0.16em] text-[#85513f] uppercase block">
+                  Up Close · Real Skin Still Wins
+                </span>
+                <h2 className="font-serif text-3xl sm:text-4xl text-[#2B211E] font-normal leading-[1.15] text-balance">
+                  Freckles Stay. Texture Stays. Only the Magic Appears.
+                </h2>
+                <p className="font-serif italic text-lg text-[#85513f]">
+                  Even at inches away, it reads as skin—never as coverage.
+                </p>
+              </div>
+
+              <p className="font-sans text-sm sm:text-base text-[#4E4542] leading-relaxed font-light">
+                Look closely at the shift above: every natural freckle, every brow hair, and the living warmth of bare skin remain completely intact. A whisper of tonal bronzing, sheer light along the high points, and a harmonized nude lip are all it takes to transform expression and depth—without ever erasing the face underneath.
+              </p>
+
+              <div className="pt-3 border-t border-[#E4D7C9] grid grid-cols-1 sm:grid-cols-2 gap-5 text-xs sm:text-sm text-[#4E4542]">
+                <div className="space-y-1">
+                  <h3 className="font-serif text-base text-[#2B211E] font-normal">
+                    Tonal Harmony Over Coverage
+                  </h3>
+                  <p className="font-light leading-relaxed">
+                    Instead of blanking out natural skin tone, micro-translucent pigments echo your own undertones for effortless lift.
+                  </p>
+                </div>
+                <div className="space-y-1">
+                  <h3 className="font-serif text-base text-[#2B211E] font-normal">
+                    Breathable Close-Up Finish
+                  </h3>
+                  <p className="font-light leading-relaxed">
+                    Zero heavy foundation line, zero powdery buildup—just subtle dimension that looks even better in daylight.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Row: Second Transformation Video */}
+          <div className="mt-14 pt-12 border-t border-[#E4D7C9] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="lg:col-span-5 space-y-4 order-2 lg:order-1">
+              <span className="text-xs font-sans font-medium tracking-[0.16em] text-[#85513f] uppercase block">
+                Transformation Film 02
+              </span>
+              <h3 className="font-serif text-2xl sm:text-3xl text-[#2B211E] font-normal leading-snug text-balance">
+                Every Step Minimal. The Whole Effect Unmistakable.
+              </h3>
+              <p className="text-sm text-[#4E4542] leading-relaxed font-light">
+                Watch how sheer placement around the eyes, cheeks, and lips brings bone structure into quiet focus while keeping skin effortlessly natural from start to finish.
+              </p>
+              <div className="pt-2">
+                <Link
+                  to="/shop"
+                  className="bg-[#2B211E] hover:bg-[#433430] text-white text-xs font-sans font-semibold tracking-[0.14em] uppercase px-6 py-3 rounded-lg transition-colors inline-flex items-center space-x-2 whitespace-nowrap shrink-0"
+                >
+                  <span>Shop Minimal Essentials</span>
+                  <ArrowRight size={14} />
+                </Link>
+              </div>
+            </div>
+
+            <div className="lg:col-span-7 order-1 lg:order-2">
+              <YouTubeCoverPlayer
+                videoId="doqQyoiWjMU"
+                title="Minimal Nude Makeup Transformation — Real Skin Elevated"
+                quote="“Real skin, softly elevated.”"
+              />
             </div>
           </div>
         </div>
